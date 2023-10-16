@@ -4,42 +4,62 @@ namespace UnitsDrafts
 {
     internal class Bishop : Unit
     {
-        private int _defence;
-
         private int _mana;
+        private int _maxmana;
 
-        public Bishop(string name, int maxHealth, int speed, int mana, int defence, int damage, int health)
-            : base(name, maxHealth, speed, defence, damage, health)
+        public Bishop(string name, int maxHealth, int defense, int damage, int speed, int mana,int maxmana)
+            : base(name, maxHealth,defense,damage, speed)
         {
-            _defence = defence;
             _mana = mana;
+            _maxmana = maxmana;
         }
 
-        public Bishop() : base("Bishop", 60, 10, 20, 10, 3)
+        public Bishop() : base("Bishop", 60,7,10,10)
         {
-            
-            _mana = 150;
+            _maxmana = 100;
+            _mana = _maxmana;
         }
-
+        public int MaxMana
+        {
+            get;
+            set;
+        }
         public int Mana
         {
             get { return _mana; }
             set { _mana = value; }
         }
-
-        public void HealSomebody(Unit peasant)
+        public void Healing(Unit unit)
         {
-            peasant.Health = peasant.Health + 2;
-            _mana -= 10;
+            if (_mana >= 10)
+            {
+                if (unit.Health < unit.MaxHealth)
+                {
+                    unit.Health = unit.Health + 20;
+                    if (unit.Health > unit.MaxHealth)
+                    {
+                        unit.Health = unit.MaxHealth;
+                    }
+                    _mana = _mana - 10;
+                    Console.WriteLine($"У священника осталось {_mana} / {_maxmana} маны");
+                    Console.WriteLine($"У юнита {unit.Name} востановленно 20HP");
+                    Console.WriteLine($"Текущее HP {unit.Health} / {unit.MaxHealth}");
+                }
+                else
+                {
+                    Console.WriteLine("Юниту не нужн хил");
+                }
+            }    
+            else
+            {       
+                Console.WriteLine("У вас недостаточно маны!");  
+                Mp_cheak();
+                
+            }
         }
-        public void Ostatoc()
+        public void Mp_cheak()
         {
-            Console.WriteLine($"У вас осталось {_mana} маны");
-        }
-
-        public void Vos()
-        {
-            Console.WriteLine("Здоровье восстановилось!");
+            Console.WriteLine($"Маны {_mana} / {_maxmana}");
         }
     }
 }

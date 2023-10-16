@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,14 +11,14 @@ namespace UnitsDrafts
     {
         public Footman CreateFootman()
         {
-            ++Stat.FootmanQuant;
-            ++Stat.FootmanQuant;
+
+            Random rnd = new Random();
+            Statistics.FootmanCount++;
             return new Footman();
         }
-
-        public Archer CreateArcher()
+        public Archer CrateArcher()
         {
-            ++Stat.ArcherQuant;
+            Statistics.ArcherCount++;
             return new Archer();
         }
     }
