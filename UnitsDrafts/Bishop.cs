@@ -1,4 +1,6 @@
-﻿namespace UnitsDrafts
+﻿using System.Xml.Linq;
+
+namespace UnitsDrafts
 {
     internal class Bishop : Unit
     {
@@ -17,6 +19,11 @@
         public void HealSomebody(Unit unit)
         {
 
+        }
+
+        public override void ShowInfo()
+        {
+            Console.WriteLine($"Name:{base.Name} Health: {base.Health}/{base.MaxHealth} Mana:{_mana}");
         }
 
 
