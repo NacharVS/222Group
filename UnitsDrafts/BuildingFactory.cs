@@ -4,7 +4,10 @@
     {
         public static void CreateBarracs()
         {
+        }
 
+        public static void CreateTownHall()
+        {
         }
     }
 }

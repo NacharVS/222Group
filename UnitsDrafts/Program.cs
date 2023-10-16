@@ -1,10 +1,8 @@
 ﻿using UnitsDrafts;
 
 Barracs barracs = new Barracs();
-var ft1 = barracs.CreateFootman();
-var ft2 = barracs.CreateFootman();
-var ft3 = barracs.CreateFootman();
-var ft4 = barracs.CreateFootman();
+TownHall TownHalls = new TownHall();
+
 Archer[] archers = new Archer[3]
 {
     barracs.CreateArcher(),
@@ -12,9 +10,20 @@ Archer[] archers = new Archer[3]
     barracs.CreateArcher()
 };
 
+Bishop[] bishops = new Bishop[4]
+    {
+        TownHalls.CreateBishop(),
+        TownHalls.CreateBishop(),
+        TownHalls.CreateBishop(),
+        TownHalls.CreateBishop()
+    };
+
+
+      
+
 Statistics.ShowStatistics();
 
-
+bishops[2].ShowInfo();
 
 
 
