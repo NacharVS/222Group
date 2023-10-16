@@ -20,10 +20,3 @@ Statistics.ShowStatistics();
 
 
 
-
-
-
-
-
-
-
