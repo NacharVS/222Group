@@ -1,17 +1,24 @@
-﻿namespace UnitsDrafts
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitsDrafts
 {
-    internal class Barracs 
+    internal class Barracs
     {
         public Footman CreateFootman()
         {
-            Random random = new Random();
-            Statistics.FootmansCount++;
-            return  new Footman("Name", random.Next(50,60), random.Next(5, 10), random.Next(5, 15), random.Next(1, 4));
-        }
 
-        public Archer CreateArcher()
+            Random rnd = new Random();
+            Statistics.FootmanCount++;
+            return new Footman();
+        }
+        public Archer CrateArcher()
         {
-            Statistics.ArchersCount++;
+            Statistics.ArcherCount++;
             return new Archer();
         }
     }
