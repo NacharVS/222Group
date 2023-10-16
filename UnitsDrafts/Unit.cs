@@ -39,7 +39,6 @@
                     _health = value; 
             }
         }
-
         public void Moving()
         {
             Console.WriteLine($"{_name} is moving with {_speed} speed");
