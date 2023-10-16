@@ -51,7 +51,7 @@ namespace UnitsDrafts
             }
             else
             {
-                Console.WriteLine("Юнит мертв");
+                Console.WriteLine("Юнит мертв - он не может атаковать");
             }
             
         }

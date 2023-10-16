@@ -40,6 +40,7 @@
                 if(value < 0)
                 {
                     _health = 0;
+                    Alive = false;
                 }
                 else
                     _health = value; 
