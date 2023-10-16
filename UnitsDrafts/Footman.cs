@@ -1,51 +1,87 @@
-﻿namespace UnitsDrafts
+﻿using System.ComponentModel.Design;
+using UnitsDrafts;
+
+namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
-        private int _damage;
         private int _defence;
 
-        public override int Health 
-        { 
-            get => base.Health; 
-            set => base.Health = value; 
-        }
-        public int Defence
-        {
-            get { return _defence; }
-            set { _defence = value; }
-        }
+        private int _damage;
 
-
-        public Footman(string name, int maxHealth, int speed, int damage, int defence) 
-            : base(name, maxHealth, speed)
+        public Footman(string name, int maxHealth, int speed, int damage, int defence, int health) 
+            : base(name, maxHealth, speed, defence, damage, health)
         {
             _damage = damage;
             _defence = defence;
         }
-
-        public Footman() : base("Footman", 60, 10)
+        public int Defence 
         {
-            _damage = 13;
-            _defence = 2;
+            get {  return _defence; }
+            set { _defence = value; }
         }
-
         public int Damage
         {
             get { return _damage; }
             set { _damage = value; }
         }
-
+        public Footman() : base("Footman", 45, 10, 10, 10, 3)
+        {
+            _damage = 15;
+            _defence = 10;
+        }
 
         public void InflictDamage(Unit unit)
         {
-            unit.Health = unit.Health - _damage;
-        }
+            if (Health < 24)
+            {
+                _damage = _damage + _damage / 2;
+                unit.Health = unit.Health - _damage;
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
+                _damage = 15;
+            }
+            else if(Health >= 24)
+            {
+                _damage = 15;
+                unit.Health -= _damage;
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
+                if (unit.Health < 0) 
+                {
+                    Console.WriteLine("Юнит убит");
+                }
+            
+            }
 
-        public override void ShowInfo()
+        }
+        public void Defencee(Unit unit)
         {
-            Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Damage: {Damage} Defence: {Defence}");
+            if (_defence > _damage)
+            {
+                _defence = _damage;
+                unit.Health = unit.Health - (_damage - _defence);
+            }
+            else
+            {
+                unit.Health = unit.Health - (_damage - _defence);
+            }
+            if (unit.Health <= 0)
+            {
+                unit.Health = 0;
+                Console.WriteLine("Footman died");
+            }
         }
+        public void TakeDamage(int damage)
+        {
+            int reducedDamage = damage - Defence;
+            if (reducedDamage < 0)
+                reducedDamage = 0;
 
+            Health -= reducedDamage;
+        }
     }
 }
+
+
+//unit.Health = unit.Health - _damage;
+//unit.Defence -= _damage;
+//unit.Health = +Defence;
