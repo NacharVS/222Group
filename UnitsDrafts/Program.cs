@@ -4,25 +4,29 @@ Footman ft1 = new Footman();
 Footman ft12 = new Footman();
 Peasant peasant = new Peasant();    
 Archer archer = new Archer();
-Bishop bs1 = new Bishop(10, 20, 30, 40);
+Bishop bs1 = new Bishop(20, 20);
 
 
 ft1.InflictDamage(archer);
 archer.BaseInfo();
 ft1.InflictDamage(archer);
 archer.BaseInfo();
-ft1.InflictDamage(archer);
+ft1.InflictDamage(archer); 
+archer.BaseInfo();
 archer.RageMode(archer);
+ft1.InflictDamage(archer);
+archer.BaseInfo();
+
 archer.BaseInfo();
 
 Barracs barracs = new Barracs();
 TownHall th = new TownHall();
 var footman1 = barracs.CreateWarrior();
-footman1.BaseInfo();
-var archer1 = barracs.CREAS();
-archer1.BaseInfo();
-var bishop1 = th.CREEEEAAT();
-bishop1.BaseInfo();
+var archer1 = barracs.CreateArch();
+var bishop1 = th.CreateBis();
+var peas = th.CreatePeas();
+Statistics.ShowStatistics();
+
 
 
 //bs1.HealSomebody(peasant);

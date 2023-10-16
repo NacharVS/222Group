@@ -8,10 +8,20 @@ namespace UnitsDrafts
 {
     internal class TownHall
     {
-        public Bishop CREEEEAAT()
+        public Bishop CreateBis()
         {
-            Bishop bishop = new Bishop(40, 40, 40 , 40);
+            Statistics.BishopCount++;
+            Bishop bishop = new Bishop(20, 20);
             return bishop;
+            
+        }
+
+        public Peasant CreatePeas()
+        {
+            Statistics.PeasantCount++;
+            Peasant peasant = new Peasant();
+            return peasant;
+            
         }
     }
 }

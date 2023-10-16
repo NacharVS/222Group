@@ -11,14 +11,17 @@ namespace UnitsDrafts
     {
         public Footman CreateWarrior()
         {
+            Statistics.FootmansCount++;
             Footman footman = new Footman();
             return footman;
         }
-        public Archer CREAS()
+        public Archer CreateArch()
         {
+            Statistics.ArchersCount++;
             Archer archer = new Archer();
             return archer;
         }
+
         
     }
 }

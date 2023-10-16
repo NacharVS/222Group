@@ -3,9 +3,11 @@
     internal class Bishop : Unit
     {
         private int _mana;
-
-        public Bishop() : base("Bishop", 40, 7)
+        private int _maxmana;
+        public Bishop(int mana, int maxmana) : base("Bishop", 60, 7, false)
         {
+            _mana = maxmana;
+            _maxmana = maxmana;
         }
 
         public int Mana 
@@ -14,8 +16,31 @@
             set { _mana = value; }
         }
 
+        public int Maxmana
+        {
+            get { return _maxmana; }
+            set { _maxmana = value; }
+        }
+
         public void HealSomebody(Unit unit)
         {
+            if (unit.Health > 0)
+            {
+                _mana -= 2;
+                unit.Health++;
+            }
+            else if (unit.Health > MaxHealth)
+            {
+                unit.Health = MaxHealth;
+            }
+            else if (_mana <= 0)
+            {
+                Console.WriteLine("МАНЫ НЕТУ");
+            }
+            else if (unit.Health == 0)
+            {
+                Console.WriteLine("Перс мёртв нельзя хилять");
+            }
 
         }
 

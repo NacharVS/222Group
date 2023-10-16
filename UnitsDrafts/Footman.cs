@@ -45,7 +45,12 @@ namespace UnitsDrafts
 
         public void InflictDamage(Unit unit)
         {
-            if (Armor == true)
+            if (unit.Speed >= 15)
+            {
+                Console.WriteLine("СЛКШИМ БИСТРо");
+                return;            
+            }
+            else if (Armor == true)
             {
                 unit.Health = unit.Health - (_damage * 80 / 100);
             }
@@ -53,7 +58,9 @@ namespace UnitsDrafts
             {
                 unit.Health -= _damage;
             }
-        }
+        } 
+        
+            
 
     }
 }
