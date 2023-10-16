@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class Peasant : Unit
+    internal class TownHall
     {
-        public Peasant() : base("Peasant", 30, 5, false)
+        public Bishop CREEEEAAT()
         {
+            Bishop bishop = new Bishop(40, 40, 40 , 40);
+            return bishop;
         }
     }
 }

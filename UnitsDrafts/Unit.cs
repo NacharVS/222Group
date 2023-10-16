@@ -2,22 +2,20 @@
 {
     internal class Unit
     {
-        private readonly string _name;
+        private string _name;
         private int _health;
         private int _maxHealth;
         private int _speed;
+        private bool _armor;
 
-        public Unit(string name, int maxHealth, 
-            int speed)
+        public Unit(string name, int maxHealth, int speed, bool armor)
         {
             _name = name;
             _health = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
+            _armor = armor;
         }
-
-        public string Name => _name;       
-        public int MaxHealth => _maxHealth;
 
         public int Speed
         {
@@ -25,8 +23,14 @@
             set { _speed = value; }
         }
 
+        public string Name
+        {
+            get { return _name; }
+            set { _name = ""; }
+        }
 
-        public virtual int Health
+
+        public int Health
         {
             get { return _health; }
             set 
@@ -40,15 +44,34 @@
             }
         }
 
+        public int MaxHealth
+        {
+            get { return _maxHealth; }
+            set { _maxHealth = value; }
+        }
+
+        public bool Armor
+        {
+            get { return _armor; }
+            set { _armor = false; }
+        }
+
         public void Moving()
         {
             Console.WriteLine($"{_name} is moving with {_speed} speed");
         }
 
-        public virtual void ShowInfo()
+        public virtual void BaseInfo()
         {
-            Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth}" );
+            Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Speed: {Speed}" );
         }
 
+        public void Death()
+        {
+            if ( _health == 0 ) 
+            {
+                Console.WriteLine("Персонаж умер");
+            }
+        }
     }
 }

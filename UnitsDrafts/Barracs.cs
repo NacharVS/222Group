@@ -1,18 +1,24 @@
-﻿namespace UnitsDrafts
-{
-    internal class Barracs 
-    {
-        public Footman CreateFootman()
-        {
-            Random random = new Random();
-            Statistics.FootmansCount++;
-            return  new Footman("Name", random.Next(50,60), random.Next(5, 10), random.Next(5, 15), random.Next(1, 4));
-        }
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-        public Archer CreateArcher()
+namespace UnitsDrafts
+{
+    internal class Barracs
+    {
+        public Footman CreateWarrior()
         {
-            Statistics.ArchersCount++;
-            return new Archer();
+            Footman footman = new Footman();
+            return footman;
         }
+        public Archer CREAS()
+        {
+            Archer archer = new Archer();
+            return archer;
+        }
+        
     }
 }

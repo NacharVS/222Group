@@ -8,7 +8,7 @@
         {
         }
 
-        public int Mana
+        public int Mana 
         {
             get { return _mana; }
             set { _mana = value; }
