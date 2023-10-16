@@ -7,7 +7,7 @@
 
         public static void ShowStatistics()
         {
-            Console.WriteLine($"{FootmansCount} {ArchersCount}");
+            Console.WriteLine($"Created Footman: {FootmansCount} Created Archers: {ArchersCount}");
         }
     }
 }
