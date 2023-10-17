@@ -9,12 +9,13 @@
         private double _speed;
         private double _damage;
         private bool _alive = true;
+        private int run_away_count = 0;
         public string Name
         {
             get { return _name; }
             set { _name = value; }
         }
-        public virtual double Speed
+        public double Speed
         {
             get { return _speed; }
             set { _speed = value; }
@@ -58,16 +59,32 @@
             get { return _maxHealth; }
             set { _maxHealth = value; }
         }
+        public int Run_Away_Count
+        {
+            get;set;
+        }
+        public Unit(string name, double maxHealth, double defense, double damage, double speed)
+        {
+            _name = name;
+            _health = maxHealth;
+            _maxHealth = maxHealth;
+            _defense = defense;
+            _damage = damage;
+            _speed = speed;
+        }
 
         public virtual void Moving()
         {
+            
             if (Alive)
             {
+                Run_Away_Count += (int)Speed;
                 Console.WriteLine($"{Name} is moving with {Speed} speed");
+                Console.WriteLine(Run_Away_Count);
             }
             else
             {
-                Console.WriteLine("Юнит мертв");
+                Console.WriteLine("Юнит мертв он не может дивгаться");
             }
         }
 
@@ -83,15 +100,7 @@
             }
             
         }
-        public Unit(string name, double maxHealth, double defense, double damage, double speed)
-        {
-            _name = name;
-            _health = maxHealth;
-            _maxHealth = maxHealth;
-            _defense = defense;
-            _damage = damage;
-            _speed = speed;
-        }
+        
         public virtual void DealDamage(Unit unit)
         {
             if (Alive)

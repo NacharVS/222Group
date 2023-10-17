@@ -71,7 +71,7 @@ namespace UnitsDrafts
             }
             else 
             { 
-                Console.WriteLine("юнит сдох"); 
+                Console.WriteLine("юнит сдох, манны в трупе не так уж и много"); 
             }
         }
     }

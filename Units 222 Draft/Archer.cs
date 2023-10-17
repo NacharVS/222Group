@@ -14,22 +14,6 @@ namespace UnitsDrafts
                 Speed += 4;
             }
         }
-        public override void BaseInfo()
-        {
-            base.BaseInfo();
-        }
-        public override void Moving() 
-        { 
-            if (Alive)
-            {
-                Console.WriteLine($"{Name} is moving with {Speed} speed");
-            }
-            else
-            {
-                Console.WriteLine("Юнит мертв");
-            }
-            
-        }
     }
 }
 
