@@ -67,7 +67,8 @@ switch (a)
     peas1.BaseInfo();
 
     Stat.ShowInfo();     
-    break;    
+    break;
+    Console.WriteLine("вывывы");
 }
 
 
