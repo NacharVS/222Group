@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class fight
+    internal class Fight
     {
         public static void Duel(Unit unit1, Unit unit2)
         {
+            Console.WriteLine("=================================================");
             Console.WriteLine($"В дуэли учавствуют {unit1.Name} и {unit2.Name}");
             Unit[] duel_spisok = new Unit[2] { unit1, unit2};
             Unit[] duel_spisok2 = new Unit[2] { unit2, unit1 };
@@ -44,11 +45,13 @@ namespace UnitsDrafts
                     else if(unit1.Run_Away_Count >= 20)
                     {
                         Console.WriteLine($"{unit1.Name}сбежал");
+                        Console.WriteLine("=================================================");
                         break;
                     }
                     else if(unit2.Run_Away_Count >= 20)
                     {
                         Console.WriteLine($"{unit2.Name} сбежал");
+                        Console.WriteLine("=================================================");
                         break;
                     }
                     
@@ -56,6 +59,7 @@ namespace UnitsDrafts
                 else {  break; }
             }
             Console.WriteLine($"БОЙ ЗАКОНЧИЛСЯ ЗА {count} ХОДОВ");
+            Console.WriteLine("=================================================");
         }
     }
 }
