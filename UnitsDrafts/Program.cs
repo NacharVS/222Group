@@ -15,6 +15,7 @@ Console.WriteLine("1.Спид");
 Console.WriteLine("2.Дамаге");
 Console.WriteLine("3.Броня");
 Console.WriteLine("4.Бараки и Ратуша");
+Console.WriteLine("5.Хилл");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -24,34 +25,25 @@ switch (a)
         ft1.InflictDamage(archer);
         archer.BaseInfo();
         break;
-
     case 2:
         ft1.BaseInfo();
         ft2.InflictDamage(ft1);
         ft1.BaseInfo();
-        ft2.InflictDamage(ft1);
-        ft1.BaseInfo();
-        ft1.InflictDamage(ft1);
-        ft1.BaseInfo();
-        bishop.HealSomebody(ft1);
-        ft1.BaseInfo();
-        bishop.HealSomebody(ft1);
-        ft1.BaseInfo();
-        bishop.HealSomebody(ft1);
-        ft1.BaseInfo();                
+        ft1.InflictDamage(ft2);
+        ft2.BaseInfo();
         break;
 
     case 3:        
         peasant.BaseInfo();
-        ft1.Defencee(peasant);
+        ft1.InflictDamage(peasant);
         peasant.BaseInfo();
-        ft1.Defencee(peasant);
+        ft1.InflictDamage(peasant);
         peasant.BaseInfo();
-        ft1.Defencee(peasant);
+        ft1.InflictDamage(peasant);
         peasant.BaseInfo();
-        ft1.Defencee(peasant);
+        ft1.InflictDamage(peasant);
         peasant.BaseInfo();
-        ft1.Defencee(peasant);
+        ft1.InflictDamage(peasant);
         peasant.BaseInfo()       ;
         break;
     case 4:
@@ -69,6 +61,20 @@ switch (a)
     Stat.ShowInfo();     
     break;
     Console.WriteLine("вывывы");
+
+    case 5:
+        ft2.InflictDamage(ft1);
+        ft1.BaseInfo();
+        bishop.HealSomebody(ft1);
+        ft1.BaseInfo();
+        bishop.Ostatoc(); 
+        bishop.HealSomebody(ft1);
+        ft1.BaseInfo();
+        bishop.Ostatoc();
+        bishop.HealSomebody(ft1);
+        ft1.BaseInfo();
+        bishop.Ostatoc();
+        break;
 }
 
 

@@ -25,7 +25,7 @@ namespace UnitsDrafts
             get { return _damage; }
             set { _damage = value; }
         }
-        public Footman() : base("Footman", 45, 10, 10, 10, 3)
+        public Footman() : base("Footman", 30, 10, 10, 10, 3)
         {
             _damage = 15;
             _defence = 10;
@@ -37,47 +37,46 @@ namespace UnitsDrafts
             {
                 _damage = _damage + _damage / 2;
                 unit.Health = unit.Health - _damage;
-                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-                _damage = 15;
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");                
             }
             else if(Health >= 24)
-            {
-                _damage = 15;
+            {                
                 unit.Health -= _damage;
-                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-                if (unit.Health < 0) 
-                {
-                    Console.WriteLine("Юнит убит");
-                }
-            
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");            
             }
+            //if (_defence > _damage)
+            //{
+            //    _defence = _damage;
+            //    unit.Health = unit.Health - (_damage - _defence);
+            //}
+            //else
+            //{
+            //    unit.Health = unit.Health - (_damage - _defence);
+            //}
+            //if (unit.Health <= 0)
+            //{
+            //    unit.Health = 0;
+            //    Console.WriteLine("Footman died");
+            //}
 
         }
-        public void Defencee(Unit unit)
-        {
-            if (_defence > _damage)
-            {
-                _defence = _damage;
-                unit.Health = unit.Health - (_damage - _defence);
-            }
-            else
-            {
-                unit.Health = unit.Health - (_damage - _defence);
-            }
-            if (unit.Health <= 0)
-            {
-                unit.Health = 0;
-                Console.WriteLine("Footman died");
-            }
-        }
-        public void TakeDamage(int damage)
-        {
-            int reducedDamage = damage - Defence;
-            if (reducedDamage < 0)
-                reducedDamage = 0;
-
-            Health -= reducedDamage;
-        }
+        //public void Defencee(Unit unit)
+        //{
+        //    if (_defence > _damage)
+        //    {
+        //        _defence = _damage;
+        //        unit.Health = unit.Health - (_damage - _defence);
+        //    }
+        //    else
+        //    {
+        //        unit.Health = unit.Health - (_damage - _defence);
+        //    }
+        //    if (unit.Health <= 0)
+        //    {
+        //        unit.Health = 0;
+        //        Console.WriteLine("Footman died");
+        //    }
+        //}
     }
 }
 

@@ -47,6 +47,7 @@ namespace UnitsDrafts
             set { _Health = value; }
         }
 
+
         public override void BaseInfo()
         {
             if (_defence > _damage)
