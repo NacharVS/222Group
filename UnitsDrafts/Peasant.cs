@@ -48,24 +48,42 @@ namespace UnitsDrafts
         }
 
 
-        public override void BaseInfo()
+        //public override void BaseInfo()
+        //{
+        //    if (_defence > _damage)
+        //    {
+        //        _defence = _damage;
+        //        _Health = _Health - (_damage - _defence);
+        //    }
+        //    else
+        //    {
+        //        _Health = _Health - (_damage - _defence);
+        //    }
+        //    if (_Health <= 0)
+        //    {
+        //        _Health = 0;
+        //        Console.WriteLine("Peasant died");
+        //    }
+        //    Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
+        //}
+
+        public void BaseInfo(Unit unit)
         {
-            if (_defence > _damage)
-            {
-                _defence = _damage;
-                _Health = _Health - (_damage - _defence);
-            }
-            else
-            {
-                _Health = _Health - (_damage - _defence);
-            }
-            if (_Health <= 0)
-            {
-                _Health = 0;
-                Console.WriteLine("Peasant died");
-            }
+            unit.Health -= _damage;
             Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
+            if (unit.Health <= 0)
+            {
+                Console.WriteLine("Юнит умер, движение невозможно!");
+            }
         }
+        public void PeasantDamage(Unit unit)
+        {   
+            unit.Health = unit.Health - _damage;
+            Console.WriteLine($"Вашему герою нанесено {_damage} урона");
+            if (unit.Health <= 0)
+            {
+                 Console.WriteLine("Вы не можете бить, так как мертвы");
+            }           
+        }       
     }
 }
-

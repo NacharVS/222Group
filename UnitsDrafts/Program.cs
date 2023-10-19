@@ -16,6 +16,7 @@ Console.WriteLine("2.Дамаге");
 Console.WriteLine("3.Броня");
 Console.WriteLine("4.Бараки и Ратуша");
 Console.WriteLine("5.Хилл");
+Console.WriteLine("6.Файт");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -60,7 +61,6 @@ switch (a)
 
     Stat.ShowInfo();     
     break;
-    Console.WriteLine("вывывы");
 
     case 5:
         ft2.InflictDamage(ft1);
@@ -74,6 +74,16 @@ switch (a)
         bishop.HealSomebody(ft1);
         ft1.BaseInfo();
         bishop.Ostatoc();
+        break;
+
+    case 6:
+        ft1.BaseInfo();
+        peasant.PeasantDamage(ft1);
+        ft1.BaseInfo();
+        ft1.InflictDamage(peasant);
+        peasant.BaseInfo();
+        peasant.PeasantDamage(ft1);
+        ft1.BaseInfo();
         break;
 }
 

@@ -47,14 +47,10 @@
                 }
                 else
                     _health = value;
-                while (Health < Health / 100 * 40)
-                {
-                    _damage = _damage + _damage / 100 * 50;
-                }
             }
         }
 
-        public int Defence 
+        public int Defence
         {
             get { return _defence; }
             set { _defence -= _damage; }
@@ -71,6 +67,7 @@
         {
             Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Defence: {_defence} " );
         }
+
 
     }
 }

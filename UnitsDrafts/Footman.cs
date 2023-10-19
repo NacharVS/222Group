@@ -37,13 +37,23 @@ namespace UnitsDrafts
             {
                 _damage = _damage + _damage / 2;
                 unit.Health = unit.Health - _damage;
-                Console.WriteLine($"Вашему герою нанесено {_damage} урона");                
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
             }
-            else if(Health >= 24)
-            {                
+            else if (Health >= 24)
+            {
                 unit.Health -= _damage;
-                Console.WriteLine($"Вашему герою нанесено {_damage} урона");            
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
             }
+
+            //while (Health != 0)
+            //{
+            //    unit.Health = unit.Health - _damage;
+            //}
+            //if (Health <= 0)
+            //{
+            //    Console.WriteLine("юнит умер, движение невозможно");
+            //}
+
             //if (_defence > _damage)
             //{
             //    _defence = _damage;
@@ -58,29 +68,6 @@ namespace UnitsDrafts
             //    unit.Health = 0;
             //    Console.WriteLine("Footman died");
             //}
-
         }
-        //public void Defencee(Unit unit)
-        //{
-        //    if (_defence > _damage)
-        //    {
-        //        _defence = _damage;
-        //        unit.Health = unit.Health - (_damage - _defence);
-        //    }
-        //    else
-        //    {
-        //        unit.Health = unit.Health - (_damage - _defence);
-        //    }
-        //    if (unit.Health <= 0)
-        //    {
-        //        unit.Health = 0;
-        //        Console.WriteLine("Footman died");
-        //    }
-        //}
     }
 }
-
-
-//unit.Health = unit.Health - _damage;
-//unit.Defence -= _damage;
-//unit.Health = +Defence;
