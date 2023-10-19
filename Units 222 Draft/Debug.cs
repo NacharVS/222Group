@@ -8,65 +8,30 @@ namespace UnitsDrafts
 {
     class Test
     {
-        public static void Debug()
-        {
-            Barracs bar1 = new Barracs();
-            Townhall th1 = new Townhall();
-            var ft1 = bar1.SpawnFootman();
-            var ps1 = th1.SpawnPeasant();
-            var ac1 = bar1.SpawnArcher();
-            var bp1 = th1.SpawnBishop();
-            while (true)
-            {
-                Console.WriteLine("1)Перейти к списку");
-                Console.WriteLine("2) Статистика");
-                Console.WriteLine("0) Остановить Дебаг");
-                int choise = Convert.ToInt32(Console.ReadLine());
-                if (choise == 0)
-                {
-                    break;
-                }
-                switch (choise)
-                {
-                    case (1):
-                        while (true)
-                        {
-
-                            Console.WriteLine("1) Убить юнита ");
-                            Console.WriteLine("2) Ударить лучника");
-                            Console.WriteLine("3) Привести мечника в ярость");
-                            Console.WriteLine("0) Вернуться в меню");
-                            choise = Convert.ToInt32(Console.ReadLine());
-                            if (choise == 0)
-                            {
-                                break;
-                            }
-                            switch (choise)
-                            {
-
-                                case (1):
-                                    ft1.Alive = false;
-                                    ft1.BaseInfo();
-                                    break;
-                                case (2):
-                                    ft1.DealDamage(ac1);
-                                    break;
-                                case (3):
-                                    ft1.Health = ft1.MaxHealth * 0.39;
-                                    break;
-                            }
-                        }
-
-                        break;
-                    case 2:
-                        Stat.ShowInfo();
-                        break;
-                }
-            }
-        }
+        public static int Training_show = 0;
+        public static string How_To_Duel =
+            "Чтобы успешно провести дуэль (или как минимум не умереть) нужно знание того по каким правилам работает дуэль в этом месте." +
+            "\r\nЕсть два варианта того как закончить дуэль " +
+            "\r\n1)Избей своего врага до смерти " +
+            "\r\n2)Если победить не удастся то рекомендую свалить пока не поздно." +
+            "\r\n  Учитывай что при побеге важна твоя ловкость";
         public static void How_to_Duel()
         {
-            Console.WriteLine("Чтобы успешно провести дуэль (или как минимум не умереть) нужно знание того по каким правилам работает дуэль в этом месте. /r/n Есть два варианта закончитьь дуэль 1) Один из участников умрет - просто забей своего врага руками 2) Какой то из участников сбежит - если победить не удасться то рекомендую свалить пока не поздно, прожимай кнопку побега и, в зависимости от своей ловкости, сбежишь");
+            if (Training_show == 0)
+            {
+                Console.WriteLine("==================================================================================");
+                Console.WriteLine();
+                Console.WriteLine(How_To_Duel);
+                Console.WriteLine();
+                Console.WriteLine("==================================================================================");
+                Console.WriteLine("Нажмите 1 чтобы не показывать обучение снова");
+                int choise = Convert.ToInt32(Console.ReadLine());
+                if (choise == 1)
+                {
+                    Training_show++;
+                    Console.WriteLine("Обучение больше не покажется");
+                }
+            }
         }
     }
 }

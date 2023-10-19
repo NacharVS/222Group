@@ -48,7 +48,7 @@ namespace UnitsDrafts
                     }
                     else
                     {
-                        Console.WriteLine("Юниту не нужн хил");
+                        Console.WriteLine("Юниту не нужен хил");
                     }
                 }
                 else

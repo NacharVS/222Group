@@ -84,7 +84,7 @@
             }
             else
             {
-                Console.WriteLine("Юнит мертв он не может дивгаться");
+                Console.WriteLine("Юнит мертв, он не может двигаться");
             }
         }
 
@@ -112,7 +112,7 @@
                     {
                         def_damage = 0;
                     }
-                    Console.WriteLine($"{Name} dealed {def_damage} damage");
+                    Console.WriteLine($"{Name} нанес {def_damage} урона");
                     unit.Health = unit.Health - def_damage;
                     if (unit.Health <= 0)
                     {

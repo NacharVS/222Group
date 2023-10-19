@@ -5,5 +5,4 @@ var br = new Barracs();
 var bh = th.SpawnBishop();
 var arch = br.SpawnArcher();
 var ps = th.SpawnPeasant();
-//Fight.Duel(bh, arch);
-Test.How_to_Duel();
+Fight.Duel(bh, arch);
