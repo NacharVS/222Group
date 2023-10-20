@@ -13,8 +13,6 @@ namespace UnitsDrafts
         public int Damage
         {
             get { return 7 * Garnizon.Count; }
-
-
         }
         public List<Unit> Garnizon = new List<Unit>();
         
