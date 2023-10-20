@@ -67,11 +67,11 @@ while (true)
     {
         Statistics.ArcherCount++;
     }
-    else if (choice == 5)
+    else if (choice == 6)
     {
         Statistics.BishopCount++;
     }
-    else if (choice == 5)
+    else if (choice == 7)
     {
         Statistics.PeasantCount++;
     }
@@ -84,3 +84,24 @@ while (true)
         break;
     }
 }
+
+WatchingTower tower = new WatchingTower();
+
+// Добавление 3 лучников
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+
+// Улучшение башни
+tower.UpgradeTower();
+
+// Добавление 7 лучников после улучшения
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+tower.AddArcher(new Archer());
+
+Console.WriteLine("Количество лучников в башне: " + tower.ArcherCount);
