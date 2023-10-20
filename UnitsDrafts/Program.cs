@@ -8,6 +8,7 @@ Archer archer = new Archer();
 Bishop bishop = new Bishop();
 Barracs barracs = new Barracs();
 Ratusha ratusha = new Ratusha();
+WatchingTower watchingTower = new WatchingTower();
 
 
 Console.WriteLine("Введите номер того, чего хотите сделать");
@@ -17,6 +18,7 @@ Console.WriteLine("3.Броня");
 Console.WriteLine("4.Бараки и Ратуша");
 Console.WriteLine("5.Хилл");
 Console.WriteLine("6.Файт");
+Console.WriteLine("7.Башня с тремя лучниками");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -84,6 +86,10 @@ switch (a)
         peasant.BaseInfo();
         peasant.PeasantDamage(ft1);
         ft1.BaseInfo();
+        break;
+
+    case 7:
+        watchingTower.Garrison();
         break;
 }
 
