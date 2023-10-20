@@ -12,7 +12,7 @@ namespace unit
         public static int PeasantQuant = 0;
         public static int ArcherQuant = 0;
         public static int FootmanQuant = 0;
-        public static int LiveQuant = 0 - KilledQuant;
+        public static int LiveQuant = 0;
         public static int KilledQuant = 0;
         public static  void StatInfo()
         {

@@ -16,7 +16,7 @@ namespace unit
         {
             _mana = mana;
         }
-        public Bishop() : base("bishop", 30, 20, 1, 4)
+        public Bishop() : base("bishop", 0, 20, 1, 4)
         {
             _mana = 19;
         }
@@ -36,32 +36,39 @@ namespace unit
 
         public void HealSomebody(Unit unit)
         {
-            if ( unit.Health > 0 )
+            if(Alive)
             {
-                if (_mana > 1)
+                if (unit.Alive)
                 {
-                    unit.Health += 8;
-                    if (unit.Health >= unit.MaxHealth)
-
+                    if (unit.Health > 0)
                     {
-                        unit.Health = unit.MaxHealth;
-
-
-
+                        if (_mana > 1)
+                        {
+                            unit.Health += 8;
+                            if (unit.Health >= unit.MaxHealth)
+                            {
+                                unit.Health = unit.MaxHealth;
+                            }
+                            _mana--;
+                        }
+                        if (unit.Health <= 0)
+                        {
+                            Console.WriteLine("Лечение игрока невозможно, так как он мертв");
+                        }
                     }
-                    _mana--;
-
-
+                    else
+                        Console.WriteLine("Персонаж умер, его нельзя хилить");
                 }
-                if (unit.Health <= 0 ) 
+                else
                 {
-                    Console.WriteLine("Лечение игрока невозможно, так как он мертв");
-
+                    Console.WriteLine("Юнит мертв");
                 }
             }
             else
-                Console.WriteLine("Персонаж умер, его нельзя хилить");
-
+            {   
+                Alive = false;
+                Console.WriteLine("Персонаж не может хилить, он мертв");
+            }
 
 
         }

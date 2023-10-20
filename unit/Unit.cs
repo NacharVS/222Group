@@ -14,9 +14,10 @@ namespace unit
         private int _speed;
         private int _damage;
         private int _defence;
+        private bool _alive = true;
 
         public Unit(string name, int maxHealth,
-            int speed, int damage, int defence)
+            int speed, int damage, int defence )
         {
             _name = name;
             _health = maxHealth;
@@ -24,6 +25,12 @@ namespace unit
             _speed = speed;
             _damage = damage;
             _defence = defence;
+            
+        }
+        public bool Alive
+        {
+            get { return _alive; }
+            set { _alive = value; }
         }
         public int Damage
         {
@@ -56,8 +63,12 @@ namespace unit
                 if (value < 0)
                 {
                     _health = 0;
+                    _alive = false;
                 }
-                
+                if(_health <= 0)
+                {
+                    _alive = false;
+                }
                 else
                     _health = value;
             }
@@ -67,13 +78,50 @@ namespace unit
         {
             Console.WriteLine($"{_name} is moving with {_speed} speed");
         }
+        public virtual void InflictDamage(Unit unit)
+        {
 
+            if (Alive)
+            {
+                if (unit.Alive)
+                {
+                    if (unit.Health > 0)
+                    {
+                        unit.Health = unit.Health - Damage;
+
+
+                    }
+                    
+                    
+                    if (unit.Health <= 0)
+                    {
+                        Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Юнит мертв");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{Name} не может атаковать , он мертв");
+            }
+
+        }
         public virtual void BaseInfo()
                 
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Speed: {_speed}");
-            Console.ResetColor();
+            if (Health <= 0)
+            {
+                Console.WriteLine($"Name:{_name} Статус: Мертв");
+            }
+            else {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Speed: {_speed} Статус: Жив");
+                Console.ResetColor();
+            } 
         }
         public virtual string HealthAfterDamage()
         {

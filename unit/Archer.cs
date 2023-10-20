@@ -17,8 +17,8 @@ namespace unit
         {
             _armor = armor;
         }
-        
-            
+
+
         public Archer() : base("Archer", 50, 15, 9, 4)
         {
             _armor = 3;
@@ -27,8 +27,8 @@ namespace unit
         {
             get { return _armor; }
             set
-            {  
-              _armor = value;
+            {
+                _armor = value;
             }
         }
         //public  int Health
@@ -49,29 +49,44 @@ namespace unit
         //            Health = value;
         //    }
         //}
-        public  void ArcherDamage(Unit unit)
+        public override void InflictDamage(Unit unit)
         {
-            if (unit.Health >= 0)
+            if (Alive)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                if (unit.Alive)
+                {
+                    if (unit.Health > 0)
+                    {
+                        unit.Health = unit.Health - Damage;
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"{Name} сделал выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
 
-                unit.Health = unit.Health - Damage;
-                Console.Write($"Вы сделали выстрел, здоровье противника: {unit.HealthAfterDamage()} ");
-                Console.ResetColor();
+
+                        Console.ResetColor();
+
+                    }
+
+
+                    if (unit.Health <= 0)
+                    {
+                        Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
+                        
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Юнит мертв");
+                }
             }
-            if (unit.Health <= 0)
+            else
             {
-                Console.WriteLine("Вы не можете больше стрелять так как персонаж мертв");
+                Alive = false;
+                Console.WriteLine($"{Name} не может атаковать , он мертв");
             }
-        
+
         }
-        //public void Move(Archer archer)
-        //{
-        //    if (Health < MaxHealth *40/100)
-        //    {
-        //        Speed += 4;
-        //    }
-        //}
+       
         public override void BaseInfo()
         {
             if (Health < MaxHealth * 0.4)
@@ -85,7 +100,7 @@ namespace unit
             Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Damage: {Damage} Defence : {Defence} Speed: {Speed} Armor : {Armor}");
             Console.ResetColor();
         }
-        
+
     }
 }
 
