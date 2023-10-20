@@ -13,16 +13,14 @@ ft1.InflictDamage(archer);
 archer.BaseInfo();
 ft1.InflictDamage(archer); 
 archer.BaseInfo();
-archer.RageMode(archer);
 ft1.InflictDamage(archer);
 archer.BaseInfo();
 
 archer.BaseInfo();
 
-Barracs barracs = new Barracs();
 TownHall th = new TownHall();
-var footman1 = barracs.CreateWarrior();
-var archer1 = barracs.CreateArch();
+var footman1 = CreateWarrior();
+var archer1 = CreateArch();
 var bishop1 = th.CreateBis();
 var peas = th.CreatePeas();
 Statistics.ShowStatistics();

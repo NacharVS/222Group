@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class Fight
+    internal static class Fight
+     
     {
-        public Fight()
+        
+        static void arenavoins()
         {
-
+            string vibor1 = Console.ReadLine();
+            Console.WriteLine("Выберите либо Мечник или Лучник");
+            if (vibor1 == "Лучник")
+            {
+                List<string> list = new List<string>();
+                list.Add()
+            }
         }
+        
     }
 }

@@ -5,14 +5,20 @@ namespace UnitsDrafts
 {
     internal class Archer : Unit
     {
-        public Archer() : base("Archer", 40, 11, false)
+        public Archer() : base("Archer", 40, 11, false, 9)
         {
         }
-        public void RageMode(Archer archer)
+        public int RageMode
         {
-            if (Health < MaxHealth * 40 / 100)
+            get { return Health; }
+            set
             {
-                Speed += 4;
+                if (value < 40 && value > 0)
+                {
+                    Console.WriteLine("ЖИДКИЙ ПОНОС Я В ЯРОСТЕ");
+                    Speed += 4;
+                }
+
             }
         }
         public override void BaseInfo()

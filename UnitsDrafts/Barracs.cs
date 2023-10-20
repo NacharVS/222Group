@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class Barracs
+    internal static class Barracs
     {
-        public Footman CreateWarrior()
+        static Footman CreateWarrior()
         {
             Statistics.FootmansCount++;
             Footman footman = new Footman();
             return footman;
         }
-        public Archer CreateArch()
+        static Archer CreateArch()
         {
             Statistics.ArchersCount++;
             Archer archer = new Archer();
