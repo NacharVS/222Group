@@ -1,13 +1,14 @@
-﻿namespace UnitsDrafts
-{
-    internal static class Statistics
-    {
-        public static int FootmansCount { get; set; } = 0;
-        public static int ArchersCount { get; set; } = 0;
+﻿//namespace UnitsDrafts
+//{
+//    internal class Statistics
+//    {
+//        public static int FootmanCount { get; set; } = 0;
+//        public static int ArcherCount { get; set; } = 0;
+//        public static int BishopCount { get; set; } = 0;
+//        public static int PeasantCount { get; set; } = 0;
 
-        public static void ShowStatistics()
-        {
-            Console.WriteLine($"Created Footman: {FootmansCount} Created Archers: {ArchersCount}");
-        }
-    }
-}
+//        public static void ShowStatistics()
+//        {
+//            Console.WriteLine($"Created Footman: {FootmanCount} Created Archer: {ArcherCount} Created Bishop: {BishopCount} Created Peasent: {PeasantCount}");
+//        }
+//    }

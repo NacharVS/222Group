@@ -16,13 +16,21 @@
 
 //Statistics.ShowStatistics();
 
-Bishop ft1 = new Bishop();
-Footman ft2 = new Footman();
+Archer ar1 = new Archer();
+Bishop bp1 = new Bishop();
+Footman ft1 = new Footman();
 
+Console.ReadKey();
+while (true)
+{
+    int choice = Convert.ToInt32(Console.ReadKey());
 
-ft1.HealSomebody(ft2);
-
-
+    if (choice == 1)
+    bp1.Heals(ft1);
+    ft1.ShowInfo();
+    else if (choice == 1) ;
+    else break;
+}
 
 
 

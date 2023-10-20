@@ -16,7 +16,7 @@
 
 
 
-        public void HealSomebody(Unit unit)
+        public void Heals(Unit unit)
         {
             if (unit.MaxHealth > 0);
                 while (MaxHealth < 100);
