@@ -9,13 +9,13 @@ namespace UnitsDrafts
 {
     internal static class Barracs
     {
-        static Footman CreateWarrior()
+       public static Footman CreateWarrior()
         {
             Statistics.FootmansCount++;
             Footman footman = new Footman();
             return footman;
         }
-        static Archer CreateArch()
+        public static Archer CreateArch()
         {
             Statistics.ArchersCount++;
             Archer archer = new Archer();
