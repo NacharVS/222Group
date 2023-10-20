@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
@@ -19,11 +15,11 @@ namespace UnitsDrafts
         {
             if (Training_show == 0)
             {
-                Console.WriteLine("==================================================================================");
-                Console.WriteLine();
-                Console.WriteLine(How_To_Duel);
-                Console.WriteLine();
-                Console.WriteLine("==================================================================================");
+                Console.WriteLine("==================================================================================\n\r" +
+                    "\n\r" +
+                    How_To_Duel +
+                    "\n\r" +
+                    "\n\r==================================================================================");
                 Console.WriteLine("Нажмите 1 чтобы не показывать обучение снова");
                 int choise = Convert.ToInt32(Console.ReadLine());
                 if (choise == 1)

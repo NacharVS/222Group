@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
@@ -14,6 +10,7 @@ namespace UnitsDrafts
         public static int ArcherQuantity = 0;
         public static int CorpseQuantity = 0;
         public static int AliveQuantity = 0;
+        public static List<Unit> units = new List<Unit>();
         public static void ShowInfo()
         { 
             Console.WriteLine($"{FootmanQuantity} Пехотинцов");

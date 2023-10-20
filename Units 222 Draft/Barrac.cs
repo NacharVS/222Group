@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
@@ -11,12 +7,14 @@ namespace UnitsDrafts
         public Footman SpawnFootman() 
         {
             ++Stat.FootmanQuantity;
+            Stat.units.Add(new Footman());
             ++Stat.AliveQuantity;
             return new Footman();
         }
         public Archer SpawnArcher()
         {
             ++Stat.ArcherQuantity;
+            Stat.units.Add(new Archer());
             ++Stat.AliveQuantity;
             return new Archer();
         }

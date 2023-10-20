@@ -9,7 +9,7 @@
         private double _speed;
         private double _damage;
         private bool _alive = true;
-        private int run_away_count = 0;
+        private int run_away_count = 0;//нужно для побега во время файтов (скорее всего перейдет в класс Team)
         public string Name
         {
             get { return _name; }
@@ -92,11 +92,11 @@
         {
             if (Alive)
             {
-                Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Defense: {Defense} Speed {Speed}");
+                Console.WriteLine($"Name:{Name} \n\rHealth: {Health}/{MaxHealth} \n\rDefense: {Defense} \n\rSpeed: {Speed}");
             }
             else
             {
-                Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Defense: {Defense} Speed {Speed}");
+                Console.WriteLine($"Name:{Name} dead Defense: {Defense} Speed {Speed}");
             }
             
         }
