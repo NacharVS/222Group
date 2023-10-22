@@ -48,24 +48,19 @@ namespace UnitsDrafts
         }
 
 
-        //public override void BaseInfo()
-        //{
-        //    if (_defence > _damage)
-        //    {
-        //        _defence = _damage;
-        //        _Health = _Health - (_damage - _defence);
-        //    }
-        //    else
-        //    {
-        //        _Health = _Health - (_damage - _defence);
-        //    }
-        //    if (_Health <= 0)
-        //    {
-        //        _Health = 0;
-        //        Console.WriteLine("Peasant died");
-        //    }
-        //    Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
-        //}
+        public override void BaseInfo()
+        {
+            if (_defence > _damage)
+            {
+                _defence = _damage;
+                _Health = _Health - (_damage - _defence);
+            }
+            else
+            {
+                _Health = _Health - (_damage - _defence);
+            }           
+            Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
+        }
 
         public void BaseInfo(Unit unit)
         {

@@ -16,20 +16,27 @@ namespace UnitsDrafts
             units.Add(archer1);
             units.Add(archer1);
             units.Add(archer1);
+            int ArcherCount = 3;
             foreach (Archer unit in units)
             {
                 unit.BaseInfo();
             }
             Console.WriteLine("Если хочешь улучшить башню нажми 1");
-            int a = int.Parse(Console.ReadLine());
-            if (a == 1)
+            for (int i = 1; i < 8; i++) 
             {
-                units.Add(archer1);
-                foreach (Archer unit in units)
+                int a = int.Parse(Console.ReadLine());
+                if (a == 1 )
                 {
-                    unit.BaseInfo();
+                    units.Add(archer1);
+                    foreach (Archer unit in units)
+                    {
+                        unit.BaseInfo();
+                    }
+                    Console.WriteLine($"Башня улучшена. Макс число лучников: {ArcherCount + i} ");
+                    Console.WriteLine("Если хочешь улучшить башню нажми 1");
                 }
-            }          
+            }
+            Console.WriteLine("Максимальное улучшение");
         }
     }
 }

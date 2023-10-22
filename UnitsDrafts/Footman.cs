@@ -25,7 +25,7 @@ namespace UnitsDrafts
             get { return _damage; }
             set { _damage = value; }
         }
-        public Footman() : base("Footman", 30, 10, 10, 10, 3)
+        public Footman() : base("Footman", 30, 10, 10, 30, 3)
         {
             _damage = 15;
             _defence = 10;
@@ -45,29 +45,15 @@ namespace UnitsDrafts
                 Console.WriteLine($"Вашему герою нанесено {_damage} урона");
             }
 
-            //while (Health != 0)
-            //{
-            //    unit.Health = unit.Health - _damage;
-            //}
-            //if (Health <= 0)
-            //{
-            //    Console.WriteLine("юнит умер, движение невозможно");
-            //}
-
-            //if (_defence > _damage)
-            //{
-            //    _defence = _damage;
-            //    unit.Health = unit.Health - (_damage - _defence);
-            //}
-            //else
-            //{
-            //    unit.Health = unit.Health - (_damage - _defence);
-            //}
-            //if (unit.Health <= 0)
-            //{
-            //    unit.Health = 0;
-            //    Console.WriteLine("Footman died");
-            //}
+            if (_defence > _damage)
+            {
+                _defence = _damage;
+                unit.Health = unit.Health - (_damage - _defence);
+            }
+            else
+            {
+                unit.Health = unit.Health - (_damage - _defence);
+            }
         }
     }
 }

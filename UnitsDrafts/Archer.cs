@@ -9,6 +9,7 @@ namespace UnitsDrafts
     internal class Archer : Unit
     {               
         private int _speed;
+        private int _damage;
         
         public Archer(string name, int maxHealth, int speed, int damage, int defence, int health)
             : base(name, maxHealth, speed, defence, damage, health)
@@ -17,6 +18,7 @@ namespace UnitsDrafts
         }
         public Archer() : base("Archer", 40, 11, 11, 20, 3)
         {
+            _damage = 10;
             _speed = 11;
         }
         
