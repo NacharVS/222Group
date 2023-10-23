@@ -1,34 +1,18 @@
 ﻿using UnitsDrafts;
 
+Barracs barracs = new Barracs();
+var ft1 = barracs.CreateFootman();
+var ft2 = barracs.CreateFootman();
+var ft3 = barracs.CreateFootman();
+var ft4 = barracs.CreateFootman();
+Archer[] archers = new Archer[3]
+{
+    barracs.CreateArcher(),
+    barracs.CreateArcher(),
+    barracs.CreateArcher()
+};
 
-List<Unit> units = new List<Unit>();
-
-Footman footman = new Footman();
-
-Peasant peasant = new Peasant();
-footman.InflictDamage(peasant);
-peasant.BaseInfo();
-footman.InflictDamage(peasant);
-peasant.BaseInfo();
-footman.InflictDamage(peasant);
-peasant.BaseInfo();
-footman.InflictDamage(peasant);
-peasant.BaseInfo();
-footman.InflictDamage(peasant);
-peasant.BaseInfo();
-
-
-Console.WriteLine(units.Exists(x => x.MaxHealth == 40 && x.Health == 30));
-
-
-
-
-
-
-
-
-
-
+Statistics.ShowStatistics();
 
 
 
