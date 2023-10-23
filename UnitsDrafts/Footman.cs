@@ -1,51 +1,43 @@
-﻿namespace UnitsDrafts
+﻿using System.Diagnostics.Metrics;
+
+namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
-        private int _damage;
-        private int _defence;
-
-        public override int Health 
-        { 
-            get => base.Health; 
-            set => base.Health = value; 
-        }
-        public int Defence
+        int Count = 0;
+        public Footman(string name, int maxHealth, int defense, int damage, int speed)
+            : base(name, maxHealth, defense, damage, speed)
         {
-            get { return _defence; }
-            set { _defence = value; }
+
         }
-
-
-        public Footman(string name, int maxHealth, int speed, int damage, int defence) 
-            : base(name, maxHealth, speed)
+        public Footman() : base("Footman", 60, 10, 17, 5)
         {
-            _damage = damage;
-            _defence = defence;
+
         }
 
-        public Footman() : base("Footman", 60, 10)
+        public override void DealDamage(Unit unit)
         {
-            _damage = 13;
-            _defence = 2;
+            double Rage_damage = 0;
+            if (Health < MaxHealth * 0.4)
+            {
+                Console.WriteLine();
+                Rage_damage += Damage * 0.5;
+            }
+            double def_damage = Damage + Rage_damage - unit.Defense;
+            if (def_damage < 0)
+            {
+                def_damage = 0;
+            }
+            Console.WriteLine($"{Name} dealed {def_damage} damage");
+            unit.Health = unit.Health - def_damage;
+            if (unit.Health <= 0)
+            {
+                Console.WriteLine("Unit died");
+            }
+            else
+            {
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
         }
-
-        public int Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
-
-
-        public void InflictDamage(Unit unit)
-        {
-            unit.Health = unit.Health - _damage;
-        }
-
-        public override void ShowInfo()
-        {
-            Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Damage: {Damage} Defence: {Defence}");
-        }
-
     }
 }
