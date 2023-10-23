@@ -5,7 +5,7 @@
     {
         private int _speed;
 
-        public Archer(string name, int maxHealth, int defence, int damage, int speed) : base(name, maxHealth, defence, damage, speed)
+        public Archer() : base("Arch1", 16, 5, 7, 3)
         {
         }
 
