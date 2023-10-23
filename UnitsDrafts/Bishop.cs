@@ -2,11 +2,10 @@
 {
     internal class Bishop : Unit
     {
-        private int _defence;
 
         private int _mana;
 
-        public Bishop(string name, int maxHealth, int defence, int damage, int speed) : base(name, maxHealth, defence, damage, speed)
+        public Bishop() : base("Gfg", 40, 5, 10,10)
         {
         }
 

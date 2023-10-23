@@ -8,14 +8,20 @@ namespace UnitsDrafts
 {
     internal class TownHall
     {
-        public Bishop CreateBishop(string name, int health, int speed, int mana)
+        public Bishop CreateBis()
         {
-            return new Bishop(name, health, speed, mana);
+            Statistics.BishopCount++;
+            Bishop bishop = new Bishop();
+            return bishop;
+
         }
 
-        public Peasant CreatePeasant(string name, int health, int speed)
+        public Peasant CreatePeas()
         {
-            return new Peasant(name, health, speed);
+            Statistics.PeasantCount++;
+            Peasant peasant = new Peasant();
+            return peasant;
+
         }
     }
 }
