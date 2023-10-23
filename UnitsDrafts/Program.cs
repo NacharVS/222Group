@@ -15,8 +15,13 @@ ft1.InflictDamage(archer);
 archer.BaseInfo();
 ft1.InflictDamage(archer);
 archer.BaseInfo();
-
 archer.BaseInfo();
+WatchingTower WT = new WatchingTower(100, 30, 1);
+WT.Upgradee();
+WT.Upgradee();
+WT.Upgradee();
+WT.BaseInfo();
+WT.TowerInfo();
 
 TownHall th = new TownHall();
 //var footman1 = CreateWarrior();
