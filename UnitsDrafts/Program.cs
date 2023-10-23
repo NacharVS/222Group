@@ -2,13 +2,21 @@
 
 
 List<Unit> units = new List<Unit>();
-Archer ar1 = new Archer();
-Bishop bishop = new Bishop();
-Peasant peasant = new Peasant();  
 
-units.Add(new Footman());
-units.Add(ar1);
-units.Add(bishop);
+Footman footman = new Footman();
+
+Peasant peasant = new Peasant();
+footman.InflictDamage(peasant);
+peasant.BaseInfo();
+footman.InflictDamage(peasant);
+peasant.BaseInfo();
+footman.InflictDamage(peasant);
+peasant.BaseInfo();
+footman.InflictDamage(peasant);
+peasant.BaseInfo();
+footman.InflictDamage(peasant);
+peasant.BaseInfo();
+
 
 Console.WriteLine(units.Exists(x => x.MaxHealth == 40 && x.Health == 30));
 

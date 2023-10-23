@@ -13,9 +13,5 @@ namespace UnitsDrafts
             return new Footman();
         }
 
-        public Archer CreateArcher()
-        {
-            return new Archer();
-        }
     }
 }

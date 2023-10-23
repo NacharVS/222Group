@@ -10,7 +10,7 @@
         private int _speed;
 
         public Unit(string name, int maxHealth, int defence, int damage,
-            int speed, int health)
+            int speed)
         {
             _damage = damage;
             _defence = defence;

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using UnitsDrafts;
+using UnitsDrafts.Items;
 
 namespace UnitsDrafts
 {
@@ -7,77 +8,33 @@ namespace UnitsDrafts
     {
         private int _defence;
 
-        private int _damage;
+        private Weapon _weapon;
 
-        public Footman(string name, int maxHealth, int speed, int damage, int defence, int health) 
-            : base(name, maxHealth, speed, defence, damage, health)
+        public Footman() : base("Footman", 60, 5, 2, 6)
         {
-            _damage = damage;
-            _defence = defence;
+            _weapon = new Sword();
         }
+
         public int Defence 
         {
             get {  return _defence; }
             set { _defence = value; }
         }
-        public int Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
-        public Footman() : base("Footman", 45, 10, 10, 10, 3)
-        {
-            _damage = 15;
-            _defence = 10;
-        }
+
 
         public void InflictDamage(Unit unit)
         {
-            if (Health < 24)
+            var damage = _weapon.Hit();
+            if(damage <= 0)
             {
-                _damage = _damage + _damage / 2;
-                unit.Health = unit.Health - _damage;
-                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-                _damage = 15;
-            }
-            else if(Health >= 24)
-            {
-                _damage = 15;
-                unit.Health -= _damage;
-                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-                if (unit.Health < 0) 
-                {
-                    Console.WriteLine("Юнит убит");
-                }
-            
-            }
-
-        }
-        public void Defencee(Unit unit)
-        {
-            if (_defence > _damage)
-            {
-                _defence = _damage;
-                unit.Health = unit.Health - (_damage - _defence);
+                Console.WriteLine("Miss");
             }
             else
             {
-                unit.Health = unit.Health - (_damage - _defence);
-            }
-            if (unit.Health <= 0)
-            {
-                unit.Health = 0;
-                Console.WriteLine("Footman died");
+                unit.Health -= damage;
             }
         }
-        public void TakeDamage(int damage)
-        {
-            int reducedDamage = damage - Defence;
-            if (reducedDamage < 0)
-                reducedDamage = 0;
 
-            Health -= reducedDamage;
-        }
     }
 }
 
