@@ -25,7 +25,17 @@ while (true)
     
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine();
-    Console.WriteLine("Выберите действие 0.Статистика \n 1.Лечение \n 2.Стрелять \n 3.Footman Rage \n 4.Archer Rage \n 5.Defence check \n 6.Armor check \n 7.Дуэль");
+    Console.WriteLine("Выберите действие 0.Статистика" +
+        " \n 1.Лечение" +
+        " \n 2.Стрелять" +
+        " \n 3.Footman Rage" +
+        " \n 4.Archer Rage" +
+        " \n 5.Defence check" +
+        " \n 6.Armor check" +
+        " \n 7.Дуэль " +
+        "\n 8.Archer Dead check " +
+        "\n 9.Footman Dead check " +
+        "\n 10.ArcherTower");
     Console.WriteLine();
     Console.ResetColor();
     int choice = int.Parse(Console.ReadLine());
@@ -240,6 +250,16 @@ while (true)
         archer.InflictDamage(ft1);
         ft1.BaseInfo();
         ft1.InflictDamage(archer);
+    }
+    if (choice == 10)
+    {
+        WatchingTowers wt = new WatchingTowers();
+        wt.UnitsCount();
+        wt.ShowTowerUnits();
+        wt.Upgrade();
+        wt.ShowTowerUnits();
+        wt.UnitsCount();
+
     }
 }
 
