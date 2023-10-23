@@ -2,90 +2,51 @@
 {
     internal class Unit
     {
-        private string _name;
-        private double _health;
-        private double _defense;
-        private double _maxHealth;
-        private double _speed;
-        private double _damage;
-        public string Name
+        private readonly string _name;
+        private int _health;
+        private int _maxHealth;
+        private int _speed;
+
+        public Unit(string name, int maxHealth, 
+            int speed)
         {
-            get { return _name; }
-            set { _name = value; }
+            _name = name;
+            _health = maxHealth;
+            _maxHealth = maxHealth;
+            _speed = speed;
         }
-        public virtual double Speed
+
+        public int Speed
         {
             get { return _speed; }
             set { _speed = value; }
         }
 
-        public double Defense
-        {
-            get { return _defense; }
-            set { _defense = value; }
-        }
 
-        public double Damage
+        public int Health
         {
-            get { return _damage; }
-            set { _damage = value; }
-        }
-        public virtual double Health
-        {
-
             get { return _health; }
-            set
-            {
-                if (value < 0)
+            set 
+            { 
+                if(value < 0)
                 {
                     _health = 0;
+                    Console.WriteLine("YMEP");
                 }
                 else
-                    _health = value;
+                    _health = value; 
             }
+        }
+        
+
+        public void Moving()
+        {
+            Console.WriteLine($"{_name} is moving with {_speed} speed");
         }
 
-        public double MaxHealth
+        public void BaseInfo()
         {
-            get { return _maxHealth; }
-            set { _maxHealth = value; }
-        }
-
-        public virtual void Moving()
-        {
-            Console.WriteLine($"{Name} is moving with {Speed} speed");
-        }
-
-        public virtual void BaseInfo()
-        {
-            Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Defense: {Defense} Speed {Speed}");
-        }
-        public Unit(string name, double maxHealth, double defense, double damage, double speed)
-        {
-            _name = name;
-            _health = maxHealth;
-            _maxHealth = maxHealth;
-            _defense = defense;
-            _damage = damage;
-            _speed = speed;
-        }
-        public virtual void DealDamage(Unit unit)
-        {
-            double def_damage = Damage - unit.Defense;
-            if (def_damage < 0)
-            {
-                def_damage = 0;
-            }
-            Console.WriteLine($"{Name} dealed {def_damage} damage");
-            unit.Health = unit.Health - def_damage;
-            if (unit.Health <= 0)
-            {
-                Console.WriteLine("Юнит убит");
-            }
-            else
-            {
-                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
-            }
+            Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth}" );
         }
 
     }
