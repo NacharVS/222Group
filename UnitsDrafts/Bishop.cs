@@ -8,7 +8,7 @@ namespace UnitsDrafts
         private int _maxmana;
 
         public Bishop(string name, int maxHealth, int defense, int damage, int speed, int mana,int maxmana)
-            : base(name, maxHealth,defense,damage, speed)
+            : base(name, maxHealth, defense, damage, speed)
         {
             _mana = mana;
             _maxmana = maxmana;
