@@ -17,7 +17,6 @@ namespace UnitsDrafts
 
         public Peasant CreatePeasant()
         {
-            Random rnd = new Random();
             Statistics.PeasantCount++;
             return new Peasant();
         }
