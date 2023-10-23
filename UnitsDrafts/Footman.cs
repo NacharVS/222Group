@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.Design;
+using unit.items;
 using UnitsDrafts;
+using UnitsDrafts.unit.items;
 
 namespace UnitsDrafts
 {
@@ -9,10 +11,11 @@ namespace UnitsDrafts
 
         private int _damage;
 
+        private Weapon _weapon;
         public Footman(string name, int maxHealth, int speed, int damage, int defence, int health) 
             : base(name, maxHealth, speed, defence, damage, health)
         {
-            _damage = damage;
+            _weapon = new Sword();
             _defence = defence;
         }
         public int Defence 
@@ -20,17 +23,12 @@ namespace UnitsDrafts
             get {  return _defence; }
             set { _defence = value; }
         }
-        public int Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
+        
         public Footman() : base("Footman", 30, 10, 10, 30, 3)
         {
             _damage = 15;
             _defence = 10;
         }
-
         public void InflictDamage(Unit unit)
         {
             if (Health < 24)
@@ -38,22 +36,28 @@ namespace UnitsDrafts
                 _damage = _damage + _damage / 2;
                 unit.Health = unit.Health - _damage;
                 Console.WriteLine($"Вашему герою нанесено {_damage} урона");
+                _damage = 15;
             }
             else if (Health >= 24)
             {
+                _damage = 15;
                 unit.Health -= _damage;
                 Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-            }
+                if (unit.Health < 0)
+                {
+                    Console.WriteLine("Юнит убит");
+                }
 
-            if (_defence > _damage)
-            {
-                _defence = _damage;
-                unit.Health = unit.Health - (_damage - _defence);
             }
-            else
-            {
-                unit.Health = unit.Health - (_damage - _defence);
-            }
+            //var damage = _weapon.Hit();
+            //if(damage <= 0) 
+            //{
+            //    Console.WriteLine("miss");
+            //}
+            //else
+            //{
+            //    unit.Health -= damage;
+            //}
         }
     }
 }

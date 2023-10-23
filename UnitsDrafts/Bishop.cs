@@ -32,7 +32,7 @@ namespace UnitsDrafts
             peasant.Health = peasant.Health + 2;
             _mana -= 10;
         }
-        public void Ostatoc()
+        public void Remainder()
         {
             Console.WriteLine($"У вас осталось {_mana} маны");
         }

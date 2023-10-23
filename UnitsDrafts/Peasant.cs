@@ -16,7 +16,7 @@ namespace UnitsDrafts
         public Peasant(string name, int maxHealth, int speed, int damage, int defence, int health)
             : base(name, maxHealth, speed, defence, damage, health)
         {
-            _Health = Health;
+            _Health = health;
             _MaxHealth = maxHealth;
             _damage = damage;
             _defence = defence;
@@ -47,7 +47,6 @@ namespace UnitsDrafts
             set { _Health = value; }
         }
 
-
         public override void BaseInfo()
         {
             if (_defence > _damage)
@@ -58,27 +57,18 @@ namespace UnitsDrafts
             else
             {
                 _Health = _Health - (_damage - _defence);
-            }           
+            }
+            if (_Health <= 0)
+            {
+                _Health = 0;
+                Console.WriteLine("Peasant died");
+            }
             Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
         }
 
         public void BaseInfo(Unit unit)
-        {
-            unit.Health -= _damage;
+        {            
             Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
-            if (unit.Health <= 0)
-            {
-                Console.WriteLine("Юнит умер, движение невозможно!");
-            }
-        }
-        public void PeasantDamage(Unit unit)
-        {   
-            unit.Health = unit.Health - _damage;
-            Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-            if (unit.Health <= 0)
-            {
-                 Console.WriteLine("Вы не можете бить, так как мертвы");
-            }           
-        }       
+        }     
     }
 }

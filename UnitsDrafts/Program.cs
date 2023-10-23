@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization.Formatters.Binary;
 using UnitsDrafts;
-
+Footman footman = new Footman();
 Footman ft1 = new Footman();
 Footman ft2 = new Footman();
 Peasant peasant = new Peasant();    
@@ -19,6 +19,7 @@ Console.WriteLine("4.Бараки и Ратуша");
 Console.WriteLine("5.Хилл");
 Console.WriteLine("6.Файт");
 Console.WriteLine("7.Башня с тремя лучниками");
+Console.WriteLine("8.Оружия");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -47,7 +48,7 @@ switch (a)
         ft1.InflictDamage(peasant);
         peasant.BaseInfo();
         ft1.InflictDamage(peasant);
-        peasant.BaseInfo()       ;
+        peasant.BaseInfo();
         break;
     case 4:
         
@@ -69,27 +70,47 @@ switch (a)
         ft1.BaseInfo();
         bishop.HealSomebody(ft1);
         ft1.BaseInfo();
-        bishop.Ostatoc(); 
+        bishop.Remainder(); 
         bishop.HealSomebody(ft1);
         ft1.BaseInfo();
-        bishop.Ostatoc();
+        bishop.Remainder();
         bishop.HealSomebody(ft1);
         ft1.BaseInfo();
-        bishop.Ostatoc();
+        bishop.Remainder();
         break;
 
     case 6:
         ft1.BaseInfo();
-        peasant.PeasantDamage(ft1);
+        archer.ArcherDamage(ft1);
         ft1.BaseInfo();
-        ft1.InflictDamage(peasant);
-        peasant.BaseInfo();
-        peasant.PeasantDamage(ft1);
+        ft1.InflictDamage(archer);
+        archer.BaseInfo();
+        archer.ArcherDamage(ft1);
         ft1.BaseInfo();
+        ft1.InflictDamage(archer);
+        archer.BaseInfo();
+        archer.DeadDenasty();
         break;
 
     case 7:
-        watchingTower.Garrison();
+        watchingTower.Garrison();  
+        watchingTower.TowerDamage(archer);
+        archer.BaseInfo();
+        break;
+        
+    case 8:
+        footman.InflictDamage(peasant);
+        peasant.BaseInfo();
+        footman.InflictDamage(peasant);
+        peasant.BaseInfo();
+        footman.InflictDamage(peasant);
+        peasant.BaseInfo();
+        footman.InflictDamage(peasant);
+        peasant.BaseInfo();
+        footman.InflictDamage(peasant);
+        peasant.BaseInfo();
+        footman.InflictDamage(peasant);
+        peasant.BaseInfo(); 
         break;
 }
 

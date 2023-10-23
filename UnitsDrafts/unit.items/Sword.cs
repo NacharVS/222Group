@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using unit.items;
 
-namespace UnitsDrafts
+namespace UnitsDrafts.unit.items
 {
-    internal class Fight
+    internal class Sword : Weapon
     {
-        public void Fighting(Unit unit)
+        public Sword() : base(2, 6, 8, 80, 800) 
         {
-            
+
         }
     }
 }

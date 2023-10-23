@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class WatchingTower
+    internal class WatchingTower : Archer
     {
+        public int ArcherCount = 3;
+
         public void Garrison() 
         {
             Archer archer1 = new Archer();
@@ -16,7 +18,7 @@ namespace UnitsDrafts
             units.Add(archer1);
             units.Add(archer1);
             units.Add(archer1);
-            int ArcherCount = 3;
+            
             foreach (Archer unit in units)
             {
                 unit.BaseInfo();
@@ -25,7 +27,7 @@ namespace UnitsDrafts
             for (int i = 1; i < 8; i++) 
             {
                 int a = int.Parse(Console.ReadLine());
-                if (a == 1 )
+                if (a == 1)
                 {
                     units.Add(archer1);
                     foreach (Archer unit in units)
@@ -34,9 +36,19 @@ namespace UnitsDrafts
                     }
                     Console.WriteLine($"Башня улучшена. Макс число лучников: {ArcherCount + i} ");
                     Console.WriteLine("Если хочешь улучшить башню нажми 1");
+                    Console.WriteLine("Хотите ударить Арчера? Нажмите 2");
                 }
             }
+
             Console.WriteLine("Максимальное улучшение");
+        }
+        int damage = 10;
+        public void TowerDamage(Unit unit) 
+        {
+            unit.Health = unit.Health - damage * ArcherCount;
+            Console.WriteLine($"Вашему герою нанесено {damage} урона");
         }
     }
 }
+
+
