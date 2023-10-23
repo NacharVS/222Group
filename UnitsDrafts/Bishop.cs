@@ -14,7 +14,7 @@ namespace UnitsDrafts
             _maxmana = maxmana;
         }
 
-        public Bishop() : base("Bishop", 60,7,10,10)
+        public Bishop() : base("Bishop", 60, 7, 10, 10)
         {
             _maxmana = 100;
             _mana = _maxmana;
@@ -41,25 +41,25 @@ namespace UnitsDrafts
                         unit.Health = unit.MaxHealth;
                     }
                     _mana = _mana - 10;
-                    Console.WriteLine($"У священника осталось {_mana} / {_maxmana} маны");
+                    Console.WriteLine($"У священника осталось {_mana} из {_maxmana} маны");
                     Console.WriteLine($"У юнита {unit.Name} востановленно 20HP");
-                    Console.WriteLine($"Текущее HP {unit.Health} / {unit.MaxHealth}");
+                    Console.WriteLine($"Текущее HP {unit.Health} из {unit.MaxHealth}");
                 }
                 else
                 {
-                    Console.WriteLine("Юниту не нужн хил");
+                    Console.WriteLine("Юниту не нужен хил");
                 }
             }    
             else
             {       
                 Console.WriteLine("У вас недостаточно маны!");  
-                Mp_cheak();
+                MP_cheak();
                 
             }
         }
-        public void Mp_cheak()
+        public void MP_cheak()
         {
-            Console.WriteLine($"Маны {_mana} / {_maxmana}");
+            Console.WriteLine($"Маны {_mana} из {_maxmana}");
         }
     }
 }

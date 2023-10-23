@@ -11,12 +11,10 @@ namespace UnitsDrafts
     {
         public Footman CreateFootman()
         {
-
-            Random rnd = new Random();
             Statistics.FootmanCount++;
             return new Footman();
         }
-        public Archer CrateArcher()
+        public Archer CreateArcher()
         {
             Statistics.ArcherCount++;
             return new Archer();

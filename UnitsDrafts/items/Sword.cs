@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitsDrafts
+namespace UnitsDrafts.items
 {
-    internal class Peasant : Unit
+    internal class Sword : Weapon
     {
-        public Peasant() : base("Peasant", 30, 0, 0, 5)
+        public Sword() : base(2, 6, 8, 80, 800)
         {
         }
     }
