@@ -6,7 +6,7 @@ namespace UnitsDrafts
     {
         int Count = 0;
         public Footman(string name, int maxHealth, int defense,int damage, int speed) 
-            : base(name, maxHealth,defense,damage, speed)
+            : base(name, maxHealth, defense, damage, speed)
         {
             
         }

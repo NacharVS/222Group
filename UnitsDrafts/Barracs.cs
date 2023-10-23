@@ -11,8 +11,6 @@ namespace UnitsDrafts
     {
         public Footman CreateFootman()
         {
-
-            Random rnd = new Random();
             Statistics.FootmanCount++;
             return new Footman();
         }
