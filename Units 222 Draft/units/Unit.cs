@@ -1,4 +1,7 @@
-﻿namespace UnitsDrafts
+﻿using Units_222_Draft.items;
+using UnitsDrafts;
+
+namespace Units_222_Draft.units
 {
     internal class Unit
     {
@@ -10,6 +13,7 @@
         private double _damage;
         private bool _alive = true;
         private int run_away_count = 0;//нужно для побега во время файтов (скорее всего перейдет в класс Team)
+        private Weapon _weapon;
         public string Name
         {
             get { return _name; }
@@ -32,19 +36,19 @@
             get { return _damage; }
             set { _damage = value; }
         }
-        public virtual double Health 
+        public virtual double Health
         {
 
             get { return _health; }
-            set 
+            set
             {
-                if(value < 0)
+                if (value < 0)
                 {
                     _health = 0;
                     Alive = false;
                 }
                 else
-                    _health = value; 
+                    _health = value;
             }
         }
 
@@ -55,13 +59,18 @@
         }
 
         public double MaxHealth
-        { 
+        {
             get { return _maxHealth; }
             set { _maxHealth = value; }
         }
         public int Run_Away_Count
         {
-            get;set;
+            get; set;
+        }
+        public Weapon Weapon
+        {
+            get { return _weapon; }
+            set { _weapon = value; }
         }
         public Unit(string name, double maxHealth, double defense, double damage, double speed)
         {
@@ -75,7 +84,7 @@
 
         public virtual void Moving()
         {
-            
+
             if (Alive)
             {
                 Run_Away_Count += (int)Speed;
@@ -98,11 +107,12 @@
             {
                 Console.WriteLine($"Name:{Name} dead Defense: {Defense} Speed {Speed}");
             }
-            
+
         }
-        
+
         public virtual void DealDamage(Unit unit)
         {
+            double Damage = Weapon.Hit();
             if (Alive)
             {
                 if (unit.Alive)

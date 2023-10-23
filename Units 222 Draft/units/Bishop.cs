@@ -1,20 +1,20 @@
-﻿using System;
+﻿using Units_222_Draft.items;
 
-namespace UnitsDrafts
+namespace Units_222_Draft.units
 {
     internal class Bishop : Unit
     {
         private int _mana;
         private int _maxmana;
 
-        public Bishop(string name, int maxHealth, int defense, int damage, int speed, int mana,int maxmana)
-            : base(name, maxHealth,defense,damage, speed)
+        public Bishop(string name, int maxHealth, int defense, int damage, int speed, int mana, int maxmana)
+            : base(name, maxHealth, defense, damage, speed)
         {
             _mana = mana;
             _maxmana = maxmana;
         }
 
-        public Bishop() : base("Bishop", 60,7,10,10)
+        public Bishop() : base("Bishop", 60, 7, 0, 10)
         {
             _maxmana = 100;
             _mana = _maxmana;
@@ -30,7 +30,8 @@ namespace UnitsDrafts
             set { _mana = value; }
         }
         public void Healing(Unit unit)
-        { if (Alive)
+        {
+            if (Alive)
             {
                 if (_mana >= 10)
                 {
@@ -63,15 +64,41 @@ namespace UnitsDrafts
                 Console.WriteLine("Мертвый юнит не может хилять");
             }
         }
+
+        public void Defense_up(Unit unit)
+        {
+            if (Alive)
+            {
+                if (unit.Alive)
+                {
+                    if (Mana > 10)
+                    {
+                        unit.Health += 10;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Маны мало");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Защита не нужна трупу");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Юнит не может дамажить");
+            }
+        }
         public void Mp_cheak()
         {
             if (Alive)
             {
                 Console.WriteLine($"Маны {_mana} / {_maxmana}");
             }
-            else 
-            { 
-                Console.WriteLine("юнит сдох, манны в трупе не так уж и много"); 
+            else
+            {
+                Console.WriteLine("Юнит сдох, манны в трупе не так уж и много");
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Units_222_Draft.units;
 
 namespace UnitsDrafts
 {
@@ -7,7 +8,7 @@ namespace UnitsDrafts
         public int Level = 0;
         public int Capasity
         {
-            get { return Capasity+Level; }
+            get { return 3+Level; }
             set { Capasity = value; }
         }
         public int Damage

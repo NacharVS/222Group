@@ -1,25 +1,27 @@
 ﻿using System;
+using Units_222_Draft.items;
+using UnitsDrafts;
 
-namespace UnitsDrafts
+namespace Units_222_Draft.units
 {
     internal class Footman : Unit
     {
-        public Footman(string name, int maxHealth, int defense,int damage, int speed) 
-            : base(name, maxHealth,defense,damage, speed)
+        public Footman(string name, int maxHealth, int defense, int damage, int speed)
+            : base(name, maxHealth, defense, damage, speed)
         {
-            
         }
-        public Footman() : base("Footman", 60, 10, 17, 5)
+        public Footman() : base("Footman", 60, 10, 0, 5)
         {
-
+            Weapon = new Sword();
         }
-
+        
         public override void DealDamage(Unit unit)
         {
             if (Alive)
             {
                 if (unit.Alive)
                 {
+                    double Damage = Weapon.Hit();
                     double Rage_damage = 0;
                     if (Health < MaxHealth * 0.4)
                     {
@@ -52,7 +54,7 @@ namespace UnitsDrafts
             {
                 Console.WriteLine("Юнит мертв - он не может атаковать");
             }
-            
+
         }
     }
 }
