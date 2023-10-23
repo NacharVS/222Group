@@ -19,8 +19,8 @@ archer.BaseInfo();
 archer.BaseInfo();
 
 TownHall th = new TownHall();
-var footman1 = CreateWarrior();
-var archer1 = CreateArch();
+//var footman1 = CreateWarrior();
+//var archer1 = CreateArch();
 var bishop1 = th.CreateBis();
 var peas = th.CreatePeas();
 Statistics.ShowStatistics();

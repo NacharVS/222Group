@@ -13,9 +13,8 @@ namespace UnitsDrafts
             
         }
 
-        public Footman() : base("Footman", 60, 10, false, 13)
+        public Footman() : base("Footman", 60, 10, true, 13)
         {
-            _defence = 2 / 10;
         }
 
         public int RageMode

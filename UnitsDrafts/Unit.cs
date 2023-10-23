@@ -54,7 +54,9 @@ namespace UnitsDrafts
                     _health = 0;
                 }
                 else
+                {
                     _health = value;
+                }
                 
             }
         }
