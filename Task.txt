@@ -1,0 +1,9 @@
+1. 3 kind of weapon
+	- Sword(2-7, CRIT(damage + 150%, chance - 20%), ) 	
+	- Axe(3-9, BLEEDING(-1 HP for 1 turn. chance - 30%))
+	- Mace(2-10, STUN(Enemy can not make a turn), chance 10%)
+	- Bow(1-15, CRIT(damage +300% chance 20% ))
+
+2. Accuracy (Axe - 70, Mace - 85, BOW - 55)
+3. DURABILITY (Custom) New - 100%, Worn - 70%, Old - 40%. Broken - can't do everything
+4. UPGRADE (Custom) 
