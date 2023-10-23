@@ -7,6 +7,13 @@ namespace UnitsDrafts
     internal class Archer : Unit
     {
         int Count = 0;
+
+        public Archer(string name, int maxHealth, int damage, int speed)
+            : base(name,speed, maxHealth, damage, speed)
+        {
+
+        }
+
         public Archer() : base("Archer", 40, 5, 15, 15)
         {
             if (Health < MaxHealth * 0.4)

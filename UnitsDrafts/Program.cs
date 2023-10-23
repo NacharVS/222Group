@@ -63,4 +63,26 @@ Archer[] archers = new Archer[2]
 };
 
 Statistics.ShowStatistics();
+{
+    static void Main(string[] args)
+    {
+        WatchingTower tower = new WatchingTower();
+
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+
+        tower.UpTower();
+
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+        tower.AddArcher(new Archer());
+
+        Console.WriteLine("Кол-во лучников в башне: " + tower.ArcherCount);
+    }
+}
 
