@@ -18,17 +18,18 @@
 
         public void Heals(Unit unit)
         {
-            if (unit.MaxHealth > 0);
-                while (MaxHealth < 100);
-            {
+            if (unit.MaxHealth > 0)
+             {   while (MaxHealth < 100);
+            
                 unit.Health += 3;
                 _mana -= 2;
                 while (MaxHealth == 100)
                 {
                     Console.WriteLine("Your Unit was healed with help Bishop");
                 }
-            }
-            if (unit.MaxHealth < 0)
+
+             }
+            if (unit.Health < 0)
             {
                 Console.WriteLine("Your Unit was died, and bishop can't heal");
             }
@@ -36,7 +37,10 @@
             {
                 Console.WriteLine("Bishop don't have mana");
             }
-;
+            else
+            {
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
 
 
 

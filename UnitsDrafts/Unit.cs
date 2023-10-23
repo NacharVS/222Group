@@ -48,6 +48,19 @@
         {
             Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth}" );
         }
+        public void Death()
+        {
+            if (_health < 0)
+            {
+                Console.WriteLine($"Your Unit died, because he have {_health})");
+                _health = 0;
+                _maxHealth = 0;
+                _speed = 0;
+                
+            }
+            else
+                Console.WriteLine($"Your unit have: {_health})");
 
+        }
     }
 }

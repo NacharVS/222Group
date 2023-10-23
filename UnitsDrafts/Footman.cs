@@ -40,6 +40,7 @@
         public void InflictDamage(Unit unit)
         {
             unit.Health = unit.Health - _damage;
+            Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
         }
 
         public override void ShowInfo()
