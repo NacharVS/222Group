@@ -1,7 +1,7 @@
 ﻿using UnitsDrafts;
 
 Footman ft1 = new Footman();
-Peasant ps1 = new Peasant();    
+Peasant ps1 = new Peasant();
 Archer ac1 = new Archer();
 Bishop bp1 = new Bishop();
 
@@ -24,11 +24,11 @@ while (true)
     {
         ft1.DealDamage(ac1);
     }
-    else if (choice == 2) 
+    else if (choice == 2)
     {
         bp1.Healing(ft1);
     }
-    else if (choice == 3) 
+    else if (choice == 3)
     {
         ac1.BaseInfo();
     }
