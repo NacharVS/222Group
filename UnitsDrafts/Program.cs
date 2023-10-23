@@ -36,8 +36,8 @@ Console.WriteLine("2 - Bishop will heal the footman");
 Console.WriteLine("3 - Archer information");
 Console.WriteLine("4 - Create Footman");
 Console.WriteLine("5 - Create Archer");
-Console.WriteLine("6 - Create Archer");
-Console.WriteLine("7 - Create Archer");
+Console.WriteLine("6 - Create Bishop");
+Console.WriteLine("7 - Create Peasant");
 Console.WriteLine("8 - Show Statictic");
 
 while (true)
