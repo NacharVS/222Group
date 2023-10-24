@@ -10,11 +10,11 @@ namespace Units_222_Draft.items
 
         public Sword() : base (2,7,5,90)
         {
-
         }
         public override double Hit()
         {
-            if (Durability > 0)
+            Durability--;
+            if (Alive)
             {
                 Durability--;
                 double CritChance = 20;
@@ -28,7 +28,7 @@ namespace Units_222_Draft.items
                     {
                         Damage += Damage * CritDamage;
                     }
-                    return Damage;
+                    return Damage * Durability_check();
                 }
             else
             {
@@ -39,7 +39,6 @@ namespace Units_222_Draft.items
             {
                 return 0;
             }
-
         }
     }
 }

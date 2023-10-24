@@ -13,6 +13,7 @@ namespace Units_222_Draft.items
         }
         public override double Hit()
         {
+            Durability--;
             if (Durability > 0)
             {
                 Durability--;
@@ -27,7 +28,7 @@ namespace Units_222_Draft.items
                     {
                         Damage += Damage * CritDamage;
                     }
-                    return Damage;
+                    return Damage * Durability_check();
                 }
                 else
                 {

@@ -20,7 +20,7 @@ namespace Units_222_Draft.items
         }
         public override double Hit(Unit unit)
         {
-            if (Durability > 0)
+            if (Alive)
             {
                 Durability--;
                 double CritChance = 20;
@@ -34,25 +34,26 @@ namespace Units_222_Draft.items
                 {
                     Damage += Damage * CritDamage;
                 }
-                return Damage;
-            }
-            else
-            {
-                return 0;
-            }
-            }
-            else
-            {
-                return 0;
-            }
-            if(Durability>0) 
-            {
-                var chance = new Random().Next(1, 100);
-                if (chance <= 10)
+                return Damage * Durability_check();
+                if (Alive)
                 {
-                    Stun();
+                    chance = new Random().Next(1, 100);
+                    if (chance <= 10)
+                    {
+                        Stun(unit);
+                    }
                 }
+                }
+            else
+            {
+                return 0;
             }
+            }
+            else
+            {
+                return 0;
+            }
+
             
         }
     }

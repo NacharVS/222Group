@@ -13,7 +13,7 @@ namespace Units_222_Draft.items
         }
         public override double Hit()
         {
-            if (Durability > 0)
+            if (Alive)
             {
                 Durability--;
                 double CritChance = 20;
@@ -27,7 +27,7 @@ namespace Units_222_Draft.items
                 {
                     Damage += Damage * CritDamage;
                 }
-                return Damage;
+                return Damage * Durability_check();
             }
             else
             {
