@@ -1,6 +1,8 @@
 ﻿//	-Mace(2 - 10, STUN(Enemy can not make a turn), chance 10 %)
 //3.DURABILITY(Custom) New - 100 %, Worn - 70 %, Old - 40 %.Broken - can't do everything
 //4.UPGRADE(Custom)
+using Units_222_Draft.units;
+
 namespace Units_222_Draft.items
 {
     internal class Mace : Weapon
@@ -12,19 +14,23 @@ namespace Units_222_Draft.items
         {
 
         }
-        public override double Hit()
+        public void Stun(Unit unit)
+        {
+
+        }
+        public override double Hit(Unit unit)
         {
             if (Durability > 0)
             {
                 Durability--;
                 double CritChance = 20;
                 double CritDamage = 0.5;
-                var x = new Random().Next(1, 100);
-            if (x <= Accuracy)
+                var chance = new Random().Next(1, 100);
+            if (chance <= Accuracy)
             {
                 double Damage = new Random().Next(MinDamage, MaxDamage);
-                x = new Random().Next(1, 100);
-                if (x <= CritChance)
+                    chance = new Random().Next(1, 100);
+                if (chance <= CritChance)
                 {
                     Damage += Damage * CritDamage;
                 }
@@ -38,6 +44,14 @@ namespace Units_222_Draft.items
             else
             {
                 return 0;
+            }
+            if(Durability>0) 
+            {
+                var chance = new Random().Next(1, 100);
+                if (chance <= 10)
+                {
+                    Stun();
+                }
             }
             
         }

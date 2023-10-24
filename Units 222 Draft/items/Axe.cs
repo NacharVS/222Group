@@ -10,7 +10,6 @@ namespace Units_222_Draft.items
         }
         public Axe() : base(3, 9, 1, 70)
         {
-
         }
         public override double Hit()
         {
