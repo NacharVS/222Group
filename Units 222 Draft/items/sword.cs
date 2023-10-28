@@ -1,4 +1,4 @@
-﻿//3.DURABILITY(Custom) New - 100 %, Worn - 70 %, Old - 40 %.Broken - can't do everything
+﻿
 //4.UPGRADE(Custom)
 namespace Units_222_Draft.items
 {

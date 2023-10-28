@@ -1,5 +1,5 @@
 ﻿//	-Mace(2 - 10, STUN(Enemy can not make a turn), chance 10 %)
-//3.DURABILITY(Custom) New - 100 %, Worn - 70 %, Old - 40 %.Broken - can't do everything
+
 //4.UPGRADE(Custom)
 using Units_222_Draft.units;
 
@@ -46,7 +46,8 @@ namespace Units_222_Draft.items
                 }
             else
             {
-                return 0;
+                    Console.WriteLine("Не попал");
+                    return 0;
             }
             }
             else
