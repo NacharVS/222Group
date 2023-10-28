@@ -36,6 +36,7 @@ namespace Units_222_Draft.items
             }
             else
             {
+                Console.WriteLine("Оружие сломалось");
                 return 0;
             }
             

@@ -117,22 +117,29 @@ namespace Units_222_Draft.units
             {
                 if (unit.Alive)
                 {
-                    double def_damage = Damage - unit.Defense;
-                    if (def_damage < 0)
+                    if (Weapon.Alive)
                     {
-                        def_damage = 0;
-                    }
-                    Console.WriteLine($"{Name} нанес {def_damage} урона");
-                    unit.Health = unit.Health - def_damage;
-                    if (unit.Health <= 0)
-                    {
-                        Console.WriteLine("Юнит убит");
-                        ++Stat.CorpseQuantity;
-                        unit.Alive = false;
+                        double def_damage = Damage - unit.Defense;
+                        if (def_damage < 0)
+                        {
+                            def_damage = 0;
+                        }
+                        Console.WriteLine($"{Name} нанес {def_damage} урона");
+                        unit.Health = unit.Health - def_damage;
+                        if (unit.Health <= 0)
+                        {
+                            Console.WriteLine("Юнит убит");
+                            ++Stat.CorpseQuantity;
+                            unit.Alive = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                        Console.WriteLine("Невозможно атаковать сломанным оружием");
                     }
                 }
                 else

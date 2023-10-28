@@ -8,7 +8,7 @@ namespace Units_222_Draft.items
         public int MaxDamage;
         public int AttackSpeed;
         public int Accuracy;
-        public int Durability;
+        public int Durability = 100;
         public bool Alive= true;
 
         public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
@@ -28,14 +28,16 @@ namespace Units_222_Draft.items
             {
                 return 0.7;
             }
-            else if(Durability>= 0)
+            else if(Durability> 0)
             {
                 return 0.4;
             }
             else
             {
-                return 0;
                 Alive = false;
+                Console.WriteLine("Оружие сломалось");
+                return 0;
+                
             }
         }
         public virtual double Hit()

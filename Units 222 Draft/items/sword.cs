@@ -11,14 +11,15 @@ namespace Units_222_Draft.items
         public Sword() : base (2,7,5,90)
         {
         }
+        double CritChance = 20;
+        double CritDamage = 0.5;
+        
         public override double Hit()
         {
             Durability--;
             if (Alive)
             {
                 Durability--;
-                double CritChance = 20;
-                double CritDamage = 0.5;
                 var x = new Random().Next(1, 100);
                 if (x <= Accuracy)
                 {
@@ -30,13 +31,15 @@ namespace Units_222_Draft.items
                     }
                     return Damage * Durability_check();
                 }
+                else
+                {
+                    Console.WriteLine("Не попал");
+                    return 0;
+                }
+            }
             else
             {
-                return 0;
-            }
-            }
-            else
-            {
+                Console.WriteLine("Оружие сломалось");
                 return 0;
             }
         }

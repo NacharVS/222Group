@@ -14,11 +14,11 @@ namespace Units_222_Draft.items
         {
 
         }
-        public void Stun(Unit unit)
+        public void Stun()
         {
 
         }
-        public override double Hit(Unit unit)
+        public override double Hit()
         {
             if (Alive)
             {
@@ -40,7 +40,7 @@ namespace Units_222_Draft.items
                     chance = new Random().Next(1, 100);
                     if (chance <= 10)
                     {
-                        Stun(unit);
+                        Stun();
                     }
                 }
                 }
@@ -51,6 +51,7 @@ namespace Units_222_Draft.items
             }
             else
             {
+                Console.WriteLine("Оружие сломалось");
                 return 0;
             }
 
