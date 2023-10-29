@@ -2,6 +2,7 @@
 
 //4.UPGRADE(Custom)
 using Units_222_Draft.units;
+using UnitsDrafts;
 
 namespace Units_222_Draft.items
 {
@@ -14,11 +15,13 @@ namespace Units_222_Draft.items
         {
 
         }
-        public void Stun()
+        public void Stun(Unit unit)
         {
-
+            int count_buffer = Fight.fight_count + 2;
+            unit.Stunned = true;
+            
         }
-        public override double Hit()
+        public override double Hit(Unit unit)
         {
             if (Alive)
             {
@@ -26,37 +29,32 @@ namespace Units_222_Draft.items
                 double CritChance = 20;
                 double CritDamage = 0.5;
                 var chance = new Random().Next(1, 100);
-            if (chance <= Accuracy)
-            {
-                double Damage = new Random().Next(MinDamage, MaxDamage);
-                    chance = new Random().Next(1, 100);
-                if (chance <= CritChance)
-                {
-                    Damage += Damage * CritDamage;
-                }
-                return Damage * Durability_check();
-                if (Alive)
+                if (chance <= Accuracy)
                 {
                     chance = new Random().Next(1, 100);
                     if (chance <= 10)
                     {
-                        Stun();
+                        Stun(unit);
                     }
+                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    chance = new Random().Next(1, 100);
+                    if (chance <= CritChance)
+                    {
+                        Damage += Damage * CritDamage;
+                    }
+                    return Damage * Durability_check();
                 }
-                }
-            else
-            {
+                else
+                {
                     Console.WriteLine("Не попал");
                     return 0;
-            }
+                }
             }
             else
             {
                 Console.WriteLine("Оружие сломалось");
                 return 0;
-            }
-
-            
+            }   
         }
     }
 }

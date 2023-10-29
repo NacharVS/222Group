@@ -1,5 +1,6 @@
 ﻿
 //4.UPGRADE(Custom)
+using Units_222_Draft.units;
 namespace Units_222_Draft.items
 {
     internal class Sword : Weapon
@@ -14,7 +15,7 @@ namespace Units_222_Draft.items
         double CritChance = 20;
         double CritDamage = 0.5;
         
-        public override double Hit()
+        public override double Hit(Unit unit)
         {
             Durability--;
             if (Alive)

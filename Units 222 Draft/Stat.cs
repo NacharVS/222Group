@@ -1,5 +1,6 @@
 ﻿using System;
 using Units_222_Draft.units;
+using Units_222_Draft.items;
 
 namespace UnitsDrafts
 {
@@ -21,7 +22,12 @@ namespace UnitsDrafts
             Console.WriteLine($"{AliveQuantity - CorpseQuantity} Живо");
             Console.WriteLine($"{CorpseQuantity} Убито");
         }
-        
+        public static void StatusCheck(Unit unit)
+        {
+            //тут идет чек всех статутсов типа стана и кровотека -  
+            //если они вышли за рамки количества ходов - остановить
+            // статус чек идет перед каждым действием , раньше проверки  if (alive)
+        }
     }
 
 }

@@ -1,5 +1,5 @@
-﻿//3.DURABILITY(Custom) New - 100 %, Worn - 70 %, Old - 40 %.Broken - can't do everything
-//4.UPGRADE(Custom)
+﻿//4.UPGRADE(Custom)
+using Units_222_Draft.units;
 namespace Units_222_Draft.items
 {
     internal class Weapon
@@ -40,7 +40,7 @@ namespace Units_222_Draft.items
                 
             }
         }
-        public virtual double Hit()
+        public virtual double Hit(Unit unit)
         {
             Durability--;
             if (Durability > 0)

@@ -1,5 +1,6 @@
 ﻿
 //4.UPGRADE(Custom)
+using Units_222_Draft.units;
 namespace Units_222_Draft.items
 {
     internal class Bow : Weapon
@@ -11,7 +12,7 @@ namespace Units_222_Draft.items
         {
 
         }
-        public override double Hit()
+        public override double Hit(Unit unit)
         {
             Durability--;
             if (Durability > 0)

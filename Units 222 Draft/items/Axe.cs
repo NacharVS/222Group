@@ -1,5 +1,6 @@
 ﻿//	-Axe(3 - 9, BLEEDING(-1 HP for 1 turn.chance - 30 %))
 //4.UPGRADE(Custom)
+using Units_222_Draft.units;
 namespace Units_222_Draft.items
 {
     internal class Axe : Weapon
@@ -10,7 +11,7 @@ namespace Units_222_Draft.items
         public Axe() : base(3, 9, 1, 70)
         {
         }
-        public override double Hit()
+        public override double Hit(Unit unit)
         {
             if (Alive)
             {

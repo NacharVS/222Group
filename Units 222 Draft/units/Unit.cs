@@ -14,6 +14,7 @@ namespace Units_222_Draft.units
         private bool _alive = true;
         private int run_away_count = 0;//нужно для побега во время файтов (скорее всего перейдет в класс Team)
         private Weapon _weapon;
+        public bool _stunned = false;
         public string Name
         {
             get { return _name; }
@@ -72,6 +73,11 @@ namespace Units_222_Draft.units
             get { return _weapon; }
             set { _weapon = value; }
         }
+        public bool Stunned
+        {
+            get;
+            set;
+        }
         public Unit(string name, double maxHealth, double defense, double damage, double speed)
         {
             _name = name;
@@ -112,7 +118,7 @@ namespace Units_222_Draft.units
 
         public virtual void DealDamage(Unit unit)
         {
-            double Damage = Weapon.Hit();
+            double Damage = Weapon.Hit(unit);
             if (Alive)
             {
                 if (unit.Alive)
