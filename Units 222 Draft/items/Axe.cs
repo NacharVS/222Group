@@ -8,7 +8,7 @@ namespace Units_222_Draft.items
         public Axe(int minDamage, int maxDamage, int attackSpeed, int accuracy) : base(minDamage, maxDamage, attackSpeed, accuracy)
         {
         }
-        public Axe() : base(3, 9, 1, 70)
+        public Axe() : base(2, 10, 1, 70)
         {
             Name = "axe";
         }

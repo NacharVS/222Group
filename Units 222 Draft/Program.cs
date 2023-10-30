@@ -2,13 +2,11 @@
 using Units_222_Draft.items;
 using Units_222_Draft.units;
 using Units_222_Draft.Stats;
-using System.Diagnostics;
- Console.WriteLine("пососал");
+Console.WriteLine("пососал");
 var th = new Townhall();
 var br = new Barracs();
 var bh = th.SpawnBishop();
 var ft = br.SpawnFootman();
-ft.Weapon = new Bow();ft.Name = "Ильдар";
-var ft1 = br.SpawnFootman();ft1.Weapon = new Bow();ft.Weapon.Level = 3 ; ft1.Name = "даня";
 var ps = th.SpawnPeasant();
-Fight.Duel(ft,ps);
+Fight.Duel(ft, ps);
+

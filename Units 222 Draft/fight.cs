@@ -14,8 +14,8 @@ namespace UnitsDrafts
                 Test.How_to_Duel();
                 Console.WriteLine("=================================================");
                 Console.WriteLine($"В дуэли участвуют {unit1.Name} и {unit2.Name}");
-                Unit[] duel_spisok = new Unit[2] { unit1, unit2 };
-                Unit[] duel_spisok2 = new Unit[2] { unit2, unit1 };
+                List<Unit> duel_spisok = new List<Unit>() { unit1, unit2 };
+                List<Unit> duel_spisokRev = new List<Unit>() { unit2, unit1 };
                 fight_count = 0;
                 Console.WriteLine("=================================================");
                 Console.WriteLine("0 - Атаковать");
@@ -37,7 +37,7 @@ namespace UnitsDrafts
                                 {
                                     case 0:
                                         Console.WriteLine("=================================================");
-                                        duel_spisok[i].DealDamage(duel_spisok2[i]);
+                                        duel_spisok[i].DealDamage(duel_spisokRev[i]);
                                         fight_count++;
                                         break;
                                     case 1:

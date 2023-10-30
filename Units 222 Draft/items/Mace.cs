@@ -9,7 +9,7 @@ namespace Units_222_Draft.items
         public Mace(int minDamage, int maxDamage, int attackSpeed, int accuracy) : base(minDamage, maxDamage, attackSpeed, accuracy)
         {
         }
-        public Mace() : base(2, 10, 1, 85)
+        public Mace() : base(1, 11, 1, 85)
         {
             Name = "mace";
         }

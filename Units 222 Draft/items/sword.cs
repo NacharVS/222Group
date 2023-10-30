@@ -9,7 +9,7 @@ namespace Units_222_Draft.items
         {
         }
 
-        public Sword() : base (2,7,5,90)
+        public Sword() : base (1,8,5,90)
         {
             Name = "sword";
         }

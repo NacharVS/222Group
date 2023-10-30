@@ -8,7 +8,7 @@ namespace Units_222_Draft.items
         public Bow(int minDamage, int maxDamage, int attackSpeed, int accuracy) : base(minDamage, maxDamage, attackSpeed, accuracy)
         {
         }
-        public Bow() : base(14,15,1,55)
+        public Bow() : base(0,16,1,55)
         {
             Name = "bow";
         }

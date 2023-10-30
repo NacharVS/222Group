@@ -45,7 +45,7 @@ namespace Units_222_Draft.units
                             unit.Health = unit.Health - def_damage;
                             if (unit.Health <= 0)
                             {
-                                Console.WriteLine("Юнит убит");
+                                Console.WriteLine($"{unit.Name} убит");
                                 ++Stat.CorpseQuantity;
                             }
                             else

@@ -18,7 +18,7 @@ namespace Units_222_Draft.items
 
         public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
         {
-            MinDamage = minDamage;
+            MinDamage = minDamage;//min|max damage на один меньше|больше чтобы был достигнут правильный интервал занчений
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
@@ -75,6 +75,7 @@ namespace Units_222_Draft.items
             }
 
         }
+        
         public void LevelUp()
         {
             if (Level < 10)
