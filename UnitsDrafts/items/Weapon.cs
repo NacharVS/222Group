@@ -8,9 +8,9 @@ namespace UnitsDrafts.items
 {
     internal class Weapon
     {
-        public Weapon(string WeapName, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
+        public Weapon(string weapName, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
         {
-            WeapName = WeapName;
+            WeapName = weapName;
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
