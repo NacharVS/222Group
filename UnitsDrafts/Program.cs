@@ -45,6 +45,9 @@ TownHall th = new TownHall();
 var bishop1 = th.CreateBis();
 var peas = th.CreatePeas();
 Statistics.ShowStatistics();
+Sorting sort = new Sorting("", 20);
+Sorting.Sorter();
+
 
 
 
