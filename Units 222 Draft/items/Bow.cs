@@ -10,7 +10,7 @@ namespace Units_222_Draft.items
         }
         public Bow() : base(1,15,1,55)
         {
-
+            Name = "bow";
         }
         public override double Hit(Unit unit)
         {

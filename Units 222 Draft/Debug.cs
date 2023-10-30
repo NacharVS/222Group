@@ -1,4 +1,5 @@
 ﻿using System;
+using Units_222_Draft.items;
 
 namespace UnitsDrafts
 {
@@ -31,3 +32,52 @@ namespace UnitsDrafts
         }
     }
 }
+//public static void gnome()
+//{
+//    //Выводит список всвего оружия с сотрировкой от меньшего мин урона до большего
+//    Console.WriteLine("Гномья сортировка");
+
+//    Sword sword = new Sword(); Axe axe = new Axe(); Bow bow = new Bow(); Mace mace = new Mace();
+//    var array = new Weapon[4] { sword, axe, bow, mace };
+//    var ildar = GnomeSort(array);
+
+//    foreach (Weapon weapon in ildar)
+//    {
+//        Console.WriteLine(weapon.Name + " " + weapon.MinDamage);
+//    }
+
+//    static void Swap(ref Weapon item1, ref Weapon item2)
+//    {
+//        var temp = item1;
+//        item1 = item2;
+//        item2 = temp;
+//    }
+
+//    //Гномья сортировка
+//    static Weapon[] GnomeSort(Weapon[] unsortedArray)
+//    {
+//        var index = 1;
+//        var nextIndex = index + 1;
+
+//        while (index < unsortedArray.Length)
+//        {
+//            if (unsortedArray[index - 1].MinDamage < unsortedArray[index].MinDamage)
+//            {
+//                index = nextIndex;
+//                nextIndex++;
+//            }
+//            else
+//            {
+//                Swap(ref unsortedArray[index - 1], ref unsortedArray[index]);
+//                index--;
+//                if (index == 0)
+//                {
+//                    index = nextIndex;
+//                    nextIndex++;
+//                }
+//            }
+//        }
+
+//        return unsortedArray;
+//    }
+//}

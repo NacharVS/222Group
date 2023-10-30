@@ -8,13 +8,13 @@ namespace Units_222_Draft.units
         private int _maxmana;
 
         public Bishop(string name, int maxHealth, int defense, int damage, int speed, int mana, int maxmana)
-            : base(name, maxHealth, defense, damage, speed)
+            : base(name, maxHealth, defense, speed)
         {
             _mana = mana;
             _maxmana = maxmana;
         }
 
-        public Bishop() : base("Bishop", 60, 7, 0, 10)
+        public Bishop() : base("Bishop", 60, 7, 10)
         {
             _maxmana = 100;
             _mana = _maxmana;

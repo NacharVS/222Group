@@ -1,5 +1,5 @@
 ﻿using Units_222_Draft.items;
-using UnitsDrafts;
+using Units_222_Draft.Stats;
 
 namespace Units_222_Draft.units
 {
@@ -10,11 +10,11 @@ namespace Units_222_Draft.units
         private double _defense;
         private double _maxHealth;
         private double _speed;
-        private double _damage;
         private bool _alive = true;
-        private int run_away_count = 0;//нужно для побега во время файтов (скорее всего перейдет в класс Team)
+        private int run_away_count = 0;//нужно для побега во время файтов 
         private Weapon _weapon;
         public bool _stunned = false;
+        public bool _bloodloss = false;
         public string Name
         {
             get { return _name; }
@@ -31,12 +31,6 @@ namespace Units_222_Draft.units
             get { return _defense; }
             set { _defense = value; }
         }
-
-        public double Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
         public virtual double Health
         {
 
@@ -52,13 +46,11 @@ namespace Units_222_Draft.units
                     _health = value;
             }
         }
-
         public bool Alive
         {
             get { return _alive; }
             set { _alive = value; }
         }
-
         public double MaxHealth
         {
             get { return _maxHealth; }
@@ -75,16 +67,20 @@ namespace Units_222_Draft.units
         }
         public bool Stunned
         {
-            get;
-            set;
+            get { return _stunned; }
+            set {_stunned = value; }
         }
-        public Unit(string name, double maxHealth, double defense, double damage, double speed)
+        public bool BloodLoss
+        {
+            get { return _bloodloss; }
+            set { _bloodloss = value; }
+        }
+        public Unit(string name, double maxHealth, double defense, double speed)
         {
             _name = name;
             _health = maxHealth;
             _maxHealth = maxHealth;
             _defense = defense;
-            _damage = damage;
             _speed = speed;
         }
 
@@ -93,9 +89,17 @@ namespace Units_222_Draft.units
 
             if (Alive)
             {
-                Run_Away_Count += (int)Speed;
-                Console.WriteLine($"{Name} is moving with {Speed} speed");
-                Console.WriteLine(Run_Away_Count);
+                if (Stunned)
+                {
+                    Console.WriteLine("Юнит оглушен он не может двигаться");
+                }
+                else
+                {
+                    Run_Away_Count += (int)Speed;
+                    Console.WriteLine($"{Name} is moving with {Speed} speed");
+                    Console.WriteLine(Run_Away_Count);
+                }
+                
             }
             else
             {
@@ -107,7 +111,7 @@ namespace Units_222_Draft.units
         {
             if (Alive)
             {
-                Console.WriteLine($"Name:{Name} \n\rHealth: {Health}/{MaxHealth} \n\rDefense: {Defense} \n\rSpeed: {Speed}");
+                Console.WriteLine($"Name:{Name} \n\rHealth: {Health}/{MaxHealth} \n\rDefense: {Defense} \n\rSpeed: {Speed}\n\rStun: {Stunned} ");
             }
             else
             {
@@ -121,37 +125,45 @@ namespace Units_222_Draft.units
             double Damage = Weapon.Hit(unit);
             if (Alive)
             {
-                if (unit.Alive)
+                if (Stunned)
                 {
-                    if (Weapon.Alive)
+                    Console.WriteLine("Юнит оглушен - он не может атаковать");
+                }
+                else
+                {
+                    if (unit.Alive)
                     {
-                        double def_damage = Damage - unit.Defense;
-                        if (def_damage < 0)
+                        if (Weapon.Alive)
                         {
-                            def_damage = 0;
-                        }
-                        Console.WriteLine($"{Name} нанес {def_damage} урона");
-                        unit.Health = unit.Health - def_damage;
-                        if (unit.Health <= 0)
-                        {
-                            Console.WriteLine("Юнит убит");
-                            ++Stat.CorpseQuantity;
-                            unit.Alive = false;
+                            double def_damage = Damage - unit.Defense;
+                            if (def_damage < 0)
+                            {
+                                def_damage = 0;
+                            }
+                            Console.WriteLine($"{Name} нанес {def_damage} урона");
+                            unit.Health = unit.Health - def_damage;
+                            if (unit.Health <= 0)
+                            {
+                                Console.WriteLine("Юнит убит");
+                                ++Stat.CorpseQuantity;
+                                unit.Alive = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                            }
                         }
                         else
                         {
-                            Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                            Console.WriteLine("Невозможно атаковать сломанным оружием");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Невозможно атаковать сломанным оружием");
+                        Console.WriteLine("зачем ты атакуешь труп?");
                     }
                 }
-                else
-                {
-                    Console.WriteLine("зачем ты атакуешь труп?");
-                }
+                
             }
             else { Console.WriteLine("Юнит не может атаковать - он мертв"); }
         }

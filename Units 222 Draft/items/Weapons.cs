@@ -1,5 +1,7 @@
 ﻿//4.UPGRADE(Custom)
 using Units_222_Draft.units;
+using UnitsDrafts;
+
 namespace Units_222_Draft.items
 {
     internal class Weapon
@@ -10,6 +12,7 @@ namespace Units_222_Draft.items
         public int Accuracy;
         public int Durability = 100;
         public bool Alive= true;
+        public string Name;
 
         public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
         {
@@ -63,10 +66,10 @@ namespace Units_222_Draft.items
                     return 0;
                 }
             }
-            else 
-            { 
-                return 0; }
-
+            else
+            {
+                return 0;
+            }
         }
     }
 }

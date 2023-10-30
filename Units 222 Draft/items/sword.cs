@@ -11,9 +11,11 @@ namespace Units_222_Draft.items
 
         public Sword() : base (2,7,5,90)
         {
+            Name = "sword";
         }
         double CritChance = 20;
         double CritDamage = 0.5;
+
         
         public override double Hit(Unit unit)
         {

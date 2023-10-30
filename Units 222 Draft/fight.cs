@@ -1,5 +1,6 @@
 ﻿using System;
 using Units_222_Draft.units;
+using Units_222_Draft.Stats;
 
 namespace UnitsDrafts
 {
@@ -21,10 +22,12 @@ namespace UnitsDrafts
                 Console.WriteLine("1 - Бежать");
                 while (true)
                 {
-                    if (unit1.Alive != false && unit2.Alive != false)
+                    if (unit1.Alive && unit2.Alive)
                     {
                         if (unit1.Run_Away_Count < 20 && unit2.Run_Away_Count < 20)
                         {
+                            Stat.StatusCheck(unit1); 
+                            Stat.StatusCheck(unit2);
                             Console.WriteLine($"{fight_count} ход");
                             for (int i = 0; i < 2; i++)
                             {

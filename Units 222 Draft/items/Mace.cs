@@ -1,7 +1,6 @@
-﻿//	-Mace(2 - 10, STUN(Enemy can not make a turn), chance 10 %)
-
-//4.UPGRADE(Custom)
+﻿//4.UPGRADE(Custom)
 using Units_222_Draft.units;
+using Units_222_Draft.Stats;
 using UnitsDrafts;
 
 namespace Units_222_Draft.items
@@ -13,14 +12,9 @@ namespace Units_222_Draft.items
         }
         public Mace() : base(2, 10, 1, 85)
         {
-
+            Name = "mace";
         }
-        public void Stun(Unit unit)
-        {
-            int count_buffer = Fight.fight_count + 2;
-            unit.Stunned = true;
-            
-        }
+        
         public override double Hit(Unit unit)
         {
             if (Alive)
@@ -34,7 +28,7 @@ namespace Units_222_Draft.items
                     chance = new Random().Next(1, 100);
                     if (chance <= 10)
                     {
-                        Stun(unit);
+                        Stat.Stun(unit);
                     }
                     double Damage = new Random().Next(MinDamage, MaxDamage);
                     chance = new Random().Next(1, 100);

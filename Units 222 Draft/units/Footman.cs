@@ -1,18 +1,18 @@
 ﻿using System;
 using Units_222_Draft.items;
-using UnitsDrafts;
+using Units_222_Draft.Stats;
 
 namespace Units_222_Draft.units
 {
     internal class Footman : Unit
     {
         public Footman(string name, int maxHealth, int defense, int damage, int speed)
-            : base(name, maxHealth, defense, damage, speed)
+            : base(name, maxHealth, defense, speed)
         {
         }
-        public Footman() : base("Footman", 60, 10, 0, 5)
+        public Footman() : base("Footman", 60, 0, 5)
         {
-            Weapon = new Sword();
+            Weapon = new Mace();
         }
         
         public override void DealDamage(Unit unit)
@@ -23,7 +23,7 @@ namespace Units_222_Draft.units
                 {
                     if (Weapon.Alive)
                     {
-                        double Damage = Weapon.Hit();
+                        double Damage = Weapon.Hit(unit);
                         double Rage_damage = 0;
                         if (Health < MaxHealth * 0.4)
                         {
