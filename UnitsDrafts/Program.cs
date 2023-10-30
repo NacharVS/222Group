@@ -98,18 +98,18 @@ switch (a)
         archer.BaseInfo();
         break;
         
-    case 8:
-        footman.InflictDamage(peasant);
+    case 8:      
+        footman.Damage(peasant);
         peasant.BaseInfo();
-        footman.InflictDamage(peasant);
+        footman.Damage(peasant);
         peasant.BaseInfo();
-        footman.InflictDamage(peasant);
+        footman.Damage(peasant);
         peasant.BaseInfo();
-        footman.InflictDamage(peasant);
+        footman.Damage(peasant);
         peasant.BaseInfo();
-        footman.InflictDamage(peasant);
+        footman.Damage(peasant);
         peasant.BaseInfo();
-        footman.InflictDamage(peasant);
+        footman.Damage(peasant);
         peasant.BaseInfo(); 
         break;
 }

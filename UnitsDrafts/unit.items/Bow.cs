@@ -7,13 +7,11 @@ using unit.items;
 
 namespace UnitsDrafts.unit.items
 {
-    internal class Sword : Weapon
+    internal class Bow : Weapon
     {
-        double CritDamage = 0.5;
-        double CritChance = 20;
-        public Sword() : base(2, 7, 8, 80) 
+        public Bow() : base(4, 7, 2, 30) 
         {
-
+            
         }
     }
 }

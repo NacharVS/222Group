@@ -12,22 +12,45 @@ namespace UnitsDrafts
         private int _damage;
 
         private Weapon _weapon;
-        public Footman(string name, int maxHealth, int speed, int damage, int defence, int health) 
-            : base(name, maxHealth, speed, defence, damage, health)
-        {
-            _weapon = new Sword();
-            _defence = defence;
-        }
-        public int Defence 
-        {
-            get {  return _defence; }
-            set { _defence = value; }
-        }
-        
+
         public Footman() : base("Footman", 30, 10, 10, 30, 3)
         {
             _damage = 15;
-            _defence = 10;
+            _weapon = new Sword();
+        }
+        public void Damage(Unit unit)
+        {            
+            Console.WriteLine("Выберите оружие:");
+            Console.WriteLine("1.Sword");
+            Console.WriteLine("2.Axe");
+            Console.WriteLine("3.Mace");
+            Console.WriteLine("4.Bow");
+            int f = Convert.ToInt32(Console.ReadLine());
+            if (f == 1)
+            {
+                _weapon = new Sword();
+            }
+            if (f == 2)
+            {
+                _weapon = new Axe();
+            }
+            if (f == 3) 
+            {
+                _weapon = new Mace();
+            }
+            if(f == 4) 
+            {
+                _weapon = new Bow();
+            }
+            var damage = _weapon.Hit();
+            if (damage <= 0)
+            {
+                Console.WriteLine("miss");
+            }
+            else
+            {
+                unit.Health -= damage;
+            }
         }
         public void InflictDamage(Unit unit)
         {
@@ -47,17 +70,11 @@ namespace UnitsDrafts
                 {
                     Console.WriteLine("Юнит убит");
                 }
-
             }
-            //var damage = _weapon.Hit();
-            //if(damage <= 0) 
-            //{
-            //    Console.WriteLine("miss");
-            //}
-            //else
-            //{
-            //    unit.Health -= damage;
-            //}
+
         }
     }
 }
+            
+
+       

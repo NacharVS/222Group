@@ -24,11 +24,9 @@ namespace UnitsDrafts
         public Peasant() : base("Peasant", 30, 30, 20, 15, 3)
         {
             _defence = 10;
-            _damage = 15;
             _MaxHealth = 30;
             _Health = 30;
         }
-
         public int defence
         {
             get { return _defence; }
@@ -47,28 +45,23 @@ namespace UnitsDrafts
             set { _Health = value; }
         }
 
-        public override void BaseInfo()
+        public void BaseInfo(Unit unit)
         {
             if (_defence > _damage)
             {
                 _defence = _damage;
-                _Health = _Health - (_damage - _defence);
+                unit.Health = unit.Health - (_damage - _defence);
             }
             else
             {
-                _Health = _Health - (_damage - _defence);
+                unit.Health = unit.Health - (_damage - _defence);
             }
-            if (_Health <= 0)
+            if (unit.Health <= 0)
             {
-                _Health = 0;
+                unit.Health = 0;
                 Console.WriteLine("Peasant died");
             }
-            Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
+            Console.WriteLine($"Name:{Name} Health: {unit.Health}/{_MaxHealth} Defence: {_defence}");
         }
-
-        public void BaseInfo(Unit unit)
-        {            
-            Console.WriteLine($"Name:{Name} Health: {_Health}/{_MaxHealth} Defence: {_defence}");
-        }     
     }
 }

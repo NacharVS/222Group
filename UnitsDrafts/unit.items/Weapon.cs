@@ -8,15 +8,35 @@ namespace unit.items
 {
     internal class Weapon
     {
-        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
+        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy )
         {
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
-            Durability = durability;
         }
+        public double Durability_check()
+        {
+            if (Durability >= 70)
+            {
+                return 1;
+            }
+            else if (Durability >= 40)
+            {
+                return 0.7;
+            }
+            else if (Durability > 0)
+            {
+                return 0.4;
+            }
+            else
+            {
+                Alive = false;
+                Console.WriteLine("Оружие сломалось");
+                return 0;
 
+            }
+        }
         public int MinDamage { get; set; }
 
         public int MaxDamage { get; set; }
@@ -25,7 +45,9 @@ namespace unit.items
 
         public int Accuracy { get; set; }
 
-        public int Durability { get; set; }
+        public int Durability = 100;
+
+        public bool Alive = true;
 
 
         public virtual int Hit()
