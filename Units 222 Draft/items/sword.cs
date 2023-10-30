@@ -26,7 +26,8 @@ namespace Units_222_Draft.items
                 var x = new Random().Next(1, 100);
                 if (x <= Accuracy)
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    double Damage = new Random().Next(MinDamage, MaxDamage); 
+                    Damage += Level * 5;
                     x = new Random().Next(1, 100);
                     if (x <= CritChance)
                     {

@@ -8,7 +8,7 @@ namespace Units_222_Draft.items
         public Bow(int minDamage, int maxDamage, int attackSpeed, int accuracy) : base(minDamage, maxDamage, attackSpeed, accuracy)
         {
         }
-        public Bow() : base(1,15,1,55)
+        public Bow() : base(14,15,1,55)
         {
             Name = "bow";
         }
@@ -18,12 +18,13 @@ namespace Units_222_Draft.items
             if (Durability > 0)
             {
                 Durability--;
-                double CritChance = 20;
+                double CritChance = 100;
                 double CritDamage = 3;
                 var x = new Random().Next(1, 100);
                 if (x <= Accuracy)
                 {
                     double Damage = new Random().Next(MinDamage, MaxDamage);
+                    Damage += Level * 5;
                     x = new Random().Next(1, 100);
                     if (x <= CritChance)
                     {

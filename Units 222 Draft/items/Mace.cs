@@ -1,5 +1,4 @@
-﻿//4.UPGRADE(Custom)
-using Units_222_Draft.units;
+﻿using Units_222_Draft.units;
 using Units_222_Draft.Stats;
 using UnitsDrafts;
 
@@ -31,6 +30,7 @@ namespace Units_222_Draft.items
                         Stat.Stun(unit);
                     }
                     double Damage = new Random().Next(MinDamage, MaxDamage);
+                    Damage += Level * 5;
                     chance = new Random().Next(1, 100);
                     if (chance <= CritChance)
                     {

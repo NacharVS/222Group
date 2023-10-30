@@ -1,4 +1,5 @@
 ﻿//4.UPGRADE(Custom)
+using System.Security.Cryptography.X509Certificates;
 using Units_222_Draft.units;
 using UnitsDrafts;
 
@@ -11,8 +12,9 @@ namespace Units_222_Draft.items
         public int AttackSpeed;
         public int Accuracy;
         public int Durability = 100;
-        public bool Alive= true;
+        public bool Alive = true;
         public string Name;
+        public double Level = 0;
 
         public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
         {
@@ -27,11 +29,11 @@ namespace Units_222_Draft.items
             {
                 return 1;
             }
-            else if(Durability >= 40)
+            else if (Durability >= 40)
             {
                 return 0.7;
             }
-            else if(Durability> 0)
+            else if (Durability > 0)
             {
                 return 0.4;
             }
@@ -40,7 +42,7 @@ namespace Units_222_Draft.items
                 Alive = false;
                 Console.WriteLine("Оружие сломалось");
                 return 0;
-                
+
             }
         }
         public virtual double Hit(Unit unit)
@@ -54,6 +56,7 @@ namespace Units_222_Draft.items
                 if (x <= Accuracy)
                 {
                     double Damage = new Random().Next(MinDamage, MaxDamage);
+                    Damage += Level * 5;
                     x = new Random().Next(1, 100);
                     if (x <= CritChance)
                     {
@@ -69,6 +72,18 @@ namespace Units_222_Draft.items
             else
             {
                 return 0;
+            }
+
+        }
+        public void LevelUp()
+        {
+            if (Level < 10)
+            {
+                Level += 1;
+            }
+            else
+            {
+                Console.WriteLine($"У {Name} Максимальный левел");
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿//	-Axe(3 - 9, BLEEDING(-1 HP for 1 turn.chance - 30 %))
-//4.UPGRADE(Custom)
+﻿
 using Units_222_Draft.Stats;
 using Units_222_Draft.units;
 namespace Units_222_Draft.items
@@ -24,7 +23,8 @@ namespace Units_222_Draft.items
             if (x <= Accuracy)
             {
                 double Damage = new Random().Next(MinDamage, MaxDamage);
-                x = new Random().Next(1, 100);
+                    Damage += Level * 5;
+                    x = new Random().Next(1, 100);
                 if (x <= CritChance)
                 {
                     Damage += Damage * CritDamage;

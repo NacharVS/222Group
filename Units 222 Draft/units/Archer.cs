@@ -13,7 +13,6 @@ namespace Units_222_Draft.units
             }
             Weapon = new Axe();
         }
-        
     }
 }
 

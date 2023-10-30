@@ -19,42 +19,49 @@ namespace Units_222_Draft.units
         {
             if (Alive)
             {
-                if (unit.Alive)
+                if(Stunned)
                 {
-                    if (Weapon.Alive)
+                    Console.WriteLine("Юнит застанен");
+                }
+                else
+                {
+                    if (unit.Alive)
                     {
-                        double Damage = Weapon.Hit(unit);
-                        double Rage_damage = 0;
-                        if (Health < MaxHealth * 0.4)
+                        if (Weapon.Alive)
                         {
-                            Console.WriteLine("===========================================");
-                            Rage_damage += Damage * 0.5;
-                        }
-                        double def_damage = Damage + Rage_damage - unit.Defense;
-                        if (def_damage < 0)
-                        {
-                            def_damage = 0;
-                        }
-                        Console.WriteLine($"{Name} dealed {def_damage} damage");
-                        unit.Health = unit.Health - def_damage;
-                        if (unit.Health <= 0)
-                        {
-                            Console.WriteLine("Юнит убит");
-                            ++Stat.CorpseQuantity;
+                            double Damage = Weapon.Hit(unit);
+                            double Rage_damage = 0;
+                            if (Health < MaxHealth * 0.4)
+                            {
+                                Console.WriteLine("===========================================");
+                                Rage_damage += Damage * 0.5;
+                            }
+                            double def_damage = Damage + Rage_damage - unit.Defense;
+                            if (def_damage < 0)
+                            {
+                                def_damage = 0;
+                            }
+                            Console.WriteLine($"{Name} dealed {def_damage} damage");
+                            unit.Health = unit.Health - def_damage;
+                            if (unit.Health <= 0)
+                            {
+                                Console.WriteLine("Юнит убит");
+                                ++Stat.CorpseQuantity;
+                            }
+                            else
+                            {
+                                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                            }
                         }
                         else
                         {
-                            Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                            Console.WriteLine("Невозможно атаковать сломанным оружием");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Невозможно атаковать сломанным оружием");
+                        Console.WriteLine("Нахуй ты труп атакуешь?");
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Нахуй ты труп атакуешь?");
                 }
             }
             else
