@@ -19,7 +19,7 @@ namespace UnitsDrafts
         public WatchingTower(int TowerHealth, int TowerDamage, int lvl, int archersInTower)
         {
             _TowerHealth = 1300;
-            _TowerDamage = 9;
+            _TowerDamage = 27;
             _lvl = 1;
             _ArchersInTower = 3;
         }
