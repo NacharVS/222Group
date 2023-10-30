@@ -8,38 +8,54 @@ namespace UnitsDrafts
 {
     internal class Sorting
     {
-        public string Name { get; set; }
-        public int Damage { get; set; }
-
-        public Sorting(string name, int damage)
+        public static void gnome()
         {
-            Name = name;
-            Damage = damage;
-        }
+            Console.WriteLine("Гномья сортировка");
 
-        public static void Sorter()
-        {
-            List<Sorting> weapons = new List<Sorting>
-        {
-            new Sorting("Sword", 15),
-            new Sorting("Axe", 20),
-            new Sorting("Dagger", 5),
-            new Sorting("Bow", 10)
-        };
-
-            Console.WriteLine("Weapons (unsorted):");
-            foreach (Sorting weapon in weapons)
+            Sword sword = new Sword();
+            Bow bow = new Bow();
+            Scepter scepter = new Scepter();
+            var array = new Weapon[3] { sword, bow, scepter };
+            var denis = GnomeSort(array);
+            foreach (Weapon weapon in denis)
             {
-                Console.WriteLine($"Name: {weapon.Name}, Damage: {weapon.Damage}");
+                Console.WriteLine(weapon.WepName + " " + weapon.MinDamage);
             }
 
-            weapons.Sort((w1, w2) => w1.Damage.CompareTo(w2.Damage));
-
-            Console.WriteLine("\nWeapons (sorted by minimum damage):");
-            foreach (Sorting weapon in weapons)
+            static void Swap(ref Weapon item1, ref Weapon item2)
             {
-                Console.WriteLine($"Name: {weapon.Name}, Damage: {weapon.Damage}");
+                var temp = item1;
+                item1 = item2;
+                item2 = temp;
             }
+
+            static Weapon[] GnomeSort(Weapon[] unsortedArray)
+            {
+                var index = 1;
+                var nextIndex = index + 1;
+
+                while (index < unsortedArray.Length)
+                {
+                    if (unsortedArray[index - 1].MinDamage < unsortedArray[index].MinDamage)
+                    {
+                        index = nextIndex;
+                        nextIndex++;
+                    }
+                    else
+                    {
+                        Swap(ref unsortedArray[index - 1], ref unsortedArray[index]);
+                        index--;
+                        if (index == 0)
+                        {
+                            index = nextIndex;
+                            nextIndex++;
+                        }
+                    }
+                }
+
+                return unsortedArray;
+            }
+
         }
     }
 }

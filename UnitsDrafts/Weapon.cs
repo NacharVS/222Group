@@ -2,15 +2,16 @@
 {
     internal class Weapon
     {
-        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
+        public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
         {
+            WepName = name;
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
             Durability = durability;
         }
-
+        public string WepName { get; set; }
         public int MinDamage { get; set; }
         public int MaxDamage { get; set; }
 
