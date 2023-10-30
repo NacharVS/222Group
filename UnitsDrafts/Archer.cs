@@ -5,7 +5,7 @@ namespace UnitsDrafts
 {
     internal class Archer : Unit
     {
-        public Archer() : base("Archer", 40, 11, true, 9)
+        public Archer() : base("Archer", 40, 11, true)
         {
         }
         public int RageMode

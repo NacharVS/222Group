@@ -8,9 +8,11 @@
 
         public static int PeasantCount { get; set; } = 0;
 
+        public static int TowerCount { get; set; } = 0;
+
         public static void ShowStatistics()
         {
-            Console.WriteLine($"{FootmansCount} {ArchersCount} {PeasantCount} {BishopCount}");
+            Console.WriteLine($"{FootmansCount} {ArchersCount} {PeasantCount} {BishopCount} {TowerCount}");
         }
     }
 }

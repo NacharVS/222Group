@@ -13,12 +13,21 @@ namespace UnitsDrafts
         private int _TowerHealth;
         private int _TowerDamage;
         private int _lvl;
+        private int _ArchersInTower;
 
-        public WatchingTower(int TowerHealth, int TowerDamage, int lvl)
+
+        public WatchingTower(int TowerHealth, int TowerDamage, int lvl, int archersInTower)
         {
-            _TowerHealth = TowerHealth;
-            _TowerDamage = TowerDamage;
-            _lvl = lvl;
+            _TowerHealth = 1300;
+            _TowerDamage = 9;
+            _lvl = 1;
+            _ArchersInTower = 3;
+        }
+
+        public int AIT
+        {
+            get { return _ArchersInTower; }
+            set { _ArchersInTower = value; }
         }
         public int LVL
         {
@@ -34,9 +43,7 @@ namespace UnitsDrafts
         {
             get { return _TowerDamage; }
             set { _TowerDamage = value; }
-        }
-        int lvlr = 3;
-        int lvlt = 1;
+        } 
 
         public List<Archer> archerTower = new List<Archer>();
         Archer archer2 = new Archer();
@@ -48,22 +55,29 @@ namespace UnitsDrafts
 
         public void Upgradee()
         {
-            for (lvlr = lvlr; lvlr > archerTower.Count(); archerTower.Add(archer2))
+            for (AIT = AIT; AIT > archerTower.Count(); archerTower.Add(archer2))
             {
             }
-            if (archerTower.Count() <= lvlr)
+            if (archerTower.Count() <= AIT && LVL != 8)
             {
+                TWhealth += 100;
+                TWDamage += 9;
                 archerTower.Add(archer2);
-                lvlr = lvlr + 1;
-                lvlt = lvlr - 2;
-                Console.WriteLine($"Башня прокачалась до: {lvlt}");
+                AIT = AIT + 1;
+                LVL++;
+                Console.WriteLine($"Башня прокачалась до: {LVL}");
                 Console.WriteLine($"Количество лучников увеличилось до: {archerTower.Count()}");
+            }
+            else
+            {
+                Console.WriteLine("Максимальный лвл уже прокачен!");
+                return;
             }
         }
 
         public void TowerInfo()
         {
-            Console.WriteLine($"Health: {TWhealth} Damage: {TWDamage} Lvl: {lvlt}");
+            Console.WriteLine($"Health: {TWhealth} Damage: {TWDamage} Lvl: {LVL} Count: {AIT}");
         }
     }
 }
