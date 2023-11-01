@@ -1,6 +1,4 @@
-﻿
-//4.UPGRADE(Custom)
-using Units_222_Draft.units;
+﻿using Units_222_Draft.units;
 namespace Units_222_Draft.items
 {
     internal class Bow : Weapon
@@ -12,18 +10,18 @@ namespace Units_222_Draft.items
         {
             Name = "bow";
         }
-        public override double Hit(Unit unit)
+        public override float Hit(Unit unit)
         {
             Durability--;
             if (Durability > 0)
             {
                 Durability--;
-                double CritChance = 100;
-                double CritDamage = 3;
+                float CritChance = 100;
+                float CritDamage = 3;
                 var x = new Random().Next(1, 100);
                 if (x <= Accuracy)
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    float Damage = new Random().Next(MinDamage, MaxDamage);
                     Damage += Level * 5;
                     x = new Random().Next(1, 100);
                     if (x <= CritChance)

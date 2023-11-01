@@ -12,17 +12,17 @@ namespace Units_222_Draft.items
         {
             Name = "axe";
         }
-        public override double Hit(Unit unit)
+        public override float Hit(Unit unit)
         {
             if (Alive)
             {
                 Durability--;
-                double CritChance = 20;
-                double CritDamage = 0.5;
+                float CritChance = 20;
+                float CritDamage = 0.5f;
                 var x = new Random().Next(1, 100);
             if (x <= Accuracy)
             {
-                double Damage = new Random().Next(MinDamage, MaxDamage);
+                float Damage = new Random().Next(MinDamage, MaxDamage);
                     Damage += Level * 5;
                     x = new Random().Next(1, 100);
                 if (x <= CritChance)

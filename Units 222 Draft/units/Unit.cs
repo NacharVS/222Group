@@ -6,10 +6,10 @@ namespace Units_222_Draft.units
     internal class Unit
     {
         private string _name;
-        private double _health;
-        private double _defense;
-        private double _maxHealth;
-        private double _speed;
+        private float _health;
+        private float _defense;
+        private float _maxHealth;
+        private float _speed;
         private bool _alive = true;
         private int run_away_count = 0;//нужно для побега во время файтов 
         private Weapon _weapon;
@@ -20,18 +20,18 @@ namespace Units_222_Draft.units
             get { return _name; }
             set { _name = value; }
         }
-        public double Speed
+        public float Speed
         {
             get { return _speed; }
             set { _speed = value; }
         }
 
-        public double Defense
+        public float Defense
         {
             get { return _defense; }
             set { _defense = value; }
         }
-        public virtual double Health
+        public virtual float Health
         {
 
             get { return _health; }
@@ -51,7 +51,7 @@ namespace Units_222_Draft.units
             get { return _alive; }
             set { _alive = value; }
         }
-        public double MaxHealth
+        public float MaxHealth
         {
             get { return _maxHealth; }
             set { _maxHealth = value; }
@@ -75,7 +75,7 @@ namespace Units_222_Draft.units
             get { return _bloodloss; }
             set { _bloodloss = value; }
         }
-        public Unit(string name, double maxHealth, double defense, double speed)
+        public Unit(string name, float maxHealth, float defense, float speed)
         {
             _name = name;
             _health = maxHealth;
@@ -96,7 +96,7 @@ namespace Units_222_Draft.units
                 else
                 {
                     Run_Away_Count += (int)Speed;
-                    Console.WriteLine($"{Name} is moving with {Speed} speed");
+                    Console.WriteLine($"{Name} двигается со скоростью {Speed}");
                     Console.WriteLine(Run_Away_Count);
                 }
                 
@@ -111,7 +111,11 @@ namespace Units_222_Draft.units
         {
             if (Alive)
             {
-                Console.WriteLine($"Name:{Name} \n\rHealth: {Health}/{MaxHealth} \n\rDefense: {Defense} \n\rSpeed: {Speed}\n\rStun: {Stunned} ");
+                Console.WriteLine($"Name:{Name} \n\r" +
+                    $"Health: {Health}/{MaxHealth} \n\r" +
+                    $"Defense: {Defense} \n\r" +
+                    $"Speed: {Speed}\n\r" +
+                    $"ыStun: {Stunned} ");
             }
             else
             {
@@ -122,7 +126,7 @@ namespace Units_222_Draft.units
 
         public virtual void DealDamage(Unit unit)
         {
-            double Damage = Weapon.Hit(unit);
+            float Damage = Weapon.Hit(unit);
             if (Alive)
             {
                 if (Stunned)
@@ -135,7 +139,7 @@ namespace Units_222_Draft.units
                     {
                         if (Weapon.Alive)
                         {
-                            double def_damage = Damage - unit.Defense;
+                            float def_damage = Damage - unit.Defense;
                             if (def_damage < 0)
                             {
                                 def_damage = 0;

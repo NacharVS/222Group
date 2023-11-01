@@ -12,7 +12,7 @@ namespace Units_222_Draft.units
         }
         public Footman() : base("Footman", 60, 0, 5)
         {
-            Weapon = new Mace();
+            Weapon = new Sword();
         }
         
         public override void DealDamage(Unit unit)
@@ -29,20 +29,20 @@ namespace Units_222_Draft.units
                     {
                         if (Weapon.Alive)
                         {
-                            double Damage = Weapon.Hit(unit);
-                            double Rage_damage = 0;
+                            float Damage = Weapon.Hit(unit);
+                            float Rage_damage = 0;
                             if (Health < MaxHealth * 0.4)
                             {
                                 Console.WriteLine("===========================================");
-                                Rage_damage += Damage * 0.5;
+                                Rage_damage += Damage * 0.5f;
                             }
-                            double def_damage = Damage + Rage_damage - unit.Defense;
+                            float def_damage = Damage + Rage_damage - unit.Defense;
                             if (def_damage < 0)
                             {
-                                def_damage = 0;
+                                def_damage = 0f;
                             }
-                            Console.WriteLine($"{Name} dealed {def_damage} damage");
-                            unit.Health = unit.Health - def_damage;
+                            Console.WriteLine($"{Name} нанес {def_damage} урона");
+                            unit.Health -= def_damage;
                             if (unit.Health <= 0)
                             {
                                 Console.WriteLine($"{unit.Name} убит");

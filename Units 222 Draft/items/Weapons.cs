@@ -1,5 +1,4 @@
-﻿//4.UPGRADE(Custom)
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Security.Cryptography.X509Certificates;
 using Units_222_Draft.units;
 using UnitsDrafts;
 
@@ -14,7 +13,7 @@ namespace Units_222_Draft.items
         public int Durability = 100;
         public bool Alive = true;
         public string Name;
-        public double Level = 0;
+        public float Level = 0;
 
         public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
         {
@@ -23,7 +22,7 @@ namespace Units_222_Draft.items
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
         }
-        public double Durability_check()
+        public float Durability_check()
         {
             if (Durability >= 70)
             {
@@ -31,11 +30,11 @@ namespace Units_222_Draft.items
             }
             else if (Durability >= 40)
             {
-                return 0.7;
+                return 0.7f;
             }
             else if (Durability > 0)
             {
-                return 0.4;
+                return 0.4f;
             }
             else
             {
@@ -45,17 +44,17 @@ namespace Units_222_Draft.items
 
             }
         }
-        public virtual double Hit(Unit unit)
+        public virtual float Hit(Unit unit)
         {
             Durability--;
             if (Durability > 0)
             {
-                double CritChance = 20;
-                double CritDamage = 1;
-                var x = new Random().Next(1, 100);
+                float CritChance = 20;
+                float CritDamage = 1;
+                int x = new Random().Next(1, 100);
                 if (x <= Accuracy)
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    float Damage = new Random().Next(MinDamage, MaxDamage);
                     Damage += Level * 5;
                     x = new Random().Next(1, 100);
                     if (x <= CritChance)

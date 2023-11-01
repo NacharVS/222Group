@@ -14,13 +14,13 @@ namespace Units_222_Draft.items
             Name = "mace";
         }
         
-        public override double Hit(Unit unit)
+        public override float Hit(Unit unit)
         {
             if (Alive)
             {
                 Durability--;
-                double CritChance = 20;
-                double CritDamage = 0.5;
+                float CritChance = 20;
+                float CritDamage = 0.5f;
                 var chance = new Random().Next(1, 100);
                 if (chance <= Accuracy)
                 {
@@ -29,7 +29,7 @@ namespace Units_222_Draft.items
                     {
                         Stat.Stun(unit);
                     }
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    float Damage = new Random().Next(MinDamage, MaxDamage);
                     Damage += Level * 5;
                     chance = new Random().Next(1, 100);
                     if (chance <= CritChance)

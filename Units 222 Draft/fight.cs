@@ -15,6 +15,7 @@ namespace UnitsDrafts
                 Console.WriteLine("=================================================");
                 Console.WriteLine($"В дуэли участвуют {unit1.Name} и {unit2.Name}");
                 List<Unit> duel_spisok = new List<Unit>() { unit1, unit2 };
+                // Мне влом делать цикл в цикле потому два списка
                 List<Unit> duel_spisokRev = new List<Unit>() { unit2, unit1 };
                 fight_count = 0;
                 Console.WriteLine("=================================================");

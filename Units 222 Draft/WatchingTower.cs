@@ -12,7 +12,7 @@ namespace UnitsDrafts
             get { return 3+Level; }
             set { Capasity = value; }
         }
-        public int Damage
+        public float Damage
         {
             get { return 7 * Garnizon.Count; }
         }
@@ -47,7 +47,7 @@ namespace UnitsDrafts
             {
                 if (unit.Alive)
                 {
-                    double def_damage = Damage - unit.Defense;
+                    float def_damage = Damage - unit.Defense;
                     if (def_damage < 0)
                     {
                         def_damage = 0;

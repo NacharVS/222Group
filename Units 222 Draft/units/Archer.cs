@@ -11,7 +11,7 @@ namespace Units_222_Draft.units
             {
                 Speed += 4;
             }
-            Weapon = new Axe();
+            Weapon = new Bow();
         }
     }
 }
