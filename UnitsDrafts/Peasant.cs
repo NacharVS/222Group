@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unit.items;
+using UnitsDrafts.unit.items;
 
 namespace UnitsDrafts
 {
     internal class Peasant : Unit
     {
+        private Weapon _weapon;
         private int _damage;
         private int _defence;
-        private int _MaxHealth;
-        private int _Health;
+        private double _MaxHealth;
+        private double _Health;
 
-        public Peasant(string name, int maxHealth, int speed, int damage, int defence, int health)
+        public Peasant(string name, double maxHealth, int speed, int damage, int defence, double health)
             : base(name, maxHealth, speed, defence, damage, health)
         {
             _Health = health;
@@ -39,7 +42,7 @@ namespace UnitsDrafts
             set { _damage = value; }
         }
 
-        public int health
+        public double health
         {
             get { return _Health; }
             set { _Health = value; }
@@ -61,7 +64,49 @@ namespace UnitsDrafts
                 unit.Health = 0;
                 Console.WriteLine("Peasant died");
             }
+            if (unit.Health <= 0) 
+            {
+                damage = 0;
+            }
             Console.WriteLine($"Name:{Name} Health: {unit.Health}/{_MaxHealth} Defence: {_defence}");
+        }
+
+        public void PeasantDamage(Unit unit)
+        {
+            Console.WriteLine("===========================================");
+            Console.WriteLine("Игрок Peasant");
+            Console.WriteLine("===========================================");
+            Console.WriteLine("Выберите оружие:");
+            Console.WriteLine("1.Sword");
+            Console.WriteLine("2.Axe");
+            Console.WriteLine("3.Mace");
+            Console.WriteLine("4.Bow");
+            int f = Convert.ToInt32(Console.ReadLine());
+            if (f == 1)
+            {
+                _weapon = new Sword();
+            }
+            if (f == 2)
+            {
+                _weapon = new Axe();
+            }
+            if (f == 3)
+            {
+                _weapon = new Mace();
+            }
+            if (f == 4)
+            {
+                _weapon = new Bow();
+            }
+            double damage = _weapon.Hit();
+            if (damage <= 0)
+            {
+                Console.WriteLine("miss");
+            }
+            else
+            {
+                unit.Health -= damage;
+            }
         }
     }
 }

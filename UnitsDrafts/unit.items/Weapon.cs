@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnitsDrafts;
 
 namespace unit.items
 {
@@ -31,10 +32,8 @@ namespace unit.items
             }
             else
             {
-                Alive = false;
                 Console.WriteLine("Оружие сломалось");
                 return 0;
-
             }
         }
         public int MinDamage { get; set; }
@@ -47,10 +46,8 @@ namespace unit.items
 
         public int Durability = 100;
 
-        public bool Alive = true;
 
-
-        public virtual int Hit()
+        public virtual double Hit()
         {
             var x = new Random().Next(1, 100);
             if (x <= Accuracy)

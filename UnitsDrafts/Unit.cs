@@ -5,12 +5,12 @@
         private int _damage;
         private int _defence;
         private string _name;
-        private int _health;
-        private int _maxHealth;
+        private double _health;
+        private double _maxHealth;
         private int _speed;
 
-        public Unit(string name, int maxHealth, int defence, int damage,
-            int speed, int health)
+        public Unit(string name, double maxHealth, int defence, int damage,
+            int speed, double health)
         {
             _damage = damage;
             _defence = defence;
@@ -32,7 +32,7 @@
             set { _name = value; }
         }
 
-        public int Health
+        public double Health
         {
             get { return _health; }
             set 
@@ -56,7 +56,7 @@
             set { _defence -= _damage; }
         }
 
-        public int MaxHealth { get => _maxHealth; }
+        public double MaxHealth { get => _maxHealth; }
 
         public void Moving()
         {

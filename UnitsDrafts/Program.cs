@@ -20,6 +20,7 @@ Console.WriteLine("5.Хилл");
 Console.WriteLine("6.Файт");
 Console.WriteLine("7.Башня с тремя лучниками");
 Console.WriteLine("8.Оружия");
+Console.WriteLine("9.Файт с оружиями");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -110,11 +111,27 @@ switch (a)
         footman.Damage(peasant);
         peasant.BaseInfo();
         footman.Damage(peasant);
-        peasant.BaseInfo(); 
+        peasant.BaseInfo();
+        footman.Damage(peasant);
+        peasant.BaseInfo();
+        footman.Damage(peasant);
+        peasant.BaseInfo();
+        break;
+    case 9:        
+        footman.Damage(peasant);
+        peasant.BaseInfo();
+        peasant.PeasantDamage(footman);
+        footman.BaseInfo();
+        footman.Damage(peasant);
+        peasant.BaseInfo();
+        peasant.PeasantDamage(footman);
+        footman.BaseInfo();
+        footman.Damage(peasant);
+        peasant.BaseInfo();
+        peasant.PeasantDamage(footman);
+        footman.BaseInfo();
         break;
 }
-
-
 
 
 

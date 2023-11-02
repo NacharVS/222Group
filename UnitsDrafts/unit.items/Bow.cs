@@ -9,9 +9,8 @@ namespace UnitsDrafts.unit.items
 {
     internal class Bow : Weapon
     {
-        public Bow() : base(4, 7, 2, 30) 
-        {
-            
+        public Bow() : base(4, 7, 2, 55) 
+        {           
         }
     }
 }
