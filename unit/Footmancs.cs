@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using unit.Items;
 
 namespace unit
 {
@@ -11,11 +12,12 @@ namespace unit
     {
 
         private int _armor;
+        private Weapon _weapon;
         public Footman(string name, int maxHealth, int speed, int damage, int defence, int armor)
             : base(name, maxHealth, speed, damage, defence)
         {
             _armor = armor;
-            
+            _weapon = new Sword();
         }
 
         public Footman() : base("Footman", 50, 11, 10, 7)
@@ -40,52 +42,44 @@ namespace unit
         {
             if (Alive)
             {
-                if (unit.Alive)
+                if (Stun)
                 {
-                    if (unit.Health > 0)
-                    {
-                        unit.Health = unit.Health - Damage;
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"{Name} сделал выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
-
-
-                        Console.ResetColor();
-
-                    }
-                    //if (unit.Damage <= unit.Defence)
-                    ////{
-                    ////    Console.WriteLine("Вы сделали выстрел, но ваше оружие не смогло пробить противника"); 
-
-                    ////}
-                    if (Health < MaxHealth * 0.4)
-                    {
-                        Damage = Damage + 5;
-                        Damage = 15;
-                    }
-                    if (unit.Health <= 0)
-                    {
-                        Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
-
-                    }
-
-
-                    //if (Defence > Damage)
-                    //{
-                    //    Defence = Damage;
-                    //    unit.Health = unit.Health + (Damage - Defence);
-                    //    Console.ForegroundColor = ConsoleColor.Red;
-                    //    //Console.WriteLine($"Вы сделали выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
-                    //    Console.ResetColor();
-                    //}
-                    //else
-                    //    unit.Health = unit.Health + (Damage - Defence);
-                    //Console.ForegroundColor = ConsoleColor.Red;
-                    //Console.WriteLine($"Вы сделали выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
-                    //Console.ResetColor();
+                    Console.WriteLine("Противник оглушен");
                 }
                 else
                 {
-                    Console.WriteLine("Юнит мертв");
+                    if (unit.Alive)
+                    {
+                        if(Weapon.Alive)
+                        {
+                            if (unit.Health > 0)
+                            {
+                                double Damage = Weapon.Hit(unit);
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine($"{Name} сделал выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
+
+
+                                Console.ResetColor();
+
+                            }
+                            if (Health < MaxHealth * 0.4)
+                            {
+                                Damage = Damage + 5;
+                                Damage = 15;
+                            }
+                            if (unit.Health <= 0)
+                            {
+                                Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
+
+                            }
+                        }
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Юнит мертв");
+                    }
                 }
             }
             else
@@ -134,3 +128,16 @@ namespace unit
     }
 }
 
+//if (Defence > Damage)
+//{
+//    Defence = Damage;
+//    unit.Health = unit.Health + (Damage - Defence);
+//    Console.ForegroundColor = ConsoleColor.Red;
+//    //Console.WriteLine($"Вы сделали выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
+//    Console.ResetColor();
+//}
+//else
+//    unit.Health = unit.Health + (Damage - Defence);
+//Console.ForegroundColor = ConsoleColor.Red;
+//Console.WriteLine($"Вы сделали выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
+//Console.ResetColor();
