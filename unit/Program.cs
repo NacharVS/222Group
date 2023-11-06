@@ -18,8 +18,11 @@ var bishop = meriya.CreateBishop();
 var peasant = meriya.CreatePeasant();
 
 
-
-
+Sword sword = new Sword();
+sword.ShowWeaponInfo();
+sword.LevelUp();
+sword.ShowWeaponInfo();
+Console.WriteLine();
 
 
 while (true)

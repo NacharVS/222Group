@@ -80,12 +80,29 @@ namespace unit.Items
             }
 
         }
+        public void ShowWeaponInfo()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine($"Текущие характеристики {WeaponName}: MaxDamage: {MaxDamage}, MinDamage:{MinDamage}, Accuracy : {Accuracy}, Durability:{Durability}");
+            Console.ResetColor();
+
+        }
         public void LevelUp()
         {
             if (Level < 10)
             {
                 Level += 1;
-                Console.WriteLine($"Вы повысили уровень {WeaponName}") ;
+                MaxDamage += 3;
+                MinDamage += 2;
+                Accuracy += 3;
+                Durability += 20;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+                Console.WriteLine($"Вы повысили уровень {WeaponName}, теперь его лвл: {Level}") ;
+                Console.WriteLine($"у {WeaponName} увеличился max damage до {MaxDamage}, min damage до {MinDamage}, accuracy до {Accuracy} и durability до {Durability}");
+                Console.ResetColor();
+
             }
             else
             {
