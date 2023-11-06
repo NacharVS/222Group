@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 namespace unit.Items
 {
     internal class Bow : Weapon
-    {
+    {   
+        public Bow(string Name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability) : base(Name, minDamage, maxDamage, attackSpeed, accuracy, durability)
+        {
+
+        }
         public Bow() : base("Bow", 1, 15, 5, 55, 200)
         {
 
@@ -25,18 +29,20 @@ namespace unit.Items
                 int x = new Random().Next(1, 101);
                 if (x <= Accuracy)
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    double Damage = new Random().Next(MinDamage, MaxDamage+1);
                     Damage += Level * 5;
                     x = new Random().Next(1, 101);
                     if (x <= CritChance)
                     {
+                        Damage = MaxDamage;
                         Damage = Damage * CritDamage;
+                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage}");
                     }
                     return Damage * DurabilityQuality();
                 }
                 else
                 {
-                    Console.WriteLine("Не попал");
+                    Console.WriteLine($"{unit.Name} Не попал");
                     return 0;
                 }
             }

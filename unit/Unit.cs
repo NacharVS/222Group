@@ -10,7 +10,7 @@ namespace unit
     internal class Unit
     {
         private string _name;
-        private int _health;
+        private double _health;
         private int _maxHealth;
         private int _speed;
         private int _damage;
@@ -70,7 +70,7 @@ namespace unit
         public int MaxHealth
         { get => _maxHealth; }
 
-        public int Health
+        public double Health
         {
             get { return _health; }
             set
@@ -120,6 +120,7 @@ namespace unit
             else
             {
                 Console.WriteLine($"{Name} не может атаковать , он мертв");
+                
             }
 
         }

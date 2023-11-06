@@ -71,7 +71,8 @@ namespace unit
                     if (unit.Health <= 0)
                     {
                         Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
-                        
+                        Stat.KilledQuant++;
+                        unit.Alive = false;
 
                     }
                 }
@@ -82,7 +83,7 @@ namespace unit
             }
             else
             {
-                Alive = false;
+                
                 Console.WriteLine($"{Name} не может атаковать , он мертв");
             }
 

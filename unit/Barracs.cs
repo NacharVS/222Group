@@ -13,7 +13,7 @@ namespace unit
             Stat.FootmanQuant += 1;
             Stat.LiveQuant += 1;
             Random random = new Random();
-            return new Footman("Footman", random.Next(50,55),11,10, 7,random.Next(1,4)) ;
+            return new Footman("Footman", random.Next(50,80),11,10, 7,random.Next(1,4)) ;
         }
         public Archer CreateArchcer()
         {

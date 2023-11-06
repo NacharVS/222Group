@@ -64,7 +64,7 @@ namespace unit.Items
                 int x = new Random().Next(1, 101);
                 if (x <= Accuracy)
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                     double Damage = new Random().Next(MinDamage, MaxDamage+1);
                     Damage += Level * 5;
                     return Damage * DurabilityQuality();
                 }
@@ -75,6 +75,7 @@ namespace unit.Items
             }
             else
             {
+                Console.WriteLine("Оружие сломано");
                 return 0;
             }
 

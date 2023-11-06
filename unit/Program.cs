@@ -1,5 +1,6 @@
 ﻿using System;
 using unit;
+using unit.Items;
 
 //Footman ft1 = new Footman();
 
@@ -16,13 +17,14 @@ var archer = barracs1.CreateArchcer();
 var bishop = meriya.CreateBishop();
 var peasant = meriya.CreatePeasant();
 
-Stat.StatInfo();
+
+
 
 
 
 while (true)
 {
-    
+    Stat.StatInfo();
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine();
     Console.WriteLine("Выберите действие 0.Статистика" +
@@ -106,7 +108,18 @@ while (true)
             ft1.BaseInfo();
             ft1.InflictDamage(peasant);
             Console.WriteLine();
-
+            ft1.BaseInfo();
+            ft1.InflictDamage(peasant);
+            Console.WriteLine();
+            ft1.BaseInfo();
+            ft1.InflictDamage(peasant);
+            Console.WriteLine();
+            ft1.BaseInfo();
+            ft1.InflictDamage(peasant);
+            Console.WriteLine();
+            ft1.BaseInfo();
+            ft1.InflictDamage(peasant);
+            Console.WriteLine();
         }
         if (damagechoice == 2)
         {
@@ -224,8 +237,10 @@ while (true)
 
     }
     if (choice == 7)
-    {
-        Duel.Fighting(ft1, archer);
+    {   
+        Footman footman1 = new Footman("Misha",new Random().Next(70,85),10,0,6,5);
+        Footman footman2 = new Footman("Elvin", new Random().Next(70, 85), 10, 0, 6, 5);
+        Duel.Fighting(footman1, footman2);
     }
     if (choice == 8)
     {

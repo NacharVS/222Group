@@ -66,7 +66,7 @@ namespace unit
             }
             else
             {   
-                Alive = false;
+                
                 Console.WriteLine("Персонаж не может хилить, он мертв");
             }
 

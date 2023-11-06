@@ -8,11 +8,16 @@ namespace unit.Items
 {
     internal class Mace: Weapon 
     {
+
+        public Mace(string Name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability) : base(Name, minDamage, maxDamage, attackSpeed, accuracy, durability)
+        {
+
+        }
         public Mace() : base("Mace", 2, 10, 3, 85, 700)
         {
 
         }
-        int CritChance = 10;
+        int CritChance = 30;
         public override double Hit(Unit unit)
         {
 
@@ -24,18 +29,20 @@ namespace unit.Items
                 int x = new Random().Next(1, 101);
                 if (x <= Accuracy)
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
+                    double Damage = new Random().Next(MinDamage, MaxDamage+1);
                     Damage += Level * 5;
                     x = new Random().Next(1, 101);
                     if (x <= CritChance)
                     {
                         unit.Stun = true;
+                        
                     }
+                    
                     return Damage * DurabilityQuality();
                 }
                 else
                 {
-                    Console.WriteLine("Не попал");
+                    Console.WriteLine($"{unit.Name} Не попал");
                     return 0;
                 }
 
