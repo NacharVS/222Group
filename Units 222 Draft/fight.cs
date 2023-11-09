@@ -1,6 +1,7 @@
 ﻿using System;
 using Units_222_Draft.units;
 using Units_222_Draft.Stats;
+using Units_222_Draft.items;
 
 namespace UnitsDrafts
 {
@@ -9,7 +10,7 @@ namespace UnitsDrafts
         public static int fight_count = 0;
         public static void Duel(Unit unit1, Unit unit2)
         {
-            if (unit1.Alive &&  unit2.Alive)
+            if (unit1.Alive && unit2.Alive)
             {
                 Test.How_to_Duel();
                 Console.WriteLine("=================================================");
@@ -27,7 +28,7 @@ namespace UnitsDrafts
                     {
                         if (unit1.Run_Away_Count < 20 && unit2.Run_Away_Count < 20)
                         {
-                            Stat.StatusCheck(unit1); 
+                            Stat.StatusCheck(unit1);
                             Stat.StatusCheck(unit2);
                             Console.WriteLine($"{fight_count} ход");
                             for (int i = 0; i < 2; i++)
@@ -71,6 +72,15 @@ namespace UnitsDrafts
             {
                 Console.WriteLine("Невозможно начать дуэль с трупом");
             }
-        }     
+        }
+        public static void War(List<Unit> Team1, List<Unit> Team2)
+        {
+            Team1.Count();
+            Team2.Count();
+            while (true)
+            {
+                
+            }
+        }
     }
 }

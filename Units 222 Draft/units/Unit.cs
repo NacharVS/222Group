@@ -5,16 +5,15 @@ namespace Units_222_Draft.units
 {
     internal class Unit
     {
-        private string _name;
-        private float _health;
-        private float _defense;
-        private float _maxHealth;
-        private float _speed;
-        private bool _alive = true;
-        private int run_away_count = 0;//нужно для побега во время файтов 
-        private Weapon _weapon;
-        public bool _stunned = false;
-        public bool _bloodloss = false;
+        private string _name;// Имя юнита
+        private float _health; // Количество очков жизни на данный момент
+        private float _defense; // Очки защиты
+        private float _maxHealth; // Максимальное количество очков жизни
+        private float _speed;// Нужна для побега
+        private bool _alive = true; //проверка живой или нет
+        private Weapon _weapon;// Оружие юнита
+        public bool _stunned = false;// Оглушение
+        public bool _bloodloss = false;// Кровотечение
         public string Name
         {
             get { return _name; }
@@ -58,6 +57,7 @@ namespace Units_222_Draft.units
         }
         public int Run_Away_Count
         {
+            //необходимо для побега из боя
             get; set;
         }
         public Weapon Weapon
@@ -83,7 +83,7 @@ namespace Units_222_Draft.units
             _defense = defense;
             _speed = speed;
         }
-
+        //Метод для побега
         public virtual void Moving()
         {
 
@@ -115,7 +115,7 @@ namespace Units_222_Draft.units
                     $"Health: {Health}/{MaxHealth} \n\r" +
                     $"Defense: {Defense} \n\r" +
                     $"Speed: {Speed}\n\r" +
-                    $"ыStun: {Stunned} ");
+                    $"Stun: {Stunned} ");
             }
             else
             {
@@ -123,7 +123,7 @@ namespace Units_222_Draft.units
             }
 
         }
-
+        // Метод нанесения урона
         public virtual void DealDamage(Unit unit)
         {
             float Damage = Weapon.Hit(unit);

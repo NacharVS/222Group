@@ -6,11 +6,11 @@ namespace Units_222_Draft.items
 {
     internal class Weapon
     {
-        public int MinDamage;
-        public int MaxDamage;
-        public int AttackSpeed;
-        public int Accuracy;
-        public int Durability = 100;
+        public int MinDamage;// минимальный урон у оружия
+        public int MaxDamage;// максимальный урон у оружия
+        public int AttackSpeed;// скорость атаки (не используется но по ТЗ нужно)
+        public int Accuracy;// точность
+        public int Durability = 100; // 
         public bool Alive = true;
         public string Name;
         public float Level = 0;
@@ -22,6 +22,7 @@ namespace Units_222_Draft.items
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
         }
+        // метод который изменяет характеристики оружия в зависимости от прочности
         public float Durability_check()
         {
             if (Durability >= 70)
@@ -44,6 +45,7 @@ namespace Units_222_Draft.items
 
             }
         }
+
         public virtual float Hit(Unit unit)
         {
             Durability--;

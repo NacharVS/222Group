@@ -74,6 +74,7 @@ namespace Units_222_Draft.units
                     if (Mana > 10)
                     {
                         unit.Health += 10;
+                        Mana -= 10;
                     }
                     else
                     {
@@ -87,7 +88,7 @@ namespace Units_222_Draft.units
             }
             else
             {
-                Console.WriteLine("Юнит не может дамажить");
+                Console.WriteLine("Юнит не может наложить спелл");
             }
         }
         public void Mp_cheak()
