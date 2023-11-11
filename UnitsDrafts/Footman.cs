@@ -12,22 +12,52 @@ namespace UnitsDrafts
 
         private int _damage;
 
-        private Weapon _weapon;
+        public Weapon _weapon;
 
-        public Footman() : base("Footman", 30, 10, 10, 30, 3)
+        public Footman() : base("Footman", 30, 10, 10, 30, 3) 
         {
+
         }
-        public virtual void Damage(Unit unit)
+        //public void Damage(Unit unit)
+        //{
+        //    Console.WriteLine("===========================================");
+        //    Console.WriteLine("Игрок Footman");
+        //    Console.WriteLine("===========================================");
+        //    Console.WriteLine("Выберите оружие:");
+        //    Console.WriteLine("1.Sword");
+        //    Console.WriteLine("2.Axe");
+        //    Console.WriteLine("3.Mace");
+        //    Console.WriteLine("4.Bow");
+        //    int f = Convert.ToInt32(Console.ReadLine());            
+        //    if (f == 1)
+        //    {
+        //        _weapon = new Sword(); 
+        //    }
+        //    if (f == 2)
+        //    {
+        //        _weapon = new Axe();            
+        //    }
+        //    if (f == 3) 
+        //    {
+        //        _weapon = new Mace();
+        //    }
+        //    if(f == 4) 
+        //    {
+        //        _weapon = new Bow();
+        //    }
+        //    double damage = _weapon.Hit(unit);
+        //    if (Stun)
+        //    {
+        //        damage = 0;
+        //    }
+        //    else
+        //    {
+        //        unit.Health -= damage;
+        //    }
+        //}
+        public override void DealDamage(Unit unit)
         {
-            Console.WriteLine("===========================================");
-            Console.WriteLine("Игрок Footman");
-            Console.WriteLine("===========================================");
-            Console.WriteLine("Выберите оружие:");
-            Console.WriteLine("1.Sword");
-            Console.WriteLine("2.Axe");
-            Console.WriteLine("3.Mace");
-            Console.WriteLine("4.Bow");
-            int f = Convert.ToInt32(Console.ReadLine());            
+            int f = Convert.ToInt32(Console.ReadLine());
             if (f == 1)
             {
                 _weapon = new Sword();
@@ -36,27 +66,49 @@ namespace UnitsDrafts
             {
                 _weapon = new Axe();
             }
-            if (f == 3) 
+            if (f == 3)
             {
                 _weapon = new Mace();
             }
-            if(f == 4) 
+            if (f == 4)
             {
                 _weapon = new Bow();
             }
-            double damage = _weapon.Hit();
-            if (damage <= 0)
+            double damage = _weapon.Hit(unit);
+            if (Stun)
             {
-                Console.WriteLine("miss");
+                damage = 0;
             }
-            else
+            if (Alive)
             {
-                unit.Health -= damage;
+                if (Stun)
+                {
+                    Console.WriteLine("Юнит оглушен - он не может атаковать. Damage = 0");
+                }
+                else
+                {
+                    if (unit.Alive)
+                    {
+                        Console.WriteLine($"{Name} нанес {damage} урона");
+                        unit.Health = unit.Health - damage;
+
+                        if (unit.Health <= 0)
+                        {
+                            Console.WriteLine($"{unit.Name} убит");
+                            unit.Alive = false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("зачем ты атакуешь труп?");
+                    }
+                }
+
             }
+            else { Console.WriteLine("Юнит не может атаковать - он мертв"); }
         }
         public void InflictDamage(Unit unit)
         {
-            double _Damage = _weapon.Hit();
             if (Health < 24)
             {
                 _damage = _damage + _damage / 2;

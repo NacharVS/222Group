@@ -29,6 +29,7 @@ namespace UnitsDrafts
             _defence = 10;
             _MaxHealth = 30;
             _Health = 30;
+
         }
         public int defence
         {
@@ -71,16 +72,8 @@ namespace UnitsDrafts
             Console.WriteLine($"Name:{Name} Health: {unit.Health}/{_MaxHealth} Defence: {_defence}");
         }
 
-        public void PeasantDamage(Unit unit)
+        public override void DealDamage(Unit unit)
         {
-            Console.WriteLine("===========================================");
-            Console.WriteLine("Игрок Peasant");
-            Console.WriteLine("===========================================");
-            Console.WriteLine("Выберите оружие:");
-            Console.WriteLine("1.Sword");
-            Console.WriteLine("2.Axe");
-            Console.WriteLine("3.Mace");
-            Console.WriteLine("4.Bow");
             int f = Convert.ToInt32(Console.ReadLine());
             if (f == 1)
             {
@@ -98,14 +91,47 @@ namespace UnitsDrafts
             {
                 _weapon = new Bow();
             }
-            double damage = _weapon.Hit();
-            if (damage <= 0)
+            double damage = _weapon.Hit(unit);
+            if (Stun)
             {
-                Console.WriteLine("miss");
+                damage = 0;
             }
-            else
+            if (Alive)
             {
-                unit.Health -= damage;
+                if (Stun)
+                {
+                    Console.WriteLine("Юнит оглушен - он не может атаковать. Damage = 0");
+                }
+                else
+                {
+                    if (unit.Alive)
+                    {
+                        if (_weapon.Alive) 
+                        {
+                            Console.WriteLine($"{Name} нанес {damage} урона");
+                            unit.Health = unit.Health - damage;
+                            Console.WriteLine($"У вас {unit.Health} здоровья");
+                            if (unit.Health <= 0)
+                            {
+                                Console.WriteLine($"{unit.Name} убит");
+                                unit.Alive = false;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("оружие сломано");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Труп");
+                    }
+                }
+
+            }
+            else 
+            { 
+                Console.WriteLine("Юнит не может атаковать - он мертв"); 
             }
         }
     }

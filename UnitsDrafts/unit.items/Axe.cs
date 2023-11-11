@@ -9,23 +9,34 @@ namespace UnitsDrafts.unit.items
 {
     internal class Axe : Weapon
     {
-        public int BleedChance = 30;
+        public int BleedChance = 100;
         public int BleedDamage = 1;
         public Axe() : base(3, 9, 6, 70) 
         { 
         }
-        public override double Hit()
+        public override double Hit(Unit unit)
         {
-            double damage = new Random().Next(MinDamage, MaxDamage);
-            var x = new Random().Next(1, 100);
-            if (x <= BleedChance)
+            if(Durability > 0)
             {
-                damage += BleedDamage;
-                Console.WriteLine("У вас кровотечение!!!, + 1 урон");               
-                Console.WriteLine($"Вы нанесли {damage} урона");
-                return damage;
+                Durability = Durability - 2;
+                double damage = new Random().Next(MinDamage, MaxDamage);
+                var x = new Random().Next(1, 100);
+                if (Accuracy >= x)
+                {            
+                    if (x <= BleedChance)
+                    {
+                        unit.BloodLoss = true;
+                    }
+                    return damage * Durability_check();
+                }
+                else
+                {
+                    Console.WriteLine("Промах");
+                    return 0;
+                }
             }
-            return damage;
+            Console.WriteLine("Оружие сломалось!");
+            return 0;
         }
     }
 }

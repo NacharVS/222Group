@@ -3,7 +3,10 @@ using UnitsDrafts;
 Footman footman = new Footman();
 Footman ft1 = new Footman();
 Footman ft2 = new Footman();
-Peasant peasant = new Peasant();    
+Peasant peasant = new Peasant();
+Peasant peasant1 = new Peasant();
+peasant.Name = "Эмиль";
+peasant1.Name = "Данёк";
 Archer archer = new Archer();
 Bishop bishop = new Bishop();
 Barracs barracs = new Barracs();
@@ -100,36 +103,25 @@ switch (a)
         break;
         
     case 8:      
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
+        //footman.Damage(peasant);
+        //peasant.BaseInfo();
         break;
-    case 9:        
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        peasant.PeasantDamage(footman);
-        footman.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        peasant.PeasantDamage(footman);
-        footman.BaseInfo();
-        footman.Damage(peasant);
-        peasant.BaseInfo();
-        peasant.PeasantDamage(footman);
-        footman.BaseInfo();
+    case 9:
+        Fight.Duel(peasant, peasant1);
         break;
 }
 

@@ -9,13 +9,25 @@ namespace unit.items
 {
     internal class Weapon
     {
-        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy )
-        {
+        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
+        {           
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
         }
+        public int MinDamage { get; set; }
+
+        public int MaxDamage { get; set; }
+
+        public int AttackSpeed { get; set; }
+
+        public int Accuracy { get; set; }
+
+        public int Durability = 100;
+
+        public bool Alive = true;
+
         public double Durability_check()
         {
             if (Durability >= 70)
@@ -32,32 +44,29 @@ namespace unit.items
             }
             else
             {
+                Alive = false;
                 Console.WriteLine("Оружие сломалось");
                 return 0;
             }
         }
-        public int MinDamage { get; set; }
 
-        public int MaxDamage { get; set; }
-
-        public int AttackSpeed { get; set; }
-
-        public int Accuracy { get; set; }
-
-        public int Durability = 100;
-
-
-        public virtual double Hit()
+        public virtual double Hit(Unit unit)
         {
             var x = new Random().Next(1, 100);
-            if (x <= Accuracy)
+            if (Durability > 0)
             {
-                return new Random().Next(MinDamage, MaxDamage);
+                if (x <= Accuracy)
+                {
+                    double damage = new Random().Next(MinDamage, MaxDamage);
+                    return damage * Durability_check();
+                }
+                else 
+                {
+                    return 0;
+                }
             }
-            else 
-            {
-                return 0;
-            }
+            Console.WriteLine("Оружие сломалось");
+            return 0;           
         }
     }
 }
