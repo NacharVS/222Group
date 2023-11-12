@@ -107,7 +107,7 @@ namespace UnitsDrafts
             {
                 if (Stun)
                 {
-                    Console.WriteLine("Юнит оглушен - он не может атаковать");
+                    Console.WriteLine("Юнит оглушен, атака невозможна!");
                 }
                 else
                 {
@@ -124,12 +124,12 @@ namespace UnitsDrafts
                     }
                     else
                     {
-                        Console.WriteLine("зачем ты атакуешь труп?");
+                        Console.WriteLine("Нельзя бить труп");
                     }
                 }
 
             }
-            else { Console.WriteLine("Юнит не может атаковать - он мертв"); }
+            else { Console.WriteLine("Юнит не может атаковать, так как мёртв"); }
         }
 
         public double MaxHealth { get => _maxHealth; }

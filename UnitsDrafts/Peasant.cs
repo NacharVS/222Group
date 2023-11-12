@@ -10,7 +10,6 @@ namespace UnitsDrafts
 {
     internal class Peasant : Unit
     {
-        private Weapon _weapon;
         private int _damage;
         private int _defence;
         private double _MaxHealth;
@@ -29,7 +28,6 @@ namespace UnitsDrafts
             _defence = 10;
             _MaxHealth = 30;
             _Health = 30;
-
         }
         public int defence
         {
@@ -74,23 +72,6 @@ namespace UnitsDrafts
 
         public override void DealDamage(Unit unit)
         {
-            int f = Convert.ToInt32(Console.ReadLine());
-            if (f == 1)
-            {
-                _weapon = new Sword();
-            }
-            if (f == 2)
-            {
-                _weapon = new Axe();
-            }
-            if (f == 3)
-            {
-                _weapon = new Mace();
-            }
-            if (f == 4)
-            {
-                _weapon = new Bow();
-            }
             double damage = _weapon.Hit(unit);
             if (Stun)
             {
@@ -106,7 +87,7 @@ namespace UnitsDrafts
                 {
                     if (unit.Alive)
                     {
-                        if (_weapon.Alive) 
+                        if (_weapon.Alive)
                         {
                             Console.WriteLine($"{Name} нанес {damage} урона");
                             unit.Health = unit.Health - damage;
@@ -122,16 +103,17 @@ namespace UnitsDrafts
                             Console.WriteLine("оружие сломано");
                         }
                     }
+
                     else
                     {
-                        Console.WriteLine("Труп");
+                        Console.WriteLine("труп");
                     }
                 }
 
             }
             else 
             { 
-                Console.WriteLine("Юнит не может атаковать - он мертв"); 
+                Console.WriteLine("Юнит не может атаковать, так как он мертв"); 
             }
         }
     }

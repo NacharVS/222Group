@@ -27,23 +27,23 @@ namespace UnitsDrafts
         public static void StatusCheck(Unit unit)
         {
             StunCheck(unit);
-            BloodLoss(unit);
+            BloodCheck(unit);
         }
         public static void Stun(Unit unit)
         {
-            StunCount = Fight.fight_count + 2;
+            StunCount = Fight.FightCount + 2;
             unit.Stun = true;
-            Console.WriteLine("ОГЛУШИЛ");
+            Console.WriteLine("Оглушение");
         }
         public static void StunCheck(Unit unit)
         {
-            if (Fight.fight_count >= StunCount)
+            if (Fight.FightCount >= StunCount)
             {
                 unit.Stun = false;
             }
         }
 
-        public static void BloodLoss(Unit unit)
+        public static void BloodCheck(Unit unit)
         {
             if (unit.BloodLoss)
             {

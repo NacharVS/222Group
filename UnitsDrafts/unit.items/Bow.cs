@@ -11,7 +11,7 @@ namespace UnitsDrafts.unit.items
     {
         public int CritChance = 20;
         public int CritDamage = 3;
-        public Bow() : base(1, 15, 2, 55) 
+        public Bow() : base(1, 15, 2, 55, 13) 
         {           
         }
         public override double Hit(Unit unit)
@@ -22,7 +22,8 @@ namespace UnitsDrafts.unit.items
                 double damage = new Random().Next(MinDamage, MaxDamage);
                 var y = new Random().Next(1, 100);
                 if(Accuracy >= y) 
-                {                
+                {
+                    damage += level * 5;
                     var x = new Random().Next(1, 100);
                     Console.WriteLine($"Вы нанесли {damage} урона");
                     if (x <= CritChance)
@@ -31,11 +32,11 @@ namespace UnitsDrafts.unit.items
                         Console.WriteLine("Выпал Крит!!!");
                         return damage;
                     }
-                    return damage * Durability_check();
+                    return damage * DurabilityCheck();
                 }
                 else 
                 {
-                    Console.WriteLine("Промах");
+                    Console.WriteLine("Промах!");
                 }
                 return 0;
             }

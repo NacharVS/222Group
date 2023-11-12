@@ -3,30 +3,33 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using unit.items;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UnitsDrafts.unit.items
 {
-    
     internal class Sword : Weapon
     {
         private Weapon _weapon;
         double CritDamage = 1.5;
         double CritChance = 20;
-        public Sword() : base(2, 7, 8, 100) 
+        public Sword() : base(2, 7, 8, 100, 12) 
         {             
         }
         public override double Hit(Unit unit)
         {      
             if (Durability >= 0) 
             {
-                Durability = Durability - 2;
+                Durability -= 2;
+                Console.WriteLine(Durability);
                 double damage = new Random().Next(MinDamage, MaxDamage);
                 var y = new Random().Next(1, 100);
                 if (Accuracy >= y)
                 {
+                    damage += level * 5;
                     var x = new Random().Next(1, 100);
                     if (x <= CritChance)
                     {
@@ -34,7 +37,7 @@ namespace UnitsDrafts.unit.items
                         Console.WriteLine("Выпал Крит!!!");
                         return damage;                
                     }
-                    return damage * Durability_check();
+                    return damage * DurabilityCheck();
                 }
                 else
                 {
@@ -44,7 +47,7 @@ namespace UnitsDrafts.unit.items
             }
             else
             {
-                Console.WriteLine("Оружие сломалось");
+                Console.WriteLine("Оружие сломалось!");
                 return 0;
             }        
         }

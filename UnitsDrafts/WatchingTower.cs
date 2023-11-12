@@ -39,16 +39,14 @@ namespace UnitsDrafts
                     Console.WriteLine("Хотите ударить Арчера? Нажмите 2");
                 }
             }
-
             Console.WriteLine("Максимальное улучшение");
         }
         int damage = 10;
         public void TowerDamage(Unit unit) 
         {
-            unit.Health = unit.Health - damage * ArcherCount;
-            Console.WriteLine($"Вашему герою нанесено {damage} урона");
+            int DamageFix = damage * ArcherCount;
+            unit.Health = unit.Health - DamageFix;
+            Console.WriteLine($"Вашему герою нанесено {DamageFix} урона");
         }
     }
 }
-
-

@@ -3,39 +3,84 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unit.items;
+using UnitsDrafts.unit.items;
 
 namespace UnitsDrafts
 {
     internal class Fight
     {
-        public static int fight_count = 0;
+        public static int FightCount = 0;
         public static void Duel(Unit unit1, Unit unit2)
         {
+            List<Weapon> weapons = new List<Weapon>() { new Sword(), new Axe(), new Mace(), new Bow() };
+            List<Weapon> weaponss = new List<Weapon>() { new Sword(), new Axe(), new Mace(), new Bow() };
             if (unit1.Alive && unit2.Alive)
             {
-
-                List<Unit> duel_spisok = new List<Unit>() { unit1, unit2 };
-                List<Unit> duel_spisokRev = new List<Unit>() { unit2, unit1 };
-                fight_count = 0;
+                FightCount = 0;
                 while (true)
                 {
                     if (unit1.Alive && unit2.Alive)
                     {
                         Stat.StatusCheck(unit1);
                         Stat.StatusCheck(unit2);
-                        Console.WriteLine($"{fight_count} ход");
+                        Console.WriteLine($"{FightCount} ход");
                         for (int i = 0; i < 2; i++)
                         {
                             Console.WriteLine("====================================");
-                            Console.WriteLine($"Ход {duel_spisok[i].Name}");
+                            Console.WriteLine($"Ход {unit1.Name}");
                             Console.WriteLine("====================================");
                             Console.WriteLine("Выберите оружие:");
                             Console.WriteLine("1.Sword");
                             Console.WriteLine("2.Axe");
                             Console.WriteLine("3.Mace");
                             Console.WriteLine("4.Bow");
-                            duel_spisok[i].DealDamage(duel_spisokRev[i]);
-                            fight_count++;
+                            int f = Convert.ToInt32(Console.ReadLine());
+                            if (f == 1)
+                            {
+                                unit1._weapon = weapons[0];
+                            }
+                            if (f == 2)
+                            {
+                                unit1._weapon = weapons[1];
+                            }
+                            if (f == 3)
+                            {
+                                unit1._weapon = weapons[2];
+                            }
+                            if (f == 4)
+                            {
+                                unit1._weapon = weapons[3];
+                            }
+                            unit1.DealDamage(unit2);
+                            FightCount++;
+                            Console.WriteLine("====================================");
+                            Console.WriteLine($"Ход {unit2.Name}");
+                            Console.WriteLine("====================================");
+                            Console.WriteLine("Выберите оружие:");
+                            Console.WriteLine("1.Sword");
+                            Console.WriteLine("2.Axe");
+                            Console.WriteLine("3.Mace");
+                            Console.WriteLine("4.Bow");
+                            f = Convert.ToInt32(Console.ReadLine());
+                            if (f == 1)
+                            {
+                                unit2._weapon = weaponss[0];
+                            }
+                            if (f == 2)
+                            {
+                                unit2._weapon = weaponss[1];
+                            }
+                            if (f == 3)
+                            {
+                                unit2._weapon = weaponss[2];
+                            }
+                            if (f == 4)
+                            {
+                                unit2._weapon = weaponss[3];
+                            }
+                            unit2.DealDamage(unit1);
+                            FightCount++;
                         }
                     }
                     else

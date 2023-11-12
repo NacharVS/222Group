@@ -9,9 +9,9 @@ namespace UnitsDrafts.unit.items
 {
     internal class Axe : Weapon
     {
-        public int BleedChance = 100;
+        public int BleedChance = 30;
         public int BleedDamage = 1;
-        public Axe() : base(3, 9, 6, 70) 
+        public Axe() : base(3, 9, 6, 70, 14) 
         { 
         }
         public override double Hit(Unit unit)
@@ -22,12 +22,13 @@ namespace UnitsDrafts.unit.items
                 double damage = new Random().Next(MinDamage, MaxDamage);
                 var x = new Random().Next(1, 100);
                 if (Accuracy >= x)
-                {            
+                {
+                    damage += level * 5;
                     if (x <= BleedChance)
                     {
                         unit.BloodLoss = true;
                     }
-                    return damage * Durability_check();
+                    return damage * DurabilityCheck();
                 }
                 else
                 {

@@ -9,12 +9,13 @@ namespace unit.items
 {
     internal class Weapon
     {
-        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
+        public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
         {           
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
+            Durability = durability;
         }
         public int MinDamage { get; set; }
 
@@ -24,17 +25,19 @@ namespace unit.items
 
         public int Accuracy { get; set; }
 
-        public int Durability = 100;
+        public int Durability { get; set; }
 
         public bool Alive = true;
 
-        public double Durability_check()
+        public int level = 0;
+
+        public double DurabilityCheck()
         {
-            if (Durability >= 70)
+            if (Durability >= 7)
             {
                 return 1;
             }
-            else if (Durability >= 40)
+            else if (Durability >= 4)
             {
                 return 0.7;
             }
@@ -55,10 +58,11 @@ namespace unit.items
             var x = new Random().Next(1, 100);
             if (Durability > 0)
             {
+                
                 if (x <= Accuracy)
                 {
                     double damage = new Random().Next(MinDamage, MaxDamage);
-                    return damage * Durability_check();
+                    return damage * DurabilityCheck();
                 }
                 else 
                 {
@@ -67,6 +71,22 @@ namespace unit.items
             }
             Console.WriteLine("Оружие сломалось");
             return 0;           
+        }
+
+        public void LevelUp()
+        {
+            if (level < 5)
+            {
+                level++;
+                MinDamage += 2;
+                MaxDamage += 3;
+                Durability += 5;
+                Accuracy += 10;
+            }
+            else
+            {
+                Console.WriteLine("у вас макс уровень");
+            }
         }
     }
 }

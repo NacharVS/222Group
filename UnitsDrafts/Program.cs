@@ -1,5 +1,8 @@
 ﻿using System.Runtime.Serialization.Formatters.Binary;
+using unit.items;
 using UnitsDrafts;
+using UnitsDrafts.unit.items;
+Sword sw1 = new Sword();
 Footman footman = new Footman();
 Footman ft1 = new Footman();
 Footman ft2 = new Footman();
@@ -41,7 +44,7 @@ switch (a)
         ft2.BaseInfo();
         break;
 
-    case 3:        
+    case 3:
         peasant.BaseInfo();
         ft1.InflictDamage(peasant);
         peasant.BaseInfo();
@@ -55,26 +58,26 @@ switch (a)
         peasant.BaseInfo();
         break;
     case 4:
-        
-    var foot1 = barracs.CreateFootman();
-    var arch1 = barracs.CreateArcher();
-    var bish1 = ratusha.CreateBishop();
-    var peas1 = ratusha.CreatePeasant();
 
-    foot1.BaseInfo();
-    arch1.BaseInfo();
-    bish1.BaseInfo();
-    peas1.BaseInfo();
+        var foot1 = barracs.CreateFootman();
+        var arch1 = barracs.CreateArcher();
+        var bish1 = ratusha.CreateBishop();
+        var peas1 = ratusha.CreatePeasant();
 
-    Stat.ShowInfo();     
-    break;
+        foot1.BaseInfo();
+        arch1.BaseInfo();
+        bish1.BaseInfo();
+        peas1.BaseInfo();
+
+        Stat.ShowInfo();
+        break;
 
     case 5:
         ft2.InflictDamage(ft1);
         ft1.BaseInfo();
         bishop.HealSomebody(ft1);
         ft1.BaseInfo();
-        bishop.Remainder(); 
+        bishop.Remainder();
         bishop.HealSomebody(ft1);
         ft1.BaseInfo();
         bishop.Remainder();
@@ -97,12 +100,12 @@ switch (a)
         break;
 
     case 7:
-        watchingTower.Garrison();  
+        watchingTower.Garrison();
         watchingTower.TowerDamage(archer);
         archer.BaseInfo();
         break;
-        
-    case 8:      
+
+    case 8:
         //footman.Damage(peasant);
         //peasant.BaseInfo();
         //footman.Damage(peasant);
