@@ -17,7 +17,7 @@ namespace unit.Items
         {
 
         }
-        int CritChance = 30;
+        int CritChance = 10;
         public override double Hit(Unit unit)
         {
 
@@ -35,7 +35,7 @@ namespace unit.Items
                     if (x <= CritChance)
                     {
                         unit.Stun = true;
-                        
+                        Console.WriteLine($"{unit.Name} оглушил противника");
                     }
                     
                     return Damage * DurabilityQuality();

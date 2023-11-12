@@ -12,11 +12,11 @@ namespace unit
     {
         private int _mana;
         public Bishop(string name, int maxHealth, int speed, int mana, int damage, int defence)
-            : base(name, maxHealth, speed,damage, defence  )
+            : base(name, maxHealth, speed, defence  )
         {
             _mana = mana;
         }
-        public Bishop() : base("bishop", 0, 20, 1, 4)
+        public Bishop() : base("bishop", 0, 20, 4)
         {
             _mana = 19;
         }

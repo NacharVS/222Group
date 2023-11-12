@@ -14,13 +14,13 @@ namespace unit
         private int _armor;
 
         public Archer(string name, int maxHealth, int speed, int damage, int defence, int armor)
-             : base(name, maxHealth, speed, damage, defence)
+             : base(name, maxHealth, speed, defence)
         {
             _armor = armor;
         }
 
 
-        public Archer() : base("Archer", 50, 15, 9, 4)
+        public Archer() : base("Archer", 50, 15, 4)
         {
             _armor = 3;
         }
@@ -54,31 +54,40 @@ namespace unit
         {
             if (Alive)
             {
-                if (unit.Alive)
+                if (Stun)
                 {
-                    if (unit.Health > 0)
-                    {
-                        unit.Health = unit.Health - Damage;
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine($"{Name} сделал выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
-
-
-                        Console.ResetColor();
-
-                    }
-
-
-                    if (unit.Health <= 0)
-                    {
-                        Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
-                        Stat.KilledQuant++;
-                        unit.Alive = false;
-
-                    }
+                    Console.WriteLine($"{Name} оглушен");
+                    unit.Stun = false;
                 }
                 else
                 {
-                    Console.WriteLine("Юнит мертв");
+                    if (unit.Alive)
+                    {
+                        if (unit.Health > 0)
+                        {
+                            unit.Health = unit.Health - Damage;
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine($"{Name} сделал выстрел, здоровье противника: {unit.Health}/{unit.MaxHealth} ");
+
+
+                            Console.ResetColor();
+
+                        }
+
+
+                        if (unit.Health <= 0)
+                        {
+                            Console.WriteLine("Вы не можете больше стрелять так как противник мертв");
+                            Stat.KilledQuant++;
+                            unit.Alive = false;
+
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Юнит мертв");
+                    }
+                    
                 }
             }
             else

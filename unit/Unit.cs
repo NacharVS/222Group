@@ -16,24 +16,25 @@ namespace unit
         private int _damage;
         private int _defence;
         private bool _alive = true;
+        private bool _blodloss = false;
         private bool _stun = false;
         private Weapon _weapon;
 
 
         public Unit(string name, int maxHealth,
-            int speed, int damage, int defence)
+            int speed, int defence)
         {
             _name = name;
             _health = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
-            _damage = damage;
+           
             _defence = defence;
-
+            
         }
-        public Weapon Weapon 
-        { 
-            get { return _weapon; } 
+        public Weapon Weapon
+        {
+            get { return _weapon; }
             set { _weapon = value; }
         }
         public bool Stun
@@ -41,7 +42,11 @@ namespace unit
             get { return _stun; }
             set { _stun = value; }
         }
-
+        public bool Blodloss
+        {
+            get { return _blodloss; }
+            set { _blodloss = value; }
+        }
         public bool Alive
         {
             get { return _alive; }
@@ -75,14 +80,25 @@ namespace unit
             get { return _health; }
             set
             {
+
                 if (value < 0)
                 {
                     _health = 0;
                     _alive = false;
+
                 }
                 if (_health <= 0)
                 {
                     _alive = false;
+                }
+                if (Blodloss)
+                {
+                    if(_health > 0)
+                    {
+                        _health -= 1;
+                        Console.WriteLine($"bleeding, health{_health}");
+                        _health = value;
+                    }
                 }
                 else
                     _health = value;
@@ -106,9 +122,9 @@ namespace unit
                 {
                     if (unit.Alive)
                     {
-                        if(Weapon.Alive)
+                        if (Weapon.Alive)
                         {
-                            
+
                         }
                     }
                     else
@@ -120,10 +136,12 @@ namespace unit
             else
             {
                 Console.WriteLine($"{Name} не может атаковать , он мертв");
-                
+
             }
 
+
         }
+
 
         public virtual void BaseInfo()
 
@@ -160,6 +178,6 @@ namespace unit
 
 
 
-    
+
 }
 

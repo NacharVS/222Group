@@ -12,22 +12,25 @@ namespace unit
     {
 
         private int _armor;
-        private Weapon _weapon;
+        
         public Footman(string name, int maxHealth, int speed, int damage, int defence, int armor)
-            : base(name, maxHealth, speed, damage, defence)
+            : base(name, maxHealth, speed, defence)
         {
             _armor = armor;
-            _weapon = new Mace();
+            Weapon = new Axe();
+            Stat.FootmanQuant++;
+            Stat.LiveQuant++;
+            
         }
+        //public Weapon Weapon
+        //{
+        //    get { return _weapon; }
+        //    set
+        //    {
+        //        _weapon = value;
+        //    }
+        //}
 
-        public Footman() : base("Footman", 50, 11, 10, 7)
-        {
-            _armor = 3;
-            _weapon = new Axe();
-
-        }
-
-        
         public int Armor
         {
             get { return _armor; }
@@ -54,7 +57,7 @@ namespace unit
 
                         if (unit.Health > 0)
                         {
-                            var Damage = _weapon.Hit(unit);
+                            var Damage = Weapon.Hit(unit);
                             unit.Health -= Damage;
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine($"{Name} сделал выстрел, здоровье {unit.Name}: {unit.Health}/{unit.MaxHealth} ");
@@ -72,6 +75,7 @@ namespace unit
                         {
 
                             Stat.KilledQuant++;
+                            Stat.LiveQuant--;
                             unit.Alive = false;
                             Console.WriteLine($"{Name} не может больше стрелять так как {unit.Name} мертв");
 
@@ -82,7 +86,7 @@ namespace unit
                     }
                     else
                     {
-                        Console.WriteLine("Юнит мертв");
+                        Console.WriteLine($"{unit.Name} мертв");
                     }
                 }
             }
