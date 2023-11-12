@@ -18,7 +18,7 @@ namespace UnitsDrafts
         public override void DealDamage(Unit unit)
         {
             double Rage_damage = 0;
-            if (Health < MaxHealth*0.4 )
+            if (Health < MaxHealth * 0.4 )
             {
                 Console.WriteLine();
                 Rage_damage += Damage * 0.5;
