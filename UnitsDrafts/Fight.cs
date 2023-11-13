@@ -17,9 +17,16 @@ namespace UnitsDrafts
             Console.WriteLine("Выберите либо Мечник или Лучник");
             if (vibor1 == "Лучник")
             {
-                List<Unit> list = new List<Unit>();
-                list.Add(Barracs.CreateArch());
+                Archer adelianpodsos = new Archer("adelian lox", 40, 11, false);
+                Console.WriteLine($"Ваш раб готов к битве и его имя{adelianpodsos.Name}");
+
             }
+            else
+            {
+                Footman adellol = new Footman("adelian lox", 60, 10, true);
+                Console.WriteLine($"Ваш раб готов к битве и его имя{adellol.Name}");
+            }
+
         }
         
     }

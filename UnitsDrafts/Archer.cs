@@ -5,7 +5,11 @@ namespace UnitsDrafts
 {
     internal class Archer : Unit
     {
-        public Archer() : base("Archer", 40, 11, true)
+
+        public Archer(string name, int maxHealth, int speed, bool armor) : base(name, maxHealth, speed, armor)
+        {
+        }
+        public Archer() : base("archer", 40, 11, false)
         {
         }
         public int RageMode
@@ -15,7 +19,7 @@ namespace UnitsDrafts
             {
                 if (value < 40 && value > 0)
                 {
-                    Console.WriteLine("ЖИДКИЙ ПОНОС Я В ЯРОСТЕ");
+                    Console.WriteLine(" Я В ЯРОСТЕ");
                     Speed += 4;
                 }
 
