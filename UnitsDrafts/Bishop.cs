@@ -18,10 +18,11 @@ namespace UnitsDrafts
             set { _mana = value; }
         }
 
-        public void HealSomebody(Unit peasant)
+        public void HealSomebody(Unit peasant, int healCount)
         {
-            peasant.Health = peasant.Health + 2;
+            peasant.Health = peasant.Health + healCount;
             _mana -= 10;
+            Console.WriteLine("qq");
         }
         public void Ostatoc()
         {

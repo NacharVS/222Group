@@ -6,6 +6,9 @@ namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
+        public delegate void InflictDamageDelegate(Unit unit, int damage);
+
+        public InflictDamageDelegate inflictDamage;
         private int _defence;
 
         private Weapon _weapon;
@@ -24,15 +27,9 @@ namespace UnitsDrafts
 
         public void InflictDamage(Unit unit)
         {
-            var damage = _weapon.Hit();
-            if(damage <= 0)
-            {
-                Console.WriteLine("Miss");
-            }
-            else
-            {
-                unit.Health -= damage;
-            }
+            BaseInfo();
+            inflictDamage(unit, _weapon.Hit());
+            BaseInfo();
         }
 
     }
