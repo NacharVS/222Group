@@ -18,6 +18,7 @@ namespace Units_222_Draft.units
         {
             _maxmana = 100;
             _mana = _maxmana;
+            ClassName = "Bishop";
         }
         public int MaxMana
         {

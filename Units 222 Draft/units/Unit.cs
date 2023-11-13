@@ -5,7 +5,67 @@ namespace Units_222_Draft.units
 {
     internal class Unit
     {
+        public delegate void MovingDelegate();
+        public MovingDelegate moving;
+        public delegate void DealDamageDelegate(Unit unit);
+        public DealDamageDelegate dealDamage;
+
+        public void MovingMethod()
+        {
+            Run_Away_Count += (int)Speed;
+            Console.WriteLine($"{Name} двигается со скоростью {Speed}");
+            Console.WriteLine(Run_Away_Count);
+        }
+        public void DealDamageMethod(Unit unit)
+        {
+            float Damage = Weapon.Hit(unit);
+            float def_damage = Damage - unit.Defense;
+            if (def_damage < 0)
+            {
+                def_damage = 0;
+            }
+            Console.WriteLine($"{Name} нанес {def_damage} урона");
+            unit.Health = unit.Health - def_damage;
+            if (unit.Health <= 0)
+            {
+                Console.WriteLine($"{unit.Name} убит");
+                ++Stat.CorpseQuantity;
+                unit.Alive = false;
+            }
+            else
+            {
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
+        }
+        public void FootmanDealDamageMethod(Unit unit)
+        {
+            float Damage = Weapon.Hit(unit);
+            float Rage_damage = 0;
+            if (Health < MaxHealth * 0.4)
+            {
+                Console.WriteLine("===========================================");
+                Rage_damage += Damage * 0.5f;
+            }
+            float def_damage = Damage + Rage_damage - unit.Defense;
+            if (def_damage < 0)
+            {
+                def_damage = 0f;
+            }
+            Console.WriteLine($"{Name} нанес {def_damage} урона");
+            unit.Health -= def_damage;
+            if (unit.Health <= 0)
+            {
+                Console.WriteLine($"{unit.Name} убит");
+                ++Stat.CorpseQuantity;
+            }
+            else
+            {
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
+        }
+
         private string _name;// Имя юнита
+        private string _classname;
         private float _health; // Количество очков жизни на данный момент
         private float _defense; // Очки защиты
         private float _maxHealth; // Максимальное количество очков жизни
@@ -18,6 +78,11 @@ namespace Units_222_Draft.units
         {
             get { return _name; }
             set { _name = value; }
+        }
+        public string ClassName
+        {
+            get { return _classname; }
+            set { _classname = value; }
         }
         public float Speed
         {
@@ -95,9 +160,8 @@ namespace Units_222_Draft.units
                 }
                 else
                 {
-                    Run_Away_Count += (int)Speed;
-                    Console.WriteLine($"{Name} двигается со скоростью {Speed}");
-                    Console.WriteLine(Run_Away_Count);
+                    moving = MovingMethod;
+                    moving();
                 }
                 
             }
@@ -126,7 +190,6 @@ namespace Units_222_Draft.units
         // Метод нанесения урона
         public virtual void DealDamage(Unit unit)
         {
-            float Damage = Weapon.Hit(unit);
             if (Alive)
             {
                 if (Stunned)
@@ -139,23 +202,15 @@ namespace Units_222_Draft.units
                     {
                         if (Weapon.Alive)
                         {
-                            float def_damage = Damage - unit.Defense;
-                            if (def_damage < 0)
+                            if (ClassName == "Footman")
                             {
-                                def_damage = 0;
-                            }
-                            Console.WriteLine($"{Name} нанес {def_damage} урона");
-                            unit.Health = unit.Health - def_damage;
-                            if (unit.Health <= 0)
-                            {
-                                Console.WriteLine($"{unit.Name} убит");
-                                ++Stat.CorpseQuantity;
-                                unit.Alive = false;
+                                dealDamage = FootmanDealDamageMethod;
                             }
                             else
                             {
-                                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                                dealDamage = DealDamageMethod;
                             }
+                            dealDamage(unit);
                         }
                         else
                         {

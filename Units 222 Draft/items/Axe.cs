@@ -38,8 +38,8 @@ namespace Units_222_Draft.items
             }
             else
             {
-                    Console.WriteLine("Не попал");
-                    return 0;
+                Console.WriteLine("Не попал");
+                return 0;
             }
             }
             else

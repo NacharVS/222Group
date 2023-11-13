@@ -8,6 +8,7 @@ namespace Units_222_Draft.units
         public Peasant() : base("Peasant", 30, 0, 7)
         {
             Weapon = new Nothing();
+            ClassName = "Peasant";
         }
     }
 }

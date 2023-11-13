@@ -29,11 +29,14 @@ namespace Units_222_Draft.Stats
         {
             StunCheck(unit);
             BloodLoss(unit);
-            //тут идет чек всех статутсов типа стана и кровотека -  
+            //тут идет чек всех статутсов из разряда стана и кровотека -  
             //если они вышли за рамки количества ходов - остановить
             // статус чек идет перед каждым действием , раньше проверки  if (alive)
         }
-        
+        static void MethodVar1(Unit unit)
+        {
+            Stat.BloodLoss(unit); 
+        }
         public static void Stun(Unit unit)
         {
             StunCount = Fight.fight_count + 2;
