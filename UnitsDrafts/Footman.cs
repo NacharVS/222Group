@@ -42,6 +42,11 @@
             unit.Health = unit.Health - _damage;
         }
 
+        public void RageMode()
+        { 
+        
+        }
+
         public override void ShowInfo()
         {
             Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Damage: {Damage} Defence: {Defence}");
