@@ -21,10 +21,9 @@ namespace UnitsDrafts.unit.items
         }
         public override double Hit(Unit unit)
         {      
-            if (Durability >= 0) 
+            if (Durability > 0) 
             {
                 Durability -= 2;
-                Console.WriteLine(Durability);
                 double damage = new Random().Next(MinDamage, MaxDamage);
                 var y = new Random().Next(1, 100);
                 if (Accuracy >= y)

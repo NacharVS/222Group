@@ -2,20 +2,31 @@
 using unit.items;
 using UnitsDrafts;
 using UnitsDrafts.unit.items;
-Sword sw1 = new Sword();
 Footman footman = new Footman();
 Footman ft1 = new Footman();
 Footman ft2 = new Footman();
 Peasant peasant = new Peasant();
 Peasant peasant1 = new Peasant();
 peasant.Name = "Эмиль";
-peasant1.Name = "Данёк";
+peasant1.Name = "Рамиль";
 Archer archer = new Archer();
 Bishop bishop = new Bishop();
 Barracs barracs = new Barracs();
 Ratusha ratusha = new Ratusha();
 WatchingTower watchingTower = new WatchingTower();
 
+//footman.inflictDamage = MethodVar1;
+//footman.inflictDamage += MethodVar2;
+//footman.InflictDamage(peasant);
+//static void MethodVar1(Unit unit, double damage)
+//{
+//    Console.WriteLine($"{unit.Name} took {damage} and took stun");
+//}
+
+//static void MethodVar2(Unit unit, double damage)
+//{
+//    Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
+//}
 
 Console.WriteLine("Введите номер того, чего хотите сделать");
 Console.WriteLine("1.Спид");
@@ -27,6 +38,7 @@ Console.WriteLine("6.Файт");
 Console.WriteLine("7.Башня с тремя лучниками");
 Console.WriteLine("8.Оружия");
 Console.WriteLine("9.Файт с оружиями");
+Console.WriteLine("10.Делегаты");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -73,17 +85,17 @@ switch (a)
         break;
 
     case 5:
-        ft2.InflictDamage(ft1);
-        ft1.BaseInfo();
-        bishop.HealSomebody(ft1);
-        ft1.BaseInfo();
-        bishop.Remainder();
-        bishop.HealSomebody(ft1);
-        ft1.BaseInfo();
-        bishop.Remainder();
-        bishop.HealSomebody(ft1);
-        ft1.BaseInfo();
-        bishop.Remainder();
+        //ft2.InflictDamage(ft1);
+        //ft1.BaseInfo();
+        //bishop.HealSomebody(ft1);
+        //ft1.BaseInfo();
+        //bishop.Remainder();
+        //bishop.HealSomebody(ft1);
+        //ft1.BaseInfo();
+        //bishop.Remainder();
+        //bishop.HealSomebody(ft1);
+        //ft1.BaseInfo();
+        //bishop.Remainder();
         break;
 
     case 6:
@@ -125,6 +137,24 @@ switch (a)
         break;
     case 9:
         Fight.Duel(peasant, peasant1);
+        break;
+
+    case 10:
+        footman.inflictDamage = MethodVar1;
+        footman.inflictDamage += MethodVar2;
+        footman.inflictDamage += bishop.HealSomebody;
+        //footman.inflictDamage += watchingTower.TowerDamage;
+        footman.InflictDamage(peasant);
+        
+        static void MethodVar1(Unit unit, double damage)
+        {
+            Console.WriteLine($"{unit.Name} took {damage} and took stun");
+        }
+
+        static void MethodVar2(Unit unit, double damage)
+        {
+            Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
+        }
         break;
 }
 

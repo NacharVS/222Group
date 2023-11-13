@@ -27,10 +27,11 @@ namespace UnitsDrafts
             set { _mana = value; }
         }
 
-        public void HealSomebody(Unit peasant)
+        public void HealSomebody(Unit peasant, double healCount)
         {
             peasant.Health = peasant.Health + 2;
             _mana -= 10;
+            Console.WriteLine("кк");
         }
         public void Remainder()
         {

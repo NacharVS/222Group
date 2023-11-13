@@ -10,6 +10,9 @@ namespace UnitsDrafts
 {
     internal class Peasant : Unit
     {
+        public delegate void InflictDamageDelegate(Unit unit, int damage);
+
+        public InflictDamageDelegate inflictDamage;
         private int _damage;
         private int _defence;
         private double _MaxHealth;
@@ -116,5 +119,11 @@ namespace UnitsDrafts
                 Console.WriteLine("Юнит не может атаковать, так как он мертв"); 
             }
         }
+        //public void InflictDamage(Unit unit)
+        //{
+        //    BaseInfo();
+        //    inflictDamage(unit, _weapon.Hit());
+        //    BaseInfo();
+        //}
     }
 }
