@@ -3,7 +3,6 @@
     internal class Footman : Unit
     {
         private int _damage;
-        private int _defence;
 
         public override int Health 
         { 
@@ -27,7 +26,7 @@
         public Footman() : base("Footman", 60, 10)
         {
             _damage = 13;
-            _defence = 2;
+            _defence = 0;
         }
 
         public int Damage
@@ -39,8 +38,22 @@
 
         public void InflictDamage(Unit unit)
         {
-            unit.Health = unit.Health - _damage;
-            Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            if (unit._defence >= 1) //Armour
+            {
+                unit.Health = unit.Health - (_damage / unit._defence);
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
+            else if (Health < MaxHealth * 4 / 10) // Rage
+            {
+                unit.Health = unit.Health - (_damage + (_damage / 2));
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
+            else
+            {
+                unit.Health = unit.Health - _damage;
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+            }
+
         }
 
         public override void ShowInfo()

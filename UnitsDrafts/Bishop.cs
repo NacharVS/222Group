@@ -29,19 +29,17 @@
                 }
 
              }
-            if (unit.Health < 0)
+            else if (unit.Health <= 0)
             {
                 Console.WriteLine("Your Unit was died, and bishop can't heal");
             }
-            if (_mana > 2)
+            else if (_mana <= 2)
             {
                 Console.WriteLine("Bishop don't have mana");
             }
-            else
-            {
-                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
-            }
+            
 
+              Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
 
 
         }

@@ -5,15 +5,18 @@
         private readonly string _name;
         private int _health;
         private int _maxHealth;
-        private int _speed;
+        public int _speed;
+        private int _damage;
+        public int _defence;
 
-        public Unit(string name, int maxHealth, 
-            int speed)
+
+        public Unit(string name, int maxHealth, int speed)
         {
             _name = name;
             _health = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
+        
         }
 
         public string Name => _name;       
@@ -28,16 +31,20 @@
 
         public virtual int Health
         {
+          
             get { return _health; }
             set 
-            { 
-                if(value < 0)
+            {
+
+                if (value < 0)
                 {
                     _health = 0;
                 }
                 else
                     _health = value; 
             }
+            
+                
         }
         public void Moving()
         {
