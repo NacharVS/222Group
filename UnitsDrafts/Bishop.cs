@@ -29,13 +29,14 @@ namespace UnitsDrafts
             get { return _mana; }
             set { _mana = value; }
         }
-        public void Healing(Unit unit)
+        public void Healing(Unit ac1, int heal)
         {
             if (_mana >= 10)
             {
                 if (unit.Health < unit.MaxHealth)
                 {
-                    unit.Health = unit.Health + 20;
+                    heal = 20;
+                    unit.Health = unit.Health + heal;
                     if (unit.Health > unit.MaxHealth)
                     {
                         unit.Health = unit.MaxHealth;

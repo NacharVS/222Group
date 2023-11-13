@@ -8,11 +8,13 @@
         private double _maxHealth;
         private double _speed;
         private double _damage;
+
         public string Name
         {
             get { return _name; }
             set { _name = value; }
         }
+
         public virtual double Speed
         {
             get { return _speed; }
@@ -30,6 +32,7 @@
             get { return _damage; }
             set { _damage = value; }
         }
+
         public virtual double Health 
         {
 
@@ -58,8 +61,9 @@
 
         public virtual void BaseInfo()
         {
-            Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Defense: {Defense} Speed {Speed}" );
+            Console.WriteLine($"Name: {Name} Health: {Health}/{MaxHealth} Defense: {Defense} Speed {Speed}" );
         }
+
         public Unit(string name, double maxHealth, double defense, double damage, double speed)
         {
             _name = name;
@@ -69,6 +73,7 @@
             _damage = damage;
             _speed = speed;
         }
+
         public virtual void DealDamage(Unit unit)
         {
             double def_damage = Damage - unit.Defense;

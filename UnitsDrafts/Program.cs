@@ -20,7 +20,7 @@ foreach (Weapon weapon in weapons)
 GnomeSort.GnomeSortWeapons(weapons);
 
 // Выводим оружие после сортировки
-Console.WriteLine("\n Оружие после сортировки:");
+Console.WriteLine("\nОружие после сортировки:");
 foreach (Weapon weapon in weapons)
 {
     Console.WriteLine($"Название: {weapon.WeapName}, Мин урон: {weapon.MinDamage}");
@@ -55,10 +55,10 @@ Peasant[] peasant = new Peasant[2]
    hall.CreatePeasant()
 };
 
-ftmn1.dealDamage = MethodVar1;
-ftmn1.dealDamage += MethodVar2;
-ftmn1.dealDamage += bshp1.Healing;
-ftmn1.DealDamage(peasant);
+ft1.dealDamage = MethodVar1;
+ft1.dealDamage += MethodVar2;
+ft1.dealDamage += bshp1.Healing;
+ft1.DealDamage(ac1);
 
 
 static void MethodVar1(Unit unit, int damage)
@@ -70,6 +70,8 @@ static void MethodVar2(Unit unit, int damage)
 {
     Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
 }
+
+Console.WriteLine("");
 
 Statistics.ShowStatistics();
 
@@ -99,7 +101,7 @@ while (true)
     }
     else if (choice == 2) 
     {
-        bp1.Healing(ft1);
+        bp1.Healing(ft1, 20);
     }
     else if (choice == 3) 
     {
