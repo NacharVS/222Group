@@ -39,6 +39,7 @@
                 if (value < 0)
                 {
                     _health = 0;
+                    Death();
                 }
                 else
                     _health = value; 
@@ -57,9 +58,9 @@
         }
         public void Death()
         {
-            if (_health < 0)
+            if (_health <= 0)
             {
-                Console.WriteLine($"Your Unit died, because he have {_health})");
+                Console.WriteLine($"Your Unit died, because he have {_health}");
                 _health = 0;
                 _maxHealth = 0;
                 _speed = 0;

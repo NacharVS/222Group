@@ -9,7 +9,7 @@
 
         public static void ShowStatistics()
         {
-            Console.WriteLine($"Created Footman: {FootmanCount} Created Archer: {ArcherCount} Created Bishop: {BishopCount} Created Peasent: {PeasantCount}");
+            Console.WriteLine($"Создано копейщиков: {FootmanCount}\nСоздано лучников: {ArcherCount}\nСоздано лекарей: {BishopCount}\nСоздано крестьян: {PeasantCount}");
         }
     }
 }

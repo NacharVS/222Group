@@ -18,11 +18,10 @@
              : base(name, maxHealth, speed)
         {
             _damage = damage;
-            _speed = speed;
-
         }
         public Archer() : base("Archer", 40, 11)
         {
+          
             _damage = 15;
         }
         public void InflictDamage(Unit unit)
@@ -31,13 +30,6 @@
             {
                 unit.Health = unit.Health - (_damage / unit._defence);
                 Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
-            }
-            else if (Health < MaxHealth * 4 / 10) // Rage
-            {
-                unit.Health = unit.Health - _damage;
-                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
-                Console.WriteLine($"Скорость увеличина, теперь скорость: {Speed}");
-                _speed -= 4;
             }
             else
             {
