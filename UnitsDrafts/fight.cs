@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using unit.items;
@@ -27,6 +28,7 @@ namespace UnitsDrafts
                         Console.WriteLine($"{FightCount} ход");
                         for (int i = 0; i < 2; i++)
                         {
+                            
                             Console.WriteLine("====================================");
                             Console.WriteLine($"Ход {unit1.Name}");
                             Console.WriteLine("====================================");
@@ -52,7 +54,7 @@ namespace UnitsDrafts
                             {
                                 unit1._weapon = weapons[3];
                             }
-                            unit1.DealDamage(unit2);
+                            unit1.GiveDamage(unit2);
                             FightCount++;
                             Console.WriteLine("====================================");
                             Console.WriteLine($"Ход {unit2.Name}");
@@ -79,7 +81,7 @@ namespace UnitsDrafts
                             {
                                 unit2._weapon = weaponss[3];
                             }
-                            unit2.DealDamage(unit1);
+                            unit2.GiveDamage(unit1);
                             FightCount++;
                         }
                     }

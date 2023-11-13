@@ -49,11 +49,11 @@ switch (a)
         archer.BaseInfo();
         break;
     case 2:
-        ft1.BaseInfo();
-        ft2.InflictDamage(ft1);
-        ft1.BaseInfo();
-        ft1.InflictDamage(ft2);
-        ft2.BaseInfo();
+        //ft1.BaseInfo();
+        //ft2.InflictDamage(ft1);
+        //ft1.BaseInfo();
+        //ft1.InflictDamage(ft2);
+        //ft2.BaseInfo();
         break;
 
     case 3:
@@ -85,17 +85,14 @@ switch (a)
         break;
 
     case 5:
-        //ft2.InflictDamage(ft1);
-        //ft1.BaseInfo();
-        //bishop.HealSomebody(ft1);
-        //ft1.BaseInfo();
-        //bishop.Remainder();
-        //bishop.HealSomebody(ft1);
-        //ft1.BaseInfo();
-        //bishop.Remainder();
-        //bishop.HealSomebody(ft1);
-        //ft1.BaseInfo();
-        //bishop.Remainder();
+        ft2.InflictDamage(ft1);
+        ft1.BaseInfo();
+        bishop.HealSomebody(ft1);
+        ft1.BaseInfo();
+        bishop.HealSomebody(ft1);
+        ft1.BaseInfo();
+        bishop.HealSomebody(ft1);
+        ft1.BaseInfo();
         break;
 
     case 6:
@@ -140,21 +137,9 @@ switch (a)
         break;
 
     case 10:
-        footman.inflictDamage = MethodVar1;
-        footman.inflictDamage += MethodVar2;
-        footman.inflictDamage += bishop.HealSomebody;
-        //footman.inflictDamage += watchingTower.TowerDamage;
-        footman.InflictDamage(peasant);
-        
-        static void MethodVar1(Unit unit, double damage)
-        {
-            Console.WriteLine($"{unit.Name} took {damage} and took stun");
-        }
 
-        static void MethodVar2(Unit unit, double damage)
-        {
-            Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
-        }
+        footman.InflictDamage(archer);
+        archer.BaseInfo();
         break;
 }
 

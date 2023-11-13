@@ -25,7 +25,6 @@ namespace UnitsDrafts.unit.items
                 {
                     damage += level * 5;
                     var x = new Random().Next(1, 100);
-                    Console.WriteLine($"Вы нанесли {damage} урона");
                     if (x <= CritChance)
                     {
                          damage *= CritDamage;

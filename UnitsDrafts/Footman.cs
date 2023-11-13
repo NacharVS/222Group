@@ -8,10 +8,9 @@ namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
-        public delegate void InflictDamageDelegate(Unit unit, double damage);
+        public delegate void InflictDamageDelegate(Unit unit);
 
         public InflictDamageDelegate inflictDamage;
-        private int _defence;
 
         private int _damage;
 
@@ -21,85 +20,37 @@ namespace UnitsDrafts
         {
             _weapon = new Sword();
         }
-        public override void DealDamage(Unit unit)
+        public override void GiveDamage(Unit unit)
         {
-            int f = Convert.ToInt32(Console.ReadLine());
-            if (f == 1)
-            {
-                _weapon = new Sword();
-            }
-            if (f == 2)
-            {
-                _weapon = new Axe();
-            }
-            if (f == 3)
-            {
-                _weapon = new Mace();
-            }
-            if (f == 4)
-            {
-                _weapon = new Bow();
-            }
-            double damage = _weapon.Hit(unit);
-            if (Stun)
-            {
-                damage = 0;
-            }
-            if (Alive)
-            {
-                if (Stun)
-                {
-                    Console.WriteLine("Юнит оглушен - он не может атаковать. Damage = 0");
-                }
-                else
-                {
-                    if (unit.Alive)
-                    {
-                        Console.WriteLine($"{Name} нанес {damage} урона");
-                        unit.Health = unit.Health - damage;
-
-                        if (unit.Health <= 0)
-                        {
-                            Console.WriteLine($"{unit.Name} убит");
-                            unit.Alive = false;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("зачем ты атакуешь труп?");
-                    }
-                }
-
-            }
-            else { Console.WriteLine("Юнит не может атаковать - он мертв"); }
+            dealDamage = DealDamageMethod1;
+            dealDamage(unit);
         }
-        //public void InflictDamage(Unit unit)
-        //{
-        //    if (Health < 24)
-        //    {
-        //        _damage = _damage + _damage / 2;
-        //        unit.Health = unit.Health - _damage;
-        //        Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-        //        _damage = 15;
-        //    }
-        //    else if (Health >= 24)
-        //    {
-        //        _damage = 15;
-        //        unit.Health -= _damage;
-        //        Console.WriteLine($"Вашему герою нанесено {_damage} урона");
-        //        if (unit.Health < 0)
-        //        {
-        //            _damage = 0;
-        //            Console.WriteLine("Юнит убит");
-        //        }
-        //    }
-        //}
-
-        public void InflictDamage(Unit unit)
+        public void InflictDamageMethod(Unit unit)
         {
-            BaseInfo();
-            inflictDamage(unit, _weapon.Hit(unit));
-            BaseInfo();
+            if (Health < 24)
+            {
+                _damage = _damage + _damage / 2;
+                unit.Health = unit.Health - _damage;
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
+                _damage = 15;
+            }
+            else if (Health >= 24)
+            {
+                _damage = 15;
+                unit.Health -= _damage;
+                Console.WriteLine($"Вашему герою нанесено {_damage} урона");
+                if (unit.Health < 0)
+                {
+                    _damage = 0;
+                    Console.WriteLine("Юнит убит");
+                }
+            }
+        }
+
+        public void InflictDamage(Unit unit) 
+        {
+            inflictDamage = InflictDamageMethod;
+            inflictDamage(unit);
         }
     }
 }

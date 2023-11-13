@@ -5,7 +5,46 @@ namespace UnitsDrafts
 {
     internal class Unit 
     {
+        public void DealDamageMethod1(Unit unit)
+        {
+            double damage = _weapon.Hit(unit);
+            if (Alive)
+            {
+                if (Stun)
+                {
+                    Console.WriteLine("Юнит оглушен - он не может атаковать. Damage = 0");
+                }
+                else
+                {
+                    if (unit.Alive)
+                    {
+                        if (_weapon.Alive)
+                        {
+                            Console.WriteLine($"{Name} нанес {damage} урона");
+                            unit.Health = unit.Health - damage;
+                            Console.WriteLine($"У вас {unit.Health} здоровья");
+                            if (unit.Health <= 0)
+                            {
+                                Console.WriteLine($"{unit.Name} убит");
+                                unit.Alive = false;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("оружие сломано");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("труп");
+                    }
+                }
 
+            }
+        }
+
+        public delegate void DealDamageDelegate(Unit unit);
+        public DealDamageDelegate dealDamage;
         private int _damage;
         private int _defence;
         private string _name;
@@ -83,53 +122,10 @@ namespace UnitsDrafts
             get { return _defence; }
             set { _defence -= _damage; }
         }
-        public virtual void DealDamage(Unit unit)
+        public virtual void GiveDamage(Unit unit)
         {
-            int f = Convert.ToInt32(Console.ReadLine());
-            if (f == 1)
-            {
-                _weapon = new Sword();
-            }
-            if (f == 2)
-            {
-                _weapon = new Axe();
-            }
-            if (f == 3)
-            {
-                _weapon = new Mace();
-            }
-            if (f == 4)
-            {
-                _weapon = new Bow();
-            }
-            double damage = _weapon.Hit(unit);
-            if (Alive)
-            {
-                if (Stun)
-                {
-                    Console.WriteLine("Юнит оглушен, атака невозможна!");
-                }
-                else
-                {
-                    if (unit.Alive)
-                    {
-                            Console.WriteLine($"{Name} нанес {damage} урона");
-                            unit.Health = unit.Health - damage;
-                            Console.WriteLine($"У вас {unit.Health} здоровья");
-                        if (unit.Health <= 0)
-                        {
-                            Console.WriteLine($"{unit.Name} убит");
-                            unit.Alive = false;
-                        }         
-                    }
-                    else
-                    {
-                        Console.WriteLine("Нельзя бить труп");
-                    }
-                }
-
-            }
-            else { Console.WriteLine("Юнит не может атаковать, так как мёртв"); }
+            dealDamage = DealDamageMethod1;
+            dealDamage(unit);
         }
 
         public double MaxHealth { get => _maxHealth; }

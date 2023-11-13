@@ -10,9 +10,6 @@ namespace UnitsDrafts
 {
     internal class Peasant : Unit
     {
-        public delegate void InflictDamageDelegate(Unit unit, int damage);
-
-        public InflictDamageDelegate inflictDamage;
         private int _damage;
         private int _defence;
         private double _MaxHealth;
@@ -73,57 +70,10 @@ namespace UnitsDrafts
             Console.WriteLine($"Name:{Name} Health: {unit.Health}/{_MaxHealth} Defence: {_defence}");
         }
 
-        public override void DealDamage(Unit unit)
+        public override void GiveDamage(Unit unit)
         {
-            double damage = _weapon.Hit(unit);
-            if (Stun)
-            {
-                damage = 0;
-            }
-            if (Alive)
-            {
-                if (Stun)
-                {
-                    Console.WriteLine("Юнит оглушен - он не может атаковать. Damage = 0");
-                }
-                else
-                {
-                    if (unit.Alive)
-                    {
-                        if (_weapon.Alive)
-                        {
-                            Console.WriteLine($"{Name} нанес {damage} урона");
-                            unit.Health = unit.Health - damage;
-                            Console.WriteLine($"У вас {unit.Health} здоровья");
-                            if (unit.Health <= 0)
-                            {
-                                Console.WriteLine($"{unit.Name} убит");
-                                unit.Alive = false;
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("оружие сломано");
-                        }
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("труп");
-                    }
-                }
-
-            }
-            else 
-            { 
-                Console.WriteLine("Юнит не может атаковать, так как он мертв"); 
-            }
+            dealDamage = DealDamageMethod1;
+            dealDamage(unit);
         }
-        //public void InflictDamage(Unit unit)
-        //{
-        //    BaseInfo();
-        //    inflictDamage(unit, _weapon.Hit());
-        //    BaseInfo();
-        //}
     }
 }
