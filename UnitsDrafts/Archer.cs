@@ -6,10 +6,10 @@ namespace UnitsDrafts
     internal class Archer : Unit
     {
 
-        public Archer(string name, int maxHealth, int speed, bool armor) : base(name, maxHealth, speed, armor)
+        public Archer(string name, int maxHealth, int speed, bool armor) : base(name, maxHealth, speed, armor, null)
         {
         }
-        public Archer() : base("archer", 40, 11, false)
+        public Archer() : base("archer", 40, 11, false, null)
         {
         }
         public int RageMode

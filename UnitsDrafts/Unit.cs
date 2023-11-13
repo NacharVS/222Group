@@ -10,13 +10,15 @@ namespace UnitsDrafts
         private int _maxHealth;
         private int _speed;
         private bool _armor;
+        public Weapon Weapon;
 
-        public Unit(string name, int maxHealth, int speed, bool armor)
+        public Unit(string name, int maxHealth, int speed, bool armor, Weapon weapon)
         {
             _name = name;
             _health = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
+            Weapon = weapon;
         }
 
         public int Speed

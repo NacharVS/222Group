@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using static UnitsDrafts.Weapon;
+
 namespace UnitsDrafts
 {
     internal class Weapon
@@ -11,6 +13,8 @@ namespace UnitsDrafts
             Accuracy = accuracy; Durability = durability;
             Bleede = Bleed;
         }
+        public delegate void DamageDeligate(Unit unit, Weapon weapon);
+        DamageDeligate damage;
         public string WepName { get; set; }
         public int MinDamage { get; set; }
         public int MaxDamage { get; set; }
@@ -21,16 +25,17 @@ namespace UnitsDrafts
 
         public virtual int Hit(Unit unit)
         {
-            var x = new Random().Next(1, 101); if (Bleede = true && x <= Accuracy && Durability != 0)
+            var x = new Random().Next(1, 101);
+            if (Bleede = true && x <= Accuracy && Durability != 0)
             {
                 return new Random().Next(MinDamage, MaxDamage + 1);
-                Thread.Sleep(10000); 
-                for (int i = 5; i >= 0; i--) 
+                Thread.Sleep(10000);
+                for (int i = 5; i >= 0; i--)
                 {
                     return unit.Health = unit.Health - new Random().Next(1, 5);
 
                 }
-              
+
             }
             if (x <= Accuracy && Durability != 0)
             {
@@ -42,24 +47,24 @@ namespace UnitsDrafts
                 return 0;
             }
         }
-        public virtual int attackSS()
+        public virtual int attackSS(Unit unit)
         {
             if (AttackSpeed < 5)
             {
                 Console.WriteLine("Вы замохнулись оружием");
-                Thread.Sleep(10000); 
+                Thread.Sleep(10000);
                 Console.WriteLine("Вы попали");
-                return Hit();
+                return Hit(unit);
             }
             if (AttackSpeed < 15)
             {
                 Console.WriteLine("Вы замохнулись оружием");
-                Thread.Sleep(5000); 
-                Console.WriteLine("Вы попали"); 
-                return Hit();
+                Thread.Sleep(5000);
+                Console.WriteLine("Вы попали");
+                return Hit(unit);
             }
             else
-                return Hit();
+                return Hit(unit);
         }
 
     }

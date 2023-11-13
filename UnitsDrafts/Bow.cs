@@ -8,7 +8,7 @@ namespace UnitsDrafts
 {
     internal class Bow : Weapon
     {
-        public Bow() : base("Luk", 5, 10, 4, 95, 200)
+        public Bow() : base("Luk", 5, 10, 4, 95, 200, true)
         {
         }
     }

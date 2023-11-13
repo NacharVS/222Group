@@ -8,7 +8,7 @@ namespace UnitsDrafts
 {
     internal class Scepter : Weapon
     {
-        public Scepter() : base("Skiper", 4, 8, 6, 75, 400)
+        public Scepter() : base("Skiper", 4, 8, 6, 75, 400, false)
         {
         }
     }

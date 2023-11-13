@@ -46,6 +46,7 @@ var bishop1 = th.CreateBis();
 var peas = th.CreatePeas();
 Statistics.ShowStatistics();
 Sorting.gnome();
+Fight.Arenavoins();
 
 
 
