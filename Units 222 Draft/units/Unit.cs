@@ -16,6 +16,7 @@ namespace Units_222_Draft.units
             Console.WriteLine($"{Name} двигается со скоростью {Speed}");
             Console.WriteLine(Run_Away_Count);
         }
+        // самый обычный дамаг перешедший из прошлого кода
         public void DealDamageMethod(Unit unit)
         {
             float Damage = Weapon.Hit(unit);
@@ -37,6 +38,7 @@ namespace Units_222_Draft.units
                 Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
             }
         }
+        //нанесение урона специальное для footman ибо у него rage влияет на урон
         public void FootmanDealDamageMethod(Unit unit)
         {
             float Damage = Weapon.Hit(unit);
@@ -65,7 +67,7 @@ namespace Units_222_Draft.units
         }
 
         private string _name;// Имя юнита
-        private string _classname;
+        private string _classname;// Имя класса
         private float _health; // Количество очков жизни на данный момент
         private float _defense; // Очки защиты
         private float _maxHealth; // Максимальное количество очков жизни
@@ -202,6 +204,7 @@ namespace Units_222_Draft.units
                     {
                         if (Weapon.Alive)
                         {
+                            //В зависимости от класса разный способ нанесения урона
                             if (ClassName == "Footman")
                             {
                                 dealDamage = FootmanDealDamageMethod;
