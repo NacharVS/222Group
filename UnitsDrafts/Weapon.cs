@@ -4,6 +4,10 @@ namespace UnitsDrafts
 {
     internal class Weapon
     {
+        //делегат
+        //делегат делегат
+        //метод в который закидываешь метод
+        // и в завистимости от ситуации подставляешь разные методы в делегат
         public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability, bool Bleed)
         {
             WepName = name; MinDamage = minDamage;
