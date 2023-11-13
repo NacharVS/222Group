@@ -1,43 +1,44 @@
-﻿using System.Diagnostics.Metrics;
+﻿using System.ComponentModel.Design;
+using UnitsDrafts;
+using UnitsDrafts.Items;
 
 namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
-        int Count = 0;
-        public Footman(string name, int maxHealth, int defense, int damage, int speed)
-            : base(name, maxHealth, defense, damage, speed)
-        {
+        private int _defence;
 
-        }
-        public Footman() : base("Footman", 60, 10, 17, 5)
-        {
+        private Weapon _weapon;
 
+        public Footman() : base("Footman", 60, 5, 2, 6)
+        {
+            _weapon = new Sword();
         }
 
-        public override void DealDamage(Unit unit)
+        public int Defence 
         {
-            double Rage_damage = 0;
-            if (Health < MaxHealth * 0.4)
+            get {  return _defence; }
+            set { _defence = value; }
+        }
+
+
+        public void InflictDamage(Unit unit)
+        {
+            var damage = _weapon.Hit();
+            if(damage <= 0)
             {
-                Console.WriteLine();
-                Rage_damage += Damage * 0.5;
-            }
-            double def_damage = Damage + Rage_damage - unit.Defense;
-            if (def_damage < 0)
-            {
-                def_damage = 0;
-            }
-            Console.WriteLine($"{Name} dealed {def_damage} damage");
-            unit.Health = unit.Health - def_damage;
-            if (unit.Health <= 0)
-            {
-                Console.WriteLine("Unit died");
+                Console.WriteLine("Miss");
             }
             else
             {
-                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
+                unit.Health -= damage;
             }
         }
+
     }
 }
+
+
+//unit.Health = unit.Health - _damage;
+//unit.Defence -= _damage;
+//unit.Health = +Defence;

@@ -1,26 +1,36 @@
-﻿using System.Data;
-using System.Diagnostics.Metrics;
+﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
 
 namespace UnitsDrafts
 {
+
     internal class Archer : Unit
-    {
-        int Count = 0;
-        public Archer() : base("Archer", 40, 5, 15, 15)
+    {               
+        private int _speed;
+
+        public Archer(string name, int maxHealth, int defence, int damage, int speed) : base(name, maxHealth, defence, damage, speed)
         {
-            if (Health < MaxHealth * 0.4)
-            {
-                Speed += 4;
-            }
         }
+
+        public int Speed
+        {
+            get { return _speed; }
+            set { _speed = value; }
+        }
+
         public override void BaseInfo()
-        {
-            base.BaseInfo();
+        { 
+            if (Health < 16) 
+            {
+                _speed += 4;
+            }
+            else
+            {
+                _speed = 11;
+            }
+            Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Speed: {_speed} ");
         }
-        public override void Moving()
-        {
-            Console.WriteLine($"{Name} is moving with {Speed} speed");
-        }
-    }
+    } 
 }
