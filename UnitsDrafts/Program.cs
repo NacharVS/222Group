@@ -55,6 +55,22 @@ Peasant[] peasant = new Peasant[2]
    hall.CreatePeasant()
 };
 
+ftmn1.dealDamage = MethodVar1;
+ftmn1.dealDamage += MethodVar2;
+ftmn1.dealDamage += bshp1.Healing;
+ftmn1.DealDamage(peasant);
+
+
+static void MethodVar1(Unit unit, int damage)
+{
+    Console.WriteLine($"{unit.Name} took {damage} and took stun");
+}
+
+static void MethodVar2(Unit unit, int damage)
+{
+    Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
+}
+
 Statistics.ShowStatistics();
 
 Console.WriteLine("");

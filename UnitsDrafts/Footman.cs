@@ -4,6 +4,10 @@ namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
+        public delegate void DealDamageDelegate(Unit unit, int damage);
+
+        public DealDamageDelegate dealDamage;
+
         public Footman(string name, int maxHealth, int defense,int damage, int speed) 
             : base(name, maxHealth, defense, damage, speed)
         {
@@ -16,8 +20,15 @@ namespace UnitsDrafts
 
         public override void DealDamage(Unit unit)
         {
+            BaseInfo();
+            dealDamage(unit, _weapon.Hit());
+            BaseInfo();
+        }
+
+        public override void DealDamage(Unit unit)
+        {
             double Rage_damage = 0;
-            if (Health < MaxHealth*0.4 )
+            if (Health < MaxHealth * 0.4 )
             {
                 Console.WriteLine();
                 Rage_damage += Damage * 0.5;
