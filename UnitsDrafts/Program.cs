@@ -20,7 +20,7 @@ foreach (Weapon weapon in weapons)
 GnomeSort.GnomeSortWeapons(weapons);
 
 // Выводим оружие после сортировки
-Console.WriteLine("\nОружие после сортировки:");
+Console.WriteLine("\n Оружие после сортировки:");
 foreach (Weapon weapon in weapons)
 {
     Console.WriteLine($"Название: {weapon.WeapName}, Мин урон: {weapon.MinDamage}");
@@ -135,37 +135,3 @@ tower.AddArcher(new Archer());
 tower.AddArcher(new Archer());
 
 Console.WriteLine("Количество лучников в башне: " + tower.ArcherCount);
-
-//namespace UnitsDrafts
-//{
-//    public class Programm
-//    {
-//        public static void Main(string[] args)
-//        {
-//            // Создаем несколько объектов Weapon
-//            Weapon sword = new Weapon("Sword", 2, 6, 8, 80, 800);
-//            Weapon axe = new Weapon("Axe", 5, 10, 4, 60, 500);
-//            Weapon bow = new Weapon("Bow", 1, 4, 6, 70, 650);
-
-//            // Помещаем оружие в массив
-//            Weapon[] weapons = new Weapon[] { sword, axe, bow };
-
-//            // Выводим оружие до сортировки
-//            Console.WriteLine("Оружие до сортировки:");
-//            foreach (Weapon weapon in weapons)
-//            {
-//                Console.WriteLine($"Название: {weapon.WeapName}, Мин урон: {weapon.MinDamage}");
-//            }
-
-//            // Сортируем оружие по урону
-//            GnomeSort.GnomeSortWeapons(weapons);
-
-//            // Выводим оружие после сортировки
-//            Console.WriteLine("\nОружие после сортировки:");
-//            foreach (Weapon weapon in weapons)
-//            {
-//                Console.WriteLine($"Название: {weapon.WeapName}, Мин урон: {weapon.MinDamage}");
-//            }
-//        }
-//    }
-//}
