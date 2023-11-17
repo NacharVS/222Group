@@ -9,6 +9,9 @@
         public static int PeasantCount { get; set; } = 0;
 
         public static int TowerCount { get; set; } = 0;
+        
+        public static int SwordCount { get; set; } = 0;
+
 
         public static void ShowStatistics()
         {
