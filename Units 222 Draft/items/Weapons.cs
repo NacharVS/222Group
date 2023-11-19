@@ -10,17 +10,18 @@ namespace Units_222_Draft.items
         public int MaxDamage;// максимальный урон у оружия
         public int AttackSpeed;// скорость атаки (не используется но по ТЗ нужно)
         public int Accuracy;// точность
-        public int Durability = 100; // 
-        public bool Alive = true;
-        public string Name;
-        public float Level = 0;
+        public int Durability = 100; //прочность
+        public bool Alive = true;//не сломано ли оружие
+        public string Name;//название оружия
+        public float Level = 0;//уровень
 
         public Weapon(int minDamage, int maxDamage, int attackSpeed, int accuracy)
         {
             MinDamage = minDamage;//min|max damage на один меньше|больше чтобы был достигнут правильный интервал занчений
             MaxDamage = maxDamage;
-            AttackSpeed = attackSpeed;
-            Accuracy = accuracy;
+            AttackSpeed = attackSpeed;//я без понятия нахер это надо честно говоря , но оно есть и оно живое
+            Accuracy = accuracy;// Точность - чем больше значение этой переменной тем больше шанс
+                                //попадения по врагу
         }
         // метод который изменяет характеристики оружия в зависимости от прочности
         public float Durability_check()
@@ -39,6 +40,7 @@ namespace Units_222_Draft.items
             }
             else
             {
+                //  а точнее метод отвечаюший за степень поломки оружия
                 Alive = false;
                 Console.WriteLine("Оружие сломалось");
                 return 0;
@@ -49,12 +51,20 @@ namespace Units_222_Draft.items
         public virtual float Hit(Unit unit)
         {
             Durability--;
-            if (Durability > 0)
+            if (!Alive)
+            {
+                return 0;
+            }
+            else
             {
                 float CritChance = 20;
                 float CritDamage = 1;
                 int x = new Random().Next(1, 100);
-                if (x <= Accuracy)
+                if (x >= Accuracy)
+                {
+                    return 0;
+                }
+                else
                 {
                     float Damage = new Random().Next(MinDamage, MaxDamage);
                     Damage += Level * 5;
@@ -65,14 +75,6 @@ namespace Units_222_Draft.items
                     }
                     return Damage * Durability_check();
                 }
-                else
-                {
-                    return 0;
-                }
-            }
-            else
-            {
-                return 0;
             }
 
         }

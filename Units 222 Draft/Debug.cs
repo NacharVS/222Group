@@ -34,7 +34,7 @@ namespace UnitsDrafts
 }
 //public static void gnome()
 //{
-//    //Выводит список всвего оружия с сотрировкой от меньшего мин урона до большего
+//    //Выводит список всего оружия с сотрировкой от меньшего мин урона до большего
 //    Console.WriteLine("Гномья сортировка");
 
 //    Sword sword = new Sword(); Axe axe = new Axe(); Bow bow = new Bow(); Mace mace = new Mace();

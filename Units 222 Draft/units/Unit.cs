@@ -5,9 +5,9 @@ namespace Units_222_Draft.units
 {
     internal class Unit
     {
-        public delegate void MovingDelegate();
+        public delegate void MovingDelegate();//
         public MovingDelegate moving;
-        public delegate void DealDamageDelegate(Unit unit);
+        public delegate void DealDamageDelegate(Unit unit);//делегат движения
         public DealDamageDelegate dealDamage;
 
         public void MovingMethod()
@@ -192,17 +192,29 @@ namespace Units_222_Draft.units
         // Метод нанесения урона
         public virtual void DealDamage(Unit unit)
         {
-            if (Alive)
+            if (!Alive)
             {
+                Console.WriteLine("Юнит не может атаковать - он мертв");   
+            }
+            else {
                 if (Stunned)
                 {
                     Console.WriteLine("Юнит оглушен - он не может атаковать");
                 }
                 else
                 {
-                    if (unit.Alive)
+                    if (!unit.Alive)
                     {
-                        if (Weapon.Alive)
+                        Console.WriteLine("зачем ты атакуешь труп?");
+                    }
+                    else
+                    {
+                        if (!Weapon.Alive)
+                        {
+                            Console.WriteLine("Невозможно атаковать сломанным оружием");
+                            
+                        }
+                        else
                         {
                             //В зависимости от класса разный способ нанесения урона
                             if (ClassName == "Footman")
@@ -215,20 +227,9 @@ namespace Units_222_Draft.units
                             }
                             dealDamage(unit);
                         }
-                        else
-                        {
-                            Console.WriteLine("Невозможно атаковать сломанным оружием");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("зачем ты атакуешь труп?");
                     }
                 }
-                
             }
-            else { Console.WriteLine("Юнит не может атаковать - он мертв"); }
         }
-
     }
 }

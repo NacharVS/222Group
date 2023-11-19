@@ -8,6 +8,34 @@ namespace UnitsDrafts
     internal class Fight
     {
         public static int fight_count = 0;
+        public static void TeamCheck(List<Unit> Team1, List<Unit> Team2)
+        {
+            for (int i = 0; i < Team1.Count; i++)
+            {
+                Stat.StatusCheck(Team1[i]);
+                if (!Team1[i].Alive)
+                {
+                    Team1.Remove(Team1[i]);
+                }
+            }
+            for (int i = 0; i < Team2.Count; i++)
+            {
+                Stat.StatusCheck(Team2[i]);
+                if (!Team2[i].Alive)
+                {
+                    Team2.Remove(Team2[i]);
+                }
+            }
+        }
+        public static void TeamInfo(List<Unit> Team)
+        {
+            int i = 0;
+            foreach (Unit unit in Team) 
+            {
+                i++;
+                Console.WriteLine($"{i}) {unit.Name} Class: {unit.ClassName} HP: {unit.MaxHealth} / {unit.Health} Defense:{unit.Defense}");
+            }   
+        }
         public static void Duel(Unit unit1, Unit unit2)
         {
             if (unit1.Alive && unit2.Alive)
@@ -75,11 +103,55 @@ namespace UnitsDrafts
         }
         public static void War(List<Unit> Team1, List<Unit> Team2)
         {
-            Team1.Count();
-            Team2.Count();
+            Fight.fight_count = 0;
             while (true)
             {
+                Fight.TeamCheck(Team1, Team2);
                 
+                if(Team1.Count()==0 || Team2.Count()== 0)
+                {
+                    Console.WriteLine("==================================");
+                    Console.WriteLine();
+                    Console.WriteLine("Бой окончен");
+                    Console.WriteLine();
+                    Console.WriteLine("==================================");
+                    break;
+                }
+                else
+                {
+                    fight_count++;
+                    Console.WriteLine($"Ход : {fight_count}");
+                    Console.WriteLine("==================================");
+                    Console.WriteLine();
+                    Console.WriteLine("Ход команды номер 1");
+                    Console.WriteLine();
+                    Console.WriteLine("==================================");
+                    Console.WriteLine();
+                    foreach (Unit unit in Team1)
+                    {
+                        Console.WriteLine($"Атакует {unit.Name}");
+                        Console.WriteLine("Выбери кого атаковать");
+                        Fight.TeamInfo(Team2);
+                        int choice = Convert.ToInt32(Console.ReadLine());
+                        if (choice == null)
+                        unit.DealDamage(Team2[choice - 1]);
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("==================================");
+                    Console.WriteLine();
+                    Console.WriteLine("Ход команды номер 2");
+                    Console.WriteLine();
+                    Console.WriteLine("==================================");
+
+                    foreach (Unit unit in Team2)
+                    {
+                        Console.WriteLine($"Атакует {unit.Name}");
+                        Console.WriteLine("Выбери кого атаковать");
+                        Fight.TeamInfo(Team1);
+                        int choice = Convert.ToInt32(Console.ReadLine());
+                        unit.DealDamage(Team1[choice - 1]);
+                    }
+                }
             }
         }
     }
