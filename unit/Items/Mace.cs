@@ -36,6 +36,8 @@ namespace unit.Items
                     {
                         unit.Stun = true;
                         Console.WriteLine($"{unit.Name} оглушил противника");
+                        Thread.Sleep(1000);
+                        unit.Stun = false;
                     }
                     
                     return Damage * DurabilityQuality();

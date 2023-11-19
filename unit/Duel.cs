@@ -94,7 +94,7 @@ namespace unit
                     Console.WriteLine($" Первым атакует {unit1.Name} ");
                     unit1.BaseInfo();
                     unit2.BaseInfo();
-                    while (unit1.Alive && unit2.Alive)
+                    while ((unit1.Alive && unit2.Alive) &&( unit1.Health > 0 && unit2.Health>0))
                     {
                         unit1.InflictDamage(unit2);
                         unit2.InflictDamage(unit1);

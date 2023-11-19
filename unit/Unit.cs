@@ -19,8 +19,8 @@ namespace unit
         private bool _blodloss = false;
         private bool _stun = false;
         private Weapon _weapon;
-
-
+        public delegate void InflictDamageDelegate(Unit unit);
+        public InflictDamageDelegate inflictDamage;
         public Unit(string name, int maxHealth,
             int speed, int defence)
         {
@@ -87,18 +87,15 @@ namespace unit
                     _alive = false;
 
                 }
-                if (_health <= 0)
+                else if (Blodloss)
                 {
-                    _alive = false;
-                }
-                if (Blodloss)
-                {
-                    if(_health > 0)
+                    if (_health > 0)
                     {
                         _health -= 1;
                         Console.WriteLine($"bleeding, health{_health}");
                         _health = value;
                     }
+
                 }
                 else
                     _health = value;
@@ -109,7 +106,7 @@ namespace unit
         {
             Console.WriteLine($"{_name} is moving with {_speed} speed");
         }
-        public virtual void InflictDamage(Unit unit)
+        public virtual void InflictDamageMethod(Unit unit)
         {
             double Damage = Weapon.Hit(unit);
             if (Alive)
@@ -120,6 +117,7 @@ namespace unit
                 }
                 else
                 {
+                    Stun = false;
                     if (unit.Alive)
                     {
                         if (Weapon.Alive)
@@ -142,7 +140,11 @@ namespace unit
 
         }
 
-
+        public void InflictDamage(Unit unit)
+        {
+            inflictDamage = InflictDamageMethod;
+            inflictDamage(unit);
+        }
         public virtual void BaseInfo()
 
         {
@@ -172,6 +174,11 @@ namespace unit
 
             }
             Health += takedDamage;
+        }
+
+        public override string ToString()
+        {
+            return _name;
         }
     }
 

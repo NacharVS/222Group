@@ -12,7 +12,8 @@ namespace unit
     {
 
         private int _armor;
-
+        public delegate void InflictDamageDelegate(Unit unit);
+        public InflictDamageDelegate inflictDamage;
         public Archer(string name, int maxHealth, int speed, int damage, int defence, int armor)
              : base(name, maxHealth, speed, defence)
         {
@@ -50,7 +51,7 @@ namespace unit
         //            Health = value;
         //    }
         //}
-        public override void InflictDamage(Unit unit)
+        public override void InflictDamageMethod(Unit unit)
         {
             if (Alive)
             {
@@ -97,7 +98,11 @@ namespace unit
             }
 
         }
-       
+        public void InflictDamage(Unit unit)
+        {
+            inflictDamage = InflictDamageMethod;
+            inflictDamage(unit);
+        }
         public override void BaseInfo()
         {
             if (Health < MaxHealth * 0.4)

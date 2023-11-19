@@ -12,12 +12,13 @@ namespace unit
     {
 
         private int _armor;
-        
+        public delegate void InflictDamageDelegate(Unit unit);
+        public InflictDamageDelegate inflictDamage;
         public Footman(string name, int maxHealth, int speed, int damage, int defence, int armor)
             : base(name, maxHealth, speed, defence)
         {
             _armor = armor;
-            Weapon = new Axe();
+            Weapon = new Mace();
             Stat.FootmanQuant++;
             Stat.LiveQuant++;
             
@@ -41,8 +42,10 @@ namespace unit
         }
 
 
-        public override void InflictDamage(Unit unit)
+        public override void InflictDamageMethod(Unit unit)
         {
+
+            Console.WriteLine("были заюзаны делегаты");
             if (Alive)
             {
                 if (Stun)
@@ -73,14 +76,18 @@ namespace unit
                         }
                         if (unit.Health <= 0)
                         {
-
+                            unit.Alive = false;
                             Stat.KilledQuant++;
                             Stat.LiveQuant--;
                             unit.Alive = false;
                             Console.WriteLine($"{Name} не может больше стрелять так как {unit.Name} мертв");
 
                         }
-
+                        if(unit.Health == 0)
+                        {
+                            unit.Alive = false;
+                            
+                        }
 
 
                     }
@@ -99,6 +106,11 @@ namespace unit
 
         }
 
+        public void InflictDamage(Unit unit)
+        {
+            inflictDamage = InflictDamageMethod;
+            inflictDamage(unit);
+        }
         public virtual void ArmorTake(int armor)
         {
             armor = Armor;

@@ -11,6 +11,8 @@ namespace unit
     internal class Bishop : Unit
     {
         private int _mana;
+        public delegate void HealSomebodyDelegate(Unit unit);
+        public HealSomebodyDelegate healSomebody;
         public Bishop(string name, int maxHealth, int speed, int mana, int damage, int defence)
             : base(name, maxHealth, speed, defence  )
         {
@@ -34,9 +36,10 @@ namespace unit
             }
         }
 
-        public void HealSomebody(Unit unit)
+        public void HealSomebodyMethod(Unit unit)
         {
-            if(Alive)
+            Console.WriteLine("был заюзан делегат");
+            if (Alive)
             {
                 if (unit.Alive)
                 {
@@ -72,6 +75,13 @@ namespace unit
 
 
         }
+        
+        public void HealSomebody(Unit unit)
+        {
+            healSomebody = HealSomebodyMethod;
+            healSomebody(unit);
+        }
+        
         public void ManaInfo()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
