@@ -92,6 +92,13 @@ switch (a)
         archer.BaseInfo();
         break;
 
+    case 7:
+       
+
+
+
+        break;
+
 
 
 }

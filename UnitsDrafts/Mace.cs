@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class Maxe
+    internal class Mace
     {
     }
 }
