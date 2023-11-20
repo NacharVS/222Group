@@ -6,7 +6,6 @@
         private int _health;
         private int _maxHealth;
         private int _speed;
-
         public Unit(string name, int maxHealth, 
             int speed)
         {
@@ -35,10 +34,13 @@
                 {
                     _health = 0;
                 }
+
                 else
                     _health = value; 
             }
         }
+
+
 
         public void Moving()
         {
