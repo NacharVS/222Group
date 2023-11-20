@@ -11,32 +11,90 @@ namespace UnitsDrafts
     internal class Fight
      
     {
-        public Archer adelianzak = new Archer("adelian lox", 40, 11, false);
-        public Footman adeliangraves = new Footman("adelian lox", 60, 10, true);
-        
+        public Bow bowforgraves = new Bow();
+        public Sword swordforzak = new Sword();
+        public Archer zak = new Archer("zak", 40, 11, false);
+        public Footman graves = new Footman("graves", 60, 10, true);
+    
         public void Arenavoins()
         {
-            Console.WriteLine("Выберите либо Мечник или Лучник");
-            string vibor1 = Console.ReadLine();
-            if (vibor1 == "Лучник")
+            graves.Weapon = bowforgraves;
+            zak.Weapon = swordforzak;
+
+            Console.WriteLine("Выберите: 1.Мечник 2.Лучник");
+            var vibor1 = Convert.ToInt32(Console.ReadLine());
+            if (vibor1 == 1)
             {
-                Console.WriteLine($"Ваш раб готов к битве и его имя{adelianzak.Name}");
+                Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
             }
-            if (vibor1 == "Мечник")
+            else 
+            if (vibor1 == 2)
             {
-                Console.WriteLine($"Ваш раб готов к битве и его имя{adeliangraves.Name}");
+                Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
             }
             else
             {
                 Console.WriteLine("Такого нет");
-                return;
             }
             Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
             var vibor2 = Convert.ToInt32(Console.ReadLine());
-            if (vibor2 == 1)
+            if (vibor2 == 1 && vibor1 == 1)
             {
-                
+                graves.BaseInfo();
+                zak.BaseInfo();
+                zak.Weapon.attackSS(graves);
+                graves.BaseInfo();
+                Console.WriteLine("Вас атаковали в ответ!");
+                graves.Weapon.attackSS(zak);
+                zak.BaseInfo();
             }
+            else
+            if (vibor2 == 1 && vibor1 == 2)
+            {
+                graves.BaseInfo();
+                zak.BaseInfo();
+                graves.Weapon.attackSS(zak);
+                zak.BaseInfo();
+                Console.WriteLine("ВАс ударяют");
+                zak.Weapon.attackSS(graves);
+                graves.BaseInfo();
+            }
+            
+            else
+            if (vibor2 == 2)
+            {
+                Console.WriteLine("FF15");
+            }
+            else
+            {
+                return;
+            }
+            //if (vibor2 == 1 && vibor1 == 1)
+            //{
+            //    zak.Weapon.attackSS(graves);
+            //    Console.WriteLine("Вы нанесли урон, zak!");
+            //    graves.BaseInfo();
+            //    graves.Weapon.attackSS(zak);
+            //    Console.WriteLine("Вас атаковали в ответ!");
+            //    zak.BaseInfo();
+            //}
+            //else
+            //if (vibor2 == 1 && vibor1 == 2)
+            //{
+            //    graves.Weapon.attackSS(zak);
+            //    Console.WriteLine("Вы нанесли урон, graves!");
+            //    zak.Weapon.attackSS(graves);
+            //}
+            //else
+            //if (vibor2 == 2)
+            //{
+            //    Console.WriteLine("FF15");
+            //}
+            //else
+            //{
+            //    return;
+            //}
+
 
 
         }

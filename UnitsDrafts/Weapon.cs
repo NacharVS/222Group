@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using static UnitsDrafts.Weapon;
 
 namespace UnitsDrafts
 {
-    internal class Weapon
+    internal class Weapon 
     {
         //делегат
         //делегат делегат
@@ -12,9 +13,12 @@ namespace UnitsDrafts
         // и в завистимости от ситуации подставляешь разные методы в делегат
         public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability, bool Bleed)
         {
-            WepName = name; MinDamage = minDamage;
-            MaxDamage = maxDamage; AttackSpeed = attackSpeed;
-            Accuracy = accuracy; Durability = durability;
+            WepName = name;
+            MinDamage = minDamage;
+            MaxDamage = maxDamage;
+            AttackSpeed = attackSpeed;
+            Accuracy = accuracy; 
+            Durability = durability;
             Bleede = Bleed;
         }
         public delegate void DamageDeligate(Unit unit, Weapon weapon);
@@ -27,54 +31,56 @@ namespace UnitsDrafts
         public int Durability { get; set; }
         public bool Bleede { get; set; } = false;
 
-        public virtual int Hit(Unit unit)
-        {
-            var x = new Random().Next(1, 101);
-            if (Bleede = true && x <= Accuracy && Durability != 0)
-            {
-                return new Random().Next(MinDamage, MaxDamage + 1);
-                Thread.Sleep(10000);
-                for (int i = 5; i >= 0; i--)
-                {
-                    return unit.Health = unit.Health - new Random().Next(1, 5);
+        //public virtual int Hit(Unit unit)
+        //{
+        //    var x = new Random().Next(1, 101);
+        //    if (Bleede = true && x <= Accuracy && Durability != 0)
+        //    {
+        //        return new Random().Next(MinDamage, MaxDamage + 1);
+        //        Thread.Sleep(10000);
+        //        for (int i = 5; i >= 0; i--)
+        //        {
+        //            return unit.Health = unit.Health - new Random().Next(1, 5);
 
-                }
+        //        }
 
-            }
-            if (x <= Accuracy && Durability != 0)
-            {
-                Durability = Durability - 50;
-                return unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        public virtual int attackSS(Unit unit)
+        //    }
+        //    if (x <= Accuracy && Durability != 0)
+        //    {
+        //        Durability = Durability - 50;
+        //        return unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }
+        //}
+        public int attackSS(Unit unit)
         {
             if (AttackSpeed < 5)
             {
-                Console.WriteLine("Вы замохнулись оружием");
-                Thread.Sleep(10000);
-                Console.WriteLine("Вы попали");
+                Console.WriteLine("Вы замахнулись оружием");
+                Thread.Sleep(3000);
+                
                 var x = new Random().Next(1, 101);
                 if (Bleede = true && x <= Accuracy && Durability != 0)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
-                    Thread.Sleep(10000);
+                    Thread.Sleep(3000);
                     for (int i = 5; i >= 0; i--)
                     {
-                        return unit.Health = unit.Health - new Random().Next(1, 5);
-
+                        Thread.Sleep(1000);
+                        unit.Health = unit.Health - new Random().Next(1, 5);
+                        unit.BaseInfo();
                     }
+                    Console.WriteLine("Вы попали");
 
                 }
                 if (x <= Accuracy && Durability != 0)
                 {
                     Durability = Durability - 50;
-                    return unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
                 }
                 if (Durability == 0)
                 {
@@ -88,17 +94,18 @@ namespace UnitsDrafts
                 }
 
             }
-            if (AttackSpeed < 15)
+            if (AttackSpeed >= 5 && AttackSpeed < 15)
             {
                 Console.WriteLine("Вы замохнулись оружием");
-                Thread.Sleep(5000);
+                Thread.Sleep(1500);
                 Console.WriteLine("Вы попали");
                 var x = new Random().Next(1, 101);
                 if (Bleede = true && x <= Accuracy && Durability != 0)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
-                    Thread.Sleep(10000);
+                    unit.BaseInfo();
+                    Thread.Sleep(1500);
                     for (int i = 5; i >= 0; i--)
                     {
                         return unit.Health = unit.Health - new Random().Next(1, 5);
@@ -106,11 +113,13 @@ namespace UnitsDrafts
                     }
 
                 }
+                else
                 if (x <= Accuracy && Durability != 0)
                 {
                     Durability = Durability - 50;
                     return unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
                 }
+                else
                 if (Durability == 0)
                 {
                     Console.WriteLine("Оружие сломана");
@@ -123,6 +132,5 @@ namespace UnitsDrafts
                 }
             }return 0;
         }
-
     }
 }

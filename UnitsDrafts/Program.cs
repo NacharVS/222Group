@@ -1,10 +1,10 @@
 ﻿using UnitsDrafts;
 
-Footman ft1 = new Footman();
+Footman footman = new Footman();
 Footman ft12 = new Footman();
 Peasant peasant = new Peasant();    
 Archer archer = new Archer();
-Bishop bs1 = new Bishop(20, 20);
+Bishop bishop = new Bishop(20, 20);
 
 
 //ft1.InflictDamage(archer);
@@ -46,9 +46,19 @@ var bishop1 = th.CreateBis();
 var peas = th.CreatePeas();
 Statistics.ShowStatistics();
 Sorting.gnome();
-Fight.Arenavoins();
-
-
+forge forge = new forge();
+Bow bow = new Bow();
+Sword sword = new Sword();
+Scepter scepter = new Scepter();
+bishop.Weapon = scepter;
+footman.Weapon = sword;
+archer.Weapon = bow;
+scepter.SCEPUpgrade();
+scepter.SCEPUpgrade();
+scepter.SCEPUpgrade();
+Fight fight = new Fight();
+fight.Arenavoins();
+fight.bowforgraves.BowUpgrade();
 
 
 //bs1.HealSomebody(peasant);

@@ -4,7 +4,7 @@
     {
         private int _mana;
         private int _maxmana;
-        public Bishop(int mana, int maxmana) : base("Bishop", 60, 7, false)
+        public Bishop(int mana, int maxmana) : base("Bishop", 60, 7, false, null)
         {
             _mana = maxmana;
             _maxmana = maxmana;
