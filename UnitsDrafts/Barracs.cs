@@ -2,10 +2,20 @@
 {
     internal class Barracs
     {
-        public Footman CreateFootman()
+        public Footman CreateFoot()
         {
-            return new Footman();
+            Statistics.FootmansCount++;
+            Footman footman = new Footman();
+            return footman;
+
         }
 
+        public Archer CreateArch()
+        {
+            Statistics.ArchersCount++;
+            Archer archer = new Archer();
+            return archer;
+
+        }
     }
 }
