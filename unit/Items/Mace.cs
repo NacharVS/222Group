@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unit.units;
 
 namespace unit.Items
 {
@@ -34,10 +35,10 @@ namespace unit.Items
                     x = new Random().Next(1, 101);
                     if (x <= CritChance)
                     {
-                        unit.Stun = true;
+                        Stat.Stun(unit);
                         Console.WriteLine($"{unit.Name} оглушил противника");
                         Thread.Sleep(1000);
-                        unit.Stun = false;
+                        
                     }
                     
                     return Damage * DurabilityQuality();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unit.units;
 
 namespace unit.Items
 {
@@ -35,8 +36,8 @@ namespace unit.Items
                     if (x <= CritChance)
                     {
                         Damage = MaxDamage;
-                        unit.Blodloss = true;
-                        Console.WriteLine("Был нанесен критический удар, у противника началась кровотечение");
+                        Stat.Bloodloss(unit);
+                        Console.WriteLine($"Был нанесен критический удар, у {unit.Name} началась кровотечение");
                     }
                     return Damage * DurabilityQuality();
                 }

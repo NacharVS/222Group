@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using unit.units;
 
 namespace unit.Items
 {
@@ -36,7 +37,7 @@ namespace unit.Items
                     {
                         Damage = MaxDamage;
                         Damage = Damage * CritDamage;
-                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage}");
+                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage} с помощью лука");
                     }
                     return Damage * DurabilityQuality();
                 }

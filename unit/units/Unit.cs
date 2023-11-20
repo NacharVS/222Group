@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using unit.Items;
 
-namespace unit
+namespace unit.units
 {
     internal class Unit
     {
@@ -28,9 +28,9 @@ namespace unit
             _health = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
-           
+
             _defence = defence;
-            
+
         }
         public Weapon Weapon
         {
@@ -87,21 +87,56 @@ namespace unit
                     _alive = false;
 
                 }
-                else if (Blodloss)
-                {
-                    if (_health > 0)
-                    {
-                        _health -= 1;
-                        Console.WriteLine($"bleeding, health{_health}");
-                        _health = value;
-                    }
+                //else if (Blodloss)
+                //{
+                //    if (_health > 0)
+                //    {
+                //        _health -= 1;
+                //        Console.WriteLine($"bleeding, health{_health}");
+                //        _health = value;
+                //    }
 
-                }
+                //}
                 else
                     _health = value;
             }
         }
+        public void WeaponChoose(Unit unit)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{unit.Name}, Выберите оружие атаковать:\n" +
+                $"1. Axe\n" +
+                $"2. Sword\n" +
+                $"3. Mace\n" +
+                $"4. Bow");
+            Console.WriteLine();
+            int GunChoice = int.Parse(Console.ReadLine());
+            switch (GunChoice)
+            {
+                case 1:
+                    {
+                        unit.Weapon = new Axe();
+                    }
+                    break;
+                case 2:
+                    {
+                        unit.Weapon = new Sword();
+                    }
+                    break;
 
+                case 3:
+                    {
+                        unit.Weapon = new Mace();
+                    }
+                    break;
+
+                case 4:
+                    {
+                        unit.Weapon = new Bow();
+                    }
+                    break;
+            }
+        }
         public void Moving()
         {
             Console.WriteLine($"{_name} is moving with {_speed} speed");

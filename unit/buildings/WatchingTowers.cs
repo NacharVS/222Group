@@ -8,8 +8,9 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
 using unit.Items;
 using System.Reflection.Emit;
+using unit.units;
 
-namespace unit
+namespace unit.buildings
 {
     internal class WatchingTowers
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using unit.Items;
 
-namespace unit
+namespace unit.units
 {
     internal class Archer : Unit
     {
@@ -88,12 +88,12 @@ namespace unit
                     {
                         Console.WriteLine("Юнит мертв");
                     }
-                    
+
                 }
             }
             else
             {
-                
+
                 Console.WriteLine($"{Name} не может атаковать , он мертв");
             }
 

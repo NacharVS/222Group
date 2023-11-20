@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace unit
+namespace unit.units
 {
 
     internal class Bishop : Unit

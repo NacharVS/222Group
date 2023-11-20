@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using unit.Items;
 
-namespace unit
+namespace unit.units
 {
     internal class Footman : Unit
     {
@@ -21,7 +21,7 @@ namespace unit
             Weapon = new Mace();
             Stat.FootmanQuant++;
             Stat.LiveQuant++;
-            
+
         }
         //public Weapon Weapon
         //{
@@ -45,7 +45,6 @@ namespace unit
         public override void InflictDamageMethod(Unit unit)
         {
 
-            Console.WriteLine("были заюзаны делегаты");
             if (Alive)
             {
                 if (Stun)
@@ -83,10 +82,10 @@ namespace unit
                             Console.WriteLine($"{Name} не может больше стрелять так как {unit.Name} мертв");
 
                         }
-                        if(unit.Health == 0)
+                        if (unit.Health == 0)
                         {
                             unit.Alive = false;
-                            
+
                         }
 
 
@@ -111,6 +110,8 @@ namespace unit
             inflictDamage = InflictDamageMethod;
             inflictDamage(unit);
         }
+
+
         public virtual void ArmorTake(int armor)
         {
             armor = Armor;
