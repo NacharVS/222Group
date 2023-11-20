@@ -53,13 +53,15 @@ Scepter scepter = new Scepter();
 bishop.Weapon = scepter;
 footman.Weapon = sword;
 archer.Weapon = bow;
-scepter.SCEPUpgrade();
-scepter.SCEPUpgrade();
-scepter.SCEPUpgrade();
 Fight fight = new Fight();
-fight.Arenavoins();
 fight.bowforgraves.BowUpgrade();
-
+fight.bowforgraves.BowUpgrade();
+fight.bowforgraves.BowUpgrade();
+fight.swordforzak.SwordUpgrade();
+fight.swordforzak.SwordUpgrade(); 
+fight.swordforzak.SwordUpgrade();
+fight.swordforzak.SwordUpgrade();
+fight.Arenavoins();
 
 //bs1.HealSomebody(peasant);
 //peasant.BaseInfo();

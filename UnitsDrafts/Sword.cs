@@ -1,9 +1,11 @@
-﻿namespace UnitsDrafts
+﻿using System.Text;
+
+namespace UnitsDrafts
 {
     internal class Sword : Weapon
     {
         private int _swordlvl;
-        public Sword() : base("Mech", 2, 6, 8, 80, 800, false)
+        public Sword() : base("Mech", 6, 11, 8, 85, 800, false)
         {
             _swordlvl = 0;
         }
@@ -22,8 +24,9 @@
                 AttackSpeed += 2;
                 Accuracy += 3;
                 Durability += 50;
+                Bleede = false;
                 Console.WriteLine($"SwordLVL: {SWORDLVL} Name:{WepName} MinDMG: {MinDamage} MaxDMG: {MaxDamage} " +
-                                  $"AttackSpeed: {AttackSpeed} Accuracy: {Accuracy} Durability: {Durability}");
+                                  $"AttackSpeed: {AttackSpeed} Accuracy: {Accuracy} Durability: {Durability} Bleede: {Bleede}");
             }
             else
             {
