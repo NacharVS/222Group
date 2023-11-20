@@ -10,7 +10,7 @@ namespace UnitsDrafts
     {
         public int Chance { get; set; }
         
-        public Sword() : base(2, 6, 8, 80, 800)
+        public Sword() : base(2, 6, 8, 80,100,30,40)
         {
 
         }

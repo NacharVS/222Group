@@ -8,6 +8,7 @@
         private int _health;
         private int _maxHealth;
         private int _speed;
+        public Weapon weapon;
 
         public Unit(string name, int maxHealth, int defence, int damage,
             int speed)
@@ -32,7 +33,7 @@
             set { _name = value; }
         }
 
-        public int Health
+        public virtual int Health
         {
             get { return _health; }
             set
