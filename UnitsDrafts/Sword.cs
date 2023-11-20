@@ -11,20 +11,6 @@ namespace UnitsDrafts
         public Sword() : base(5, 10, 8, 100, 10)
         {
         }
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
