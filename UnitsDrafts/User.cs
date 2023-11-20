@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UnitsDrafts
+﻿namespace UnitsDrafts
 {
-    internal class User<T>
+    internal class User
     {
         public int Id { get; set; }
-        public T Field { get; set; }
+        public string Field { get; set; }
     }
 }

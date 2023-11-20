@@ -2,6 +2,7 @@
 {
     internal class Unit 
     {
+        public Action action;
         private int _damage;
         private int _defence;
         private string _name;
@@ -70,6 +71,7 @@
         public virtual void BaseInfo()
         {
             Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Defence: {_defence} " );
+            action();
         }
 
     }
