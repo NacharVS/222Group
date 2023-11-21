@@ -21,7 +21,6 @@
         }
         public Archer() : base("Archer", 40, 11)
         {
-          
             _damage = 15;
         }
         public void InflictDamage(Unit unit)

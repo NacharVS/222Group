@@ -11,8 +11,9 @@
 
         public Archer CreateArcher()
         {
+            Random random = new Random();
             Statistics.ArcherCount++;
-            return new Archer();
+            return new Archer("Name", random.Next(30, 45), random.Next(5, 10), random.Next(10, 15));
         }
     }
 }
