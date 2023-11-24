@@ -9,6 +9,7 @@ namespace UnitsDrafts.items
 {
     internal class Weapons
     {
+       
         public string Wname;
         public int MinDamage;
         public int MaxDamage;
@@ -18,15 +19,17 @@ namespace UnitsDrafts.items
         public int DamageW;
 
 
+
         public Weapons(string _wname,int _speedat,int _mindamage ,int _maxdamage ,int _durabulity, int _accuracy)
         {
+            Random rnd = new Random();
             _wname = Wname;
             _speedat = SpeedAttack;
             _mindamage = MinDamage;
             _maxdamage = MaxDamage;
             _durabulity = Durabulity;
             _accuracy = Accuracy;
-            DamageW.next(MaxDamage, MinDamage;
+            DamageW = rnd.next(MinDamage, MaxDamage);
         }
 
         public void Damage(Unit unit, Weapons weapon)
@@ -45,7 +48,7 @@ namespace UnitsDrafts.items
 
         public int Speed(int _speedat)
         {
-            MinDamage = 
+            
         }
 
     }
