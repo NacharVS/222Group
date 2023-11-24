@@ -6,7 +6,7 @@
         private int _health;
         private int _maxHealth;
         private int _speed;
-        public Weapon weapon;
+        //public Weapon weapon;
         public Unit(string name, int maxHealth, 
             int speed)
         {

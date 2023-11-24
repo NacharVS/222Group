@@ -35,7 +35,7 @@ namespace UnitsDrafts
                 Thread.Sleep(2000);
                 Console.WriteLine("Вы натянули тетеву");
                 Thread.Sleep(6000);
-                Console.WriteLine("Выстрел!!!");
+                Console.WriteLine("Выстрел!!!");    
                 var x = new Random().Next(1, 101);
                 if (x <= Acc && Dura != 0)
                 {
@@ -43,6 +43,7 @@ namespace UnitsDrafts
                     Dura -= 8;
                     // возможно стоит добавить макс дура
                     unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                    unit.ShowInfo();
                     //Нужно сделать урон по юнита
                     // + точность
                 }
@@ -50,11 +51,11 @@ namespace UnitsDrafts
                 {
                     Console.WriteLine("Вы промахнулись");
                     Dura -= 8;
+                    unit.ShowInfo();
                     //- точность
-                    return 0;
                 }
             }
-            else if (AttSp < 6 && AttSp < 3)
+            else if (AttSp < 6 && AttSp > 2)
             {
                 Thread.Sleep(1000);
                 Console.WriteLine("Вы замахнулись буловой");
@@ -65,11 +66,14 @@ namespace UnitsDrafts
                     Console.WriteLine("Вы ударили по цели");
                     Dura -= 15;
                     unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                    unit.ShowInfo();
                 }
                 else
                 {
                     Console.WriteLine("Вы не смогли ударить по цели");
+                    unit.ShowInfo();
                     return 0;
+
                 }
             }
             else if (AttSp > 5 && AttSp < 8)
@@ -83,10 +87,12 @@ namespace UnitsDrafts
                     Console.WriteLine("Вы ударили по цели");
                     Dura -= 10;
                     unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                    unit.ShowInfo();
                 }
                 else
                 {
                     Console.WriteLine("Вы не смогли ударить по цели");
+                    unit.ShowInfo();
                     return 0;
                 }
             }
@@ -100,22 +106,24 @@ namespace UnitsDrafts
                     Console.WriteLine("Вы ударили по цели");
                     Dura -= 5;
                     unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                    unit.ShowInfo();
                 }
                 else
                 {
                     Console.WriteLine("Вы не смогли ударить по цели");
+                    unit.ShowInfo();
                     return 0;
                 }
+            }
+            return 0;
+        }  
+ 
 
                 //// сделать кровотечение  for (int i = 5; i >= 0; i--)
                 //{
                 //    Thread.Sleep(1000);
                 //    unit.Health = unit.Health - new Random().Next(1, 5);
-                //    добавить инфу от юнито при каждом действии unit.BaseInfo();
-                //}
-
-            }
-        }
+                //    добавить инфу от юнито при каждом действии unit.BaseInfo();   
     }
 }
     
