@@ -9,7 +9,7 @@ namespace UnitsDrafts
     internal class Scepter : Weapon
     {
         private int _sceplvl;
-        public Scepter() : base("Skiper", 4, 8, 6, 75, 400, false)
+        public Scepter() : base("Skiper", 4, 8, 6, 75, 400, false, 20)
         {
             SCEPLVL = 0;
         }

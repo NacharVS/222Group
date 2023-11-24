@@ -14,7 +14,7 @@ namespace UnitsDrafts
             get { return _bowlvl; }
             set { _bowlvl = value; }
         }
-        public Bow() : base("Luk", 4, 9, 4, 75, 300, true)
+        public Bow() : base("Luk", 4, 9, 4, 75, 300, true, 0)
         {
             BOWLVL = 0;
         }

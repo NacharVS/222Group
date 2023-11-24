@@ -11,6 +11,7 @@ namespace UnitsDrafts
         private int _speed;
         private bool _armor;
         public Weapon Weapon;
+        public bool Stunned = false;
 
         public Unit(string name, int maxHealth, int speed, bool armor, Weapon weapon)
         {

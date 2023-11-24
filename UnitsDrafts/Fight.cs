@@ -46,6 +46,7 @@ namespace UnitsDrafts
                 if (vibor2 == 1 && vibor1 == 1)
                 {
                     zak.Weapon.attackSS(graves);
+                    Console.WriteLine("Вас атакует Лучник!!!");
                     graves.Weapon.attackSS(zak);
                     if (zak.Health != 0 || graves.Health != 0)
                     {
@@ -61,6 +62,7 @@ namespace UnitsDrafts
                 if (vibor2 == 1 && vibor1 == 2)
                 {
                     graves.Weapon.attackSS(zak);
+                    Console.WriteLine("Вас атакует мечник!!!");
                     zak.Weapon.attackSS(graves);
                     if (zak.Health != 0 || graves.Health != 0)
                     {
