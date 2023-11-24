@@ -11,7 +11,7 @@ namespace UnitsDrafts
         private int _speed;
         private bool _armor;
         public Weapon Weapon;
-        public bool Stunned = false;
+        private bool _stunned;
 
         public Unit(string name, int maxHealth, int speed, bool armor, Weapon weapon)
         {
@@ -21,7 +21,6 @@ namespace UnitsDrafts
             _speed = speed;
             Weapon = weapon;
         }
-
         public int Speed
         {
             get { return _speed; }

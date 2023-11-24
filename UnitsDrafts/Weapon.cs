@@ -21,6 +21,7 @@ namespace UnitsDrafts
             Durability = durability;
             Bleede = Bleed;
             Stunchance = stunchance;
+            WeaponDropped = false;
         }
         //public delegate void DamageDeligate(Unit unit, Weapon weapon);
         //DamageDeligate damage;
@@ -32,6 +33,7 @@ namespace UnitsDrafts
         public int Durability { get; set; }
         public bool Bleede { get; set; } = false;
         public int Stunchance { get; set; }
+        public bool WeaponDropped { get; set; }
 
         //public virtual int Hit(Unit unit)
         //{
@@ -65,18 +67,20 @@ namespace UnitsDrafts
                 Thread.Sleep(3000);               
                 var x = new Random().Next(1, 101);
                 var z = new Random().Next(1, 101);
-                if (Bleede == true && x <= Accuracy && Durability != 0 && unit.Stunned != true)
+                if (Bleede == true && x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    Console.WriteLine("Вы попали");
                     if (z <= Stunchance)
                     {
-                        unit.Stunned = true;
+                        unit.Weapon.WeaponDropped = true;
                         Console.WriteLine("Stun applied!");
                     }
+                    
                     unit.BaseInfo();
                     Thread.Sleep(3000);
-                    Console.WriteLine("Вы попали в вену!!!");
+                    Console.WriteLine("У врага началось кровотечение");
                     for (int i = 5; i >= 0; i--)
                     {
                         Thread.Sleep(1000);
@@ -86,23 +90,23 @@ namespace UnitsDrafts
 
                 }
                 else
-                if (x <= Accuracy && Durability != 0 && unit.Stunned != true)
+                if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
                     Console.WriteLine("Вы попали");
                     if (z <= Stunchance)
                     {
-                        unit.Stunned = true;
+                        unit.Weapon.WeaponDropped = true;
                         Console.WriteLine("Stun applied!");
                     }
                     unit.BaseInfo();
                 }
                 else
-                if (unit.Stunned == true)
+                if (WeaponDropped == true)
                 {
                     Console.WriteLine("Вы оглушены");
-                    unit.Stunned = false;
+                    WeaponDropped = false;
                 }
                 else
                 if (Durability == 0)
@@ -124,18 +128,19 @@ namespace UnitsDrafts
                 Thread.Sleep(1500);
                 var x = new Random().Next(1, 101);
                 var z = new Random().Next(1, 101);
-                if (Bleede == true && x <= Accuracy && Durability != 0 && unit.Stunned != true)
+                if (Bleede == true && x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    Console.WriteLine("Вы попали");
                     if (z <= Stunchance)
                     {
-                        unit.Stunned = true;
+                        unit.Weapon.WeaponDropped = true;
                         Console.WriteLine("Stun applied!");
                     }
                     unit.BaseInfo();
                     Thread.Sleep(1500);
-                    Console.WriteLine("Вы попали в вену!!!");
+                    Console.WriteLine("У врага началось кровотечение");
                     for (int i = 5; i >= 0; i--)
                     {
                         Thread.Sleep(1000);
@@ -144,23 +149,24 @@ namespace UnitsDrafts
                     }
                 }
                 else
-                if (x <= Accuracy && Durability != 0 && unit.Stunned != true)
+                if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
                     Console.WriteLine("Вы попали");
                     if (z <= Stunchance)
                     {
-                        unit.Stunned = true;
+                        unit.Weapon.WeaponDropped = true;
                         Console.WriteLine("Stun applied!");
                     }
                     unit.BaseInfo();
                 }
                 else
-                if (unit.Stunned == true)
+                if (WeaponDropped == true)
                 {
                     Console.WriteLine("Вы оглушены");
-                    unit.Stunned = false;
+                    WeaponDropped = false;
+                    
                 }
                 else
                 if (Durability == 0)
