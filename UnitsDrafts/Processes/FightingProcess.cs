@@ -30,7 +30,7 @@ namespace UnitsDrafts.Processes
                     //ft1.InflictDamage(ft2);
                     battleft1.Weapon.attack(battleft2);
                     Console.WriteLine("Вас атакует мечник!!!");
-                    //zak.Weapon.attackSS(graves);
+
                     if (battleft2.Health <= 0)
                     {
                         ShowStatisticProcess.KilledQuant--;
