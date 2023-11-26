@@ -60,8 +60,18 @@ namespace UnitsDrafts
                         Console.WriteLine("Вы попали в цель");
                         Dura -= 8;
                         // возможно стоит добавить макс дура
-                        unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
-                        unit.ShowInfo();
+                        if (y <= Nua)
+                        {
+                            unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1) * 300 / 100;
+                            unit.ShowInfo();
+                            Console.WriteLine("Херанул критом");
+                        }
+                        else
+                        {
+                            unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                            Console.WriteLine("Крит не херанул");
+                            unit.ShowInfo();
+                        }
                         //Нужно сделать урон по юнита
                         // + точность
                     }
