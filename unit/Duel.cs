@@ -24,6 +24,7 @@ namespace unit
                     Console.WriteLine($" Первым атакует {unit1.Name} ");
                     unit1.BaseInfo();
                     unit2.BaseInfo();
+                    
                     while (unit1.Alive && unit2.Alive) 
                     {
                         Stat.StunCheck(unit1);
@@ -51,8 +52,7 @@ namespace unit
                         }
 
                     }
-                    Stat.FootmanQuant--;
-                    Stat.LiveQuant--;
+                    
                     break;
                     
                 case 2:
@@ -92,11 +92,11 @@ namespace unit
                         }
 
                     }
-                    Stat.FootmanQuant--;
-                    Stat.LiveQuant--;
+                    
                     break;
             }
 
+            Stat.FootmanQuant--;
             
 
         }

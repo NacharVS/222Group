@@ -19,8 +19,6 @@ namespace unit.units
         {
             _armor = armor;
             Weapon = new Mace();
-            Stat.FootmanQuant++;
-            Stat.LiveQuant++;
 
         }
         //public Weapon Weapon
@@ -78,17 +76,10 @@ namespace unit.units
                             unit.Alive = false;
                             Stat.KilledQuant++;
                             Stat.LiveQuant--;
-                            unit.Alive = false;
                             Console.WriteLine($"{Name} не может больше стрелять так как {unit.Name} мертв");
 
                         }
-                        if (unit.Health == 0)
-                        {
-                            unit.Alive = false;
-
-                        }
-
-
+                        
                     }
                     else
                     {
