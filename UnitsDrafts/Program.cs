@@ -183,6 +183,21 @@ namespace UnitsDrafts
                         var bbb = dictionaryExample[$"{a}1"];
                         bbb.InflictDamage(ft1);
 
+                        dictionaryExample.ToList().ForEach(x => Console.WriteLine(x.Key + " : " + x.Value));
+
+
+                        foreach (var pair in dictionaryExample)
+                        {
+                            pair.Value.InflictDamage(ft1);
+                            ft1.BaseInfo();
+                        }
+
+
+                        //foreach (int item in dictionaryExample)
+                        //{
+                        //    MyMethod(item);
+                        //}
+
 
 
 
