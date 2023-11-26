@@ -1,11 +1,12 @@
-﻿namespace UnitsDrafts.Items
+﻿
+namespace UnitsDrafts.Items
 {
-    internal class Sword : Weapon
+    internal class Scepter : Weapon
     {
-        public Sword(string name, int minDamage, int maxDamage, int attackspeed, int accuracy, int durability) : base(name, minDamage, maxDamage, attackspeed, accuracy, durability)
+        public Scepter(string name, int minDamage, int maxDamage, int attackspeed, int accuracy, int durability) : base(name, minDamage, maxDamage, attackspeed, accuracy, durability)
         {
         }
-        public Sword() : base("Sword", 2, 6, 8, 80, 800)
+        public Scepter() : base("Scepter", 1, 1, 1, 1, 200)
         {
         }
         public override int Hit(Unit unit)
@@ -19,13 +20,9 @@
                     {
                         int Damage = new Random().Next(MinDamage, MaxDamage);
                         x = new Random().Next(1, 100);
-                        if (x <= 35)
+                        if (x <= 20)
                         {
-                            unit.Bleeding = true;
-                            for (int i = 0; i < 5; i++) 
-                            {
-                                 unit.Health -= 2;
-                            }
+                            unit.Stunned = true;
                         }
                         return Damage;
                     }

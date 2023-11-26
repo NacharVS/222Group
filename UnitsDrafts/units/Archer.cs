@@ -12,6 +12,8 @@ namespace UnitsDrafts
             if (Health < MaxHealth * 0.4)
             {
                 Speed += 4;
+                ClassName = "Archer";
+                Weapon = new Bow();
             }
         }
         public override void BaseInfo()

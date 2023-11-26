@@ -12,7 +12,8 @@ namespace UnitsDrafts
         }
         public Footman() : base("Footman", 60, 10, 17, 5)
         {
-
+            ClassName = "Footman";
+            Weapon = new Sword();
         }
 
         public override void DealDamage(Unit unit)

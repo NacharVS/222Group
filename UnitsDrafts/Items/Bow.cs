@@ -1,11 +1,17 @@
-﻿namespace UnitsDrafts.Items
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitsDrafts.Items
 {
-    internal class Sword : Weapon
+    internal class Bow : Weapon
     {
-        public Sword(string name, int minDamage, int maxDamage, int attackspeed, int accuracy, int durability) : base(name, minDamage, maxDamage, attackspeed, accuracy, durability)
+        public Bow(string name, int minDamage, int maxDamage, int attackspeed, int accuracy, int durability) : base(name, minDamage, maxDamage, attackspeed, accuracy, durability)
         {
         }
-        public Sword() : base("Sword", 2, 6, 8, 80, 800)
+        public Bow() : base("Bow", 4, 8, 10, 50, 1000)
         {
         }
         public override int Hit(Unit unit)
@@ -13,7 +19,7 @@
             {
                 if (WeaponAlive)
                 {
-                    Durability-= 50;
+                    Durability -= 50;
                     var x = new Random().Next(1, 100);
                     if (x <= Accuracy)
                     {
@@ -22,9 +28,9 @@
                         if (x <= 35)
                         {
                             unit.Bleeding = true;
-                            for (int i = 0; i < 5; i++) 
+                            for (int i = 0; i < 5; i++)
                             {
-                                 unit.Health -= 2;
+                                unit.Health -= 2;
                             }
                         }
                         return Damage;

@@ -10,6 +10,8 @@ namespace UnitsDrafts
     {
         public Peasant() : base("Peasant", 30, 0, 0, 5)
         {
+            ClassName = "Peasant";
+            Weapon = new Nothing();
         }
     }
 }

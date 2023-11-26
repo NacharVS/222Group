@@ -4,7 +4,7 @@ namespace UnitsDrafts.Items
 {
     internal class Weapon
     {
-        public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability, bool Bleed, int stunchance)
+        public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability)
         {
             WeaponName = name;
             MinDamage = minDamage;
@@ -12,8 +12,6 @@ namespace UnitsDrafts.Items
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
             Durability = durability;
-            Bleed = Bleed;
-            Stunchance = stunchance;
         }
         public string WeaponName { get; set; }
         public int MinDamage { get; set; }
@@ -35,20 +33,22 @@ namespace UnitsDrafts.Items
                     Durability = value;
             }
         }
-        public bool Bleed { get; set; } = false;
+        public bool Bleede { get; set; } = false;
         public int Stunchance { get; set; }
         public bool WeaponAlive { get; set; }
-        public virtual int Hit()
+        public virtual int Hit(Unit unit)
         {
-            if (Durability != 0)
+            if (WeaponAlive == true)
             {
                 var x = new Random().Next(1, 101);
                 if (x <= Accuracy)
                 {
-                    return new Random().Next(MinDamage, MaxDamage + 1);
+                  int Damage = new Random().Next(MinDamage, MaxDamage + 1);
+                  return Damage;
                 }
                 else
                 {
+                    Console.WriteLine("Юнит промахнулся");
                     return 0;
                 }
             }

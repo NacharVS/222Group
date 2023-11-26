@@ -18,6 +18,8 @@ namespace UnitsDrafts
         {
             _maxmana = 100;
             _mana = _maxmana;
+            ClassName = "Bishop";
+            Weapon = new Scepter();
         }
         public int MaxMana
         {
