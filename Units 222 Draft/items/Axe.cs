@@ -1,6 +1,7 @@
-﻿
-using Units_222_Draft.Stats;
+﻿using Units_222_Draft.Stats;
 using Units_222_Draft.units;
+using UnitsDrafts;
+
 namespace Units_222_Draft.items
 {
     internal class Axe : Weapon
@@ -19,21 +20,27 @@ namespace Units_222_Draft.items
                 Durability--;
                 float CritChance = 20;
                 float CritDamage = 0.5f;
-                var x = new Random().Next(1, 100);
-            if (x <= Accuracy)
+                var chance = new Random().Next(1, 100);
+            if (chance <= Accuracy)
             {
                 float Damage = new Random().Next(MinDamage, MaxDamage);
-                    Damage += Level * 5;
-                    x = new Random().Next(1, 100);
-                if (x <= CritChance)
+                Damage += Level * 5;
+                chance = new Random().Next(1, 100);
+                //Нанесение урона
+                if (chance <= CritChance)
                 {
                     Damage += Damage * CritDamage;
                 }
-                x = new Random().Next(1, 100);
-                if (x <= 30) 
-                    {
-                        unit.BloodLoss = true;   
-                    }
+                chance = new Random().Next(1, 100);
+                //Нанесение кровотечения
+                if (chance <= 30) 
+                {
+                    unit.BloodLoss = true;
+                    unit.BloodLossCount += Fight.fight_count + 5;
+                    Console.WriteLine();
+                    Console.WriteLine($"Нанес кровотечение персовнажу {unit.Name}");
+                    Console.WriteLine();
+                }
                 return Damage * Durability_check();
             }
             else

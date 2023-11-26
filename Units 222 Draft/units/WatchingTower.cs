@@ -1,26 +1,20 @@
 ﻿using System;
 using Units_222_Draft.Stats;
-using Units_222_Draft.units;
 
-namespace UnitsDrafts
+namespace Units_222_Draft.units
 {
     internal class WatchingTower
     {
         public int Level = 0;
         public int Capasity
         {
-            get { return 3+Level; }
+            get { return 3 + Level; }
             set { Capasity = value; }
         }
-        public float Damage
-        {
-            get { return 7 * Garnizon.Count; }
-        }
         public List<Unit> Garnizon = new List<Unit>();
-        
         public void ArcherAdd()
         {
-            if (Garnizon.Count < Capasity) 
+            if (Garnizon.Count < Capasity)
             {
                 Garnizon.Add(new Archer());
             }
@@ -28,9 +22,9 @@ namespace UnitsDrafts
             {
                 Console.WriteLine("Гарнизон забит");
             }
-            
+
         }
-        public void LevelUp() 
+        public void LevelUp()
         {
             if (Level++ != 7)
             {
@@ -43,6 +37,7 @@ namespace UnitsDrafts
         }
         public void DealDamage(Unit unit)
         {
+            float Damage = 7* Garnizon.Count;
             if (Garnizon.Count > 0)
             {
                 if (unit.Alive)
@@ -53,7 +48,7 @@ namespace UnitsDrafts
                         def_damage = 0;
                     }
                     Console.WriteLine($"Гарнизон нанес {def_damage} урона");
-                    unit.Health = unit.Health - def_damage;
+                    unit.Health  -= def_damage;
                     if (unit.Health <= 0)
                     {
                         Console.WriteLine("Юнит убит");
@@ -74,7 +69,7 @@ namespace UnitsDrafts
             {
                 Console.WriteLine("Гарнизон пуст - стрелять некому");
             }
-        } 
+        }
 
     }
 }

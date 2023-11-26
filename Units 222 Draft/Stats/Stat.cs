@@ -33,10 +33,6 @@ namespace Units_222_Draft.Stats
             //если они вышли за рамки количества ходов - остановить
             // статус чек идет перед каждым действием , раньше проверки  if (alive)
         }
-        static void MethodVar1(Unit unit)
-        {
-            Stat.BloodLoss(unit); 
-        }
         public static void Stun(Unit unit)
         {
             StunCount = Fight.fight_count + 2;
@@ -52,10 +48,14 @@ namespace Units_222_Draft.Stats
         }
         public static void BloodLoss(Unit unit)
         {
-            if (unit.BloodLoss)
+            if (Fight.fight_count <= unit.BloodLossCount)
+            {
+                unit.BloodLoss=false;
+            }
+            else
             {
                 unit.Health -= 1;
-                Console.WriteLine($"Кровотечение нанесло ");
+                Console.WriteLine($"Кровотечение нанесло 1 дамаг {unit.Name}");
             }
         }
     }

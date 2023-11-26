@@ -5,9 +5,10 @@ namespace Units_222_Draft.units
 {
     internal class Unit
     {
-        public delegate void MovingDelegate();//
+        public Action action;
+        public delegate void MovingDelegate();//делегат движения
         public MovingDelegate moving;
-        public delegate void DealDamageDelegate(Unit unit);//делегат движения
+        public delegate void DealDamageDelegate(Unit unit);//делегат дамага
         public DealDamageDelegate dealDamage;
 
         public void MovingMethod()
@@ -38,6 +39,7 @@ namespace Units_222_Draft.units
                 Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
             }
         }
+        
         //нанесение урона специальное для footman ибо у него rage влияет на урон
         public void FootmanDealDamageMethod(Unit unit)
         {
@@ -76,6 +78,7 @@ namespace Units_222_Draft.units
         private Weapon _weapon;// Оружие юнита
         public bool _stunned = false;// Оглушение
         public bool _bloodloss = false;// Кровотечение
+        public int BloodLossCount;
         public string Name
         {
             get { return _name; }
@@ -164,8 +167,7 @@ namespace Units_222_Draft.units
                 {
                     moving = MovingMethod;
                     moving();
-                }
-                
+                } 
             }
             else
             {
@@ -187,7 +189,6 @@ namespace Units_222_Draft.units
             {
                 Console.WriteLine($"Name:{Name} dead Defense: {Defense} Speed {Speed}");
             }
-
         }
         // Метод нанесения урона
         public virtual void DealDamage(Unit unit)
@@ -224,6 +225,7 @@ namespace Units_222_Draft.units
                             else
                             {
                                 dealDamage = DealDamageMethod;
+                                Console.WriteLine($"");
                             }
                             dealDamage(unit);
                         }

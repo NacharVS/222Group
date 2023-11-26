@@ -38,15 +38,19 @@ namespace UnitsDrafts
         }
         public static void Duel(Unit unit1, Unit unit2)
         {
+            unit1.BloodLossCount = 0;
+            unit2.BloodLossCount = 0;
+            fight_count = 0;
             if (unit1.Alive && unit2.Alive)
             {
+                
                 Test.How_to_Duel();
                 Console.WriteLine("=================================================");
                 Console.WriteLine($"В дуэли участвуют {unit1.Name} и {unit2.Name}");
                 List<Unit> duel_spisok = new List<Unit>() { unit1, unit2 };
                 // Мне влом делать цикл в цикле потому два списка
                 List<Unit> duel_spisokRev = new List<Unit>() { unit2, unit1 };
-                fight_count = 0;
+                
                 Console.WriteLine("=================================================");
                 Console.WriteLine("0 - Атаковать");
                 Console.WriteLine("1 - Бежать");
@@ -68,15 +72,16 @@ namespace UnitsDrafts
                                     case 0:
                                         Console.WriteLine("=================================================");
                                         duel_spisok[i].DealDamage(duel_spisokRev[i]);
-                                        fight_count++;
                                         break;
                                     case 1:
                                         Console.WriteLine("=================================================");
                                         duel_spisok[i].Moving();
-                                        fight_count++;
+                                        break;
+                                    case 2:
                                         break;
                                 }
                             }
+                            fight_count++;
                         }
                         else if (unit1.Run_Away_Count >= 20)
                         {

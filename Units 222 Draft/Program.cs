@@ -7,14 +7,14 @@ Console.WriteLine("пососал");
 var th = new Townhall();
 var br = new Barracs();
 var bh = th.SpawnBishop();
-var ft = br.SpawnFootman(); ft.Name = "Биба";
+var ft = br.SpawnFootman(); ft.Name = "Биба"; ft.Weapon = new Axe();
 //даня аксенов сделал кстати
-var ft1 = br.SpawnFootman(); ft1.Name = "Боба";
-var ft2 = br.SpawnFootman(); ft2.Name = "Пупа";
-var ft3 = br.SpawnFootman(); ft3.Name = "Лупа";
-
-List<Unit> Team1 = new List<Unit>() { ft1, ft };
-List<Unit> Team2 = new List<Unit>() { ft2, ft3 };
+var ft1 = br.SpawnFootman(); ft1.Name = "Боба"; ft1.Weapon = new Axe();
+var ft2 = br.SpawnFootman(); ft2.Name = "Пупа"; ft2.Weapon = new Axe();
+var ft3 = br.SpawnFootman(); ft3.Name = "Лупа"; ft3.Weapon = new Axe();
+WatchingTower Towar = new WatchingTower();
+Towar.ArcherAdd();
+Towar.DealDamage(ft1);
 //Fight.Duel(ft, ft1);
-Fight.War(Team1, Team2);
+//Fight.War(Team1, Team2);
 
