@@ -21,6 +21,9 @@ var peasant = meriya.CreatePeasant();
 WatchingTowers wt = new WatchingTowers();
 
 Sword sword = new Sword();
+
+
+
 //sword.ShowWeaponInfo();
 //sword.LevelUp();
 //sword.ShowWeaponInfo();
