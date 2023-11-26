@@ -62,6 +62,7 @@
         }
 
         public int MaxHealth { get => _maxHealth; }
+        public bool StChance { get; internal set; }
 
         public void Moving()
         {
