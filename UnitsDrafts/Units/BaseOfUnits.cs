@@ -9,25 +9,26 @@ namespace UnitsDrafts
     internal class BaseOfUnits
     {
         private int _damage;
-        private int _defence;
         private string _name;
         private int _health;
         private int _maxHealth;
+        private int _accuracy;
 
-
-        public BaseOfUnits(string name, int health, int maxHealth, int defence, int damage)
+        public BaseOfUnits(string name, int health, int maxHealth, int damage, int accuracy)
         {
             _damage = damage;
-            _defence = defence;
             _name = name;
             _health = health;
-            _maxHealth = maxHealth;           
+            _maxHealth = maxHealth;      
+            _accuracy = accuracy;
         }
-        public int Defence
+
+        public int Accuracy
         {
-            get { return _defence; }
-            set { _defence -= _damage; }
+            get { return _accuracy; }
+            set { _accuracy = value; }
         }
+    
         public int Health
         {
             get

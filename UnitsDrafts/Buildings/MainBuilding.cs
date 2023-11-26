@@ -9,7 +9,7 @@ namespace UnitsDrafts
     internal class MainBuilding : BaseOfUnits
     {
         public static List<Peasant> peasantList = new List<Peasant>();
-        public MainBuilding() : base("Main building", 100, 100, 0, 0)
+        public MainBuilding() : base("Main building", 1000, 1000, 0, 0)
         {
         }
 

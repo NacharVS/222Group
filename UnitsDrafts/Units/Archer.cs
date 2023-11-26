@@ -9,7 +9,7 @@ namespace UnitsDrafts
     internal class Archer : BaseOfUnits
     {
      
-        public Archer() : base("Archer", 100, 100, 0, 0)
+        public Archer() : base("Archer", 100, 100, 50, 40)
         {
         }
     }

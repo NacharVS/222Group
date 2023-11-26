@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace UnitsDrafts
 {
-    class Fighting 
-    {   
+    internal class Fighting
+    {
+
     }
 }

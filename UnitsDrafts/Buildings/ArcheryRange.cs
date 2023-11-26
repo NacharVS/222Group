@@ -10,7 +10,7 @@ namespace UnitsDrafts
     internal class ArcheryRange : BaseOfUnits
     {
         public static List<Archer> archerList = new List<Archer>();
-        public ArcheryRange() : base("Archery Range", 100, 100, 0, 0)
+        public ArcheryRange() : base("Archery Range", 500, 500, 0, 0)
         {
         }
 

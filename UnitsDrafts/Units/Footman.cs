@@ -9,7 +9,7 @@ namespace UnitsDrafts
     internal class Footman : BaseOfUnits
     {
          
-        public Footman() : base("Footman", 100, 100, 0, 0)
+        public Footman() : base("Footman", 100, 100, 20, 100)
         {       
         }
     }

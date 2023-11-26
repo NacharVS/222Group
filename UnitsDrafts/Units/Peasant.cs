@@ -10,6 +10,7 @@ namespace UnitsDrafts
     internal class Peasant : BaseOfUnits
     {
         public static List<ArcheryRange> ArcheryRanges = new List<ArcheryRange>();
+        public static List<FootmansTrainingGround> FootmansTrainingGrounds = new List<FootmansTrainingGround>();
         public Peasant() : base("Peasant", 100, 100, 0, 0)
         {
         }
@@ -18,6 +19,12 @@ namespace UnitsDrafts
         {
             ShowCount.BuildingQuant += 1;
             ArcheryRanges.Add(new ArcheryRange());
+        }
+
+        public void BuildFootmansTrainingGroind()
+        {
+            ShowCount.BuildingQuant += 1;
+            FootmansTrainingGrounds.Add(new FootmansTrainingGround());
         }
 
     }
