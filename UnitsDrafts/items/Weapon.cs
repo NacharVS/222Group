@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace UnitsDrafts.items
+namespace UnitsDrafts
 {
-    internal class Weapons
+    internal class Weapon
     {
        
         public string Wname;
@@ -16,40 +16,39 @@ namespace UnitsDrafts.items
         public int Accuracy;
         public int Durabulity;
         public int SpeedAttack;
-        public int DamageW;
 
-
-
-        public Weapons(string _wname,int _speedat,int _mindamage ,int _maxdamage ,int _durabulity, int _accuracy)
+        Random rnd = new Random();
+        
+        public Weapon(string _wname,int _speedat,int _mindamage ,int _maxdamage ,int _durabulity, int _accuracy)
         {
-            Random rnd = new Random();
+            
             _wname = Wname;
             _speedat = SpeedAttack;
             _mindamage = MinDamage;
             _maxdamage = MaxDamage;
             _durabulity = Durabulity;
             _accuracy = Accuracy;
-            DamageW = rnd.next(MinDamage, MaxDamage);
+            
         }
 
-        public void Damage(Unit unit, Weapons weapon)
+        public void Damage(Unit unit)
         {
             if (unit._defence >= 1) //Armour
             {
-                unit.Health = unit.Health - ( weapon.DamageW / unit._defence);
+                unit.Health = unit.Health - (MinDamage / unit._defence);
                 Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
             }
             else
             {
-                unit.Health = unit.Health - weapon.DamageW;
+                unit.Health = unit.Health - MinDamage;
                 Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
             }
         }
 
-        public int Speed(int _speedat)
-        {
-            
-        }
+        //public int Speed(int _speedat)
+        //{
+
+        //}
 
     }
 }

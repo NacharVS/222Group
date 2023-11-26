@@ -27,7 +27,7 @@
         {
             if (unit._defence >= 1) //Armour
             {
-                unit.Health = unit.Health - (_damage / unit._defence);
+                unit.Health = unit.Health - _damage / unit._defence;
                 Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
             }
             else
@@ -41,8 +41,19 @@
         {
             Console.WriteLine($"Name:{Name} Health: {Health}/{MaxHealth} Damage: {Damage} Speed: {Speed}");
             if (Health < MaxHealth * 4 / 10)
-                _speed += 4;
-            Console.WriteLine($"Скорость увеличина, теперь скорость: {Speed}");
+            {
+                if (_speed == 15)
+                {
+
+                }
+                else
+                {
+                    _speed += 4;
+                    Console.WriteLine($"Скорость увеличина, теперь скорость: {Speed}");
+                }
+
+            }
+            
         }
 
     }

@@ -1,4 +1,6 @@
-﻿namespace UnitsDrafts
+﻿using UnitsDrafts;
+
+namespace UnitsDrafts
 {
     internal class Barracs
     {
