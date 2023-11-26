@@ -1,7 +1,5 @@
 ﻿using System.Xml.Linq;
-using UnitsDrafts.Toolbox;
 using UnitsDrafts.Processes;
-using UnitsDrafts.Toolbox;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace UnitsDrafts.UnitsAll
@@ -13,7 +11,7 @@ namespace UnitsDrafts.UnitsAll
         private int _speed;
 
         public Footman(string name, int maxHealth, int speed, int damage, int defence)
-            : base(name, maxHealth, speed, defence, damage)
+            : base(name, maxHealth, speed, defence, damage, null)
         {
             _damage = damage;
             _defence = defence;
@@ -23,7 +21,7 @@ namespace UnitsDrafts.UnitsAll
 
         private Weapon _weapon;
 
-        public Footman() : base("Footman", 60, 10, 10, 30)
+        public Footman() : base("Footman", 60, 10, 10, 30, null)
         {
             _damage = 17;
             _defence = 5;
@@ -60,26 +58,39 @@ namespace UnitsDrafts.UnitsAll
         public override void BaseInfo()
         {
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"Name: {Name} | ");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Health: {Health}/{MaxHealth}");
-            Console.ResetColor();
-            Console.Write(" | ");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write($"Damage: {Damage}");
-            Console.ResetColor();
-            Console.Write(" | ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"Speed: {Speed}");
-            Console.ResetColor();
-            Console.Write(" | ");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write($"Defence: {Defence}");
-            Console.ResetColor();
-            Console.WriteLine(" | ");
+            if (Health <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Name: {Name} | ");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Health: Юнит мертв!");
+                Console.ResetColor();
+                Console.WriteLine("|");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Name: {Name} |");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Health: {Health}/{MaxHealth}");
+                Console.ResetColor();
+                Console.Write("|");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write($"Damage: {Damage}");
+                Console.ResetColor();
+                Console.Write("|");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"Speed: {Speed}");
+                Console.ResetColor();
+                Console.Write("|");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write($"Defence: {Defence}");
+                Console.ResetColor();
+                Console.WriteLine(" | ");
 
+            }
         }
 
 

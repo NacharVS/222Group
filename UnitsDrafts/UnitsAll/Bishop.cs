@@ -9,12 +9,12 @@ namespace UnitsDrafts.UnitsAll
         private int _speed;
 
         public Bishop(string name, int maxHealth, int speed, int mana, int defence, int damage)
-            : base(name, maxHealth, speed, defence, damage)
+            : base(name, maxHealth, speed, defence, damage, null)
         {
             _mana = mana;
         }
 
-        public Bishop() : base("Bishop", 60, 8, 0, 0)
+        public Bishop() : base("Bishop", 60, 8, 0, 0, null)
         {
             _mana = 300;
             _speed = 8;
@@ -92,21 +92,34 @@ namespace UnitsDrafts.UnitsAll
         public override void BaseInfo()
         {
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"Name: {Name} | ");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Health: {Health}/{MaxHealth}");
-            Console.ResetColor();
-            Console.Write(" | ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write($"Mana: {Mana}");
-            Console.ResetColor();
-            Console.Write(" | ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"Speed: {Speed}");
-            Console.ResetColor();
-            Console.WriteLine(" | ");
+            if (Health <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Name: {Name} |");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Health: Юнит мертв!");
+                Console.ResetColor();
+                Console.WriteLine("|");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Name: {Name} |");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Health: {Health}/{MaxHealth}");
+                Console.ResetColor();
+                Console.Write(" | ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write($"Mana: {Mana}");
+                Console.ResetColor();
+                Console.Write(" | ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"Speed: {Speed}");
+                Console.ResetColor();
+                Console.WriteLine(" | ");
+            }
         }
     }
 }

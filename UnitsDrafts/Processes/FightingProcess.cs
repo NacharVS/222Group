@@ -10,18 +10,28 @@ namespace UnitsDrafts.Processes
 {
     internal class FightingProcess
     {
-        public static void Fighting(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1)
+
+        static public Bow boww = new Bow();
+        static public Sword swordd = new Sword();
+        public static void Fighting(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1, Footman battleft1, Footman battleft2)
         {
+            battleft1.Weapon = swordd;
+            battleft2.Weapon = swordd;
+
+
             string AliveUnit1 = "Alive";
             string AliveUnit2 = "Alive";
             while (AliveUnit1 == "Alive" || AliveUnit2 == "Alive")
             {
-                Console.WriteLine($"Кто будет бить?\n1.{ft1.Name}\n2.{ft2.Name}");
+                Console.WriteLine($"Кто будет бить?\n1.{battleft1.Name}\n2.{battleft2.Name}");
                 int member = Convert.ToInt32(Console.ReadLine());
                 if (member == 1)
                 {
-                    ft1.InflictDamage(ft2);
-                    if (ft2.Health <= 0)
+                    //ft1.InflictDamage(ft2);
+                    battleft1.Weapon.attack(battleft2);
+                    Console.WriteLine("Вас атакует мечник!!!");
+                    //zak.Weapon.attackSS(graves);
+                    if (battleft2.Health <= 0)
                     {
                         ShowStatisticProcess.KilledQuant--;
                         ShowStatisticProcess.FootmanQuant--;
@@ -30,8 +40,9 @@ namespace UnitsDrafts.Processes
                 }
                 else if (member == 2)
                 {
-                    ft2.InflictDamage(ft1);
-                    if (ft1.Health <= 0)
+                    //ft2.InflictDamage(ft1);
+                    battleft2.Weapon.attack(battleft1);
+                    if (battleft1.Health <= 0)
                     {
                         ShowStatisticProcess.KilledQuant--;
                         ShowStatisticProcess.FootmanQuant--;
@@ -40,7 +51,7 @@ namespace UnitsDrafts.Processes
                 }
                 else
                 {
-                    Fighting(ft1, ft2, bs1, ps1);
+                    Fighting(ft1, ft2, bs1, ps1, battleft1, battleft2);
                 }
             }
         }

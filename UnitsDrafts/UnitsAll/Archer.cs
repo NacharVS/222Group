@@ -7,13 +7,13 @@ namespace UnitsDrafts.UnitsAll
         private int _damage;
         private int _speed;
         public Archer(string name, int maxHealth, int speed, int damage, int defence)
-            : base(name, maxHealth, speed, defence, damage)
+            : base(name, maxHealth, speed, defence, damage, null)
         {
             _speed = speed;
             _damage = damage;
         }
 
-        public Archer() : base("Archer", 40, 11, 5, 15)
+        public Archer() : base("Archer", 40, 11, 5, 15, null)
         {
             _speed = 11;
             _damage = 8;
@@ -33,26 +33,30 @@ namespace UnitsDrafts.UnitsAll
 
         public override void BaseInfo()
         {
-            if (Health < 16)
+            if (Health <= 0)
             {
-                _speed = 11;
-                _speed = _speed + 4;
-
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Name: {Name} | ");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Health: Юнит мертв!");
+                Console.ResetColor();
+                Console.WriteLine("|");
             }
             else
             {
-                _speed = 11;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"Name: {Name}|");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Health: {Health}/{MaxHealth}");
+                Console.ResetColor();
+                Console.Write("|");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"|Speed: {_speed}");
+                Console.ResetColor();
+                Console.WriteLine("|");
             }
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"Name: {Name}|");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Health: {Health}/{MaxHealth}");
-            Console.ResetColor();
-            Console.Write("|");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"|Speed: {_speed}");
-            Console.ResetColor();
 
         }
     }

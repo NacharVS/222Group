@@ -1,133 +1,153 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using UnitsDrafts.UnitsAll;
-using static System.Net.Mime.MediaTypeNames;
+using static UnitsDrafts.Weapon;
 
-namespace UnitsDrafts.Toolbox
+namespace UnitsDrafts
 {
     internal class Weapon
     {
-        public Weapon(string weaponName, int minDamage, int maxDamage, double attackSpeed, double accuracy, float maxsolidity, int critChanse)
+
+        public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability, bool Bleed, int stunchance)
         {
-            WeaponName = weaponName;
+            WepName = name;
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             AttackSpeed = attackSpeed;
             Accuracy = accuracy;
-            MaxSolidity = maxsolidity;
-            CritChanse = critChanse;
+            Durability = durability;
+            Bleede = Bleed;
+            Stunchance = stunchance;
+            WeaponDropped = false;
         }
 
-        public string WeaponName { get; set; }
+        public string WepName { get; set; }
         public int MinDamage { get; set; }
         public int MaxDamage { get; set; }
+        public int AttackSpeed { get; set; }
+        public int Accuracy { get; set; }
+        public int Durability { get; set; }
+        public bool Bleede { get; set; } = false;
+        public int Stunchance { get; set; }
+        public bool WeaponDropped { get; set; }
 
-        public double AttackSpeed { get; set; }
-        public double Accuracy { get; set; }
-        public double CurSolidity { get; set; }
-        public double MaxSolidity { get; set; }
-
-        public int CritChanse { get; set; }
-
-        public bool isWork = true;
-
-        public virtual double Hit(Unit unit)
+        public int attack(Unit unit)
         {
-            CurSolidity--;
-            if (!isWork)
+            if (AttackSpeed < 5)
             {
-                return 0;
-            }
-            else
-            {
-                float CritChance = 20;
-                float CritDamage = 1;
-                int x = new Random().Next(1, 100);
-                if (x >= Accuracy)
+                Console.WriteLine("Вы замахнулись оружием");
+                Thread.Sleep(3000);
+                var x = new Random().Next(1, 101);
+                var z = new Random().Next(1, 101);
+                if (Bleede == true && x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
+                    Durability = Durability - 50;
+                    unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    Console.WriteLine("Вы попали");
+                    if (z <= Stunchance)
+                    {
+                        unit.Weapon.WeaponDropped = true;
+                        Console.WriteLine("Чела застаанили!");
+                    }
+
+                    unit.BaseInfo();
+                    Thread.Sleep(3000);
+                    Console.WriteLine("У врага началось кровотечение");
+                    for (int i = 5; i >= 0; i--)
+                    {
+                        Thread.Sleep(1000);
+                        unit.Health = unit.Health - new Random().Next(1, 5);
+                        unit.BaseInfo();
+                    }
+
+                }
+                else if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
+                {
+                    Durability = Durability - 50;
+                    unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    Console.WriteLine("Вы попали");
+                    if (z <= Stunchance)
+                    {
+                        unit.Weapon.WeaponDropped = true;
+                        Console.WriteLine("Чел застанился!");
+                    }
+                    unit.BaseInfo();
+                }
+                else if (WeaponDropped == true)
+                {
+                    Console.WriteLine("Вы оглушены");
+                    WeaponDropped = false;
+                }
+                else if (Durability == 0)
+                {
+                    Console.WriteLine("Оружие сломана");
                     return 0;
                 }
                 else
                 {
-                    double Damage = new Random().Next(MinDamage, MaxDamage);
-                    x = new Random().Next(1, 100);
-                    if (x <= CritChance)
+                    Console.WriteLine("Вы промаахнулись");
+                    return 0;
+                }
+
+            }
+            else if (AttackSpeed < 100000 && AttackSpeed >= 5)
+            {
+                Console.WriteLine("Вы замаахнулись оружием");
+                Thread.Sleep(1500);
+                var x = new Random().Next(1, 101);
+                var z = new Random().Next(1, 101);
+                if (Bleede == true && x <= Accuracy && Durability != 0 && WeaponDropped == false)
+                {
+                    Durability = Durability - 50;
+                    unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    Console.WriteLine("Вы попали");
+                    if (z <= Stunchance)
                     {
-                        Damage += Damage * CritDamage;
+                        unit.Weapon.WeaponDropped = true;
+                        Console.WriteLine("Чела застаанили!");
                     }
-                    return Damage * Solidity_control();
+                    unit.BaseInfo();
+                    Thread.Sleep(1500);
+                    Console.WriteLine("У врага началось кровотечение");
+                    for (int i = 5; i >= 0; i--)
+                    {
+                        Thread.Sleep(1000);
+                        unit.Health = unit.Health - new Random().Next(1, 5);
+                        unit.BaseInfo();
+                    }
+                }
+                else if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
+                {
+                    Durability = Durability - 50;
+                    unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
+                    Console.WriteLine("Вы попали");
+                    if (z <= Stunchance)
+                    {
+                        //unit.Weapon.WeaponDropped = true;
+                        Console.WriteLine("Чела застаанили!");
+                    }
+                    unit.BaseInfo();
+                }
+                else if (WeaponDropped == true)
+                {
+                    Console.WriteLine("Вы оглушены");
+                    WeaponDropped = false;
+
+                }
+                else if (Durability == 0)
+                {
+                    Console.WriteLine("Оружие сломана");
+                    return 0;
+                }
+                else
+                {
+                    Console.WriteLine("Вы промаахнулись");
+                    return 0;
                 }
             }
+            return 0;
 
-        }
-
-        public virtual int Hit()
-        {
-            var x = new Random().Next(0, 100);
-            if (x <= Accuracy)
-            {
-                return new Random().Next(MinDamage, MaxDamage + 1);
-            }
-            else
-            {
-                return 0;
-            }
-
-            x = new Random().Next(0, 100);
-            if (x <= CritChanse)
-            {
-                //Damage = MaxDamage;
-                Console.WriteLine("Был нанесен критический удар");
-
-            }
-        }
-
-        public double Solidity_control()
-        {
-            //CurSolidity = Math.Sqrt(CurSolidity) * 0.3;
-
-            //CurSolidity = Math.Pow(CurSolidity, 2) * 0.0019;
-            
-
-            switch (CurSolidity)
-            {
-                case > 1:
-                    CurSolidity = Math.Pow(CurSolidity, 2) * 0.0019;
-                    Console.WriteLine($"Прочность {CurSolidity}");
-                    return CurSolidity;
-
-                default:
-                    CurSolidity = Math.Pow(CurSolidity, 2) * 0.0019;
-                    Console.WriteLine($"Оружие сломалось {CurSolidity}.");
-                    isWork = false;
-                    Console.WriteLine("Оружие сломалось");
-                    return 0;
-            }
-
-            //if (CurSolidity >= 60)
-            //{
-            //    return 1;   
-            //}
-            //else if (CurSolidity >= 40)
-            //{
-            //    return 0.69f;
-            //}
-            //else if (CurSolidity > 0)
-            //{
-            //    return 0.39f;
-            //}
-            //else
-            //{
-            //    isWork = false;
-            //    Console.WriteLine("Оружие сломалось");
-            //    return 0;
-
-            //}
         }
     }
 }

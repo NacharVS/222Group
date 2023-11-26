@@ -11,9 +11,10 @@ namespace UnitsDrafts.UnitsAll
         private int _speed;
         private int _defence;
         private int _damage;
+        public Weapon Weapon;
 
         public Unit(string name, int maxHealth,
-            int speed, int defence, int damage)
+            int speed, int defence, int damage, Weapon weapon)
         {
             _name = name;
             _health = maxHealth;
@@ -21,6 +22,7 @@ namespace UnitsDrafts.UnitsAll
             _speed = speed;
             _defence = defence;
             _damage = damage;
+            Weapon = weapon;
         }
 
 
@@ -55,6 +57,12 @@ namespace UnitsDrafts.UnitsAll
             }
         }
 
+        public int Speed
+        {
+            get { return _speed; }
+            set { _speed = value; }
+        }
+
         public int MaxHealth { get => _maxHealth; }
 
         public void Moving()
@@ -66,6 +74,26 @@ namespace UnitsDrafts.UnitsAll
         {
 
             int reduceDamage;
+
+            switch (Weapon)
+            {
+                case Sword:
+                    Damage = 0;
+                    break;
+                case Axe:
+                    Damage = 0;
+                    break;
+                case Bow:
+                    Damage = 0;
+                    break;
+                case Morgenstern:
+                    Damage = 0;
+                    break;
+                default:
+                    
+                    break;
+            }
+
 
             if (unit.Health <= 0)
             {
@@ -150,7 +178,7 @@ namespace UnitsDrafts.UnitsAll
         {
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"Name: {_name} | ");
+            Console.Write($"Name: {_name} |");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write($"Health: {_health}/{_maxHealth}");

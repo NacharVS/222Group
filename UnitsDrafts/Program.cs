@@ -27,14 +27,17 @@ namespace UnitsDrafts
             ft1.Name = "Первый футман";
             ft2.Name = "Второй футман";
 
+            var battleft1 = br1.CreateFootman();
+            var battleft2 = br1.CreateFootman();
+
             //List<string> myList = new List<string>();
 
-            Menu(ft1, ft2, bs1, ps1);
+            Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
 
         }
 
 
-        public static void ShowInfo(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1)
+        public static void ShowInfo(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1, Footman battleft1, Footman battleft2)
         {
             /*UNIT INFO*/
             Console.WriteLine("Информация о всех юнитах:");
@@ -60,7 +63,7 @@ namespace UnitsDrafts
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Имя изменено");
                     Console.ResetColor();
-                    Menu(ft1, ft2, bs1, ps1);
+                    Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
                 }
                 else if (unit_change == 2)
                 {
@@ -71,7 +74,7 @@ namespace UnitsDrafts
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Имя изменено");
                     Console.ResetColor();
-                    Menu(ft1, ft2, bs1, ps1);
+                    Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
                 }
                 else if (unit_change == 3)
                 {
@@ -82,7 +85,7 @@ namespace UnitsDrafts
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Имя изменено");
                     Console.ResetColor();
-                    Menu(ft1, ft2, bs1, ps1);
+                    Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
                 }
                 else if (unit_change == 4)
                 {
@@ -93,23 +96,23 @@ namespace UnitsDrafts
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Имя изменено");
                     Console.ResetColor();
-                    Menu(ft1, ft2, bs1, ps1);
+                    Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
                 }
 
             }
             else if (change_back == 2)
             {
                 Console.Clear();
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
             else
             {
                 Console.Clear();
-                ShowInfo(ft1, ft2, bs1, ps1);
+                ShowInfo(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
         }
 
-        public static void Menu(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1)
+        public static void Menu(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1, Footman battleft1, Footman battleft2)
         {
             Console.WriteLine("Какое действие хотите выполнить?");
             Console.WriteLine("");
@@ -124,11 +127,11 @@ namespace UnitsDrafts
             if (deistv == 1)
             {
                 Console.Clear();
-                ShowInfo(ft1, ft2, bs1, ps1);
+                ShowInfo(ft1, ft2, bs1, ps1, battleft1, battleft2);
                 ShowStatisticProcess.StatInfo();
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------");
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
             else if (deistv == 2)
             {
@@ -253,7 +256,7 @@ namespace UnitsDrafts
 
 
 
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
             else if (deistv == 3)
             {
@@ -273,7 +276,7 @@ namespace UnitsDrafts
 
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------");
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
             else if (deistv == 4)
             {
@@ -286,18 +289,18 @@ namespace UnitsDrafts
 
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------");
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
             else if (deistv == 5)
             {
                 ShowStatisticProcess.StatInfo();
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
             }
             else if (deistv == 6)
             {
                 Console.Clear();
-                FightingProcess.Fighting(ft1, ft2, bs1, ps1);
-                Menu(ft1, ft2, bs1, ps1);
+                FightingProcess.Fighting(ft1, ft2, bs1, ps1, battleft1, battleft2);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
 
             }
             else if (deistv == 7)
@@ -312,7 +315,7 @@ namespace UnitsDrafts
 
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------");
-                Menu(ft1, ft2, bs1, ps1);
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
 
                 //ft1.BaseInfo();
             }

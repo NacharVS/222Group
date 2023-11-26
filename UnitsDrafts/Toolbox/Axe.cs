@@ -2,10 +2,10 @@
 
 namespace UnitsDrafts
 {
-    internal class Sword : Weapon
+    internal class Axe : Weapon
     {
         private int _swordlvl;
-        public Sword() : base("Меч", 6, 11, 8, 85, 800, false, 100)
+        public Axe() : base("Топорик", 6, 11, 8, 85, 800, false, 100)
         {
             _swordlvl = 0;
         }
