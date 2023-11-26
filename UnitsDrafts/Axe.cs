@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class Peasant : Unit
+    internal class Axe : Weapon
     {
-        public Peasant() : base("Peasant", 1000, 5)
+        public Axe () : base("Топор", 30, 5, 70, 300, 7, 30, 0 )
         {
         }
     }

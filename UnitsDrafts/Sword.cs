@@ -8,8 +8,9 @@ namespace UnitsDrafts
 {
     internal class Sword : Weapon
     {
-        public Sword() : base("Excalibur", 20, 10, 100, 500, 8, false, 20)
+        public Sword() : base("Excalibur", 20, 10, 100, 500, 8, 0, 20)
         {
+
         }
     }
 }
