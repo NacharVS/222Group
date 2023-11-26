@@ -14,8 +14,10 @@
 
 //Statistics.ShowStatistics();
 
-Axe sword = new Axe();
+Sword sword = new Sword();
 Peasant peasant = new Peasant();
+sword.Metodataki(peasant);
+sword.Metodataki(peasant);
 sword.Metodataki(peasant);
 
 

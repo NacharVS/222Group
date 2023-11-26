@@ -48,7 +48,7 @@ namespace UnitsDrafts
         {
             if (AttSp < 3 )
             {
-                if (Dura != 0)
+                if (Dura > 0)
                 {
                     Thread.Sleep(2000);
                     Console.WriteLine("Вы натянули тетеву");
@@ -60,7 +60,8 @@ namespace UnitsDrafts
                         Console.WriteLine("Вы попали в цель");
                         Dura -= 8;
                         // возможно стоит добавить макс дура
-                        if (y <= Nua)
+                        var z = new Random().Next(1, 101);
+                        if (z <= Nua)
                         {
                             unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1) * 300 / 100;
                             unit.ShowInfo();
@@ -91,7 +92,7 @@ namespace UnitsDrafts
             }
             else if (AttSp < 6 && AttSp > 2 )
             {
-               if (Dura != 0)
+               if (Dura > 0)
                 {
                     Thread.Sleep(1000);
                     Console.WriteLine("Вы замахнулись буловой");
@@ -118,7 +119,7 @@ namespace UnitsDrafts
             }
             else if (AttSp > 5 && AttSp < 8)
             {
-                if(Dura != 0)
+                if(Dura > 0)
                 {
                     Thread.Sleep(1000);
                     Console.WriteLine("Вы замахнулись топором");
@@ -154,7 +155,7 @@ namespace UnitsDrafts
             }
             else if (AttSp < 10 && AttSp > 7)
             {
-                if (Dura != 0)
+                if (Dura > 0)
                 {
                     Console.WriteLine("Вы замахнулись мечом");
                     Thread.Sleep(1000);
