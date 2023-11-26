@@ -10,14 +10,15 @@ namespace UnitsDrafts
 {
     internal class Weapon
     {
-        public Weapon(string name, int maxDamage, int mindamage, int accuracy, int durability, int attackspeed, bool Krovotok)
+        public Weapon(string name, int maxDamage, int minDamage, int accuracy, int durability, int attackspeed, bool Krovotok, int crit)
         {
             Wepname = name;
             MaxDam = maxDamage;
-            MinDam = mindamage;
+            MinDam = minDamage;
             Acc = accuracy;
             Dura = durability;
             AttSp = attackspeed;
+            Nua = crit;
             Krovyaka = Krovotok;
         }
         public string Wepname { get; set; }
@@ -26,7 +27,7 @@ namespace UnitsDrafts
         public int Acc { get; set; }
         public int Dura { get; set; }
         public int AttSp { get; set; }
-
+        public int Nua { get; set; }
         public bool Krovyaka { get; set; } = false;
 
 
@@ -60,6 +61,7 @@ namespace UnitsDrafts
                         Dura -= 8;
                         // возможно стоит добавить макс дура
                         unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                        Krovyaka = true;
                         if (Krovyaka == true)
                         {
                             for (int i = 5; i >= 0; i--)
@@ -79,7 +81,8 @@ namespace UnitsDrafts
                         Dura -= 8;
                         if (Krovyaka == true)
                         {
-                            unit.Health = unit.Health - new Random().Next(1, 5 + 1);
+                            Thread.Sleep(1000);
+                            unit.Health = unit.Health - new Random().Next(1, 5);
                         }
                         unit.ShowInfo();
                         //- точность
@@ -88,6 +91,15 @@ namespace UnitsDrafts
                 else
                 {
                     Console.WriteLine("Ваш лук сломан");
+                    if (Krovyaka == true)
+                    {
+                        for (int i = 5; i >= 0; i--)
+                        {
+                            Thread.Sleep(2000);
+                            unit.Health = unit.Health - new Random().Next(1, 5);
+                            unit.ShowInfo();
+                        }
+                    }
                 }
             }
             else if (AttSp < 6 && AttSp > 2 )
@@ -104,13 +116,6 @@ namespace UnitsDrafts
                         Dura -= 15;
                         unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
                         unit.ShowInfo();
-                        for (int i = 5; i >= 0; i--)
-                        {
-                            Thread.Sleep(2000);
-                            unit.Health = unit.Health - new Random().Next(1, 5);
-                            unit.ShowInfo();
-                        }
-                        unit.ShowInfo();
                     }
                     else
                     {
@@ -121,6 +126,7 @@ namespace UnitsDrafts
                 else
                 {
                     Console.WriteLine("Ваша булава сломана");
+
                 }            
             }
             else if (AttSp > 5 && AttSp < 8)
@@ -136,29 +142,11 @@ namespace UnitsDrafts
                         Console.WriteLine("Вы ударили по цели");
                         Dura -= 10;
                         unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
-                        if (Krovyaka == true)
-                        {
-                            for (int i = 5; i >= 0; i--)
-                            {
-                                Thread.Sleep(2000);
-                                unit.Health = unit.Health - new Random().Next(1, 5);
-                                unit.ShowInfo();
-                            }
-                        }
                         unit.ShowInfo();
                     }
                     else
                     {
                         Console.WriteLine("Вы не смогли ударить по цели");
-                        if (Krovyaka == true)
-                        {
-                            for (int i = 5; i >= 0; i--)
-                            {
-                                Thread.Sleep(2000);
-                                unit.Health = unit.Health - new Random().Next(1, 5);
-                                unit.ShowInfo();
-                            }
-                        }
                         unit.ShowInfo();
                     }
                 }
@@ -167,7 +155,7 @@ namespace UnitsDrafts
                     Console.WriteLine("Ваш топор сломан");
                 }
             }
-            else if (AttSp < 10 && AttSp < 7)
+            else if (AttSp < 10 && AttSp > 7)
             {
                 if (Dura != 0)
                 {
@@ -178,14 +166,19 @@ namespace UnitsDrafts
                     {
                         Console.WriteLine("Вы ударили по цели");
                         Dura -= 5;
-                        unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
-                        for (int i = 5; i >= 0; i--)
+                        var y = new Random().Next(1, 101);
+                        if (y <= Nua )
                         {
-                            Thread.Sleep(2000);
-                            unit.Health = unit.Health - new Random().Next(1, 5);
+                            unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1) * 150 / 100;
+                            unit.ShowInfo();
+                            Console.WriteLine("Херанул критом");
+                        }
+                        else
+                        {
+                            unit.Health = unit.Health - new Random().Next(MinDam, MaxDam + 1);
+                            Console.WriteLine("Крит не херанул");
                             unit.ShowInfo();
                         }
-                        unit.ShowInfo();
                     }
                     else
                     {
