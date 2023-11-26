@@ -122,8 +122,11 @@ namespace UnitsDrafts
                         var y = new Random().Next(1, 101);
                         if (y <= Krovyaka)
                         {
-                            Thread.Sleep(1000);
-                            unit.Health = unit.Health - unit.MaxHealth * 20 / 100;
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                Thread.Sleep(1000);
+                                unit.Health = unit.Health - 10;
+                            }
                             Console.WriteLine("Пошла кровъ");
                         }    
                         unit.ShowInfo();
