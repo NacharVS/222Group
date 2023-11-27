@@ -128,6 +128,7 @@ namespace UnitsDrafts
             Console.WriteLine("5.Показать количество юнитов.");
             Console.WriteLine("6.Дуэль");
             Console.WriteLine("7.Вышка обстреливает");
+            Console.WriteLine("8.Отхилить всех юнитов");
 
             int deistv;
 
@@ -350,6 +351,22 @@ namespace UnitsDrafts
 
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------");
+                Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
+
+                //ft1.BaseInfo();
+            }
+            else if (deistv == 8)
+            {
+                Console.Clear();
+                ft1.Health = ft1.MaxHealth;
+                ft2.Health = ft2.MaxHealth;
+                bs1.Health = bs1.MaxHealth;
+                ps1.Health = ps1.MaxHealth;
+                battleft1.Health = battleft2.MaxHealth;
+                battleft2.Health = battleft2.MaxHealth;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Юниты отхилены!");
+                Console.ResetColor();
                 Menu(ft1, ft2, bs1, ps1, battleft1, battleft2);
 
                 //ft1.BaseInfo();
