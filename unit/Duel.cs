@@ -29,13 +29,11 @@ namespace unit
                     {
                         Stat.StunCheck(unit1);
                         Stat.StunCheck(unit2);
-                        Stat.BloodLossCheck(unit1);
-                        Stat.BloodLossCheck(unit2);
                         Console.WriteLine($"раунд {FightCount + 1}");
                         unit1.InflictDamage(unit2);
                         unit2.InflictDamage(unit1);
 
-                        FightCount++;
+                        
                         if (unit1.Health > 0 && unit2.Health <= 0)
                         {
 
@@ -50,6 +48,7 @@ namespace unit
                             Console.WriteLine($"{unit2.Name} победил {unit1.Name}, дуэль закончилась");
                             Console.ResetColor();
                         }
+                        FightCount++;
 
                     }
                     
@@ -68,9 +67,8 @@ namespace unit
                     {
                         Stat.StunCheck(unit1);
                         Stat.StunCheck(unit2);
-                        Stat.BloodLossCheck(unit1);
-                        Stat.BloodLossCheck(unit2);
                         
+
 
                         Console.WriteLine($"раунд {FightCount + 1}");
                         unit2.InflictDamage(unit1);

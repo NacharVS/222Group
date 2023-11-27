@@ -38,19 +38,12 @@ namespace unit
         }
         public static void Bloodloss(Unit unit)
         {
-            BloodLosscount = Duel.FightCount + 10;
-            unit.Blodloss = true;
-            unit.Health -= 1;
-            Console.WriteLine($"bleeding, health{unit.Health}, name{unit.Name}");
+            
+            
+
 
         }
-        public static void BloodLossCheck(Unit unit)
-        {
-            if (Duel.FightCount >= BloodLosscount)
-            {
-                unit.Blodloss = false;
-            }
-        }
+
     }
 }
 

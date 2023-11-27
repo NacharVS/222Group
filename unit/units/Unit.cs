@@ -19,6 +19,7 @@ namespace unit.units
         private bool _blodloss = false;
         private bool _stun = false;
         private Weapon _weapon;
+        public  int blcount;
         public delegate void InflictDamageDelegate(Unit unit);
         public InflictDamageDelegate inflictDamage;
         public Unit(string name, int maxHealth,

@@ -36,7 +36,12 @@ namespace unit.Items
                     if (x <= CritChance)
                     {
                         Damage = MaxDamage;
-                        Stat.Bloodloss(unit);
+                        unit.Blodloss = true;
+                        
+                    }
+                    if (unit.Blodloss = true)
+                    {
+                        unit.Health -= 1;
                         Console.WriteLine($"Был нанесен критический удар, у {unit.Name} началась кровотечение");
                     }
                     return Damage * DurabilityQuality();
