@@ -177,22 +177,11 @@ namespace UnitsDrafts
                 }
                 else
                 {
-                    if (!Alive)
-                    {
-                        Console.WriteLine("Юнит не может атаковать - он мертв");
-                    }
-                    else
-                    {
-                        if (Stunned)
+
+                       if (!unit.Alive)
                         {
-                            Console.WriteLine("Юнит оглушен - он не может атаковать");
-                        }
-                        else
-                        {
-                            if (!unit.Alive)
-                            {
                                 Console.WriteLine("зачем ты атакуешь труп?");
-                            }
+                         }
                             else
                             {
                                 if (!Weapon.WeaponAlive)
