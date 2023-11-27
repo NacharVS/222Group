@@ -14,6 +14,12 @@ namespace UnitsDrafts.Processes
         public static int FootmanQuant = 0;
         public static int LiveQuant = 0;
         public static int KilledQuant = 0;
+
+        public static int TownHallQuant = 0;
+        public static int MamaQuant = 0;
+        public static int BarracsQuant = 0;
+        public static int TowersQuant = 0;
+        public static int BuildingQuant = 0;
         public static void StatInfo()
         {
             Console.WriteLine($" Количество Bishop:{BishopQuant} \n Количество Peasant:{PeasantQuant} \n Количество Archer:{ArcherQuant} \n Количество Footman:{FootmanQuant}");

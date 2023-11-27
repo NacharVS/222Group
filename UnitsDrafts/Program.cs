@@ -324,6 +324,7 @@ namespace UnitsDrafts
                 WatchingTower wt1 = new WatchingTower();
                 wt1.AddArcher();
                 wt1.AddArcher();
+                wt1.AddArcher();
 
                 wt1.DealDamage(ft1);
                 ft1.BaseInfo();
