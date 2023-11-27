@@ -50,7 +50,7 @@ namespace UnitsDrafts
             ft2.BaseInfo();
             bs1.BaseInfo();
             ps1.BaseInfo();
-            
+
             Console.WriteLine("");
             Console.WriteLine("1.Изменить имя юнита\n2.Вернуться в меню");
             int change_back = Convert.ToInt32(Console.ReadLine());
@@ -119,6 +119,7 @@ namespace UnitsDrafts
 
         public static void Menu(Footman ft1, Footman ft2, Bishop bs1, Peasant ps1, Footman battleft1, Footman battleft2)
         {
+            Console.Clear();
             Console.WriteLine("Какое действие хотите выполнить?");
             Console.WriteLine("");
             Console.WriteLine("1.Показать информацию о юнитах.");
@@ -143,7 +144,7 @@ namespace UnitsDrafts
                 throw;
             }
 
-            
+
             if (deistv == 1)
             {
                 Console.Clear();
@@ -187,6 +188,26 @@ namespace UnitsDrafts
 
                 var a = "";
                 var dictionaryExample = new Dictionary<string, Unit>();
+
+
+                switch (group)
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    default:
+                        Console.WriteLine("Неизвестное имя");
+                        break;
+                }
 
                 switch (kovo)
                 {

@@ -22,7 +22,8 @@ namespace UnitsDrafts.Processes
             
             while (true)
             {
-                Console.WriteLine($"Кто будет бить?\n1.{battleft1.Name}\n2.{battleft2.Name}");
+
+                Console.WriteLine($"Кто будет бить?\n1.{battleft1.Name}\n2.{battleft2.Name}\n3.Вернуться в меню");
                 int member = Convert.ToInt32(Console.ReadLine());
                 if (member == 1)
                 {
@@ -47,6 +48,10 @@ namespace UnitsDrafts.Processes
                         ShowStatisticProcess.FootmanQuant--;
                         break;
                     }
+                }
+                else if (member == 3)
+                {
+                    Program.Menu(ft1, ft2, bs1, ps1,battleft1, battleft2);
                 }
                 else
                 {

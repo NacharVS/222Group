@@ -7,7 +7,7 @@ using static UnitsDrafts.Weapon;
 namespace UnitsDrafts
 {
     internal class Weapon
-    {
+    {//fdsjfduhfdskkkk
 
         public Weapon(string name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability, bool Bleed, int stunchance)
         {
@@ -49,11 +49,11 @@ namespace UnitsDrafts
                     if (z <= Stunchance)
                     {
                         unit.Weapon.WeaponDropped = true;
-                        Console.WriteLine("Чела застаанили!");
+                        Console.WriteLine("Чела застанили!");
                     }
 
                     unit.BaseInfo();
-                    
+
 
                 }
                 else if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
@@ -80,7 +80,7 @@ namespace UnitsDrafts
                 }
                 else
                 {
-                    Console.WriteLine("Вы промаахнулись");
+                    Console.WriteLine("Вы промахнулись");
                     return 0;
                 }
 
@@ -100,10 +100,10 @@ namespace UnitsDrafts
                     if (z <= Stunchance)
                     {
                         unit.Weapon.WeaponDropped = true;
-                        Console.WriteLine("Чела застаанили!");
+                        Console.WriteLine("Чела застанили!");
                     }
                     unit.BaseInfo();
-                    
+
                 }
                 else if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
@@ -130,7 +130,7 @@ namespace UnitsDrafts
                 }
                 else
                 {
-                    Console.WriteLine("Вы промаахнулись");
+                    Console.WriteLine("Вы промахнулись");
                     return 0;
                 }
             }
