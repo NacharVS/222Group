@@ -16,10 +16,9 @@
 
 Sword sword = new Sword();
 Peasant peasant = new Peasant();
-sword.Metodataki(peasant);
-sword.Metodataki(peasant);
-sword.Metodataki(peasant);
-
+Footman footman = new Footman();
+footman.weapon = sword;
+footman.weapon.Metodataki(peasant);
 
 
 
