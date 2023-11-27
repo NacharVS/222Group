@@ -123,7 +123,21 @@ namespace UnitsDrafts
             Console.WriteLine("5.Показать количество юнитов.");
             Console.WriteLine("6.Дуэль");
             Console.WriteLine("7.Вышка обстреливает");
-            int deistv = Convert.ToInt32(Console.ReadLine());
+
+            int deistv;
+
+            try
+            {
+                deistv = Convert.ToInt32(Console.ReadLine());
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("processing failed");
+                throw;
+            }
+
+            
             if (deistv == 1)
             {
                 Console.Clear();
