@@ -12,6 +12,7 @@ namespace UnitsDrafts.BuilsingsAll
     {
         public Peasant CreatePeasant()
         {
+            
             ShowStatisticProcess.PeasantQuant += 1;
             ShowStatisticProcess.LiveQuant += 1;
             Random random = new Random();

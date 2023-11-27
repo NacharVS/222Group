@@ -50,7 +50,7 @@ namespace UnitsDrafts
             ft2.BaseInfo();
             bs1.BaseInfo();
             ps1.BaseInfo();
-            
+
             Console.WriteLine("");
             Console.WriteLine("1.Изменить имя юнита\n2.Вернуться в меню");
             int change_back = Convert.ToInt32(Console.ReadLine());
@@ -142,7 +142,7 @@ namespace UnitsDrafts
                 throw;
             }
 
-            
+
             if (deistv == 1)
             {
                 Console.Clear();
