@@ -19,9 +19,8 @@ namespace UnitsDrafts.Processes
             battleft2.Weapon = swordd;
 
 
-            string AliveUnit1 = "Alive";
-            string AliveUnit2 = "Alive";
-            while (AliveUnit1 == "Alive" || AliveUnit2 == "Alive")
+            
+            while (true)
             {
                 Console.WriteLine($"Кто будет бить?\n1.{battleft1.Name}\n2.{battleft2.Name}");
                 int member = Convert.ToInt32(Console.ReadLine());

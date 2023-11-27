@@ -36,11 +36,12 @@ namespace UnitsDrafts
         {
             if (AttackSpeed < 5)
             {
+                Console.Clear();
                 Console.WriteLine("Вы замахнулись оружием");
                 Thread.Sleep(3000);
-                var x = new Random().Next(1, 101);
-                var z = new Random().Next(1, 101);
-                if (Bleede == true && x <= Accuracy && Durability != 0 && WeaponDropped == false)
+                var x = new Random().Next(0, 100);
+                var z = new Random().Next(0, 100);
+                if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
@@ -52,14 +53,7 @@ namespace UnitsDrafts
                     }
 
                     unit.BaseInfo();
-                    Thread.Sleep(3000);
-                    Console.WriteLine("У врага началось кровотечение");
-                    for (int i = 5; i >= 0; i--)
-                    {
-                        Thread.Sleep(1000);
-                        unit.Health = unit.Health - new Random().Next(1, 5);
-                        unit.BaseInfo();
-                    }
+                    
 
                 }
                 else if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
@@ -93,11 +87,12 @@ namespace UnitsDrafts
             }
             else if (AttackSpeed < 100000 && AttackSpeed >= 5)
             {
-                Console.WriteLine("Вы замаахнулись оружием");
+                Console.Clear();
+                Console.WriteLine("Вы замахнулись оружием");
                 Thread.Sleep(1500);
-                var x = new Random().Next(1, 101);
-                var z = new Random().Next(1, 101);
-                if (Bleede == true && x <= Accuracy && Durability != 0 && WeaponDropped == false)
+                var x = new Random().Next(0, 100);
+                var z = new Random().Next(0, 100);
+                if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
                     Durability = Durability - 50;
                     unit.Health = unit.Health - new Random().Next(MinDamage, MaxDamage + 1);
@@ -108,14 +103,7 @@ namespace UnitsDrafts
                         Console.WriteLine("Чела застаанили!");
                     }
                     unit.BaseInfo();
-                    Thread.Sleep(1500);
-                    Console.WriteLine("У врага началось кровотечение");
-                    for (int i = 5; i >= 0; i--)
-                    {
-                        Thread.Sleep(1000);
-                        unit.Health = unit.Health - new Random().Next(1, 5);
-                        unit.BaseInfo();
-                    }
+                    
                 }
                 else if (x <= Accuracy && Durability != 0 && WeaponDropped == false)
                 {
@@ -124,8 +112,8 @@ namespace UnitsDrafts
                     Console.WriteLine("Вы попали");
                     if (z <= Stunchance)
                     {
-                        //unit.Weapon.WeaponDropped = true;
-                        Console.WriteLine("Чела застаанили!");
+                        unit.Weapon.WeaponDropped = true;
+                        Console.WriteLine("Чела застанили!");
                     }
                     unit.BaseInfo();
                 }
