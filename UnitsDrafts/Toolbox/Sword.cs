@@ -5,7 +5,7 @@ namespace UnitsDrafts
     internal class Sword : Weapon
     {
         private int _swordlvl;
-        public Sword() : base("Меч", 6, 11, 8, 85, 800, false, 100)
+        public Sword() : base("Меч", 6, 11, 8, 85, 800, false, 30)
         {
             _swordlvl = 0;
         }

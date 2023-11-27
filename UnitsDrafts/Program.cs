@@ -29,6 +29,8 @@ namespace UnitsDrafts
 
             var battleft1 = br1.CreateFootman();
             var battleft2 = br1.CreateFootman();
+            battleft1.Name = "Первый футман Дуэль";
+            battleft2.Name = "Второй футман Дуэль";
 
             //List<string> myList = new List<string>();
 
@@ -42,10 +44,13 @@ namespace UnitsDrafts
             /*UNIT INFO*/
             Console.WriteLine("Информация о всех юнитах:");
             Console.WriteLine("------------------------------------------------");
+            battleft1.BaseInfo();
+            battleft2.BaseInfo();
             ft1.BaseInfo();
             ft2.BaseInfo();
             bs1.BaseInfo();
             ps1.BaseInfo();
+            
             Console.WriteLine("");
             Console.WriteLine("1.Изменить имя юнита\n2.Вернуться в меню");
             int change_back = Convert.ToInt32(Console.ReadLine());
