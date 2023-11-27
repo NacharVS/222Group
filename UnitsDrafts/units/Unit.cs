@@ -180,13 +180,13 @@ namespace UnitsDrafts
 
                        if (!unit.Alive)
                         {
-                                Console.WriteLine("зачем ты атакуешь труп?");
+                                Console.WriteLine("атакуемый юнит убит");
                          }
                             else
                             {
                                 if (!Weapon.WeaponAlive)
                                 {
-                                    Console.WriteLine("Невозможно атаковать сломанным оружием");
+                                    Console.WriteLine("Оружие сломано");
 
                                 }
                                 else
