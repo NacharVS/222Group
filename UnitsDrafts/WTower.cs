@@ -15,7 +15,6 @@ namespace UnitsDrafts
         private int _lvl;
         private int _ArchersInTower;
 
-
         public WatchingTower(int TowerHealth, int TowerDamage, int lvl, int archersInTower)
         {
             _TowerHealth = 1300;

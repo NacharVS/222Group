@@ -23,68 +23,72 @@ namespace UnitsDrafts
             graves.Weapon = bowforgraves;
             zak.Weapon = swordforzak;
 
-            Console.WriteLine("Выберите: 1.Мечник 2.Лучник");
-            var vibor1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
-            var vibor2 = Convert.ToInt32(Console.ReadLine());
-            switch(vibor1)
+            while(zak.Health > 0 && graves.Health > 0) 
             {
-                case 1:
-                    Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
-                    switch(vibor2)
-                    {
-                        case 1:
-                            zak.Weapon.attackSS(graves);
-                            Console.WriteLine("Вас атакует Лучник!!!");
-                            graves.Weapon.attackSS(zak);
-                            if (zak.Health != 0 || graves.Health != 0)
-                            {
-                                Arenavoins();
+                Console.WriteLine("Выберите: 1.Мечник 2.Лучник");
+                var vibor1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
+                var vibor2 = Convert.ToInt32(Console.ReadLine());
+
+                switch (vibor1)
+                {
+                    case 1:
+                        Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
+                        switch (vibor2)
+                        {
+                            case 1:
+                                zak.Weapon.attackSS(graves);
+                                Console.WriteLine("Вас атакует Лучник!!!");
+                                graves.Weapon.attackSS(zak);
+                                if (zak.Health != 0 || graves.Health != 0)
+                                {
+                                    Arenavoins();
+                                    break;
+                                }
+                                else
+                                if (zak.Health > 0 || graves.Health == 0)
+                                {
+                                    Console.WriteLine("Zak победитель в дуэли1!!");
+                                    break;
+                                }
+                                else
+                                if (zak.Health == 0 || graves.Health > 0)
+                                {
+                                    Console.WriteLine("Graves победитель в дуэли1!!");
+                                    break;
+                                }
                                 break;
-                            }
-                            else
-                            if (zak.Health > 0 || graves.Health == 0)
-                            {
-                                Console.WriteLine("Zak победитель в дуэли!!");
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
+                        switch (vibor2)
+                        {
+                            case 1:
+                                graves.Weapon.attackSS(zak);
+                                Console.WriteLine("Вас атакует мечник!!!");
+                                zak.Weapon.attackSS(graves);
+                                if (zak.Health != 0 || graves.Health != 0)
+                                {
+                                    Arenavoins();
+                                    break;
+                                }
+                                else
+                                if (zak.Health > 0 || graves.Health == 0)
+                                {
+                                    Console.WriteLine("Zak победитель в дуэли2!!");
+                                    break;
+                                }
+                                else
+                                if (zak.Health == 0 || graves.Health > 0)
+                                {
+                                    Console.WriteLine("Graves победитель в дуэли2!!");
+                                    break;
+                                }
                                 break;
-                            }
-                            else
-                            if (zak.Health == 0 || graves.Health > 0)
-                            {
-                                Console.WriteLine("Graves победитель в дуэли!!");
-                                break;
-                            }
-                            break;
-                    }
-                    break;
-                case 2:
-                    Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
-                    switch (vibor2)
-                    {
-                        case 1:
-                            graves.Weapon.attackSS(zak);
-                            Console.WriteLine("Вас атакует мечник!!!");
-                            zak.Weapon.attackSS(graves);
-                            if (zak.Health != 0 || graves.Health != 0)
-                            {
-                                Arenavoins();
-                                break;
-                            }
-                            else
-                            if (zak.Health > 0 || graves.Health == 0)
-                            {
-                                Console.WriteLine("Zak победитель в дуэли!!");
-                                break;
-                            }
-                            else
-                            if (zak.Health == 0 || graves.Health > 0)
-                            {
-                                Console.WriteLine("Graves победитель в дуэли!!");
-                                break;
-                            }
-                            break;
-                    }
-                    break;
+                        }
+                        break;
+                }
             }
             //if (vibor1 == 1)
             //{
