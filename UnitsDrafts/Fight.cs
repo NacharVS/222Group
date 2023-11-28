@@ -25,102 +25,134 @@ namespace UnitsDrafts
 
             Console.WriteLine("Выберите: 1.Мечник 2.Лучник");
             var vibor1 = Convert.ToInt32(Console.ReadLine());
-            if (vibor1 == 1)
+            Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
+            var vibor2 = Convert.ToInt32(Console.ReadLine());
+            switch(vibor1)
             {
-                Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
-            }
-            else 
-            if (vibor1 == 2)
-            {
-                Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
-            }
-            else
-            {
-                Console.WriteLine("Такого нет");
-            }
-            Battle();
-            void Battle()
-            {
-                Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
-                var vibor2 = Convert.ToInt32(Console.ReadLine());
-                if (vibor2 == 1 && vibor1 == 1)
-                {
-                    zak.Weapon.attackSS(graves);
-                    Console.WriteLine("Вас атакует Лучник!!!");
-                    graves.Weapon.attackSS(zak);
-                    if (zak.Health != 0 || graves.Health != 0)
+                case 1:
+                    Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
+                    switch(vibor2)
                     {
-                        Battle();
+                        case 1:
+                            zak.Weapon.attackSS(graves);
+                            Console.WriteLine("Вас атакует Лучник!!!");
+                            graves.Weapon.attackSS(zak);
+                            if (zak.Health != 0 || graves.Health != 0)
+                            {
+                                Arenavoins();
+                                break;
+                            }
+                            else
+                            if (zak.Health > 0 || graves.Health == 0)
+                            {
+                                Console.WriteLine("Zak победитель в дуэли!!");
+                                break;
+                            }
+                            else
+                            if (zak.Health == 0 || graves.Health > 0)
+                            {
+                                Console.WriteLine("Graves победитель в дуэли!!");
+                                break;
+                            }
+                            break;
                     }
-                    else
-                    if (zak.Health == 0 || graves.Health == 0)
+                    break;
+                case 2:
+                    Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
+                    switch (vibor2)
                     {
-                        return;
+                        case 1:
+                            graves.Weapon.attackSS(zak);
+                            Console.WriteLine("Вас атакует мечник!!!");
+                            zak.Weapon.attackSS(graves);
+                            if (zak.Health != 0 || graves.Health != 0)
+                            {
+                                Arenavoins();
+                                break;
+                            }
+                            else
+                            if (zak.Health > 0 || graves.Health == 0)
+                            {
+                                Console.WriteLine("Zak победитель в дуэли!!");
+                                break;
+                            }
+                            else
+                            if (zak.Health == 0 || graves.Health > 0)
+                            {
+                                Console.WriteLine("Graves победитель в дуэли!!");
+                                break;
+                            }
+                            break;
                     }
-                }
-                else
-                if (vibor2 == 1 && vibor1 == 2)
-                {
-                    graves.Weapon.attackSS(zak);
-                    Console.WriteLine("Вас атакует мечник!!!");
-                    zak.Weapon.attackSS(graves);
-                    if (zak.Health != 0 || graves.Health != 0)
-                    {
-                        Battle();
-                    }
-                    else
-                    if (zak.Health == 0 || graves.Health == 0)
-                    {
-                        return;
-                    }
-                }
-
-                else
-                if (vibor2 == 2 && vibor1 == 2)
-                {
-                    Console.WriteLine("Адк руина");
-                }
-
-                else
-                if (vibor2 == 2 && vibor1 == 1)
-                {
-                    Console.WriteLine("Гарен мусор");
-                }
-                else
-                {
-                    return;
-                }
+                    break;
             }
-                
-            //if (vibor2 == 1 && vibor1 == 1)
+            //if (vibor1 == 1)
             //{
-            //    zak.Weapon.attackSS(graves);
-            //    Console.WriteLine("Вы нанесли урон, zak!");
-            //    graves.BaseInfo();
-            //    graves.Weapon.attackSS(zak);
-            //    Console.WriteLine("Вас атаковали в ответ!");
-            //    zak.BaseInfo();
+            //    Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
             //}
-            //else
-            //if (vibor2 == 1 && vibor1 == 2)
+            //else 
+            //if (vibor1 == 2)
             //{
-            //    graves.Weapon.attackSS(zak);
-            //    Console.WriteLine("Вы нанесли урон, graves!");
-            //    zak.Weapon.attackSS(graves);
-            //}
-            //else
-            //if (vibor2 == 2)
-            //{
-            //    Console.WriteLine("FF15");
+            //    Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
             //}
             //else
             //{
-            //    return;
+            //    Console.WriteLine("Такого нет");
             //}
+            //Battle();
+            //void Battle()
+            //{
+            //    Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
+            //    var vibor2 = Convert.ToInt32(Console.ReadLine());
+            //    if (vibor2 == 1 && vibor1 == 1)
+            //    {
+            //        zak.Weapon.attackSS(graves);
+            //        Console.WriteLine("Вас атакует Лучник!!!");
+            //        graves.Weapon.attackSS(zak);
+            //        if (zak.Health != 0 || graves.Health != 0)
+            //        {
+            //            Battle();
+            //        }
+            //        else
+            //        if (zak.Health == 0 || graves.Health == 0)
+            //        {
+            //            return;
+            //        }
+            //    }
+            //    else
+            //    if (vibor2 == 1 && vibor1 == 2)
+            //    {
+            //        graves.Weapon.attackSS(zak);
+            //        Console.WriteLine("Вас атакует мечник!!!");
+            //        zak.Weapon.attackSS(graves);
+            //        if (zak.Health != 0 || graves.Health != 0)
+            //        {
+            //            Battle();
+            //        }
+            //        else
+            //        if (zak.Health == 0 || graves.Health == 0)
+            //        {
+            //            return;
+            //        }
+            //    }
 
+            //    else
+            //    if (vibor2 == 2 && vibor1 == 2)
+            //    {
+            //        Console.WriteLine("Адк руина");
+            //    }
 
-
+            //    else
+            //    if (vibor2 == 2 && vibor1 == 1)
+            //    {
+            //        Console.WriteLine("Гарен мусор");
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+            //}
         }
-        
+
     }
 }

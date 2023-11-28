@@ -5,7 +5,7 @@ using static UnitsDrafts.Weapon;
 
 namespace UnitsDrafts
 {
-    internal class Weapon 
+    internal class Weapon : Fight
     {
         //делегат
         //делегат делегат
@@ -35,6 +35,8 @@ namespace UnitsDrafts
         public int Stunchance { get; set; }
         public bool WeaponDropped { get; set; }
 
+
+
         //public virtual int Hit(Unit unit)
         //{
         //    var x = new Random().Next(1, 101);
@@ -61,7 +63,7 @@ namespace UnitsDrafts
         //}
         public int attackSS(Unit unit)
         {
-            if (AttackSpeed < 5)
+            if (AttackSpeed < 5 && zak.Health != 0 || graves.Health != 0)
             {
                 Console.WriteLine("Вы замахнулись оружием");
                 Thread.Sleep(3000);               
@@ -122,7 +124,7 @@ namespace UnitsDrafts
 
             }
             else
-            if (AttackSpeed < 100000 && AttackSpeed >= 5)
+            if (AttackSpeed < 100000 && AttackSpeed >= 5 && zak.Health != 0 || graves.Health != 0)
             {
                 Console.WriteLine("Вы замохнулись оружием");
                 Thread.Sleep(1500);
@@ -179,8 +181,8 @@ namespace UnitsDrafts
                     Console.WriteLine("Вы промохнулись");
                     return 0;
                 }
-            } return 0;
-
+            }
+            return 0;
         }
     }
 }
