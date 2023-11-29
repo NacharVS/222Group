@@ -63,7 +63,7 @@ namespace UnitsDrafts
         //}
         public int attackSS(Unit unit)
         {
-            if (AttackSpeed < 5 && unit.Health != 0)
+            if (AttackSpeed < 5)
             {
                 Console.WriteLine("Вы замахнулись оружием");
                 Thread.Sleep(3000);               
@@ -124,7 +124,7 @@ namespace UnitsDrafts
 
             }
             else
-            if (AttackSpeed < 30 && AttackSpeed >= 5 &&  unit.Health != 0)
+            if (AttackSpeed < 30 && AttackSpeed >= 5)
             {
                 Console.WriteLine("Вы замохнулись оружием");
                 Thread.Sleep(1500);

@@ -38,24 +38,9 @@ namespace UnitsDrafts
                         {
                             case 1:
                                 zak.Weapon.attackSS(graves);
-                                Console.WriteLine("Вас атакует Лучник!!!");
-                                graves.Weapon.attackSS(zak);
                                 if (zak.Health != 0 || graves.Health != 0)
                                 {
                                     Arenavoins();
-                                    break;
-                                }
-                                else
-                                if (zak.Health > 0 || graves.Health == 0)
-                                {
-                                    Console.WriteLine("Zak победитель в дуэли1!!");
-                                    break;
-                                }
-                                else
-                                if (zak.Health == 0 || graves.Health > 0)
-                                {
-                                    Console.WriteLine("Graves победитель в дуэли1!!");
-                                    break;
                                 }
                                 break;
                         }
@@ -66,96 +51,28 @@ namespace UnitsDrafts
                         {
                             case 1:
                                 graves.Weapon.attackSS(zak);
-                                Console.WriteLine("Вас атакует мечник!!!");
-                                zak.Weapon.attackSS(graves);
                                 if (zak.Health != 0 || graves.Health != 0)
                                 {
                                     Arenavoins();
-                                    break;
-                                }
-                                else
-                                if (zak.Health > 0 || graves.Health == 0)
-                                {
-                                    Console.WriteLine("Zak победитель в дуэли2!!");
-                                    break;
-                                }
-                                else
-                                if (zak.Health == 0 || graves.Health > 0)
-                                {
-                                    Console.WriteLine("Graves победитель в дуэли2!!");
-                                    break;
-                                }
+                                }                             
                                 break;
                         }
                         break;
                 }
             }
-            //if (vibor1 == 1)
-            //{
-            //    Console.WriteLine($"Ваш воин готов к битве и его имя{zak.Name}");
-            //}
-            //else 
-            //if (vibor1 == 2)
-            //{
-            //    Console.WriteLine($"Ваш воин готов к битве и его имя{graves.Name}");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Такого нет");
-            //}
-            //Battle();
-            //void Battle()
-            //{
-            //    Console.WriteLine("Выберите действие\n 1.Нанести урон\n 2.Сдаться\n 3.Самоубийство(показать возможности)");
-            //    var vibor2 = Convert.ToInt32(Console.ReadLine());
-            //    if (vibor2 == 1 && vibor1 == 1)
-            //    {
-            //        zak.Weapon.attackSS(graves);
-            //        Console.WriteLine("Вас атакует Лучник!!!");
-            //        graves.Weapon.attackSS(zak);
-            //        if (zak.Health != 0 || graves.Health != 0)
-            //        {
-            //            Battle();
-            //        }
-            //        else
-            //        if (zak.Health == 0 || graves.Health == 0)
-            //        {
-            //            return;
-            //        }
-            //    }
-            //    else
-            //    if (vibor2 == 1 && vibor1 == 2)
-            //    {
-            //        graves.Weapon.attackSS(zak);
-            //        Console.WriteLine("Вас атакует мечник!!!");
-            //        zak.Weapon.attackSS(graves);
-            //        if (zak.Health != 0 || graves.Health != 0)
-            //        {
-            //            Battle();
-            //        }
-            //        else
-            //        if (zak.Health == 0 || graves.Health == 0)
-            //        {
-            //            return;
-            //        }
-            //    }
-
-            //    else
-            //    if (vibor2 == 2 && vibor1 == 2)
-            //    {
-            //        Console.WriteLine("Адк руина");
-            //    }
-
-            //    else
-            //    if (vibor2 == 2 && vibor1 == 1)
-            //    {
-            //        Console.WriteLine("Гарен мусор");
-            //    }
-            //    else
-            //    {
-            //        return;
-            //    }
-            //}
+            if (zak.Health > graves.Health)
+            {
+                Console.WriteLine("Zak  победитель!!!");
+            }
+            else
+            if (graves.Health > zak.Health)
+            {
+                Console.WriteLine("Graves победитель!!!");
+            }
+            else
+            {
+                Console.WriteLine("Победителя нету");
+            }
         }
 
     }
