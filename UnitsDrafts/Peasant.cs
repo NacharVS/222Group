@@ -8,7 +8,7 @@ namespace UnitsDrafts
 {
     internal class Peasant : Unit
     {
-        public Peasant() : base("Peasant", 1000, 5)
+        public Peasant() : base("Peasant", 1000, 5, null)
         {
         }
     }

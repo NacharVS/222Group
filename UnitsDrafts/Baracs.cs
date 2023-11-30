@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal static class Baracs
+   internal static class Baracs
 
     {
-        public static Footman SozdatPehotintsa()
-        {
-            Statistics.FootmansCount++;
-            Footman footman = new Footman();
-            return footman;
-        }
-        public static Archer SozdatLuchnika()
-        {
-            Statistics.ArchersCount++;
-            Archer archer = new Archer();
-            return archer;
-        }
-    }
+//        public static Footman SozdatPehotintsa()
+//        {
+//            Statistics.FootmansCount++;
+//            Footman footman = new Footman();
+//            return footman;
+//        }
+//        public static Archer SozdatLuchnika()
+//        {
+//            Statistics.ArchersCount++;
+//            Archer archer = new Archer();
+//            return archer;
+//        }
+   }
 }

@@ -6,14 +6,14 @@
         private int _health;
         private int _maxHealth;
         private int _speed;
-        public Weapon weapon;
-        public Unit(string name, int maxHealth, 
-            int speed)
+        public Weapon _weapon;
+        public Unit(string name, int maxHealth, int speed,Weapon weapon)
         {
             _name = name;
             _health = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
+            _weapon = weapon;
         }
 
         public string Name => _name;       

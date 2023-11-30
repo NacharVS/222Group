@@ -7,7 +7,7 @@ namespace UnitsDrafts
         private int _mana;
         private int _maxmana;
 
-        public Bishop() : base("Bishop", 40, 7)
+        public Bishop() : base("Bishop", 40, 7, null)
         {
             _mana = 20;
             _maxmana = 20;

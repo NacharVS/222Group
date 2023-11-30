@@ -29,13 +29,13 @@
 
 
         public Footman(string name, int maxHealth, int speed, int damage, int defence) 
-            : base(name, maxHealth, speed)
+            : base(name, maxHealth, speed, null)
         {
             _damage = damage;
             _defence = defence;
         }
 
-        public Footman() : base("Footman", 60, 10)
+        public Footman() : base("Footman", 60, 10, null)
         {
             _damage = 13;
             _defence = 2;
