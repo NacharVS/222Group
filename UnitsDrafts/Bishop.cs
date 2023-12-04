@@ -29,7 +29,7 @@ namespace UnitsDrafts
             get { return _mana; }
             set { _mana = value; }
         }
-        public void Healing(Unit ac1, int heal)
+        public void Healing(Unit unit, int heal)
         {
             if (_mana >= 10)
             {
