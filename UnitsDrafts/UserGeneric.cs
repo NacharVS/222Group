@@ -1,8 +1,8 @@
 ﻿namespace UnitsDrafts
 {
-    internal class UserGeneric<T, K>
+    public class UserGeneric<T, K>
     {
-        public T Id { get; set; }
+        protected T Id;
         public K Field { get; set; }
     }
 }

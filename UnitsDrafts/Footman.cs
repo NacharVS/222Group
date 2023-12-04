@@ -1,13 +1,11 @@
-﻿using System.ComponentModel.Design;
-using UnitsDrafts;
-using UnitsDrafts.Items;
+﻿using UnitsDrafts.Items;
 
 namespace UnitsDrafts
 {
     internal class Footman : Unit
     {
         public delegate void InflictDamageDelegate(Unit unit, int damage);
-    
+        
 
         public InflictDamageDelegate inflictDamage;
         private int _defence;
@@ -18,6 +16,8 @@ namespace UnitsDrafts
         {
             _weapon = new Sword();
         }
+
+
 
         public int Defence 
         {

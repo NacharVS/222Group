@@ -2,11 +2,13 @@
 {
     internal class Unit 
     {
+        public delegate void HealthChangedDelegate(int health, int diff);
+
         public Action action;
         private int _damage;
         private int _defence;
         private string _name;
-        private int _health;
+        private int _currentHealth;
         private int _maxHealth;
         private int _speed;
 
@@ -16,7 +18,7 @@
             _damage = damage;
             _defence = defence;
             _name = name;
-            _health = maxHealth;
+            _currentHealth = maxHealth;
             _maxHealth = maxHealth;
             _speed = speed;
         }
@@ -35,23 +37,33 @@
 
         public int Health
         {
-            get { return _health; }
+            get { return _currentHealth; }
             set 
             { 
-                if(value > 30 )
+                if(value > MaxHealth )
                 {
-                    _health = 30;
+                    _currentHealth = MaxHealth;
                 }
                 else if (value < 0)
                 {
-                    _health = 0;
+                    _currentHealth = 0;
                 }
                 else
-                    _health = value;
-                while (Health < Health / 100 * 40)
                 {
-                    _damage = _damage + _damage / 100 * 50;
+                    int diff = _currentHealth - value;
+                    if(diff > 0)
+                    {
+                        _currentHealth = value;
+                        HealthDecreasedEvent?.Invoke(_currentHealth, diff);
+                    }
+                    else
+                    {
+                        _currentHealth = value;
+                        HealthIncreasedEvent?.Invoke(_currentHealth, Math.Abs(diff));
+
+                    }
                 }
+
             }
         }
 
@@ -70,9 +82,12 @@
 
         public virtual void BaseInfo()
         {
-            Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Defence: {_defence} " );
-            action();
+            Console.WriteLine($"Name:{_name} Health: {_currentHealth}/{_maxHealth} Defence: {_defence} " );
+
         }
+
+        public event HealthChangedDelegate HealthIncreasedEvent;
+        public event HealthChangedDelegate HealthDecreasedEvent;
 
     }
 }

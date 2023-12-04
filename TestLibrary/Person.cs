@@ -2,8 +2,13 @@
 
 namespace TestLibrary
 {
-    public class Person
+    public class Person 
     {
-        UserGeneric 
+        UserGeneric<int, int> qq;
+        
+        void Qq()
+        {
+            Console.WriteLine(qq.Id);
+        }
     }
 }
