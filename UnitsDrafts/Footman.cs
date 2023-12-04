@@ -10,11 +10,7 @@
             set => base.Health = value;
         }
       
-        public int Defence
-        {
-            get { return Defence; }
-            set { Defence = value; }
-        }
+       
 
 
         public Footman(string name, int maxHealth, int speed, int damage, int defence)

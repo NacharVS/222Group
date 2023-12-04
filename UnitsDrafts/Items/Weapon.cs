@@ -94,25 +94,50 @@ namespace UnitsDrafts
             }
         }
 
-        public int AttackSpeed(Unit unit)
-        {
-            if (AtSpeed < 4)
-            {
-                Console.WriteLine("Замах");
-                Thread.Sleep(1000);
-                var x = new Random().Next(1, 101);
-                var z = new Random().Next(1, 101);
-            }
 
-            else
-            if (AtSpeed < 100000 && AtSpeed >= 5)
+
+        public void InflictDamWep(Unit unit)
+        {
+            if (Drability >= 1) //Armour
             {
-                Console.WriteLine("Вы замохнулись оружием");
-                Thread.Sleep(1500);
-                var x = new Random().Next(1, 101);
-                var z = new Random().Next(1, 101);
+             int damage = new Random().Next(MinDam, MaxDam);
+                unit.Health = unit.Health - (damage);
+
+                Console.WriteLine($" У {unit.Name} осталось {unit.Health} из {unit.MaxHealth}");
             }
-         return 0;
+         else
+         if (Drability <=0)
+            {
+             
+                Console.WriteLine($" {unit.Name} Сдох");
+            }
+           
         }
+
+
+
+
+
+
+        //public int AttackSpeed(Unit unit)
+        //{
+        //    if (AtSpeed < 4)
+        //    {
+        //        Console.WriteLine("Замах");
+        //        Thread.Sleep(1000);
+        //        var x = new Random().Next(1, 101);
+        //        var z = new Random().Next(1, 101);
+        //    }
+
+        //    else
+        //    if (AtSpeed < 100000 && AtSpeed >= 5)
+        //    {
+        //        Console.WriteLine("Вы замохнулись оружием");
+        //        Thread.Sleep(1000);
+        //        var x = new Random().Next(1, 101);
+        //        var z = new Random().Next(1, 101);
+        //    }
+        // return 0;
+        //}
     }
 }

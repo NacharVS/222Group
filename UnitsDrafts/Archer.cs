@@ -9,11 +9,7 @@
         {
         }
 
-        public int Speed
-        {
-            get { return _speed; }
-            set { _speed = value; }
-        }
+        
 
         public override void BaseInfo()
         {
