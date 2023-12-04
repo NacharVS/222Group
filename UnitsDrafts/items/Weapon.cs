@@ -17,15 +17,15 @@ namespace UnitsDrafts.items
             Accuracy = accuracy;
             Durability = durability;
         }
-        
+
         public string WeapName { get; set; }
         public int MinDamage { get; set; }
         public int MaxDamage { get; set; }
-        
+
         public int AttackSpeed { get; set; }
         public int Accuracy { get; set; }
         public int Durability { get; set; }
-        
+
         public virtual int Hit()
         {
             var x = new Random().Next(1, 101);

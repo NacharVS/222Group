@@ -29,7 +29,7 @@ foreach (Weapon weapon in weapons)
 Console.WriteLine("");
 
 Footman ft1 = new Footman();
-Peasant ps1 = new Peasant();    
+Peasant ps1 = new Peasant();
 Archer ac1 = new Archer();
 Bishop bp1 = new Bishop();
 
@@ -54,6 +54,24 @@ Peasant[] peasant = new Peasant[2]
    hall.CreatePeasant(),
    hall.CreatePeasant()
 };
+
+ft1.dealDamage = MethodVar1;
+ft1.dealDamage += MethodVar2;
+ft1.dealDamage += bshp1.Healing;
+ft1.DealDamage(ac1);
+
+
+static void MethodVar1(Unit unit, int damage)
+{
+    Console.WriteLine($"{unit.Name} took {damage} and took stun");
+}
+
+static void MethodVar2(Unit unit, int damage)
+{
+    Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
+}
+
+Console.WriteLine("");
 
 Statistics.ShowStatistics();
 
@@ -81,11 +99,11 @@ while (true)
     {
         ft1.DealDamage(ac1);
     }
-    else if (choice == 2) 
+    else if (choice == 2)
     {
-        bp1.Healing(ft1);
+        bp1.Healing(ft1, 20);
     }
-    else if (choice == 3) 
+    else if (choice == 3)
     {
         ac1.BaseInfo();
     }
