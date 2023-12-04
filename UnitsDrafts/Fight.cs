@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace UnitsDrafts
 {
-    internal class Fight
+    internal class Draka
     {
         public Sword sword = new Sword();
         public Bow bow = new Bow();
         public Archer archer = new Archer("Bob", 40, 11);
         public Footman footman = new Footman("Pop", 50, 20, 10, 2);
 
-        public void Figt()
+        public void Bitva()
         {
             archer._weapon = bow;
             footman._weapon = sword;
@@ -21,14 +21,14 @@ namespace UnitsDrafts
             if (footman.Health > 0 && archer.Health > 0)
             {
                 Console.WriteLine("Выберите своего героя: 1.Мечник 2.Лучник 3.Топорист 4.Буловист");
-                var shag1 = Convert.ToInt32(Console.ReadLine());
+                var hod1 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Выберите действие: 1.Ударить 2.Убежать");
-                var shag2 = Convert.ToInt32(Console.ReadLine());
-                switch (shag1)
+                var hod2 = Convert.ToInt32(Console.ReadLine());
+                switch (hod1)
                 {
                     case 1:
                         Console.WriteLine($"Ваш воин готов к битве и его имя{footman.Name}");
-                        switch (shag1)
+                        switch (hod1)
                         {
                             case 1:
                                 footman._weapon.Metodataki(archer);
@@ -37,7 +37,7 @@ namespace UnitsDrafts
                         break;
                     case 2:
                         Console.WriteLine($"Ваш воин готов к битве и его имя{archer.Name}");
-                        switch (shag2)
+                        switch (hod2)
                         {
                             case 1:
                                 archer._weapon.Metodataki(footman);
