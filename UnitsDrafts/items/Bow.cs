@@ -47,7 +47,7 @@ namespace UnitsDrafts.items
                 }
                 else
                 {
-                    Console.WriteLine($"{unit.Name} Не попал");
+                    Console.WriteLine($"{unit.Name} промазал");
                     return 0;
                 }
 
@@ -55,7 +55,7 @@ namespace UnitsDrafts.items
             }
             else
             {
-                Console.WriteLine("Вы не можете стрелять, оружие сломано");
+                Console.WriteLine("Оружие поломано");
                 return 0;
             }
         }

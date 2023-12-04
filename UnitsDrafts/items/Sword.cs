@@ -35,7 +35,7 @@ namespace UnitsDrafts.items
                     {
                         Damage = MaxDamage;
                         Damage += Damage * 0.5;
-                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage} с помощью меча");
+                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage} при помощи меча");
                     }
 
                     return Damage * DurabilityQuality();
@@ -43,7 +43,7 @@ namespace UnitsDrafts.items
                 }
                 else
                 {
-                    Console.WriteLine($"{unit.Name} Ќе попал");
+                    Console.WriteLine($"{unit.Name} промазал");
                     return 0;
                 }
 
@@ -51,7 +51,7 @@ namespace UnitsDrafts.items
             }
             else
             {
-                Console.WriteLine("¬ы не можете стрел€ть, оружие сломано");
+                Console.WriteLine("ќружие поломано");
                 return 0;
             }
         }

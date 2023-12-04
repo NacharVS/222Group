@@ -36,19 +36,19 @@ namespace UnitsDrafts.items
                     {
                         Damage = MaxDamage;
                         Damage = Damage * CritDamage;
-                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage} с помощью лука");
+                        Console.WriteLine($"{unit.Name} нанес крит урон в размере {Damage} при помощи лука");
                     }
                     return Damage * DurabilityQuality();
                 }
                 else
                 {
-                    Console.WriteLine($"{unit.Name} Ќе попал");
+                    Console.WriteLine($"{unit.Name} промазал");
                     return 0;
                 }
             }
             else
             {
-                Console.WriteLine("¬ы не можете стрел€ть, оружие сломано");
+                Console.WriteLine("ќружие поломано");
                 return 0;
             }
         }
