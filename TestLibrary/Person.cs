@@ -4,8 +4,19 @@ namespace TestLibrary
 {
     public class Person : IEnumerable
     {
-        string[] listOfPersons = { "Bob", "Sam", "Jeff", "Rob" };
+        public string[] listOfPersons = { "Bob", "Sam", "Jeff", "Rob" };
         IEnumerator IEnumerable.GetEnumerator() => listOfPersons.GetEnumerator();
+
+
+        public static void ForeachTipo(IEnumerator enumerator)
+        {
+            
+            if (enumerator.MoveNext())
+            {
+                enumerator.MoveNext();
+                Console.WriteLine(enumerator.Current);
+            }
+        }
 
     }
 }
