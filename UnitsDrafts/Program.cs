@@ -3,12 +3,20 @@
 
 //peasant.HealthDecreasedEvent += MethodVar1;
 //peasant.HealthIncreasedEvent += MethodVar2;
-int[] a = new int[10];
-new Footman().BaseInfo();
+
+Console.WriteLine((int)WeaponDamage.Bow);
 
 
 
 
+
+enum WeaponDamage
+{
+    Axe = 50,
+    Bow = 40,
+    Sword = 30,
+    Gun = 20
+}
 
 
 //peasant.action = () => Console.WriteLine("Action delegate invoked");
