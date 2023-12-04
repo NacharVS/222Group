@@ -1,12 +1,24 @@
 ﻿using UnitsDrafts;
 
-
+Console.WriteLine(GetNameAge().Item2);
 //peasant.HealthDecreasedEvent += MethodVar1;
 //peasant.HealthIncreasedEvent += MethodVar2;
 
 Console.WriteLine((int)WeaponDamage.Bow);
 
 
+static (int, string) GetNameAge()
+{
+    // many of cooooooooooooooooooooooooooode!
+    int a = 10;
+    string b = "Dima";
+    return (a, b);
+    
+}
+
+//Console.WriteLine(a.Item1.GetType().ToString());
+//Console.WriteLine(a.Item2.GetType().ToString());
+//Console.WriteLine(a.Item3.GetType().ToString());
 
 
 
