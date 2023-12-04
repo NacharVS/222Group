@@ -10,12 +10,11 @@ namespace TestLibrary
 
         public static void ForeachTipo(IEnumerator enumerator)
         {
-            
-            if (enumerator.MoveNext())
+            while (enumerator.MoveNext())
             {
-                enumerator.MoveNext();
                 Console.WriteLine(enumerator.Current);
             }
+
         }
 
     }

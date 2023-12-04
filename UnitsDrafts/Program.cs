@@ -1,21 +1,29 @@
 ﻿using TestLibrary;
 
 
+Dictionary<string, string> properties = new Dictionary<string, string>();
+
+properties.Add("1", "Sam");
+properties.Add("2", "Sam");
+properties.Add("3", "Sam");
+properties.Add("4", "Sam");
+
+
+
+
 
 
 string[] list = { "Bob", "Sam", "Jeff", "Rob" };
-Console.WriteLine(GetNameAge().Item2);
+
 //peasant.HealthDecreasedEvent += MethodVar1;
+
 //peasant.HealthIncreasedEvent += MethodVar2;
 //
-Person person = new Person();
 
-Person.ForeachTipo(list.GetEnumerator());
 
-foreach (var item in person)
-{
-    Console.WriteLine(item);
-}
+Person.ForeachTipo(properties.GetEnumerator());
+
+
 
 
 
