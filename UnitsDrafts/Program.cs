@@ -1,10 +1,18 @@
-﻿using UnitsDrafts;
+﻿using TestLibrary;
 
 Console.WriteLine(GetNameAge().Item2);
 //peasant.HealthDecreasedEvent += MethodVar1;
-//peasant.HealthIncreasedEvent += MethodVar2;
+//peasant.HealthIncreasedEvent += MethodVar2; 
+Person person = new Person();
+
+foreach (var item in person)
+{
+    Console.WriteLine(item);
+}
 
 Console.WriteLine((int)WeaponDamage.Bow);
+
+
 
 
 static (int, string) GetNameAge()

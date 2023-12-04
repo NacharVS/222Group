@@ -1,14 +1,11 @@
-﻿using UnitsDrafts;
+﻿using System.Collections;
 
 namespace TestLibrary
 {
-    public class Person 
+    public class Person : IEnumerable
     {
-        UserGeneric<int, int> qq;
-        
-        void Qq()
-        {
-            Console.WriteLine(qq.Id);
-        }
+        string[] listOfPersons = { "Bob", "Sam", "Jeff", "Rob" };
+        IEnumerator IEnumerable.GetEnumerator() => listOfPersons.GetEnumerator();
+
     }
 }
