@@ -88,8 +88,7 @@ namespace UnitsDrafts
                     else
                     {
                         break;   
-                    }
-                    
+                    }                    
                 }
             }
             else

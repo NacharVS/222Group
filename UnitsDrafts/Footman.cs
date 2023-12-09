@@ -22,8 +22,8 @@ namespace UnitsDrafts
         }
         public override void GiveDamage(Unit unit)
         {
-            dealDamage = DealDamageMethod1;
-            dealDamage(unit);
+            giveDamage = GiveDamageMethod1;
+            giveDamage(unit);
         }
         public void InflictDamageMethod(Unit unit)
         {

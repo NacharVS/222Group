@@ -23,11 +23,9 @@ namespace UnitsDrafts
             _damage = damage;
             _defence = defence;
         }
-        public Peasant() : base("Peasant", 30, 30, 20, 15, 3)
+        public Peasant() : base("Peasant", (int)UnitHealth.health, 30, 20, 15, 3)
         {
             _defence = 10;
-            _MaxHealth = 30;
-            _Health = 30;
         }
         public int defence
         {
@@ -72,8 +70,8 @@ namespace UnitsDrafts
 
         public override void GiveDamage(Unit unit)
         {
-            dealDamage = DealDamageMethod1;
-            dealDamage(unit);
+            giveDamage = GiveDamageMethod1;
+            giveDamage(unit);
         }
     }
 }

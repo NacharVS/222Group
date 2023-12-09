@@ -57,8 +57,7 @@ namespace unit.items
         {
             var x = new Random().Next(1, 100);
             if (Durability > 0)
-            {
-                
+            {               
                 if (x <= Accuracy)
                 {
                     double damage = new Random().Next(MinDamage, MaxDamage);

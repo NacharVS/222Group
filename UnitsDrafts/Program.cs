@@ -2,6 +2,7 @@
 using unit.items;
 using UnitsDrafts;
 using UnitsDrafts.unit.items;
+
 Footman footman = new Footman();
 Footman ft1 = new Footman();
 Footman ft2 = new Footman();
@@ -15,18 +16,6 @@ Barracs barracs = new Barracs();
 Ratusha ratusha = new Ratusha();
 WatchingTower watchingTower = new WatchingTower();
 
-//footman.inflictDamage = MethodVar1;
-//footman.inflictDamage += MethodVar2;
-//footman.InflictDamage(peasant);
-//static void MethodVar1(Unit unit, double damage)
-//{
-//    Console.WriteLine($"{unit.Name} took {damage} and took stun");
-//}
-
-//static void MethodVar2(Unit unit, double damage)
-//{
-//    Console.WriteLine($"{unit.Name} took {damage} and his arm broken");
-//}
 
 Console.WriteLine("Введите номер того, чего хотите сделать");
 Console.WriteLine("1.Спид");
@@ -137,12 +126,14 @@ switch (a)
         break;
 
     case 10:
-
         footman.InflictDamage(archer);
         archer.BaseInfo();
         break;
 }
-
+public enum UnitHealth
+{
+    health = 30
+}
 
 
 

@@ -5,7 +5,7 @@ namespace UnitsDrafts
 {
     internal class Unit 
     {
-        public void DealDamageMethod1(Unit unit)
+        public void GiveDamageMethod1(Unit unit)
         {
             double damage = _weapon.Hit(unit);
             if (Alive)
@@ -43,8 +43,8 @@ namespace UnitsDrafts
             }
         }
 
-        public delegate void DealDamageDelegate(Unit unit);
-        public DealDamageDelegate dealDamage;
+        public delegate void GiveDamageDelegate(Unit unit);
+        public GiveDamageDelegate giveDamage;
         private int _damage;
         private int _defence;
         private string _name;
@@ -124,8 +124,8 @@ namespace UnitsDrafts
         }
         public virtual void GiveDamage(Unit unit)
         {
-            dealDamage = DealDamageMethod1;
-            dealDamage(unit);
+            giveDamage = GiveDamageMethod1;
+            giveDamage(unit);
         }
 
         public double MaxHealth { get => _maxHealth; }
@@ -139,7 +139,5 @@ namespace UnitsDrafts
         {
             Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Defence: {_defence} " );
         }
-
-
     }
 }
