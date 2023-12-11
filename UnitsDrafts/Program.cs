@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Serialization.Formatters.Binary;
 using unit.items;
 using UnitsDrafts;
+using UnitsDrafts.Interfaces;
 using UnitsDrafts.unit.items;
 
 Footman footman = new Footman();
@@ -28,6 +29,7 @@ Console.WriteLine("7.Башня с тремя лучниками");
 Console.WriteLine("8.Оружия");
 Console.WriteLine("9.Файт с оружиями");
 Console.WriteLine("10.Делегаты");
+Console.WriteLine("11.Интерфейс");
 int a = int.Parse(Console.ReadLine());
 switch (a)
 {
@@ -128,6 +130,26 @@ switch (a)
     case 10:
         footman.InflictDamage(archer);
         archer.BaseInfo();
+        break;
+
+    case 11:
+        Pistol pp = new Pistol();
+        Rifle rr = new Rifle();
+        MachineGun mm = new MachineGun();
+
+
+        UseBurstShooting(mm);
+
+
+        static void UseBurstShooting(IBurstShoot weapon)
+        {
+            weapon.BurstShoot();
+        }
+
+        static void UseWeapon(IWeapon weapon)
+        {
+            weapon.Shoot();
+        }
         break;
 }
 public enum UnitHealth

@@ -116,7 +116,7 @@ namespace UnitsDrafts
                     _health = value;
             }
         }
-
+        
         public int Defence
         {
             get { return _defence; }
