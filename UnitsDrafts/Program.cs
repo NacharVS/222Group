@@ -1,19 +1,13 @@
 ﻿using TestLibrary;
 
-
-Dictionary<string, string> properties = new Dictionary<string, string>();
-
-properties.Add("1", "Sam");
-properties.Add("2", "Sam");
-properties.Add("3", "Sam");
-properties.Add("4", "Sam");
-
-
-
-
-
-
 string[] list = { "Bob", "Sam", "Jeff", "Rob" };
+
+Pistol pp = new Pistol();
+Rifle rr = new Rifle();
+Machinegun mm = new Machinegun();
+
+
+UseBurstShooting(mm);
 
 //peasant.HealthDecreasedEvent += MethodVar1;
 
@@ -21,13 +15,19 @@ string[] list = { "Bob", "Sam", "Jeff", "Rob" };
 //
 
 
-Person.ForeachTipo(properties.GetEnumerator());
 
 
 
 
+static void UseBurstShooting(IBurstShoot weapon)
+{
+    weapon.BurtsShoot();
+}
 
-
+static void UseWeapon(IWeapon wepon)
+{
+    wepon.Shoot();
+}
 
 static (int, string) GetNameAge()
 {
