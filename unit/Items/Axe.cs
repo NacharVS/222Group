@@ -9,6 +9,7 @@ namespace unit.Items
 {
     internal class Axe : Weapon
     {
+        
         public Axe(string Name, int minDamage, int maxDamage, int attackSpeed, int accuracy, int durability) : base(Name, minDamage, maxDamage, attackSpeed, accuracy, durability)
         {
 
