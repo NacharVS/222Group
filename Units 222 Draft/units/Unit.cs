@@ -1,4 +1,5 @@
-﻿using Units_222_Draft.items;
+﻿using Units_222_Draft.guns;
+using Units_222_Draft.items;
 using Units_222_Draft.Stats;
 
 namespace Units_222_Draft.units
@@ -76,6 +77,7 @@ namespace Units_222_Draft.units
         private float _speed;// Нужна для побега
         private bool _alive = true; //проверка живой или нет
         private Weapon _weapon;// Оружие юнита
+        public Gun gun;
         public bool _stunned = false;// Оглушение
         public bool _bloodloss = false;// Кровотечение
         public int BloodLossCount;
@@ -210,7 +212,7 @@ namespace Units_222_Draft.units
                     }
                     else
                     {
-                        if (!Weapon.Alive)
+                        if (!Weapon.Alive || gun.Alive)
                         {
                             Console.WriteLine("Невозможно атаковать сломанным оружием");
                             
