@@ -19,7 +19,11 @@ namespace unit.units
         {
             _armor = armor;
         }
-
+        public Archer(string name, int maxHealth, int speed,  int defence, int armor)
+             : base(name, maxHealth, speed, defence)
+        {
+            _armor = armor;
+        }
 
         public Archer() : base("Archer", 50, 15, 4)
         {
@@ -118,6 +122,9 @@ namespace unit.units
         }
 
     }
+    
+    
+
 }
 
 

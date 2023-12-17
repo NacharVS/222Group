@@ -9,7 +9,7 @@
 
         public void Shoot()
         {
-            Console.WriteLine($"piu! Dealed {new Random().Next(MinDamage, MaxDamage)}");
+            Console.WriteLine($"piu! Dealed {new Random().Next(MinDamage, MaxDamage)} pistol");
         }
     }
 }

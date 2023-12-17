@@ -12,6 +12,7 @@ namespace unit.units
     {
 
         private int _armor;
+        
         public delegate void InflictDamageDelegate(Unit unit);
         public InflictDamageDelegate inflictDamage;
         public Footman(string name, int maxHealth, int speed, int damage, int defence, int armor)
@@ -21,6 +22,7 @@ namespace unit.units
             Weapon = new Mace();
 
         }
+        
         //public Weapon Weapon
         //{
         //    get { return _weapon; }
@@ -100,6 +102,7 @@ namespace unit.units
         {
             inflictDamage = InflictDamageMethod;
             inflictDamage(unit);
+            
         }
 
 
@@ -138,6 +141,7 @@ namespace unit.units
         }
 
     }
+    
 }
 
 //if (Defence > Damage)

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml.Serialization;
+using TestLibrary;
 using unit;
 using unit.buildings;
 using unit.Items;
@@ -10,6 +12,18 @@ using unit.units;
 //Peasant peasant = new Peasant();
 //Bishop bishop = new Bishop();
 //Archer archer = new Archer();
+var tuple = (odin:3, dva:5);
+
+Dictionary<string, int> dic = new Dictionary<string, int>()
+{
+    {"ss",5},
+    {"ssss",5333},
+    {"ssss",333}
+
+};
+dic.Add("sssss", 211);
+Console.WriteLine(perechis.awpd);
+
 
 Barracs barracs1 = new Barracs();
 Meriya meriya = new Meriya();
@@ -19,30 +33,42 @@ var archer = barracs1.CreateArchcer();
 var bishop = meriya.CreateBishop();
 var peasant = meriya.CreatePeasant();
 WatchingTowers wt = new WatchingTowers();
-
 Sword sword = new Sword();
 
 
-
-//sword.ShowWeaponInfo();
-//sword.LevelUp();
-//sword.ShowWeaponInfo();
-//Console.WriteLine();
-
-//ft1.BaseInfo();
-//while (ft1.Health>0)
-//{
-//    wt.TowerDamage(ft1);
-//    ft1.BaseInfo();
-//}
+Pistol pistol = new Pistol();
+Rifle rifle = new Rifle();
+Machinegun mg = new Machinegun();
+shotgun shg = new shotgun();
 
 
-//ft1.InflictDamage(ft2);
-//Console.WriteLine($"{ft1.Weapon.WeaponName}");
-//ft1.InflictDamage(ft2);
+UseShoot(pistol);
+UseShoot(rifle);
+UseBShoot(mg);
+UseBShoot(shg);
+ft1.InflictDamage(peasant);
+peasant.HealthDecreasedEvent += MethodVar1;
+peasant.HealthIncreasedEvent += MethodVar2;
+static void MethodVar1(int currentHealth, int diff)
+{
+    Console.WriteLine($"Unit took {diff} of damage. Health: {currentHealth}");
+}
 
-//ft1.InflictDamage(ft2);
-//ft1.InflictDamage(ft2);
+static void MethodVar2(int currentHealth, int diff)
+{
+    Console.WriteLine($"Unit took {diff} of heal. Health: {currentHealth}");
+}
+static void UseShoot(IWeapon weapon)
+{
+    weapon.Shoot();
+}
+
+static void UseBShoot(IBurstShoot weapon)
+{
+
+    weapon.BurtsShoot();
+}
+
 while (true)
 {
     Stat.StatInfo();
@@ -337,13 +363,80 @@ while (true)
 
 }
 
+enum perechis
+{
+    rifled = 1,
+    awpd=2,
+    pistol=3,
+    gund=4,
+    ranaded=5
+}
 
 
 
+internal class calc {
+    public void Add(int a, int b)
+    {
+        int result = a + b;
+        Console.WriteLine($"Result is {result}");
+    }
+    public void Add(int a, int b, int c)
+    {
+        int result = a + b + c;
+        Console.WriteLine($"Result is {result}");
+    }
+    public int Add(int a, int b, int c, int d)
+    {
+        int result = a + b + c + d;
+        Console.WriteLine($"Result is {result}");
+        return result;
+    }
+    public void Add(double a, double b)
+    {
+        double result = a + b;
+        Console.WriteLine($"Result is {result}");
+    }
+}
 
 
+//int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//for(int i = arr.Length-0; i >= 5; i--)
+//{
+//    Console.Write(i + " " +
+//        "");
+//}
+
+//int[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };
+
+//int n = numbers.Length; // длина массива
+//int k = n / 2;          // середина массива
+//int temp;               // вспомогательный элемент для обмена значениями
+//for (int i = 0; i < k; i++)
+//{
+//    temp = numbers[i];
+//    numbers[i] = numbers[n - i - 1];
+//    numbers[n - i - 1] = temp;
+//}
+//foreach (int i in numbers)
+//{
+//    Console.Write($"{i} \t");
+//}
+//sword.ShowWeaponInfo();
+//sword.LevelUp();
+//sword.ShowWeaponInfo();
+//Console.WriteLine();
+
+//ft1.BaseInfo();
+//while (ft1.Health>0)
+//{
+//    wt.TowerDamage(ft1);
+//    ft1.BaseInfo();
+//}
 
 
+//ft1.InflictDamage(ft2);
+//Console.WriteLine($"{ft1.Weapon.WeaponName}");
+//ft1.InflictDamage(ft2);
 
-
-
+//ft1.InflictDamage(ft2);
+//ft1.InflictDamage(ft2);

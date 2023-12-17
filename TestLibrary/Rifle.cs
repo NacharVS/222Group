@@ -14,7 +14,7 @@ namespace TestLibrary
 
         public void Shoot()
         {
-            Console.WriteLine($"Buh! Dealed {new Random().Next(MinDamage, MaxDamage)}");
+            Console.WriteLine($"Buh! Dealed {new Random().Next(MinDamage, MaxDamage)} rifle");
         }
     }
     

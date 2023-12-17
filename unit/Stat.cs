@@ -21,7 +21,7 @@ namespace unit
         public static  void StatInfo()
         {
             Console.WriteLine($" Количество Bishop:{BishopQuant} \n Количество Peasant:{PeasantQuant} \n Количество Archer:{ArcherQuant} \n Количество Footman:{FootmanQuant}");
-            Console.WriteLine($" Живых:{LiveQuant} \n Мертвых:{KilledQuant}");
+            Console.WriteLine($" Живых:{LiveQuant} \n Мертвых:{KilledQuant}");          
         }
         public static void Stun(Unit unit)
         {
@@ -38,12 +38,14 @@ namespace unit
         }
         public static void Bloodloss(Unit unit)
         {
-            
-            
+
+
 
 
         }
 
     }
+    
+
 }
 
