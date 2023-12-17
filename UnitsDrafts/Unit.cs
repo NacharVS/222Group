@@ -42,13 +42,14 @@ namespace UnitsDrafts
 
             }
         }
-
+        public delegate void HealthChangedDelegate(double health, double diff);
         public delegate void GiveDamageDelegate(Unit unit);
         public GiveDamageDelegate giveDamage;
         private int _damage;
         private int _defence;
         private string _name;
         private double _health;
+        private double _currentHealth;
         private double _maxHealth;
         private int _speed;
         public bool _stun = false;
@@ -101,19 +102,33 @@ namespace UnitsDrafts
 
         public double Health
         {
-            get { return _health; }
-            set 
-            { 
-                if(value > 30 )
+            get { return _currentHealth; }
+            set
+            {
+                if (value > MaxHealth)
                 {
-                    _health = 30;
+                    _currentHealth = MaxHealth;
                 }
                 else if (value < 0)
                 {
-                    _health = 0;
+                    _currentHealth = 0;
                 }
                 else
-                    _health = value;
+                {
+                    double diff = _currentHealth - value;
+                    if (diff > 0)
+                    {
+                        _currentHealth = value;
+                        HealthDecreasedEvent?.Invoke(_currentHealth, diff);
+                    }
+                    else
+                    {
+                        _currentHealth = value;
+                        HealthIncreasedEvent?.Invoke(_currentHealth, Math.Abs(diff));
+
+                    }
+                }
+
             }
         }
         
@@ -139,5 +154,9 @@ namespace UnitsDrafts
         {
             Console.WriteLine($"Name:{_name} Health: {_health}/{_maxHealth} Defence: {_defence} " );
         }
+
+        public event HealthChangedDelegate HealthIncreasedEvent;
+        public event HealthChangedDelegate HealthDecreasedEvent;
+
     }
 }

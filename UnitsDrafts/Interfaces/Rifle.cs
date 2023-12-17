@@ -14,7 +14,7 @@ namespace UnitsDrafts.Interfaces
         public int Durability { get; set; }
         public void Shoot()
         {
-            Console.WriteLine($"Нанесён урон {new Random().Next(MinDamage, MaxDamage)}");
+            Console.WriteLine($"Нанесён урон {new Random().Next(MinDamage, MaxDamage)} (Rifle)");
         }
     }
 }

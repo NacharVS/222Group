@@ -136,10 +136,11 @@ switch (a)
         Pistol pp = new Pistol();
         Rifle rr = new Rifle();
         MachineGun mm = new MachineGun();
-
+        AWP awp = new AWP();
 
         UseBurstShooting(mm);
 
+        UseWeapon(awp);
 
         static void UseBurstShooting(IBurstShoot weapon)
         {

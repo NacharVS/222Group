@@ -22,7 +22,7 @@ namespace UnitsDrafts.Interfaces
         }
         public void Shoot()
         {
-            Console.WriteLine($"Нанесён урон {new Random().Next(MinDamage, MaxDamage)}");
+            Console.WriteLine($"Нанесён урон {new Random().Next(MinDamage, MaxDamage)} (MachineGun)");
         }
     }
 }
