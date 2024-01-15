@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsDrafts", "UnitsDrafts\UnitsDrafts.csproj", "{F5549AD2-718F-4CCB-978E-516445FEBB00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Калькулятор", "Калькулятор\Калькулятор.csproj", "{2CA6DE45-B69E-4E85-856A-C8E391B1FDD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Калькулятор", "Калькулятор\Калькулятор.csproj", "{2CA6DE45-B69E-4E85-856A-C8E391B1FDD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Змейка", "Змейка\Змейка.csproj", "{C7D63216-923F-45FF-B135-1B6A2C137AFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2CA6DE45-B69E-4E85-856A-C8E391B1FDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CA6DE45-B69E-4E85-856A-C8E391B1FDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CA6DE45-B69E-4E85-856A-C8E391B1FDD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
