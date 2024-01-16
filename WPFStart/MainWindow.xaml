@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btn1" Content="CHOTASVOE" HorizontalAlignment="Left" Margin="206,217,0,0" VerticalAlignment="Top" Height="86" Width="352" FontSize="50" Click="Button_Click" MouseEnter="btn1_MouseEnter" MouseMove="btn1_MouseMove"/>
-        <Label x:Name="lbl1" Content="77" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" FontSize="48" Width="288" FlowDirection="RightToLeft"/>
+        <Button x:Name="btn1" Content="Register" HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Height="68" Width="298" FontSize="50" Click="Button_Click" MouseEnter="btn1_MouseEnter" MouseMove="btn1_MouseMove"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="21,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="list1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="487,10,10,116" Loaded="list1_Loaded"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Margin="21,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

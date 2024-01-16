@@ -20,14 +20,19 @@ namespace WPFStart
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<User> users; 
         public MainWindow()
         {
+            users = new List<User>();
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            lbl1.Content += "2";
+            users.Add(new User(txtName.Text, txtSurname.Text));
+            txtName.Clear();
+            txtSurname.Clear();
+            ListBoxRefresh();
         }
 
         private void btn1_MouseEnter(object sender, MouseEventArgs e)
@@ -38,6 +43,21 @@ namespace WPFStart
         private void btn1_MouseMove(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void list1_Loaded(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void ListBoxRefresh()
+        {
+            list1.Items.Clear();
+            foreach (User user in users)
+            {
+                list1.Items.Add(user.Surname);
+            }
         }
     }
 }
