@@ -6,6 +6,12 @@ namespace Units_222_Draft.units
 {
     internal class Unit
     {
+        public delegate void HealthChangedDelegate(float health,float diff);//делегат изменения хп
+
+        public event HealthChangedDelegate HealthIncreasedEvent;
+
+        public event HealthChangedDelegate HealthDecreasedEvent;
+
         public Action action;
         public delegate void MovingDelegate();//делегат движения
         public MovingDelegate moving;
@@ -114,7 +120,20 @@ namespace Units_222_Draft.units
                     Alive = false;
                 }
                 else
-                    _health = value;
+                {
+                    float diff = _health - value;
+                    if (diff < 0)
+                    {
+                        _health = value;
+                        HealthDecreasedEvent?.Invoke(_health, diff);
+                    }
+                    else
+                    {
+                        _health = value;
+                        HealthIncreasedEvent?.Invoke(_health, diff);
+                    }
+                }
+                    
             }
         }
         public bool Alive

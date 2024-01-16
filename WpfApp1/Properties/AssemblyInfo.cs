@@ -7,11 +7,11 @@ using System.Windows;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набор атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("WpfApp3")]
+[assembly: AssemblyTitle("WpfApp1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WpfApp3")]
+[assembly: AssemblyProduct("WpfApp1")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
