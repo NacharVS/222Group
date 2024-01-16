@@ -1,16 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Navigation;
 
 namespace ФормаСписка
 {
     internal class UserInfo
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        private string Name { get; set; }
+        private string Surname { get; set; }
 
-        public UserInfo (string name, string surname)
+        public string AllName;
+
+        public UserInfo(string name, string surname)
         {
             Name = name;
             Surname = surname;
+            AllName = Name + " " + Surname;
         }
+
+        
     }
 }

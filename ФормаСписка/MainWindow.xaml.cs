@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,10 +34,10 @@ namespace ФормаСписка
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            users.Add(new(txtName.Text, txtSurname.Text));
+            users.Add(new(txtName.Text, txtSurname.Text));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
+
             txtName.Clear();
-            txtSurname.Clear();
-            ListBoxRefresh();
+            txtSurname.Clear();        
         }
 
         private void ListBoxRefresh()
@@ -43,8 +45,12 @@ namespace ФормаСписка
 
             foreach (UserInfo user in users)
             {
-                listBox.Items.Add(user.Surname);
+                listBox.Items.Add(user.AllName);
             }
+        }
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxRefresh();
         }
     }
 }
