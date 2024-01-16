@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="315">
     <Grid HorizontalAlignment="Center">
-
         <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Height="56" VerticalAlignment="Bottom" Width="225" Click="btn0_Click"/>
         <Button x:Name="btnEqual" Content="=" HorizontalAlignment="Left" Height="56" VerticalAlignment="Bottom" Width="75" Margin="225,0,0,0" Grid.Row="1" Click="btnEqual_Click"/>
         <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Height="56" VerticalAlignment="Bottom" Width="75" Margin="0,0,0,56" Grid.Row="1" Click="btn1_Click"/>
@@ -27,6 +26,5 @@
         <Button x:Name="btnPercent" Content="%" HorizontalAlignment="Left" Height="56" VerticalAlignment="Bottom" Width="75" Margin="150,0,0,224" Grid.RowSpan="2" Click="btnPercent_Click"/>
         <Button x:Name="btnDevide" Content="/" HorizontalAlignment="Left" Height="56" VerticalAlignment="Bottom" Width="75" Margin="225,0,0,224" Grid.RowSpan="2" Click="btnDevide_Click"/>
         <TextBox x:Name="Panel" HorizontalAlignment="Center" Height="52" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="280" TextAlignment="Right" FontSize="36" Margin="0,55,0,0"/>
-
     </Grid>
 </Window>

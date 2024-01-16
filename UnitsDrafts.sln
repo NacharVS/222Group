@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsDrafts", "UnitsDrafts\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Калькулятор", "Калькулятор\Калькулятор.csproj", "{2CA6DE45-B69E-4E85-856A-C8E391B1FDD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Змейка", "Змейка\Змейка.csproj", "{C7D63216-923F-45FF-B135-1B6A2C137AFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Змейка", "Змейка\Змейка.csproj", "{C7D63216-923F-45FF-B135-1B6A2C137AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ФормаСписка", "ФормаСписка\ФормаСписка.csproj", "{C6A9B6F0-1DF3-4C23-A772-2F813DF1FACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D63216-923F-45FF-B135-1B6A2C137AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A9B6F0-1DF3-4C23-A772-2F813DF1FACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A9B6F0-1DF3-4C23-A772-2F813DF1FACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A9B6F0-1DF3-4C23-A772-2F813DF1FACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A9B6F0-1DF3-4C23-A772-2F813DF1FACD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
