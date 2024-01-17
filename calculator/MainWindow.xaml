@@ -1,0 +1,33 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="342" Width="240">
+    <Grid Margin="0,-23,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="260*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="71*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="num_7" Content="7" HorizontalAlignment="Left" Height="60" Margin="0,110,0,0" VerticalAlignment="Top" Width="60" Click="num_7_Click" FontSize="20"/>
+        <Button x:Name="num_8" Content="8" HorizontalAlignment="Left" Height="60" Margin="60,110,0,0" VerticalAlignment="Top" Width="60" Click="num_8_Click" FontSize="20"/>
+        <Button x:Name="num_9" Content="9" HorizontalAlignment="Left" Height="60" Margin="120,110,0,0" VerticalAlignment="Top" Width="60" Click="num_9_Click" FontSize="20"/>
+        <Button x:Name="division" Content="/" HorizontalAlignment="Left" Height="60" Margin="180,110,0,0" VerticalAlignment="Top" Width="60" Click="division_Click" FontSize="20"/>
+        <Button x:Name="minus" Content="-" HorizontalAlignment="Left" Height="60" Margin="180,170,0,0" VerticalAlignment="Top" Width="60" Click="minus_Click" FontSize="20"/>
+        <Button x:Name="num_5" Content="5" HorizontalAlignment="Left" Height="60" Margin="60,170,0,0" VerticalAlignment="Top" Width="60" Click="num_5_Click" FontSize="20"/>
+        <Button x:Name="num_6" Content="6" HorizontalAlignment="Left" Height="60" Margin="120,170,0,0" VerticalAlignment="Top" Width="60" Click="num_6_Click" FontSize="20"/>
+        <Button x:Name="num_4" Content="4" HorizontalAlignment="Left" Height="60" Margin="0,170,0,0" VerticalAlignment="Top" Width="60" Click="num_4_Click" FontSize="20"/>
+        <Button x:Name="num_1" Content="1" HorizontalAlignment="Left" Height="60" Margin="0,230,0,0" VerticalAlignment="Top" Width="60" Click="num_1_Click" Grid.RowSpan="3" FontSize="20"/>
+        <Button x:Name="num_2" Content="2" HorizontalAlignment="Left" Height="60" Margin="60,230,0,0" VerticalAlignment="Top" Width="60" Click="num_2_Click" Grid.RowSpan="3" FontSize="20"/>
+        <Button x:Name="num_3" Content="3" HorizontalAlignment="Left" Height="60" Margin="120,230,0,0" VerticalAlignment="Top" Width="60" Click="num_3_Click" Grid.RowSpan="3" FontSize="20"/>
+        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Height="60" Margin="180,230,0,0" VerticalAlignment="Top" Width="60" Click="plus_Click" Grid.RowSpan="3" FontSize="20"/>
+        <Button x:Name="equally" Content="=" HorizontalAlignment="Left" Height="60" Margin="180,0,0,0" VerticalAlignment="Center" Width="60" Click="equally_Click" Grid.Row="2" FontSize="20"/>
+        <Button x:Name="num_0" Content="0" HorizontalAlignment="Left" Height="60" Margin="60,0,0,0" VerticalAlignment="Center" Width="60" Click="num_0_Click" Grid.Row="2" FontSize="20"/>
+        <Button x:Name="multiplication" Content="*" HorizontalAlignment="Left" Height="60" Margin="120,0,0,0" VerticalAlignment="Center" Width="60" Click="multiplication_Click" Grid.Row="2" FontSize="20"/>
+        <Button x:Name="clean" Content="C" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Click="clean_Click" Grid.Row="2"/>
+        <Label x:Name="screan" Content="" HorizontalAlignment="Center" Height="83" Margin="0,27,0,0" VerticalAlignment="Top" Width="240" Foreground="Black"/>
+    </Grid>
+</Window>
