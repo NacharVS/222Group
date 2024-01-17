@@ -59,5 +59,16 @@ namespace WPFStart
                 list1.Items.Add(user.Surname);
             }
         }
+
+        private void list1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(list1.SelectedItem != null)
+            {
+                var user = users.Find(x => x.Surname ==
+                list1.SelectedItem.ToString());
+                lbl1.Content = user.Name;
+                lbl2.Content = user.Surname;
+            }
+        }
     }
 }
