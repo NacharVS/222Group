@@ -42,7 +42,7 @@ namespace ФормаСписка
 
         private void ListBoxRefresh()
         {
-
+            listBox.Items.Clear();
             foreach (UserInfo user in users)
             {
                 listBox.Items.Add(user.AllName);
