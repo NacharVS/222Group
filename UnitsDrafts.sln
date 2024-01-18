@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsDrafts", "UnitsDrafts\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfalculator", "wpfalculator\wpfalculator.csproj", "{55169B18-07A9-45FF-BBC2-C9E616DE2784}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "registration", "registration\registration.csproj", "{A03B11A4-3C02-410B-A56C-0AE460DAE8ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{55169B18-07A9-45FF-BBC2-C9E616DE2784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55169B18-07A9-45FF-BBC2-C9E616DE2784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55169B18-07A9-45FF-BBC2-C9E616DE2784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03B11A4-3C02-410B-A56C-0AE460DAE8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03B11A4-3C02-410B-A56C-0AE460DAE8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03B11A4-3C02-410B-A56C-0AE460DAE8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03B11A4-3C02-410B-A56C-0AE460DAE8ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
