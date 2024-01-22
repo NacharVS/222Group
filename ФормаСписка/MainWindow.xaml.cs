@@ -25,19 +25,22 @@ namespace ФормаСписка
     {
 
         List<UserInfo> users;
+        List<Teams> teams;
 
         public MainWindow()
         {
             users = new List<UserInfo>();
+            teams = new List<Teams>();
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            users.Add(new(txtName.Text, txtSurname.Text));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
-
+            users.Add(new(txtName.Text, txtSurname.Text, txtLogin.Text));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
             txtName.Clear();
-            txtSurname.Clear();        
+            txtSurname.Clear();     
+            txtLogin.Clear();
+            ListBoxRefresh();
         }
 
         private void ListBoxRefresh()
@@ -45,12 +48,13 @@ namespace ФормаСписка
             listBox.Items.Clear();
             foreach (UserInfo user in users)
             {
-                listBox.Items.Add(user.AllName);
+                listBox.Items.Add(user.Login);
             }
         }
-        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+
+        private void CreateCommand(object sender, RoutedEventArgs e)
         {
-            ListBoxRefresh();
+            listBoxCommandPreview.Items.Clear();
         }
     }
 }
