@@ -56,5 +56,71 @@ namespace ФормаСписка
         {
             listBoxCommandPreview.Items.Clear();
         }
+
+        private void listBox_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetData(DataFormats.FileDrop) is ListBoxItem listItem)
+            {
+                listBox.Items.Add(listItem);
+                listBox.Items.Refresh();
+            }
+        }
+
+        private void listBoxCommandPreview_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetData(DataFormats.FileDrop) is ListBoxItem listItem)
+            {
+                listBoxCommandPreview.Items.Add(listItem);
+                listBoxCommandPreview.Items.Refresh();
+            }
+        }
+
+        private void listBox_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            Point mPos = e.GetPosition(null);
+
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                Math.Abs(mPos.X) > SystemParameters.MinimumHorizontalDragDistance &&
+                Math.Abs(mPos.Y) > SystemParameters.MinimumVerticalDragDistance)
+            {
+                try
+                {
+                    ListBoxItem selectedItem = (ListBoxItem)listBox.SelectedItem;
+                    listBox.Items.Remove(selectedItem);
+                    DragDrop.DoDragDrop(this, new DataObject(DataFormats.FileDrop, selectedItem), DragDropEffects.Copy);
+
+                    if (selectedItem.Parent == null)
+                    {
+                        listBox.Items.Add(selectedItem);
+                    }
+                }
+                catch { }
+
+            }
+        }
+
+        private void listBoxCommandPreview_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            Point mPos = e.GetPosition(null);
+
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                Math.Abs(mPos.X) > SystemParameters.MinimumHorizontalDragDistance &&
+                Math.Abs(mPos.Y) > SystemParameters.MinimumVerticalDragDistance)
+            {
+                try
+                {
+                    ListBoxItem selectedItem = (ListBoxItem)listBoxCommandPreview.SelectedItem;
+                    listBoxCommandPreview.Items.Remove(selectedItem);
+                    DragDrop.DoDragDrop(this, new DataObject(DataFormats.FileDrop, selectedItem), DragDropEffects.Copy);
+
+                    if (selectedItem.Parent == null)
+                    {
+                        listBoxCommandPreview.Items.Add(selectedItem);
+                    }
+                }
+                catch { }
+
+            }
+        }
     }
 }
