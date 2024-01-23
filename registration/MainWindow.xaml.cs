@@ -33,11 +33,9 @@ namespace registration
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
             people.Add(new Person(txtName.Text, txtSurname.Text, txtLogin.Text));
-            teams.Add(new TeamSpirit(txtTeam.Text));
             txtName.Clear();
             txtSurname.Clear();
             txtLogin.Clear();
-            txtTeam.Clear();
             ListBoxRefresh();
             TeamBoxRefresh();
         }
@@ -58,13 +56,12 @@ namespace registration
             }
         }
 
-        private void lstLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CreateTeam_Click(object sender, RoutedEventArgs e)
         {
-            if (lstLogin.SelectedItem != null)
+            lstLogin.Items.Clear();
+            foreach (Person person in people)
             {
-                var log = people.Find(x => x.Login ==
-                lstLogin.SelectedItem.ToString());
-                lstTeam.Items.Add(log);
+                lstTeam.Items.Add(person.Login);
             }
         }
     }
