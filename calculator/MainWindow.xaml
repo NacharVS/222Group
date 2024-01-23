@@ -1,0 +1,30 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="0" HorizontalAlignment="Left" Margin="150,220,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick0" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="120,200,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick1" BorderBrush="Black" BorderThickness="1,0,1,1" Background="#FFB272D5"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="150,200,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick2" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="180,200,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick3" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick4" BorderBrush="Black" BorderThickness="1,0,1,1" Background="#FFB272D5"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="150,180,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick5" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="180,180,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick6" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="120,160,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick7" BorderBrush="Black" BorderThickness="1,0,1,1" Background="#FFB272D5"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="150,160,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick8" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="180,160,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClick9" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="," HorizontalAlignment="Left" Margin="120,220,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClickPoint" BorderBrush="Black" BorderThickness="1,0,1,1" Background="#FFB272D5"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="210,220,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClickPlus" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="210,200,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClickMinus" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="×" HorizontalAlignment="Left" Margin="210,180,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClickMult" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="÷" HorizontalAlignment="Left" Margin="210,160,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClickDivis" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="&lt;-" HorizontalAlignment="Left" Margin="180,140,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="ButtonClickDel" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="=" HorizontalAlignment="Left" Margin="180,220,0,0" VerticalAlignment="Top" Width="30" Height="20" Click="ButtonClickEqual" BorderBrush="Black" BorderThickness="0,0,1,1" Background="#FFB272D5"/>
+        <Button Content="С" HorizontalAlignment="Left" Margin="120,140,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="ButtonClickClear" BorderBrush="Black" BorderThickness="1,0,1,1" Background="#FFB272D5"/>
+        <TextBox x:Name="InputField" Text="" HorizontalAlignment="Left" Margin="120,96,0,0" VerticalAlignment="Top" Width="120" Height="44" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFB272D5"/>
+    </Grid>
+</Window>
