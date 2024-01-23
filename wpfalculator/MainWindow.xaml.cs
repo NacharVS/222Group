@@ -31,47 +31,110 @@ namespace wpfalculator
 
         private void btn7_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "7";
+            if (Almax.Content == "0") 
+            {
+                Almax.Content = "7";
+            }
+            else
+            {
+                Almax.Content += "7";
+            }
         }
 
         private void btn8_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "8";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "8";
+            }
+            else
+            {
+                Almax.Content += "8";
+            }
         }
 
         private void btn9_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "9";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "9";
+            }
+            else
+            {
+                Almax.Content += "9";
+            }
         }
 
         private void btn4_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "4";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "4";
+            }
+            else
+            {
+                Almax.Content += "4";
+            }
         }
 
         private void btn5_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "5";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "5";
+            }
+            else
+            {
+                Almax.Content += "5";
+            }
         }
 
         private void btn6_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "6";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "6";
+            }
+            else
+            {
+                Almax.Content += "6";
+            }
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "1";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "1";
+            }
+            else
+            {
+                Almax.Content += "1";
+            }
         }
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "2";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "2";
+            }
+            else
+            {
+                Almax.Content += "2";
+            }
         }
 
         private void btn3_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "3";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "3";
+            }
+            else
+            {
+                Almax.Content += "3";
+            }
         }
 
         private void btnAC_Click(object sender, RoutedEventArgs e)
@@ -89,12 +152,14 @@ namespace wpfalculator
 
         private void btn0_Click(object sender, RoutedEventArgs e)
         {
-            Almax.Content += "0";
-        }
-
-        private void btnPoint_Click(object sender, RoutedEventArgs e)
-        {
-            Almax.Content += ".";
+            if (Almax.Content == "0")
+            {
+                Almax.Content = "0";
+            }
+            else
+            {
+                Almax.Content += "0";
+            }
         }
 
         private void btnEquals_Click(object sender, RoutedEventArgs e)

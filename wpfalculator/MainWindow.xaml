@@ -24,7 +24,6 @@
         <Button x:Name="btnAC" Content="AC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="56" Margin="0,393,0,0" Click="btnAC_Click"/>
         <Label x:Name="Almax" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="225" Width="300" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="56" Margin="0,225,0,0" Click="btn7_Click"/>
-        <Button x:Name="btnPoint" Content="." HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Height="20" Margin="0,449,0,0" Click="btnPoint_Click"/>
 
     </Grid>
 </Window>
