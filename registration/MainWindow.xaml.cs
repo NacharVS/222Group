@@ -32,19 +32,22 @@ namespace registration
 
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
-            if (txtLogin == null)
+            if (string.IsNullOrWhiteSpace(txtLogin.Text))
             {
                 MessageBox.Show("Пустой логин!");
+                lstLogin.Items.Clear();
             }
             else
-            if (txtLogin != null) 
+            if (txtLogin.Text != null) 
             {
                 people.Add(new Person(txtName.Text, txtSurname.Text, txtLogin.Text));
+                teams.Add(new TeamSpirit(txtTeam.Text));
+                TeamName.Text = txtTeam.;
                 txtName.Clear();
                 txtSurname.Clear();
                 txtLogin.Clear();
+                txtTeam.Clear();
                 ListBoxRefresh();
-                TeamBoxRefresh();
             }
         }
         private void ListBoxRefresh()
@@ -55,14 +58,7 @@ namespace registration
                 lstLogin.Items.Add(person.Login);
             }
         }
-        private void TeamBoxRefresh()
-        {
-            lstTeam.Items.Clear();
-            foreach (TeamSpirit team in teams)
-            {
-                lstTeam.Items.Add(team.Team);
-            }
-        }
+ 
 
         private void CreateTeam_Click(object sender, RoutedEventArgs e)
         {
@@ -76,7 +72,7 @@ namespace registration
 
         private void DeletePerson_Click(object sender, RoutedEventArgs e)
         {
-            lstTeam.Items.Remove(lstTeam.SelectedItem);
+            lstLogin.Items.Add(lstTeam.SelectedItems);
         }
     }
 }

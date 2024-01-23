@@ -6,20 +6,23 @@
         xmlns:local="clr-namespace:registration"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="_0">
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="95,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Margin="95,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="95,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtLogin_TextChanged"/>
+        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="95,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Reg" HorizontalAlignment="Left" Margin="35,287,0,0" VerticalAlignment="Top" Height="118" Width="218" FontSize="40" Content="Registration" Click="Reg_Click"/>
         <ListBox x:Name="lstTeam" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="625,37,0,198"/>
         <ListBox x:Name="lstLogin" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="438,38,180,198"/>
         <TextBlock HorizontalAlignment="Left" Margin="21,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Имя:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="687,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Команда:"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="625,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Команда:"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="21,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Логин:"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="21,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Фамилия"/><Run Text=":"/></TextBlock>
         <Button x:Name="CreateTeam" HorizontalAlignment="Left" Margin="464,264,0,0" VerticalAlignment="Top" Height="37" Width="140" Content="Создать команду" Click="CreateTeam_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="511,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Логин:"/></TextBlock>
         <Button x:Name="DeletePerson" HorizontalAlignment="Left" Margin="642,264,0,0" VerticalAlignment="Top" Height="37" Width="140" Content="Удалить" Click="DeletePerson_Click"/>
+        <TextBox x:Name="txtTeam" HorizontalAlignment="Left" Margin="95,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,112,0,0" TextWrapping="Wrap" Text="Команда:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TeamName" HorizontalAlignment="Left" Margin="700,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="21"/>
 
     </Grid>
 </Window>
