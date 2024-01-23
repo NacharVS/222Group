@@ -11,7 +11,14 @@
         <TextBox x:Name="surnamme" HorizontalAlignment="Left" Height="29" Margin="61,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
         <ListBox x:Name="logins228" HorizontalAlignment="Left" Height="182" Margin="315,70,0,0" VerticalAlignment="Top" Width="152" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="logins228_SelectionChanged"/>
         <ListBox x:Name="commanda" HorizontalAlignment="Left" Height="182" Margin="535,70,0,0" VerticalAlignment="Top" Width="152" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="commanda_SelectionChanged"/>
-        <Button x:Name="reg" Content="Button" HorizontalAlignment="Left" Height="46" Margin="139,273,0,0" VerticalAlignment="Top" Width="104" Click="reg_Click"/>
+        <Button x:Name="reg" Content="register" HorizontalAlignment="Left" Height="46" Margin="139,273,0,0" VerticalAlignment="Top" Width="104" Click="reg_Click"/>
+        <Label x:Name="label1" Content="Логин" HorizontalAlignment="Left" Height="29" Margin="10,70,0,0" VerticalAlignment="Top" Width="46"/>
+        <Label x:Name="label2" Content="Имя" HorizontalAlignment="Left" Height="29" Margin="10,119,0,0" VerticalAlignment="Top" Width="51"/>
+        <TextBox x:Name="comy" HorizontalAlignment="Left" Height="33" Margin="77,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="TextBox_TextChanged_1"/>
+        <TextBlock x:Name="cim" HorizontalAlignment="Left" Height="36" Margin="596,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.491,0.418"/>
+        <TextBlock x:Name="label3" HorizontalAlignment="Left" Height="33" Margin="19,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="ru-ru" Text="Команда"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="359,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"><Run Language="ru-ru" Text="Логины"/></TextBlock>
+        <Label Content="Название команды:" HorizontalAlignment="Left" Height="36" Margin="472,29,0,0" VerticalAlignment="Top" Width="118"/>
 
     </Grid>
 </Window>

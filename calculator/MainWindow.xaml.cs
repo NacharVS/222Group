@@ -47,6 +47,7 @@ namespace calculator
                 screen.Content += "9";
                 a = Convert.ToInt32(screen.Content);
             }
+            e
         }
 
         private void num7_Click(object sender, RoutedEventArgs e)

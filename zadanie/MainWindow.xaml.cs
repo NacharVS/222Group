@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -45,22 +46,47 @@ namespace zadanie
 
         private void reg_Click(object sender, RoutedEventArgs e)
         {
-            listlog.Add(new logins(namme.Text, surnamme.Text));
-            surnamme.Clear();
-            namme.Clear();
-            listchistis();
+            if (namme.Text != "" && surnamme.Text != "")
+            {
+                listlog.Add(new logins(namme.Text, surnamme.Text));
+                surnamme.Clear();
+                namme.Clear();
+                listchistis();
+            }
+            
+            if(comy.Text != "")
+            {
+                cim.Text = comy.Text;
+                comy.Clear();
+                label3.Text = null;
+                comy.Margin = new Thickness(0, 0, 0, 50000);
+
+            }
         }
 
         private void logins228_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            commanda.Items.Add(logins228.SelectedItem);
-            logins228.Items.Remove(logins228.SelectedItem);   
+            if(logins228.SelectedItem != null)
+            {
+                commanda.Items.Add(logins228.SelectedItem);
+                logins228.Items.Remove(logins228.SelectedItem);
+            }
+             
         }
 
         private void commanda_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            logins228.Items.Add(commanda.SelectedItem);
-            commanda.Items.Remove(commanda.SelectedItem);
+            if(commanda.SelectedItem != null)
+            {
+                logins228.Items.Add(commanda.SelectedItem);
+                commanda.Items.Remove(commanda.SelectedItem);
+            }
+            
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
