@@ -1,0 +1,12 @@
+	WARRIOR 	ROGUE 		WIZARD
+strength	30/250		20/65		15/45	
+dexterity	15/80		30/250		20/80
+inteligence 10/ 50		15/70		35/250
+vitality	25/100		20/80		15/70
+
+Health - 	2/1vit		1.5/1vit 		1.4/vit
+Mana	1/1 int		1.2/int		1.5/int
+
+
+statpoints - textbox	
+	
