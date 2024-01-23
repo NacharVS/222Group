@@ -5,30 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="300">
     <Grid>
-        <TextBox x:Name="textbox" Text="" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="40,30,0,0" VerticalAlignment="Top" Height="30" Width="146" TextChanged="TextBox_TextChanged"/>
-        <Button x:Name="button7" Content="7" HorizontalAlignment="Left" Margin="40,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_7"/>
-        <Button x:Name="button8" Content="8" HorizontalAlignment="Left" Margin="92,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_8"/>
-        <Button x:Name="button9" Content="9" HorizontalAlignment="Left" Margin="144,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_9"/>
+        <TextBox x:Name="textbox" Text="" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="40,30,0,0" VerticalAlignment="Top" Height="30" Width="146" TextChanged="TextBox_TextChanged" BorderBrush="Black" Background="#FFE8E8E8"/>
+        <Button x:Name="button7" Content="7" HorizontalAlignment="Left" Margin="40,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_7" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="button8" Content="8" HorizontalAlignment="Left" Margin="92,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_8" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="button9" Content="9" HorizontalAlignment="Left" Margin="144,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_9" BorderBrush="Black" Background="#FFFFC2AB"/>
 
-        <Button x:Name="button4" Content="4" HorizontalAlignment="Left" Margin="40,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_4"/>
-        <Button x:Name="button5" Content="5" HorizontalAlignment="Left" Margin="92,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_5"/>
-        <Button x:Name="button6" Content="6" HorizontalAlignment="Left" Margin="144,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_6"/>
+        <Button x:Name="button4" Content="4" HorizontalAlignment="Left" Margin="40,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_4" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="button5" Content="5" HorizontalAlignment="Left" Margin="92,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_5" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="button6" Content="6" HorizontalAlignment="Left" Margin="144,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_6" BorderBrush="Black" Background="#FFFFC2AB"/>
 
-        <Button x:Name="button1" Content="1" HorizontalAlignment="Left" Margin="40,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_1"/>
-        <Button x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="92,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_2"/>
-        <Button x:Name="button3" Content="3" HorizontalAlignment="Left" Margin="144,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_3"/>
+        <Button x:Name="button1" Content="1" HorizontalAlignment="Left" Margin="40,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_1" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="92,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_2" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="button3" Content="3" HorizontalAlignment="Left" Margin="144,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_3" BorderBrush="Black" Background="#FFFFC2AB"/>
 
-        <Button x:Name="button0" Content="0" HorizontalAlignment="Left" Margin="92,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_0"/>
-        <Button x:Name="clear" Content="C" HorizontalAlignment="Left" Margin="40,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Clear"/>
-        <Button x:Name="equal" Content="=" HorizontalAlignment="Left" Margin="144,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Equal"/>
+        <Button x:Name="button0" Content="0" HorizontalAlignment="Left" Margin="92,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_0" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="clear" Content="C" HorizontalAlignment="Left" Margin="40,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Clear" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="equal" Content="=" HorizontalAlignment="Left" Margin="144,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Equal" BorderBrush="Black" Background="#FFFFC2AB"/>
 
-        <Button x:Name="addition" Content="+" HorizontalAlignment="Left" Margin="196,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Addition"/>
-        <Button x:Name="substraction" Content="-" HorizontalAlignment="Left" Margin="196,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Substraction"/>
-        <Button x:Name="multiplication" Content="×" HorizontalAlignment="Left" Margin="196,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Multiplication"/>
-        <Button x:Name="division" Content="÷" HorizontalAlignment="Left" Margin="196,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Division"/>
+        <Button x:Name="addition" Content="+" HorizontalAlignment="Left" Margin="196,71,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Addition" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="substraction" Content="-" HorizontalAlignment="Left" Margin="196,123,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Substraction" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="multiplication" Content="×" HorizontalAlignment="Left" Margin="196,175,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Multiplication" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Button x:Name="division" Content="÷" HorizontalAlignment="Left" Margin="196,227,0,0" VerticalAlignment="Top" Height="42" Width="42" Click="Button_Click_Division" BorderBrush="Black" Background="#FFFFC2AB"/>
 
-        <Button x:Name="delete" Content="←" HorizontalAlignment="Left" Margin="196,30,0,0" VerticalAlignment="Top" Height="30" Width="42" Click="Button_Click_Delete"/>
+        <Button x:Name="delete" Content="←" HorizontalAlignment="Left" Margin="196,30,0,0" VerticalAlignment="Top" Height="30" Width="42" Click="Button_Click_Delete" BorderBrush="Black" Background="#FFFFC2AB"/>
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="265" Margin="29,17,0,0" VerticalAlignment="Top" Width="220"/>
     </Grid>
 </Window>
