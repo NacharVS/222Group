@@ -16,6 +16,7 @@ namespace ФормаСписка
         {
             TeamName = team;
             TeamCount = teamCount;
+ 
         }  
     }
 }

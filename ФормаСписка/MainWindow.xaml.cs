@@ -36,11 +36,18 @@ namespace ФормаСписка
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            users.Add(new(txtName.Text, txtSurname.Text, txtLogin.Text));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
-            txtName.Clear();
-            txtSurname.Clear();     
-            txtLogin.Clear();
-            ListBoxRefresh();
+            if (!(string.IsNullOrWhiteSpace(txtLogin.Text)) && !(string.IsNullOrWhiteSpace(txtName.Text)) && !(string.IsNullOrWhiteSpace(txtSurname.Text)))
+            {
+                users.Add(new(txtName.Text, txtSurname.Text, txtLogin.Text));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
+                txtName.Clear();
+                txtSurname.Clear();
+                txtLogin.Clear();
+                ListBoxRefresh();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void ListBoxRefresh()
