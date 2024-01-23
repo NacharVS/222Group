@@ -32,12 +32,20 @@ namespace registration
 
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
-            people.Add(new Person(txtName.Text, txtSurname.Text, txtLogin.Text));
-            txtName.Clear();
-            txtSurname.Clear();
-            txtLogin.Clear();
-            ListBoxRefresh();
-            TeamBoxRefresh();
+            if (txtLogin == null)
+            {
+                MessageBox.Show("Пустой логин!");
+            }
+            else
+            if (txtLogin != null) 
+            {
+                people.Add(new Person(txtName.Text, txtSurname.Text, txtLogin.Text));
+                txtName.Clear();
+                txtSurname.Clear();
+                txtLogin.Clear();
+                ListBoxRefresh();
+                TeamBoxRefresh();
+            }
         }
         private void ListBoxRefresh()
         {
@@ -63,6 +71,12 @@ namespace registration
             {
                 lstTeam.Items.Add(person.Login);
             }
+        }
+
+
+        private void DeletePerson_Click(object sender, RoutedEventArgs e)
+        {
+            lstTeam.Items.Remove(lstTeam.SelectedItem);
         }
     }
 }
