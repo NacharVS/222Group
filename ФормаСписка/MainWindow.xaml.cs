@@ -47,8 +47,11 @@ namespace ФормаСписка
         {
             listBox.Items.Clear();
             foreach (UserInfo user in users)
-            {
-                listBox.Items.Add(user.Login);
+            {             
+                ListBoxItem listBoxItem = new ListBoxItem();
+                listBoxItem.Content = user.Login;
+                listBox.Items.Add(listBoxItem);
+
             }
         }
 
