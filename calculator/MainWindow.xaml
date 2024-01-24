@@ -10,7 +10,7 @@
         <Button x:Name="num7" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Width="97" Height="64" Content="7" Click="num7_Click"/>
         <Button x:Name="num8" Content="8" HorizontalAlignment="Left" Margin="97,217,0,0" VerticalAlignment="Top" Width="97" Height="64" Click="num8_Click"/>
         <Button x:Name="num9" Content="9" HorizontalAlignment="Left" Margin="194,217,0,0" VerticalAlignment="Top" Width="97" Height="64" Click="Button_Click"/>
-        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Margin="353,217,0,0" VerticalAlignment="Top" Width="97" Height="64" Click="plus_Click"/>
+        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Margin="291,217,0,0" VerticalAlignment="Top" Width="62" Height="64" Click="plus_Click"/>
         <Button x:Name="num4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="64" Margin="0,281,0,0" Click="num4_Click"/>
         <Button x:Name="num5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="64" Margin="97,281,0,0" Click="num5_Click"/>
         <Button x:Name="num6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="64" Margin="194,281,0,0" Click="num6_Click"/>
@@ -18,7 +18,11 @@
         <Button x:Name="num2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="64" Margin="97,345,0,0" Click="num2_Click"/>
         <Button x:Name="num" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="64" Margin="194,345,0,0" Click="num_Click"/>
         <Label x:Name="screen" Content="0" HorizontalAlignment="Left" Height="68" Margin="74,104,0,0" VerticalAlignment="Top" Width="353" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="48" FontFamily="Tahoma"/>
-        <Button x:Name="ravno" Content="=" HorizontalAlignment="Left" Margin="353,281,0,0" VerticalAlignment="Top" Height="66" Width="97" Click="ravno_Click"/>
+        <Button x:Name="ravno" Content="=" HorizontalAlignment="Left" Margin="291,279,0,0" VerticalAlignment="Top" Height="66" Width="62" Click="ravno_Click"/>
+        <Button Content="-" HorizontalAlignment="Left" Height="64" Margin="291,345,0,0" VerticalAlignment="Top" Width="62" Click="Button_Click_1"/>
+        <Button Content="C" HorizontalAlignment="Left" Height="64" Margin="353,345,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_3"/>
+        <Button Content="/" HorizontalAlignment="Left" Height="64" Margin="353,217,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_2"/>
+        <Button Content="x" HorizontalAlignment="Left" Height="66" Margin="353,279,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_4"/>
 
     </Grid>
 </Window>

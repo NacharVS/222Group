@@ -28,17 +28,74 @@ namespace calculator
         public int b;
         public string c;
         public int d;
+        public string e;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             if (c == "+")
             {
-                screen.Content += "9";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
             {
-                screen.Content = "";
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "9";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+            {
+                screen.Content = null;
                 screen.Content += "9";
                 a = Convert.ToInt32(screen.Content);
             }
@@ -47,17 +104,72 @@ namespace calculator
                 screen.Content += "9";
                 a = Convert.ToInt32(screen.Content);
             }
-            e
+
         }
 
         private void num7_Click(object sender, RoutedEventArgs e)
         {
             if (c == "+")
             {
-                screen.Content += "7";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "7";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
                 screen.Content = null;
                 screen.Content += "7";
@@ -74,10 +186,65 @@ namespace calculator
         {
             if (c == "+")
             {
-                screen.Content += "8";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "8";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
                 screen.Content = null;
                 screen.Content += "8";
@@ -94,10 +261,65 @@ namespace calculator
         {
             if (c == "+")
             {
-                screen.Content += "6";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "6";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
 
                 screen.Content = null;
@@ -115,10 +337,65 @@ namespace calculator
         {
             if (c == "+")
             {
-                screen.Content += "3";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "3";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
 
                 screen.Content = null;
@@ -136,10 +413,68 @@ namespace calculator
         {
             if (c == "+")
             {
-                screen.Content += "2";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+
+                else
+                {
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+
+                else
+                {
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+
+                else
+                {
+                    screen.Content += "2";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
                 screen.Content = null;
                 screen.Content += "2";
@@ -156,10 +491,66 @@ namespace calculator
         {
             if (c == "+")
             {
-                screen.Content += "1";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "1";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
                 screen.Content = null;
                 screen.Content += "1";
@@ -176,10 +567,64 @@ namespace calculator
         {
             if (c == "+")
             {
-                screen.Content += "4";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+                }
+                else
+                {
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content = null;
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+
+                }
+                else
+                {
+                    screen.Content += "4";
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
                 screen.Content = null;
                 screen.Content += "4";
@@ -196,10 +641,61 @@ namespace calculator
         {
             if(c == "+")
             {
-                screen.Content += "5";
-                b = Convert.ToInt32(screen.Content);
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content += "5";
+                    b = Convert.ToInt32(screen.Content);
+                }
+                else
+                {
+                    screen.Content += "5";
+                    b = Convert.ToInt32(screen.Content);
+                }
             }
-            else if (screen.Content == "0")
+            else if (c == "*")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content += "5";
+                    b = Convert.ToInt32(screen.Content);
+                }
+                else
+                {
+                    screen.Content += "5";
+
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "/")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content += "5";
+                    b = Convert.ToInt32(screen.Content);
+                }
+
+                else
+                {
+                    screen.Content += "5";
+
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (c == "-")
+            {
+                if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
+                {
+                    screen.Content += "5";
+                    b = Convert.ToInt32(screen.Content);
+                }
+                else
+                {
+                    screen.Content += "5";
+
+                    b = Convert.ToInt32(screen.Content);
+                }
+            }
+            else if (Convert.ToInt32(screen.Content) < 0.1 && Convert.ToInt32(screen.Content) > -0.1 && Convert.ToInt32(screen.Content) == 0)
             {
                 screen.Content = null;
                 screen.Content += "5";
@@ -226,6 +722,51 @@ namespace calculator
                 d = a + b;
                 screen.Content = Convert.ToString(d);
             }
+            else if(c == "-" && a > 1 && b > 1)
+            {
+                d = a - b;
+                screen.Content = Convert.ToString(d);
+            }
+            else if(c == "/" && a > 1 && b > 1)
+            {
+                d = a / b;
+                screen.Content= Convert.ToString(d);
+            }
+            else
+            {
+                d = a * b;
+                screen.Content = Convert.ToString(d);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            a = Convert.ToInt32(screen.Content);
+            screen.Content = null;
+            c = "-";
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            a = Convert.ToInt32(screen.Content);
+            screen.Content = null;
+            c = "/";
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            screen.Content = "0";
+            a = 0;
+            b = 0;
+            c = "";
+            d = 0;
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            a = Convert.ToInt32(screen.Content);
+            screen.Content = null;
+            c = "*";
         }
     }
 }
