@@ -11,14 +11,18 @@ namespace ФормаСписка
         private string Surname { get; set; }
         public string Login { get; set; }
 
+        public int UsIndex;
+
         public string AllName;
 
-        public UserInfo(string name, string surname, string login)
+        public UserInfo(string name, string surname, string login, int usIndex)
         {
             Name = name;
             Surname = surname;
             Login = login;
-            AllName = Name + " " + Surname;           
+            UsIndex = usIndex + 1;
+            AllName = Name + " " + Surname;
+            
         }    
     }
 }

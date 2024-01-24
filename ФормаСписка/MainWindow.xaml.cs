@@ -24,21 +24,24 @@ namespace ФормаСписка
     public partial class MainWindow : Window
     {
 
-        List<UserInfo> users;
-        List<Teams> teams;
+        List<UserInfo> UserList1;
+        List<UserInfo> UserList2;   
+        List<Teams> teams;  
 
         public MainWindow()
         {
-            users = new List<UserInfo>();
+            UserList1 = new List<UserInfo>();
             teams = new List<Teams>();
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            int i = 0;
             if (!(string.IsNullOrWhiteSpace(txtLogin.Text)) && !(string.IsNullOrWhiteSpace(txtName.Text)) && !(string.IsNullOrWhiteSpace(txtSurname.Text)))
             {
-                users.Add(new(txtName.Text, txtSurname.Text, txtLogin.Text));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
+                UserList1.Add(new(txtName.Text, txtSurname.Text, txtLogin.Text, i));  //Добавляет в лмст users user'а по конструктуру UserInfo, Имя и Фамилия. В конструкторе AllName = Фамилия + Имя//
+                i++;
                 txtName.Clear();
                 txtSurname.Clear();
                 txtLogin.Clear();
@@ -53,18 +56,18 @@ namespace ФормаСписка
         private void ListBoxRefresh()
         {
             listBox.Items.Clear();
-            foreach (UserInfo user in users)
+            foreach (UserInfo user in UserList1)
             {             
                 ListBoxItem listBoxItem = new ListBoxItem();
-                listBoxItem.Content = user.Login;
+                listBoxItem.Content = user.Login + user.UsIndex;
+         
                 listBox.Items.Add(listBoxItem);
-
             }
         }
 
         private void CreateCommand(object sender, RoutedEventArgs e)
         {
-            listBoxCommandPreview.Items.Clear();
+                listBoxCommandPreview.Items.Clear();
         }
 
         private void listBox_Drop(object sender, DragEventArgs e)
@@ -79,15 +82,25 @@ namespace ФормаСписка
         private void listBoxCommandPreview_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetData(DataFormats.FileDrop) is ListBoxItem listItem)
-            {
-                listBoxCommandPreview.Items.Add(listItem);
-                listBoxCommandPreview.Items.Refresh();
+            {         
+                    listBoxCommandPreview.Items.Add(listItem);
+                    listBoxCommandPreview.Items.Refresh();
+                                    
             }
         }
 
         private void listBox_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             Point mPos = e.GetPosition(null);
+
+            if (listBoxCommandPreview.Items.Count == 3)
+            {
+                listBoxCommandPreview.AllowDrop = false;
+            }
+            else
+            {
+                listBoxCommandPreview.AllowDrop = true;
+            }
 
             if (e.LeftButton == MouseButtonState.Pressed &&
                 Math.Abs(mPos.X) > SystemParameters.MinimumHorizontalDragDistance &&

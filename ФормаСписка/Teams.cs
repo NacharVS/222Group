@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace ФормаСписка
 {
-    internal class Teams
+    internal class Teams 
     {
         public string TeamName;
 
-        public int TeamCount;
+        public int UserCount;
 
-        public Teams(string team, int teamCount) 
+        public List<UserInfo> TeamStruct = new List<UserInfo>();
+
+        public Teams(string team, int userCount) 
         {
             TeamName = team;
-            TeamCount = teamCount;
- 
+            UserCount = userCount;
         }  
     }
 }
