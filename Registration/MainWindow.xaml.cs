@@ -27,95 +27,96 @@ namespace Registration
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoginBoxRefresh()
         {
-            members.Add(new Member(txtlog.Text, txtname.Text, txtsurname.Text, txtage.Text));
-            txtlog.Clear();
+            LoginBox.Items.Clear();
+            foreach (Member member in members)
+            {
+                LoginBox.Items.Add(member.Login);
+            }
+        }
+
+        private void LoginBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LoginBox.SelectedItem != null)
+            {
+                var member = members.Find(x => x.Login ==
+                LoginBox.SelectedItem.ToString());
+                lable1.Content = member.Login;
+                lable2.Content = member.Name;
+                lable3.Content = member.Surname;
+                lable4.Content = member.Age;
+            }
+        }
+
+        private void TeamBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TeamBox1.SelectedItem != null)
+            {
+                var member = members.Find(x => x.Login ==
+                TeamBox1.SelectedItem.ToString());
+                lable1.Content = member.Login;
+                lable2.Content = member.Name;
+                lable3.Content = member.Surname;
+                lable4.Content = member.Age;
+            }
+        }
+
+        private void TeamBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TeamBox2.SelectedItem != null)
+            {
+                var member = members.Find(x => x.Login ==
+                TeamBox2.SelectedItem.ToString());
+                lable1.Content = member.Login;
+                lable2.Content = member.Name;
+                lable3.Content = member.Surname;
+                lable4.Content = member.Age;
+            }
+        }
+
+        private void Button_Click_Registration(object sender, RoutedEventArgs e)
+        {
+            members.Add(new Member(txtlogin.Text, txtname.Text, txtsurname.Text, txtage.Text));
+            txtlogin.Clear();
             txtname.Clear();
             txtsurname.Clear();
             txtage.Clear();
-            LogBoxRefresh();
-        }
-        private void LogBoxRefresh()
-        {
-            LogBox.Items.Clear();
-            foreach (Member member in members)
-            {
-                LogBox.Items.Add(member.Login);
-            }
+            LoginBoxRefresh();
         }
 
-        private void LogBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click_DeleteFromTeam(object sender, RoutedEventArgs e)
         {
-            if (LogBox.SelectedItem != null)
+            if (TeamBox1.SelectedItem != null)
             {
                 var member = members.Find(x => x.Login ==
-                LogBox.SelectedItem.ToString());
-                lbl1.Content = member.Login;
-                lbl2.Content = member.Name;
-                lbl3.Content = member.Surname;
-                lbl4.Content = member.Age;
-            }
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            var member = members.Find(x => x.Login ==
-            LogBox.SelectedItem.ToString());
-            T1box.Items.Add(member.Login);
-            LogBox.Items.Remove(member.Login);
-        }
-
-        private void T1box_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (T1box.SelectedItem != null)
-            {
-                var member = members.Find(x => x.Login ==
-                T1box.SelectedItem.ToString());
-                lbl1.Content = member.Login;
-                lbl2.Content = member.Name;
-                lbl3.Content = member.Surname;
-                lbl4.Content = member.Age;
-            }
-        }
-
-        private void T2Box_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (T2Box.SelectedItem != null)
-            {
-                var member = members.Find(x => x.Login ==
-                T2Box.SelectedItem.ToString());
-                lbl1.Content = member.Login;
-                lbl2.Content = member.Name;
-                lbl3.Content = member.Surname;
-                lbl4.Content = member.Age;
-            }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (T1box.SelectedItem != null)
-            {
-                var member = members.Find(x => x.Login ==
-                T1box.SelectedItem.ToString());
-                LogBox.Items.Add(member.Login);
-                T1box.Items.Remove(member.Login);
+                TeamBox1.SelectedItem.ToString());
+                LoginBox.Items.Add(member.Login);
+                TeamBox1.Items.Remove(member.Login);
             }
             else
             {
                 var member1 = members.Find(x => x.Login ==
-                T2Box.SelectedItem.ToString());
-                LogBox.Items.Add(member1.Login);
-                T2Box.Items.Remove(member1.Login);
+                TeamBox2.SelectedItem.ToString());
+                LoginBox.Items.Add(member1.Login);
+                TeamBox2.Items.Remove(member1.Login);
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click_AddToTeam1(object sender, RoutedEventArgs e)
         {
             var member = members.Find(x => x.Login ==
-            LogBox.SelectedItem.ToString());
-            T2Box.Items.Add(member.Login);
-            LogBox.Items.Remove(member.Login);
+            LoginBox.SelectedItem.ToString());
+            TeamBox1.Items.Add(member.Login);
+            LoginBox.Items.Remove(member.Login);
+        }
+
+        private void Button_Click_AddToTeam2(object sender, RoutedEventArgs e)
+        {
+            var member = members.Find(x => x.Login ==
+            LoginBox.SelectedItem.ToString());
+            TeamBox2.Items.Add(member.Login);
+            LoginBox.Items.Remove(member.Login);
         }
     }
 }

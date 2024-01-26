@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Registration"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="420" Width="720">
     <Grid Margin="0,1,0,-7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -17,29 +17,30 @@
         <TextBlock Text="Фамилия:" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top" Height="20" Width="55" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
         <TextBlock Text="Возраст:" HorizontalAlignment="Left" Margin="20,105,0,0" VerticalAlignment="Top" Height="20" Width="55" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
 
-        <TextBox x:Name="txtlog" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtname" HorizontalAlignment="Left" Margin="80,55,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtsurname" HorizontalAlignment="Left" Margin="80,80,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtage" HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtlogin" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <TextBox x:Name="txtname" HorizontalAlignment="Left" Margin="80,55,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <TextBox x:Name="txtsurname" HorizontalAlignment="Left" Margin="80,80,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <TextBox x:Name="txtage" HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="20" Width="120" Margin="20,145,0,0" TextWrapping="Wrap" Text="Информация:" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbl1" Content="" HorizontalAlignment="Left" Margin="20,165,0,0" VerticalAlignment="Top" Height="20" Width="180" Grid.ColumnSpan="2" BorderBrush="#FFABADB3" BorderThickness="1,1,1,1"/>
-        <Label x:Name="lbl2" Content="" HorizontalAlignment="Left" Margin="20,190,0,0" VerticalAlignment="Top" Height="20" Width="180" Grid.ColumnSpan="2" BorderBrush="#FFABADB3" BorderThickness="1,1,1,1"/>
-        <Label x:Name="lbl3" Content="" HorizontalAlignment="Left" Margin="20,215,0,0" VerticalAlignment="Top" Height="20" Width="180" Grid.ColumnSpan="2" BorderBrush="#FFABADB3" BorderThickness="1,1,1,1"/>
-        <Label x:Name="lbl4" Content="" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Height="20" Width="180" Grid.ColumnSpan="2" BorderBrush="#FFABADB3" BorderThickness="1,1,1,1"/>
+        <TextBlock Text="Информация:" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Height="20" Width="120" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+        <Label x:Name="lable1" Content="" HorizontalAlignment="Left" Margin="20,165,0,0" VerticalAlignment="Top" Height="30" Width="180" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <Label x:Name="lable2" Content="" HorizontalAlignment="Left" Margin="20,200,0,0" VerticalAlignment="Top" Height="30" Width="180" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <Label x:Name="lable3" Content="" HorizontalAlignment="Left" Margin="20,235,0,0" VerticalAlignment="Top" Height="30" Width="180" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <Label x:Name="lable4" Content="" HorizontalAlignment="Left" Margin="20,270,0,0" VerticalAlignment="Top" Height="30" Width="180" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
 
         <TextBlock Text="Доступные участнки:" HorizontalAlignment="Left" Margin="220,30,0,0" VerticalAlignment="Top" Height="20" Width="150" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
         <TextBlock Text="Команда №1" HorizontalAlignment="Left" Margin="375,30,0,0" VerticalAlignment="Top" Height="20" Width="150" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
         <TextBlock Text="Команда №2" HorizontalAlignment="Left" Margin="530,30,0,0" VerticalAlignment="Top" Height="20"  Width="150" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
 
-        <ListBox x:Name="LogBox" HorizontalAlignment="Left" Margin="220,55,0,0" VerticalAlignment="Top" Height="205" Width="150" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" SelectionChanged="LogBox_SelectionChanged"/>
-        <ListBox x:Name="T1box" HorizontalAlignment="Left" Margin="375,55,0,0" VerticalAlignment="Top" Height="205" Width="150" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" SelectionChanged="T1box_SelectionChanged"/>
-        <ListBox x:Name="T2Box" HorizontalAlignment="Left" Margin="530,55,0,0" VerticalAlignment="Top" Height="205" Width="150" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" SelectionChanged="T2Box_SelectionChanged"/>
+        <ListBox x:Name="LoginBox" HorizontalAlignment="Left" Margin="220,55,0,0" VerticalAlignment="Top" Height="245" Width="150" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" SelectionChanged="LoginBox_SelectionChanged" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <ListBox x:Name="TeamBox1" HorizontalAlignment="Left" Margin="375,55,0,0" VerticalAlignment="Top" Height="245" Width="150" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" SelectionChanged="TeamBox1_SelectionChanged" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
+        <ListBox x:Name="TeamBox2" HorizontalAlignment="Left" Margin="530,55,0,0" VerticalAlignment="Top" Height="245" Width="150" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" SelectionChanged="TeamBox2_SelectionChanged" BorderBrush="Black" BorderThickness="1,1,1,1" Background="#FFE8E8E8"/>
 
 
-        <Button Content="Зарегестрировать" HorizontalAlignment="Left" Height="30" Width="180" Margin="20,280,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Click="Button_Click"/>
-        <Button Content="Удалить из команды" HorizontalAlignment="Left" Margin="220,280,0,0" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="2" Click="Button_Click_1"/>
-        <Button Content="Добавить в оманду №1" HorizontalAlignment="Left" Margin="375,280,0,0" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="2" Click="Button_Click_2"/>
-        <Button Content="Добавить в оманду №2" HorizontalAlignment="Left" Margin="530,280,0,0" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="2" Click="Button_Click_3"/>
+        <Button Content="Зарегестрировать" HorizontalAlignment="Left" Height="30" Width="180" Margin="20,315,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Click="Button_Click_Registration" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+        <Button Content="Удалить из команды" HorizontalAlignment="Left" Margin="220,315,0,0" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="2" Click="Button_Click_DeleteFromTeam" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+        <Button Content="Добавить в оманду №1" HorizontalAlignment="Left" Margin="375,315,0,0" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="2" Click="Button_Click_AddToTeam1" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+        <Button Content="Добавить в оманду №2" HorizontalAlignment="Left" Margin="530,315,0,0" VerticalAlignment="Top" Height="30" Width="150" Grid.ColumnSpan="2" Click="Button_Click_AddToTeam2" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="344" Width="680" Grid.Column="1"/>
     </Grid>
 </Window>
