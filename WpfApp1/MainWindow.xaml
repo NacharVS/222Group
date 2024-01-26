@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="a1" Content="1" Margin="269,148,432,240" Click="a1_Click"/>
+        <Label x:Name="lbl" Content="" Margin="278,42,243,312" HorizontalContentAlignment="Right"/>
+        <Button x:Name="a2" Content="2" Margin="368,148,333,240" Click="a2_Click"/>
+        <Button x:Name="a3" Content="3" Margin="467,148,234,240" Click="a3_Click"/>
+        <Button x:Name="a4" Content="4" Margin="269,194,432,194" Click="a4_Click"/>
+        <Button x:Name="a5" Content="5" Margin="368,194,333,194" Click="a5_Click"/>
+        <Button x:Name="a6" Content="6" Margin="467,194,234,194" Click="a6_Click"/>
+        <Button x:Name="a7" Content="7" Margin="269,240,432,148" Click="a7_Click"/>
+        <Button x:Name="a8" Content="8" Margin="368,240,333,148" Click="a8_Click"/>
+        <Button x:Name="a9" Content="9" Margin="467,240,234,148" Click="a9_Click">
+        </Button>
+        <Button x:Name="plus" Content="+" Margin="566,148,135,240" Click="plus_Click"/>
+        <Button x:Name="minus" Content="-" Margin="566,194,135,194" Click="minus_Click"/>
+        <Button x:Name="ravno" Content="=" Margin="566,240,135,148" Click="ravno_Click"/>
+        <Button x:Name="a0" Content="0" Margin="368,286,333,102" Click="a0_Click">
+         
+        </Button>
+        <Button x:Name="umnojit" Content="*" Margin="467,286,234,102" Click="umnojit_Click"/>
+        <Button x:Name="delit" Content=":" Margin="566,286,135,102" Click="delit_Click"/>
+        <Button x:Name="steret" Content="C" Margin="269,286,432,102" Click="steret_Click"/>
+
+
+    </Grid>
+</Window>
