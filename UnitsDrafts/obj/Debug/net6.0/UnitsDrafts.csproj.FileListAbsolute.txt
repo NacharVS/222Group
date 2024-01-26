@@ -1,0 +1,30 @@
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.exe
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.deps.json
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.runtimeconfig.json
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.pdb
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.csproj.AssemblyReference.cache
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.AssemblyInfoInputs.cache
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.AssemblyInfo.cs
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.csproj.CoreCompileInputs.cache
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\refint\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.pdb
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.genruntimeconfig.cache
+C:\Users\222223\Desktop\Новая папка\UnitsDrafts\obj\Debug\net6.0\ref\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.csproj.AssemblyReference.cache
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.AssemblyInfoInputs.cache
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.AssemblyInfo.cs
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.csproj.CoreCompileInputs.cache
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\refint\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.pdb
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.exe
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.deps.json
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.runtimeconfig.json
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.dll
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\bin\Debug\net6.0\UnitsDrafts.pdb
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\UnitsDrafts.genruntimeconfig.cache
+C:\Users\222223\Desktop\Новая папка (2)\Новая папка\UnitsDrafts\obj\Debug\net6.0\ref\UnitsDrafts.dll
