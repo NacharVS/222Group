@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WPFStart
 {
@@ -69,6 +70,20 @@ namespace WPFStart
                 lbl1.Content = user.Name;
                 lbl2.Content = user.Surname;
             }
+        }
+
+        private void Button_Click_1(System.Object sender, System.Windows.RoutedEventArgs e)
+        {
+            Method();
+        }
+
+        void Method()
+        {
+            while (File.Exists(@"C:\Users\Vadim.Nacharov\Desktop\testdoc.txt"))
+            {
+
+            }
+            MessageBox.Show("FILE DELETED OR NAME CHANGED");
         }
     }
 }
