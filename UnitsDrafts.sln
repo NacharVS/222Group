@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLibrary", "TestLibrary\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFStart", "WPFStart\WPFStart.csproj", "{C4793738-2480-4A3F-86A4-FB330B282B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitExamples", "AsyncAwaitExamples\AsyncAwaitExamples.csproj", "{90CE99B1-10E4-47F4-A9B9-3CB6587AA8FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwaitExamples", "AsyncAwaitExamples\AsyncAwaitExamples.csproj", "{90CE99B1-10E4-47F4-A9B9-3CB6587AA8FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{3E707378-53A6-4573-A3BA-85FDD853C845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{90CE99B1-10E4-47F4-A9B9-3CB6587AA8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90CE99B1-10E4-47F4-A9B9-3CB6587AA8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90CE99B1-10E4-47F4-A9B9-3CB6587AA8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E707378-53A6-4573-A3BA-85FDD853C845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E707378-53A6-4573-A3BA-85FDD853C845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E707378-53A6-4573-A3BA-85FDD853C845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E707378-53A6-4573-A3BA-85FDD853C845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
